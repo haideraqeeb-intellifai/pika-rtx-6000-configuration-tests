@@ -1,0 +1,7 @@
+{
+  "note": "After the baseline began, template lookup was localized to byte-identical JSON for a self-contained reproduction. No workflow nodes changed. Original baseline runner retained.",
+  "hashes": {
+    "denoise.json": "d6d2ddcf04a1b455e3a0d9cb859e3d07ac25b3151d71177bc0b05267fbdc12c8",
+    "decode.json": "29f9282e9144cb1cdcb3fc920162076dc9befff01556d6d5fb98f546b8c0aea9"
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "chunk": 0,
+    "tensor_values_bit_equal": true,
+    "original_bytes": 51081581,
+    "compact_bytes": 25541797
+  },
+  {
+    "chunk": 1,
+    "tensor_values_bit_equal": true,
+    "original_bytes": 51081581,
+    "compact_bytes": 25541797
+  },
+  {
+    "chunk": 2,
+    "tensor_values_bit_equal": true,
+    "original_bytes": 51081581,
+    "compact_bytes": 25541797
+  },
+  {
+    "chunk": 3,
+    "tensor_values_bit_equal": true,
+    "original_bytes": 51081581,
+    "compact_bytes": 25541797
+  },
+  {
+    "chunk": 4,
+    "tensor_values_bit_equal": true,
+    "original_bytes": 25541741,
+    "compact_bytes": 25541797
+  }
+]

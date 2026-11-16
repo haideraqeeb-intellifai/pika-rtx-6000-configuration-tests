@@ -1,0 +1,25 @@
+{
+  "followup_one_mps_repeat2": {
+    "reason": "Unexpected separate non-MPS Python GPU allocation observed at the end of the measured window; timing excluded conservatively for contention.",
+    "observed_gpu_pid": 287981,
+    "observed_ppid": 287978,
+    "observed_gpu_memory_mib": 22756,
+    "known_benchmark_mps_server": 285474,
+    "known_benchmark_mps_clients": [
+      285372,
+      285373
+    ],
+    "recorded_at": 1794315878.9917183,
+    "ancestry_note": "The extra process exited before its complete ancestry could be captured. It was not terminated by this benchmark."
+  },
+  "followup_best_combined": {
+    "reason": "Confirmed competing GPU process during timed generation; excluded from performance averages.",
+    "observed_gpu_pids": [
+      295012
+    ],
+    "ownership_evidence": "followup_ownership_continuous.jsonl",
+    "observed_first_epoch": 1794315879.0464041,
+    "observed_last_epoch": 1794315881.1057928,
+    "recorded_at": 1794315950.3351455
+  }
+}

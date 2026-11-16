@@ -1,0 +1,15 @@
+[
+  "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+  "-m",
+  "agent.rtx6000_benchmark.five_ten.experiment",
+  "--name",
+  "batch_1t2v",
+  "--mode",
+  "batch",
+  "--transformers",
+  "1",
+  "--vaes",
+  "2",
+  "--repeats",
+  "3"
+]

@@ -1,0 +1,67 @@
+{
+  "recommended": {
+    "key": [
+      20,
+      1,
+      2,
+      "dynamic",
+      false,
+      true
+    ],
+    "label": "20 chunks \u00b7 1 transformer / 2 VAE \u00b7 MPS",
+    "status": "success",
+    "samples": 3,
+    "mean_total_seconds": 223.57876813167,
+    "min_total_seconds": 221.92696636500477,
+    "max_total_seconds": 225.46428783699957,
+    "mean_video_ready_seconds": 219.5692734689995,
+    "videos_per_hour_including_qa": 16.101707823525928,
+    "videos_per_hour_ready": 16.395736721824495,
+    "peak_vram_gib": 41.301,
+    "gpu_util_mean_pct": 82.97055126398692,
+    "preparation_mean_seconds": 22.54930136466525,
+    "workers_mean_seconds": 188.8978120246708,
+    "max_concurrent_sampler_calls": 1,
+    "max_concurrent_decode_calls": 2,
+    "sampler_overlap_mean_seconds": 0.0,
+    "decode_overlap_mean_seconds": 143.58266666666665,
+    "run_names": [
+      "followup_capacity_1t_2v_control",
+      "followup_mps_1t_2v",
+      "followup_mps_1t_2v_repeat2"
+    ]
+  },
+  "fastest_mean": {
+    "key": [
+      20,
+      1,
+      2,
+      "dynamic",
+      false,
+      true
+    ],
+    "label": "20 chunks \u00b7 1 transformer / 2 VAE \u00b7 MPS",
+    "status": "success",
+    "samples": 3,
+    "mean_total_seconds": 223.57876813167,
+    "min_total_seconds": 221.92696636500477,
+    "max_total_seconds": 225.46428783699957,
+    "mean_video_ready_seconds": 219.5692734689995,
+    "videos_per_hour_including_qa": 16.101707823525928,
+    "videos_per_hour_ready": 16.395736721824495,
+    "peak_vram_gib": 41.301,
+    "gpu_util_mean_pct": 82.97055126398692,
+    "preparation_mean_seconds": 22.54930136466525,
+    "workers_mean_seconds": 188.8978120246708,
+    "max_concurrent_sampler_calls": 1,
+    "max_concurrent_decode_calls": 2,
+    "sampler_overlap_mean_seconds": 0.0,
+    "decode_overlap_mean_seconds": 143.58266666666665,
+    "run_names": [
+      "followup_capacity_1t_2v_control",
+      "followup_mps_1t_2v",
+      "followup_mps_1t_2v_repeat2"
+    ]
+  },
+  "rule": "Smallest memory footprint among n>=2 configurations within 2% of fastest mean."
+}

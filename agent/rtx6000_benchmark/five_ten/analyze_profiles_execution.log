@@ -1,0 +1,3 @@
+concurrent_2t2v {'any_kernel_seconds': 208.02694450454288, 'multiple_process_kernel_seconds': 59.267737556098474, 'multiple_transformer_kernel_seconds': 39.50237158300356, 'transformer_vae_kernel_overlap_seconds': 11.083593271999636}
+sequential_1t2v {'any_kernel_seconds': 206.9572994897382, 'multiple_process_kernel_seconds': 45.05946228811074, 'transformer_vae_kernel_overlap_seconds': 38.729768750041366}
+concurrent_2t1v {'any_kernel_seconds': 207.52375774799805, 'multiple_process_kernel_seconds': 50.136846501988074, 'multiple_transformer_kernel_seconds': 39.913631051001744, 'transformer_vae_kernel_overlap_seconds': 10.35712591000014}

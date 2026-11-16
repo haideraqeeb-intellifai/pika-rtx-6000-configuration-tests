@@ -1,0 +1,39 @@
+{
+  "viewport": "1440x1000",
+  "horizontal_overflow": false,
+  "playback": [
+    {
+      "src": "followup_fast_comparison_default_1/output.mp4",
+      "time": 0.614698,
+      "duration": 49.416667,
+      "width": 1080,
+      "height": 1920,
+      "paused": false
+    },
+    {
+      "src": "followup_fast_comparison_fast_1/output.mp4",
+      "time": 0.674535,
+      "duration": 49.416667,
+      "width": 1080,
+      "height": 1920,
+      "paused": false
+    },
+    {
+      "src": "followup_fast_comparison_default_2/output.mp4",
+      "time": 0.674691,
+      "duration": 49.416667,
+      "width": 1080,
+      "height": 1920,
+      "paused": false
+    },
+    {
+      "src": "followup_fast_comparison_fast_2/output.mp4",
+      "time": 0.674854,
+      "duration": 49.416667,
+      "width": 1080,
+      "height": 1920,
+      "paused": false
+    }
+  ],
+  "errors": []
+}

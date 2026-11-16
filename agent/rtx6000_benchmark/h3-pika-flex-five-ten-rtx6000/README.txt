@@ -1,0 +1,1 @@
+Fixed five-by-ten-second H3 Pika Flex benchmark. Open index.html. Raw timing/quality/profile summaries are JSON. Reproduction ZIP includes code, input audio/portrait, commands and per-run evidence. Native Nsight traces and model/latent tensors are not bundled. All speed means exclude profiling.

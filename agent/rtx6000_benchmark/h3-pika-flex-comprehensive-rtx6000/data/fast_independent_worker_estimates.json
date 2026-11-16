@@ -1,0 +1,19 @@
+{
+  "basis": "Fast-mode one-GPU video-ready latency; eight-GPU estimates only. Fresh-process service assumption, not warm sustained measurements.",
+  "one_gpu_video_ready_seconds": 196.12531551649954,
+  "stage_split_updated": false,
+  "scenarios": [
+    {
+      "efficiency_assumption": 0.8,
+      "estimated_videos_per_hour": 117.47591043677225
+    },
+    {
+      "efficiency_assumption": 0.9,
+      "estimated_videos_per_hour": 132.1603992413688
+    },
+    {
+      "efficiency_assumption": 1.0,
+      "estimated_videos_per_hour": 146.84488804596532
+    }
+  ]
+}

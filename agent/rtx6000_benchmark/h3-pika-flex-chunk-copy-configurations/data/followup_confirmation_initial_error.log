@@ -1,0 +1,16 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_c20_1t_1v_repeat2
+{"name": "followup_c20_1t_1v_repeat2", "status": "success", "timed_total_seconds": 239.53833551199932, "gpu_trace_summary": {"samples": 1147, "peak_vram_gib": 35.547, "gpu_util_mean_pct": 81.81255448997385}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_c20_2t_2v_repeat2
+{"name": "followup_c20_2t_2v_repeat2", "status": "success", "timed_total_seconds": 238.36277704500026, "gpu_trace_summary": {"samples": 1140, "peak_vram_gib": 69.227, "gpu_util_mean_pct": 83.96754385964913}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_chunk_copy_confirm.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_chunk_copy_confirm.py", line 39, in main
+    resident=variant('followup_best_resident',flags(best)+['--residency','highvram'])
+             ^^^^^^^
+UnboundLocalError: cannot access local variable 'variant' where it is not associated with a value

@@ -1,0 +1,43 @@
+[2026-11-10 20:08:28.434 Control 470751] Starting control daemon using socket /tmp/h3-vae-mps-5pjgainl/control
+[2026-11-10 20:08:28.434 Control 470751] To connect CUDA applications to this daemon, set env CUDA_MPS_PIPE_DIRECTORY=/tmp/h3-vae-mps-5pjgainl
+[2026-11-10 20:08:28.434 Control 470751] CUDA MPS Control binary version: 13020
+[2026-11-10 20:08:32.111 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.111 Control 470751] User did not send valid credentials
+[2026-11-10 20:08:32.111 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.111 Control 470751] NEW CLIENT 470756 from user 1014: Server is not ready, push client to pending list
+[2026-11-10 20:08:32.111 Control 470935] Starting new server 470935 for user 1014
+[2026-11-10 20:08:32.113 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.257 Control 470751] NEW SERVER 470935: Ready
+[2026-11-10 20:08:32.257 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.257 Control 470751] User did not send valid credentials
+[2026-11-10 20:08:32.257 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.257 Control 470751] User did not send valid credentials
+[2026-11-10 20:08:32.257 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.257 Control 470751] NEW CLIENT 470754 from user 1014: Server already exists
+[2026-11-10 20:08:32.257 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.257 Control 470751] NEW CLIENT 470755 from user 1014: Server already exists
+[2026-11-10 20:08:32.322 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.322 Control 470751] NEW CLIENT 470756 from user 1014: Server already exists
+[2026-11-10 20:08:32.332 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.332 Control 470751] NEW CLIENT 470754 from user 1014: Server already exists
+[2026-11-10 20:08:32.332 Control 470751] Accepting connection...
+[2026-11-10 20:08:32.332 Control 470751] NEW CLIENT 470755 from user 1014: Server already exists
+[2026-11-10 20:08:34.102 Control 470751] Accepting connection...
+[2026-11-10 20:08:34.102 Control 470751] NEW UI
+[2026-11-10 20:08:34.102 Control 470751] Cmd:ps
+[2026-11-10 20:08:34.102 Control 470751] PID       ID        SERVER         DEVICE                    NAMESPACE      COMMAND        ATTRIBUTES     
+[2026-11-10 20:08:34.102 Control 470751] 470756    1         470935         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-10 20:08:34.102 Control 470751] 470754    2         470935         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-10 20:08:34.102 Control 470751] 470755    3         470935         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-10 20:08:34.102 Control 470751] UI closed
+[2026-11-10 20:10:31.835 Control 470751] Accepting connection...
+[2026-11-10 20:10:31.835 Control 470751] NEW UI
+[2026-11-10 20:10:31.836 Control 470751] Cmd:get_server_list
+[2026-11-10 20:10:31.836 Control 470751] 470935
+[2026-11-10 20:10:31.836 Control 470751] UI closed
+[2026-11-10 20:10:31.837 Control 470751] Accepting connection...
+[2026-11-10 20:10:31.837 Control 470751] NEW UI
+[2026-11-10 20:10:31.837 Control 470751] Cmd:quit
+[2026-11-10 20:10:31.837 Control 470751] Try shutting down server 470935, backoff is disabled
+[2026-11-10 20:10:31.865 Control 470751] Server 470935 exited with status 0
+[2026-11-10 20:10:31.865 Control 470751] Exit with status 0

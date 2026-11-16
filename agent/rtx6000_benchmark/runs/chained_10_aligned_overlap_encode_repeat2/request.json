@@ -1,0 +1,92 @@
+{
+  "uid": "chained_10_aligned_overlap_encode_repeat2",
+  "webhook_url": "https://example.test/h3-benchmark",
+  "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+  "input_mode": "auto",
+  "image_path": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_overlap_encode_repeat2/runtime/input/portrait.jpg",
+  "last_image_path": "",
+  "reference_image_paths": [],
+  "reference_video_paths": [],
+  "reference_audio_paths": [],
+  "model": "pika_flex",
+  "chunked_mode": true,
+  "chunk_schedule": [
+    {
+      "duration_seconds": 4.416666666666667,
+      "reference": "original",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "previous_last_frame",
+      "anchor": "hard"
+    }
+  ],
+  "chunk_prompts": null,
+  "audio_path": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_overlap_encode_repeat2/runtime/input/source.wav",
+  "lora": "none",
+  "ref_image_size": "match",
+  "width": 720,
+  "height": 1280,
+  "final_width": 1080,
+  "final_height": 1920,
+  "num_frames": 124,
+  "fps": 24.0,
+  "seed": 9901,
+  "num_inference_steps": 2,
+  "sampler_name": "MiniMaxH3TurboSampler",
+  "scheduler": "simple",
+  "denoise": 1.0,
+  "diffusion_model": "int8_convrot",
+  "weight_dtype": "default",
+  "clip_device": "default",
+  "attention_backend": "sage2",
+  "step_accelerator": "none",
+  "use_easycache": false,
+  "use_sigma_shift": false,
+  "bit_depth": 8,
+  "container_format": "auto",
+  "codec": "auto",
+  "crf": 23,
+  "timeout_seconds": 9000
+}

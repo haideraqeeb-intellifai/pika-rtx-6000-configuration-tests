@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/stage_pipeline.py", line 153, in main
+    evidence['empty_gpu_gate'] = wait_for_empty_gpu()
+                                 ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/parallel_chunk_resident.py", line 290, in wait_for_empty_gpu
+    return empty_gpu_gate()
+           ^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py", line 153, in empty_gpu_gate
+    raise RuntimeError(f'RTX 6000 is not at its observed idle baseline: {samples}')
+RuntimeError: RTX 6000 is not at its observed idle baseline: [{'time': 1794402591.2846935, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794402592.3653357, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794402593.4466212, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}]

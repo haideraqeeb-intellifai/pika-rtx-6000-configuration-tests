@@ -1,0 +1,422 @@
+{
+  "workload": {
+    "chunks": 5,
+    "chunk_seconds": 10,
+    "fps": 24,
+    "delivered_frames_per_chunk": 240,
+    "native_frames_per_chunk": 243,
+    "video_seconds": 50,
+    "steps": 2,
+    "inference_mode": "fast",
+    "independent_anchors": "original portrait at native first and last frames",
+    "seeds": [
+      9901,
+      9902,
+      9903,
+      9904,
+      9905
+    ]
+  },
+  "preparation_seconds": 16.44073880900396,
+  "configurations": [
+    {
+      "name": "sequential_1t2v",
+      "mode": "sequential",
+      "transformers": 1,
+      "vaes": 2,
+      "n": 3,
+      "seconds": [
+        208.82034302598913,
+        208.9770818830002,
+        208.80663883298985
+      ],
+      "mean_seconds": 208.8680212473264,
+      "std_seconds": 0.09469750744672548,
+      "peak_vram_gib": 56.763916015625,
+      "mean_gpu_util_pct": 96.76939271903248,
+      "mean_last_denoise_seconds": 167.8353772720002,
+      "mean_decode_tail_seconds": 41.03264397532621,
+      "startup_seconds": 5.604214827995747,
+      "cold_first_video_seconds": 212.4253589019936,
+      "warmup_seconds": 206.82114407399786,
+      "max_node_end_model_offloaded_gib": 0.225,
+      "stages": {
+        "t": {
+          "mean_call_seconds": 33.56478869393662,
+          "summed_call_seconds_per_video": 167.8239434696831,
+          "max_torch_allocated_gib": 12.56700611114502,
+          "max_torch_reserved_gib": 18.630859375,
+          "model_loaded_gib": 19.532,
+          "sampled_peak_model_offloaded_gib": 0.0,
+          "max_node_end_offloaded_gib": 0.0
+        },
+        "v": {
+          "mean_call_seconds": 61.27925972753146,
+          "summed_call_seconds_per_video": 306.3962986376573,
+          "max_torch_allocated_gib": 5.178884983062744,
+          "max_torch_reserved_gib": 5.728515625,
+          "model_loaded_gib": 4.625,
+          "sampled_peak_model_offloaded_gib": 0.225,
+          "max_node_end_offloaded_gib": 0.225
+        }
+      },
+      "fast_counters": [
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        }
+      ],
+      "speedup_vs_sequential": 1.0,
+      "time_reduction_pct": 0.0,
+      "normalization_seconds": [
+        0.060608052008319646,
+        0.06131727498723194,
+        0.0569461080012843
+      ],
+      "mean_normalization_seconds": 0.05962381166561196,
+      "delivery_seconds": [
+        208.88095107799745,
+        209.03839915798744,
+        208.86358494099113
+      ],
+      "mean_delivery_seconds": 208.927645058992
+    },
+    {
+      "name": "batch_compact_1t2v",
+      "mode": "batch",
+      "transformers": 1,
+      "vaes": 2,
+      "n": 3,
+      "seconds": [
+        212.4474047209951,
+        212.96937214799982,
+        212.4512259359908
+      ],
+      "mean_seconds": 212.6226676016619,
+      "std_seconds": 0.30026102354375267,
+      "peak_vram_gib": 74.0863037109375,
+      "mean_gpu_util_pct": 95.55604456187423,
+      "mean_last_denoise_seconds": 167.47979572266436,
+      "mean_decode_tail_seconds": 45.14287187899754,
+      "startup_seconds": 5.59521896399383,
+      "cold_first_video_seconds": 218.56820972799323,
+      "warmup_seconds": 212.9729907639994,
+      "max_node_end_model_offloaded_gib": 0.225,
+      "stages": {
+        "t": {
+          "mean_call_seconds": 55.824048073333365,
+          "summed_call_seconds_per_video": 167.4721442200001,
+          "max_torch_allocated_gib": 24.96824073791504,
+          "max_torch_reserved_gib": 38.318359375,
+          "model_loaded_gib": 19.532,
+          "sampled_peak_model_offloaded_gib": 0.0,
+          "max_node_end_offloaded_gib": 0.0
+        },
+        "v": {
+          "mean_call_seconds": 56.005918229936896,
+          "summed_call_seconds_per_video": 280.02959114968445,
+          "max_torch_allocated_gib": 5.178884983062744,
+          "max_torch_reserved_gib": 5.728515625,
+          "model_loaded_gib": 4.625,
+          "sampled_peak_model_offloaded_gib": 0.225,
+          "max_node_end_offloaded_gib": 0.225
+        }
+      },
+      "fast_counters": [
+        {
+          "sampler_calls": 3,
+          "model_forward_calls": 6,
+          "sage2_calls": 150,
+          "sage3_calls": 150,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 3,
+          "model_forward_calls": 6,
+          "sage2_calls": 150,
+          "sage3_calls": 150,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 3,
+          "model_forward_calls": 6,
+          "sage2_calls": 150,
+          "sage3_calls": 150,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        }
+      ],
+      "speedup_vs_sequential": 0.9823412696459549,
+      "time_reduction_pct": -1.7976166633424162,
+      "normalization_seconds": [
+        0.061921877990243956,
+        0.05763883100007661,
+        0.059565987990936264
+      ],
+      "mean_normalization_seconds": 0.05970889899375228,
+      "delivery_seconds": [
+        212.50932659898535,
+        213.0270109789999,
+        212.51079192398174
+      ],
+      "mean_delivery_seconds": 212.68237650065566
+    },
+    {
+      "name": "concurrent_2t1v",
+      "mode": "concurrent",
+      "transformers": 2,
+      "vaes": 1,
+      "n": 3,
+      "seconds": [
+        219.14695660299913,
+        218.91918162899674,
+        218.86957068399352
+      ],
+      "mean_seconds": 218.97856963866312,
+      "std_seconds": 0.1479220699718197,
+      "peak_vram_gib": 85.742431640625,
+      "mean_gpu_util_pct": 93.38555291136544,
+      "mean_last_denoise_seconds": 162.83108400066945,
+      "mean_decode_tail_seconds": 56.14748563799367,
+      "startup_seconds": 5.581762161004008,
+      "cold_first_video_seconds": 225.822938917001,
+      "warmup_seconds": 220.241176755997,
+      "max_node_end_model_offloaded_gib": 0.225,
+      "stages": {
+        "t": {
+          "mean_call_seconds": 58.460274311197765,
+          "summed_call_seconds_per_video": 292.30137155598885,
+          "max_torch_allocated_gib": 12.56700611114502,
+          "max_torch_reserved_gib": 18.630859375,
+          "model_loaded_gib": 19.532,
+          "sampled_peak_model_offloaded_gib": 0.0,
+          "max_node_end_offloaded_gib": 0.0
+        },
+        "v": {
+          "mean_call_seconds": 30.684216751134954,
+          "summed_call_seconds_per_video": 153.42108375567477,
+          "max_torch_allocated_gib": 5.178884983062744,
+          "max_torch_reserved_gib": 5.728515625,
+          "model_loaded_gib": 4.625,
+          "sampled_peak_model_offloaded_gib": 0.225,
+          "max_node_end_offloaded_gib": 0.225
+        }
+      },
+      "fast_counters": [
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        }
+      ],
+      "speedup_vs_sequential": 0.9538285942408878,
+      "time_reduction_pct": -4.840639716390349,
+      "normalization_seconds": [
+        0.05880761501612142,
+        0.05612310499418527,
+        0.058273592992918566
+      ],
+      "mean_normalization_seconds": 0.05773477100107508,
+      "delivery_seconds": [
+        219.20576421801525,
+        218.97530473399092,
+        218.92784427698643
+      ],
+      "mean_delivery_seconds": 219.0363044096642
+    },
+    {
+      "name": "concurrent_2t2v",
+      "mode": "concurrent",
+      "transformers": 2,
+      "vaes": 2,
+      "n": 3,
+      "seconds": [
+        211.8965234549978,
+        211.86906984400412,
+        211.8405984389974
+      ],
+      "mean_seconds": 211.86873057933312,
+      "std_seconds": 0.027964051549248525,
+      "peak_vram_gib": 92.83502197265625,
+      "mean_gpu_util_pct": 95.6333079366455,
+      "mean_last_denoise_seconds": 163.41265099633407,
+      "mean_decode_tail_seconds": 48.45607958299903,
+      "startup_seconds": 5.625727345002815,
+      "cold_first_video_seconds": 218.65192314400338,
+      "warmup_seconds": 213.02619579900056,
+      "max_node_end_model_offloaded_gib": 0.225,
+      "stages": {
+        "t": {
+          "mean_call_seconds": 58.669822508997946,
+          "summed_call_seconds_per_video": 293.34911254498974,
+          "max_torch_allocated_gib": 12.56700611114502,
+          "max_torch_reserved_gib": 18.630859375,
+          "model_loaded_gib": 19.532,
+          "sampled_peak_model_offloaded_gib": 0.0,
+          "max_node_end_offloaded_gib": 0.0
+        },
+        "v": {
+          "mean_call_seconds": 56.232079161465904,
+          "summed_call_seconds_per_video": 281.1603958073295,
+          "max_torch_allocated_gib": 5.178884983062744,
+          "max_torch_reserved_gib": 5.728515625,
+          "model_loaded_gib": 4.625,
+          "sampled_peak_model_offloaded_gib": 0.225,
+          "max_node_end_offloaded_gib": 0.225
+        }
+      },
+      "fast_counters": [
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        },
+        {
+          "sampler_calls": 5,
+          "model_forward_calls": 10,
+          "sage2_calls": 250,
+          "sage3_calls": 250,
+          "sage3_fallback_calls": 0,
+          "video_decode_calls": 5,
+          "nvfp4_gemm_calls": 282240,
+          "weight_quantizations": 0,
+          "weight_cache_hits": 720
+        }
+      ],
+      "speedup_vs_sequential": 0.9858369409973733,
+      "time_reduction_pct": -1.4366533057990294,
+      "normalization_seconds": [
+        0.05963732799864374,
+        0.055799723020754755,
+        0.06080128200119361
+      ],
+      "mean_normalization_seconds": 0.058746111006864034,
+      "delivery_seconds": [
+        211.95616078299645,
+        211.92486956702487,
+        211.9013997209986
+      ],
+      "mean_delivery_seconds": 211.92747669033997
+    }
+  ],
+  "three_transformer_admission": {
+    "status": "not launched; conservative sum of per-stage peaks exceeds device memory",
+    "formula": "3 * (T CUDA peak allocated + reported resident T weights) + V CUDA peak allocated + reported resident V weights",
+    "estimated_concurrent_peak_with_one_vae_gib": 106.10090331649779,
+    "device_capacity_gib": 95.5927734375,
+    "caveat": "Conservative simultaneous-peak allocation estimate, not an observed OOM or proof that staggered allocation cannot fit. Torch allocators and model-manager weights use different allocators in this dynamic loader; no claim about redesigned lower-memory implementations."
+  },
+  "initial_batch_handoff": {
+    "name": "batch_1t2v",
+    "transformers": 1,
+    "vaes": 2,
+    "mode": "batch",
+    "n": 3,
+    "seconds": [
+      212.56452650600113,
+      212.525658922008,
+      212.69162796299497
+    ],
+    "mean_seconds": 212.59393779700136,
+    "peak_vram_gib": 74.0863037109375,
+    "note": "Initial saved chunk tensors retained both batch items in their backing storage. Corrected compact handoff is the primary batch comparison; initial evidence retained.",
+    "normalization_seconds": [
+      0.05974998799501918,
+      0.06067181201069616,
+      0.05935143699753098
+    ],
+    "mean_normalization_seconds": 0.05992441233441544,
+    "delivery_seconds": [
+      212.62427649399615,
+      212.5863307340187,
+      212.7509793999925
+    ],
+    "mean_delivery_seconds": 212.65386220933578
+  },
+  "delivery_timing_note": "Original measured generation plus separately timed lossless timestamp normalization. Original generation timings remain unchanged; this sum is not a new integrated pipeline run."
+}

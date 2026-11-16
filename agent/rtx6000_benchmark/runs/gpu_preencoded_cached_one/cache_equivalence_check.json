@@ -1,0 +1,78 @@
+[
+  {
+    "path": "root.conditioning[0][0]",
+    "shape": [
+      1,
+      1897,
+      5120
+    ],
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "root.conditioning[0][1].minimax_token_tags",
+    "shape": [
+      1897
+    ],
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "root.conditioning[0][1].minimax_keyframes[0].latent",
+    "shape": [
+      1,
+      24,
+      1,
+      80,
+      46
+    ],
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "root.conditioning[0][1].minimax_keyframes[1].latent",
+    "shape": [
+      1,
+      24,
+      1,
+      80,
+      46
+    ],
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "root.conditioning[0][1].minimax_audio_latent",
+    "shape": [
+      1,
+      32,
+      2,
+      207
+    ],
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "root.latent.samples.__h3_nested_tensors__[0]",
+    "shape": [
+      1,
+      24,
+      37,
+      80,
+      46
+    ],
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "root.latent.samples.__h3_nested_tensors__[1]",
+    "shape": [
+      1,
+      32,
+      2,
+      207
+    ],
+    "exact": true,
+    "max_abs_difference": 0.0
+  }
+]

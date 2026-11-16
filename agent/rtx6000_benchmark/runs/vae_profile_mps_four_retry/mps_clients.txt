@@ -1,0 +1,5 @@
+PID       ID        SERVER         DEVICE                    NAMESPACE      COMMAND        ATTRIBUTES     
+2809540   1         2809760        GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+2809542   2         2809760        GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+2809541   3         2809760        GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+2809543   4         2809760        GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               

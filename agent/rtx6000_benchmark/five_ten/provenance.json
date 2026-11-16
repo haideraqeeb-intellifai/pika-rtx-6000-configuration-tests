@@ -1,0 +1,34 @@
+{
+  "repo_commit": "7a1bbf944c8e2b99d175ec094768c22a945e75cb",
+  "python": "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+  "overlay": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/fast_dependencies/site-packages",
+  "source_hashes": {
+    "agent/rtx6000_benchmark/five_ten/experiment.py": "8788bfcd0617338996cacf5856fc848cbaec994de0e153e954ca150cd36a1ce4",
+    "agent/rtx6000_benchmark/five_ten/experiment_baseline_source.py": "a94be77b3a3e880cd53c9ca21ccac6f80d76c6538b2afb365141c833baeaec13",
+    "agent/rtx6000_benchmark/five_ten/prepare.py": "77172b320f0016ae7984085bf64b1fbf21e666d0ea8d5d9d7de032750df5cad0",
+    "agent/rtx6000_benchmark/batch_two/batch_support.py": "9faedc36f8ab4e93d18616fb4f65aa6f00b5a1e27294640b48e0e31bd587d9ae",
+    "ml_modules/minimax_h3_turbo/runtime.py": "508de516b82e09d103b8077a7fb44fe81020f26c3ca0310e7081a04b7bfb8eb6",
+    "ml_modules/minimax_h3_turbo/fast_inference.py": "35f4cf38a711c416ca702ec069c365e8911e02d264632ca015eb40fa9fa3f037",
+    "agent/rtx6000_benchmark/five_ten/experiment_pre_compact_source.py": "ee81f22ba87dd305ae5f11eb6869b1f6dba2847ff46fcc0ca7d178f12292a4ae",
+    "agent/rtx6000_benchmark/five_ten/compact_batch.py": "fd092399ea6390bbf8e6bad4e5bc160102086727292c5376a063393818c82314"
+  },
+  "template_note": "Baseline original template lookup and later localized lookup read byte-identical workflow JSON.",
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "sageattention": "2.2.0",
+    "sageattn3": "1.0.0",
+    "comfy-kitchen": "0.2.35",
+    "comfy-aimdo": "0.5.5"
+  },
+  "python_version": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "hardware": {
+    "gpu_uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+    "name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "driver": "595.84",
+    "memory_total_mib": 97887,
+    "power_limit_w": 600,
+    "sm_count": 188
+  },
+  "batch_handoff_refinement": "H3_BATCH_COMPACT=1 adds only CPU tensor compaction at per-item handoff; original runner snapshots retained."
+}

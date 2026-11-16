@@ -1,0 +1,14 @@
+{
+  "status": "kernel_overlap_unverified",
+  "scope": "unmeasured four-chunk MPS decoder profile",
+  "reason": "CUDA runtime events were captured but no GPU kernel interval table was exported. GPU timestamps were incomplete.",
+  "diagnostics": [
+    "Number of incomplete CUPTI events dropped: 1010. Incomplete events appear when GPU timestamp information have not been retrieved at the time the profiling session was stopped.",
+    "CUDA hardware tracing is not supported in MPS mode. A legacy (software instrumented) trace was collected instead.",
+    "Number of incomplete CUPTI events dropped: 1019. Incomplete events appear when GPU timestamp information have not been retrieved at the time the profiling session was stopped.",
+    "Number of incomplete CUPTI events dropped: 1163. Incomplete events appear when GPU timestamp information have not been retrieved at the time the profiling session was stopped.",
+    "Number of incomplete CUPTI events dropped: 135991. Incomplete events appear when GPU timestamp information have not been retrieved at the time the profiling session was stopped.",
+    "Number of incomplete CUPTI events dropped: 158572. Incomplete events appear when GPU timestamp information have not been retrieved at the time the profiling session was stopped."
+  ],
+  "runtime_events": 1208451
+}

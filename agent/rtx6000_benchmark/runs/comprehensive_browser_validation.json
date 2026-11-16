@@ -1,0 +1,15 @@
+{
+  "viewport": "1440x1000",
+  "horizontal_overflow": false,
+  "status_filter": "passed",
+  "search": "passed",
+  "evidence_navigation": "passed",
+  "playback": {
+    "time": 2.158444,
+    "duration": 49.416667,
+    "width": 1080,
+    "height": 1920,
+    "paused": false
+  },
+  "errors": []
+}

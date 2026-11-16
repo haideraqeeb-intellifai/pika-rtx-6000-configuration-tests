@@ -1,0 +1,455 @@
+{
+  "name": "followup_c10_2t_2v_chunk_0",
+  "status": "success",
+  "lane": 2,
+  "index": 0,
+  "frames": 106,
+  "anchor": "hard",
+  "effective": {
+    "input_mode": "fl2v",
+    "requested_width": 720,
+    "requested_height": 1280,
+    "native_width": 736,
+    "native_height": 1280,
+    "requested_frames": 106,
+    "effective_frames": 107,
+    "reference_images": 0,
+    "reference_videos": 0,
+    "reference_audios": 0,
+    "seed": 9901,
+    "optimization": {
+      "profile": "pika_flex",
+      "attention_backend": "sage2",
+      "step_accelerator": "none",
+      "approximate": true
+    },
+    "optimizer_parameters": {
+      "easycache": null,
+      "sol": null,
+      "spectrum": null
+    },
+    "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+    "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+    "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+    "lora_strength": 1.0,
+    "lora_low_vram": false,
+    "turbo_commit": null,
+    "sampler": "MiniMaxH3PikaSampler",
+    "steps": 2,
+    "denoise": 1.0,
+    "scheduler": "pika_knots",
+    "sigma_shift_video": 12.0,
+    "sigma_shift_audio": 3.0,
+    "output_frames": 106,
+    "fps": 24.0,
+    "chunked_mode": true,
+    "chunk_input_modes": [
+      "fl2v"
+    ],
+    "output_width": 1080,
+    "output_height": 1920,
+    "chunk_count": 1,
+    "chunk_seeds": [
+      9901
+    ],
+    "chunk_frames": [
+      106
+    ],
+    "chunk_inference_frames": [
+      107
+    ],
+    "chunk_schedule": [
+      {
+        "duration_seconds": 4.416666666666667,
+        "reference": "original",
+        "anchor": "hard"
+      }
+    ],
+    "chunk_execution": "stage_grouped",
+    "frame_storage": "memory"
+  },
+  "telemetry": {
+    "stages": {
+      "nodes": [
+        {
+          "node_id": "3",
+          "class_type": "VAELoader",
+          "duration_seconds": 0.0674,
+          "before": {
+            "cuda_allocated_gib": 0.0,
+            "cuda_reserved_gib": 0.0,
+            "cuda_peak_allocated_gib": 0.0,
+            "model_total_gib": 0.0,
+            "model_loaded_gib": 0.0,
+            "model_offloaded_gib": 0.0
+          },
+          "after": {
+            "cuda_allocated_gib": 0.0,
+            "cuda_reserved_gib": 0.0,
+            "cuda_peak_allocated_gib": 0.0,
+            "model_total_gib": 0.0,
+            "model_loaded_gib": 0.0,
+            "model_offloaded_gib": 0.0
+          }
+        },
+        {
+          "node_id": "load_latent",
+          "class_type": "H3LoadLatent",
+          "duration_seconds": 0.0098,
+          "before": {
+            "cuda_allocated_gib": 0.0,
+            "cuda_reserved_gib": 0.0,
+            "cuda_peak_allocated_gib": 0.0,
+            "model_total_gib": 0.0,
+            "model_loaded_gib": 0.0,
+            "model_offloaded_gib": 0.0
+          },
+          "after": {
+            "cuda_allocated_gib": 0.0,
+            "cuda_reserved_gib": 0.0,
+            "cuda_peak_allocated_gib": 0.0,
+            "model_total_gib": 0.0,
+            "model_loaded_gib": 0.0,
+            "model_offloaded_gib": 0.0
+          }
+        },
+        {
+          "node_id": "c0_11",
+          "class_type": "VAEDecode",
+          "duration_seconds": 28.051,
+          "before": {
+            "cuda_allocated_gib": 0.0,
+            "cuda_reserved_gib": 0.0,
+            "cuda_peak_allocated_gib": 0.0,
+            "model_total_gib": 0.0,
+            "model_loaded_gib": 0.0,
+            "model_offloaded_gib": 0.0
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        {
+          "node_id": "c0_15",
+          "class_type": "ImageCrop",
+          "duration_seconds": 0.0007,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        {
+          "node_id": "buffer_0",
+          "class_type": "H3StoreChunk",
+          "duration_seconds": 0.0613,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        {
+          "node_id": "save_chunks",
+          "class_type": "H3SaveChunks",
+          "duration_seconds": 2.8429,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        }
+      ],
+      "stages": [
+        {
+          "stage": "model_load",
+          "duration_seconds": 0.0674,
+          "node_count": 1,
+          "peak_cuda_allocated_gib": 0.0,
+          "peak_model_offloaded_gib": 0.0,
+          "mean_model_offloaded_gib": 0.0,
+          "gpu": {
+            "sample_count": 1,
+            "observed_sample_hz": 0.0,
+            "gpu_util_mean_pct": 100.0,
+            "gpu_util_p95_pct": 100.0,
+            "memory_used_peak_gib": 54.848,
+            "model_offloaded_mean_gib": 0.0,
+            "model_offloaded_peak_gib": 0.0,
+            "power_mean_w": 599.71,
+            "power_peak_w": 599.71,
+            "energy_wh_estimate": 0.0,
+            "temperature_peak_c": 75.0,
+            "pcie_rx_gib_estimate": 0.0,
+            "pcie_tx_gib_estimate": 0.0
+          },
+          "model_offload_sample_count": 1
+        },
+        {
+          "stage": "generation",
+          "duration_seconds": 0.0098,
+          "node_count": 1,
+          "peak_cuda_allocated_gib": 0.0,
+          "peak_model_offloaded_gib": 0.0,
+          "mean_model_offloaded_gib": 0.0,
+          "gpu": {
+            "sample_count": 0,
+            "error": "no samples"
+          }
+        },
+        {
+          "stage": "video_decode",
+          "duration_seconds": 28.051,
+          "node_count": 1,
+          "peak_cuda_allocated_gib": 1.71,
+          "peak_model_offloaded_gib": 4.819,
+          "mean_model_offloaded_gib": 0.379,
+          "gpu": {
+            "sample_count": 140,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 100.0,
+            "gpu_util_p95_pct": 100.0,
+            "memory_used_peak_gib": 75.969,
+            "model_offloaded_mean_gib": 0.379,
+            "model_offloaded_peak_gib": 4.819,
+            "power_mean_w": 599.92,
+            "power_peak_w": 601.82,
+            "energy_wh_estimate": 4.634,
+            "temperature_peak_c": 81.0,
+            "pcie_rx_gib_estimate": 15.593,
+            "pcie_tx_gib_estimate": 6.778
+          },
+          "model_offload_sample_count": 140
+        },
+        {
+          "stage": "crop_mux_save",
+          "duration_seconds": 2.9049,
+          "node_count": 3,
+          "peak_cuda_allocated_gib": 1.71,
+          "peak_model_offloaded_gib": 0.225,
+          "mean_model_offloaded_gib": 0.225,
+          "gpu": {
+            "sample_count": 14,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 100.0,
+            "gpu_util_p95_pct": 100.0,
+            "memory_used_peak_gib": 74.428,
+            "model_offloaded_mean_gib": 0.225,
+            "model_offloaded_peak_gib": 0.225,
+            "power_mean_w": 599.58,
+            "power_peak_w": 600.42,
+            "energy_wh_estimate": 0.433,
+            "temperature_peak_c": 80.0,
+            "pcie_rx_gib_estimate": 0.893,
+            "pcie_tx_gib_estimate": 0.631
+          },
+          "model_offload_sample_count": 14
+        }
+      ],
+      "execution_event_seconds": 31.054,
+      "final_memory": {
+        "cuda_allocated_gib": 0.01,
+        "cuda_reserved_gib": 0.023,
+        "cuda_peak_allocated_gib": 1.71,
+        "model_total_gib": 4.85,
+        "model_loaded_gib": 4.625,
+        "model_offloaded_gib": 0.225
+      }
+    },
+    "gpu": {
+      "sample_count": 156,
+      "observed_sample_hz": 5.0,
+      "gpu_util_mean_pct": 100.0,
+      "gpu_util_p95_pct": 100.0,
+      "memory_used_peak_gib": 75.969,
+      "model_offloaded_mean_gib": 0.362,
+      "model_offloaded_peak_gib": 4.819,
+      "power_mean_w": 599.9,
+      "power_peak_w": 601.82,
+      "energy_wh_estimate": 5.166,
+      "temperature_peak_c": 81.0,
+      "pcie_rx_gib_estimate": 16.582,
+      "pcie_tx_gib_estimate": 7.491
+    },
+    "easycache": null,
+    "spectrum": null,
+    "sol": null
+  },
+  "output_probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "Main",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1088,
+        "coded_height": 1920,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 54272,
+        "duration": "4.416667",
+        "bit_rate": "3675030",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "106",
+        "nb_read_frames": "106",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc60.5.100 h264_nvenc"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 211968,
+        "duration": "4.416000",
+        "bit_rate": "191217",
+        "nb_frames": "209",
+        "nb_read_frames": "207",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ]
+  },
+  "output_sha256": "ee330398dffefcfd3ef879e4ec6e931e30c54521c6a6572d0d1d41052352524f",
+  "total_seconds": 31.564186371000687,
+  "process_started_wall_utc": 1794312517.834924,
+  "process_ended_wall_utc": 1794312549.3991122,
+  "inference_started_wall_utc": 1794312517.8805118,
+  "inference_ended_wall_utc": 1794312548.9362245,
+  "sampler_intervals": [],
+  "prepared_dir": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_c10_2t_2v/prepared",
+  "stage": "decode",
+  "residency": "dynamic",
+  "async_encoding": false,
+  "decode_intervals": [
+    {
+      "started_wall_utc": 1794312517.961025,
+      "ended_wall_utc": 1794312546.0072236
+    }
+  ],
+  "mps_requested": false,
+  "mps_active_thread_percentage": null,
+  "latent_artifact": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_c10_2t_2v/latents/latent_0.pt"
+}

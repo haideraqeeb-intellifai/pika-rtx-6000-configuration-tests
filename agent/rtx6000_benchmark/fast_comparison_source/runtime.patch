@@ -1,0 +1,19 @@
+diff --git a/ml_modules/minimax_h3_turbo/runtime.py b/ml_modules/minimax_h3_turbo/runtime.py
+index 076aae4b..b7f9b5f5 100644
+--- a/ml_modules/minimax_h3_turbo/runtime.py
++++ b/ml_modules/minimax_h3_turbo/runtime.py
+@@ -434,10 +434,11 @@ def infer(runtime, workflow, prompt_id, timeout_seconds, inference_mode="default
+                         decodes = sum(node["class_type"] == "VAEDecode" for node in workflow.values())
+                         if executor.success and (fast_stats["sampler_calls"] != samples or
+                                                  fast_stats["model_forward_calls"] != 2 * samples or
+-                                                 fast_stats["sage2_calls"] == 0 or
+-                                                 fast_stats["sage3_calls"] == 0 or
++                                                 (samples > 0 and fast_stats["sage2_calls"] == 0) or
++                                                 (samples > 0 and fast_stats["sage3_calls"] == 0) or
+                                                  fast_stats["sage3_fallback_calls"] != 0 or
+-                                                 fast_stats["video_decode_calls"] != decodes):
++                                                 fast_stats["video_decode_calls"] != decodes or
++                                                 (decodes > 0 and fast_stats["nvfp4_gemm_calls"] == 0)):
+                             raise RuntimeError(f"Pika fast inference did not complete the expected two-step path: {fast_stats}")
+                         fast_stats_result = fast_stats
+                 else:

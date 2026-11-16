@@ -1,0 +1,794 @@
+[
+  {
+    "mode": "sequential",
+    "repeat": 1,
+    "chunk": 0,
+    "sha256": "b6fe3da6039736c4c33467fbe6ba881eeb240e21e2b0ea7390d959618133dcbd",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000338554382324
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000001192092896
+    }
+  },
+  {
+    "mode": "sequential",
+    "repeat": 1,
+    "chunk": 1,
+    "sha256": "03a0fb96bddb8bfff5411be4d9a1ebe3de6bf60add52bd0c1c9579cb89b4c419",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000317096710205
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 0.9999998807907104
+    }
+  },
+  {
+    "mode": "sequential",
+    "repeat": 2,
+    "chunk": 0,
+    "sha256": "b6fe3da6039736c4c33467fbe6ba881eeb240e21e2b0ea7390d959618133dcbd",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000338554382324
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000001192092896
+    }
+  },
+  {
+    "mode": "sequential",
+    "repeat": 2,
+    "chunk": 1,
+    "sha256": "03a0fb96bddb8bfff5411be4d9a1ebe3de6bf60add52bd0c1c9579cb89b4c419",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000317096710205
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 0.9999998807907104
+    }
+  },
+  {
+    "mode": "sequential",
+    "repeat": 3,
+    "chunk": 0,
+    "sha256": "b6fe3da6039736c4c33467fbe6ba881eeb240e21e2b0ea7390d959618133dcbd",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000338554382324
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000001192092896
+    }
+  },
+  {
+    "mode": "sequential",
+    "repeat": 3,
+    "chunk": 1,
+    "sha256": "03a0fb96bddb8bfff5411be4d9a1ebe3de6bf60add52bd0c1c9579cb89b4c419",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000317096710205
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 0.9999998807907104
+    }
+  },
+  {
+    "mode": "batch",
+    "repeat": 1,
+    "chunk": 0,
+    "sha256": "6496306189bc88fa38ed548e1b5ba462630c80cc505614466b3869cffe1d7a52",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.08253204077482224,
+      "max_abs_difference": 2.477163553237915,
+      "cosine": 0.9970810413360596
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.38109201192855835,
+      "max_abs_difference": 2.5176949501037598,
+      "cosine": 0.9368716478347778
+    }
+  },
+  {
+    "mode": "batch",
+    "repeat": 1,
+    "chunk": 1,
+    "sha256": "db2823c54a909f066cac5525dfdf92cf7ced9c2a5d01f98216b81a0f60b4253e",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.17160789668560028,
+      "max_abs_difference": 4.298978328704834,
+      "cosine": 0.9872000813484192
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.39112621545791626,
+      "max_abs_difference": 2.4119625091552734,
+      "cosine": 0.934036135673523
+    }
+  },
+  {
+    "mode": "batch",
+    "repeat": 2,
+    "chunk": 0,
+    "sha256": "6496306189bc88fa38ed548e1b5ba462630c80cc505614466b3869cffe1d7a52",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.08253204077482224,
+      "max_abs_difference": 2.477163553237915,
+      "cosine": 0.9970810413360596
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.38109201192855835,
+      "max_abs_difference": 2.5176949501037598,
+      "cosine": 0.9368716478347778
+    }
+  },
+  {
+    "mode": "batch",
+    "repeat": 2,
+    "chunk": 1,
+    "sha256": "db2823c54a909f066cac5525dfdf92cf7ced9c2a5d01f98216b81a0f60b4253e",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.17160789668560028,
+      "max_abs_difference": 4.298978328704834,
+      "cosine": 0.9872000813484192
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.39112621545791626,
+      "max_abs_difference": 2.4119625091552734,
+      "cosine": 0.934036135673523
+    }
+  },
+  {
+    "mode": "batch",
+    "repeat": 3,
+    "chunk": 0,
+    "sha256": "6496306189bc88fa38ed548e1b5ba462630c80cc505614466b3869cffe1d7a52",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.08253204077482224,
+      "max_abs_difference": 2.477163553237915,
+      "cosine": 0.9970810413360596
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.38109201192855835,
+      "max_abs_difference": 2.5176949501037598,
+      "cosine": 0.9368716478347778
+    }
+  },
+  {
+    "mode": "batch",
+    "repeat": 3,
+    "chunk": 1,
+    "sha256": "db2823c54a909f066cac5525dfdf92cf7ced9c2a5d01f98216b81a0f60b4253e",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.17160789668560028,
+      "max_abs_difference": 4.298978328704834,
+      "cosine": 0.9872000813484192
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.39112621545791626,
+      "max_abs_difference": 2.4119625091552734,
+      "cosine": 0.934036135673523
+    }
+  },
+  {
+    "mode": "concurrent",
+    "repeat": 1,
+    "chunk": 0,
+    "sha256": "b6fe3da6039736c4c33467fbe6ba881eeb240e21e2b0ea7390d959618133dcbd",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000338554382324
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000001192092896
+    }
+  },
+  {
+    "mode": "concurrent",
+    "repeat": 1,
+    "chunk": 1,
+    "sha256": "03a0fb96bddb8bfff5411be4d9a1ebe3de6bf60add52bd0c1c9579cb89b4c419",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000317096710205
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 0.9999998807907104
+    }
+  },
+  {
+    "mode": "concurrent",
+    "repeat": 2,
+    "chunk": 0,
+    "sha256": "b6fe3da6039736c4c33467fbe6ba881eeb240e21e2b0ea7390d959618133dcbd",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000338554382324
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000001192092896
+    }
+  },
+  {
+    "mode": "concurrent",
+    "repeat": 2,
+    "chunk": 1,
+    "sha256": "03a0fb96bddb8bfff5411be4d9a1ebe3de6bf60add52bd0c1c9579cb89b4c419",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000317096710205
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 0.9999998807907104
+    }
+  },
+  {
+    "mode": "concurrent",
+    "repeat": 3,
+    "chunk": 0,
+    "sha256": "b6fe3da6039736c4c33467fbe6ba881eeb240e21e2b0ea7390d959618133dcbd",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000338554382324
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000001192092896
+    }
+  },
+  {
+    "mode": "concurrent",
+    "repeat": 3,
+    "chunk": 1,
+    "sha256": "03a0fb96bddb8bfff5411be4d9a1ebe3de6bf60add52bd0c1c9579cb89b4c419",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 1.0000317096710205
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": true,
+      "rmse": 0.0,
+      "max_abs_difference": 0.0,
+      "cosine": 0.9999998807907104
+    }
+  },
+  {
+    "mode": "batch_modulation",
+    "repeat": 1,
+    "chunk": 0,
+    "sha256": "6496306189bc88fa38ed548e1b5ba462630c80cc505614466b3869cffe1d7a52",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.08253204077482224,
+      "max_abs_difference": 2.477163553237915,
+      "cosine": 0.9970810413360596
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.38109201192855835,
+      "max_abs_difference": 2.5176949501037598,
+      "cosine": 0.9368716478347778
+    }
+  },
+  {
+    "mode": "batch_modulation",
+    "repeat": 1,
+    "chunk": 1,
+    "sha256": "db2823c54a909f066cac5525dfdf92cf7ced9c2a5d01f98216b81a0f60b4253e",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.17160789668560028,
+      "max_abs_difference": 4.298978328704834,
+      "cosine": 0.9872000813484192
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.39112621545791626,
+      "max_abs_difference": 2.4119625091552734,
+      "cosine": 0.934036135673523
+    }
+  },
+  {
+    "mode": "batch_modulation",
+    "repeat": 2,
+    "chunk": 0,
+    "sha256": "6496306189bc88fa38ed548e1b5ba462630c80cc505614466b3869cffe1d7a52",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.08253204077482224,
+      "max_abs_difference": 2.477163553237915,
+      "cosine": 0.9970810413360596
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.38109201192855835,
+      "max_abs_difference": 2.5176949501037598,
+      "cosine": 0.9368716478347778
+    }
+  },
+  {
+    "mode": "batch_modulation",
+    "repeat": 2,
+    "chunk": 1,
+    "sha256": "db2823c54a909f066cac5525dfdf92cf7ced9c2a5d01f98216b81a0f60b4253e",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.17160789668560028,
+      "max_abs_difference": 4.298978328704834,
+      "cosine": 0.9872000813484192
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.39112621545791626,
+      "max_abs_difference": 2.4119625091552734,
+      "cosine": 0.934036135673523
+    }
+  },
+  {
+    "mode": "batch_modulation",
+    "repeat": 3,
+    "chunk": 0,
+    "sha256": "6496306189bc88fa38ed548e1b5ba462630c80cc505614466b3869cffe1d7a52",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.08253204077482224,
+      "max_abs_difference": 2.477163553237915,
+      "cosine": 0.9970810413360596
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.38109201192855835,
+      "max_abs_difference": 2.5176949501037598,
+      "cosine": 0.9368716478347778
+    }
+  },
+  {
+    "mode": "batch_modulation",
+    "repeat": 3,
+    "chunk": 1,
+    "sha256": "db2823c54a909f066cac5525dfdf92cf7ced9c2a5d01f98216b81a0f60b4253e",
+    "video": {
+      "shape": [
+        1,
+        24,
+        17,
+        80,
+        46
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.17160789668560028,
+      "max_abs_difference": 4.298978328704834,
+      "cosine": 0.9872000813484192
+    },
+    "audio_latent_unused_for_export": {
+      "shape": [
+        1,
+        32,
+        2,
+        93
+      ],
+      "finite": true,
+      "bit_equal": false,
+      "rmse": 0.39112621545791626,
+      "max_abs_difference": 2.4119625091552734,
+      "cosine": 0.934036135673523
+    }
+  }
+]

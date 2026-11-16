@@ -1,0 +1,25 @@
+{
+  "configuration": "3 transformers with MPS, then 2 VAEs; 20 independent chunks",
+  "samples": 1,
+  "pipeline_preflight": "Rejected: conservative estimated 101.663 GiB vs device 95.59 GiB; not an actual allocation attempt",
+  "staged_memory_budget_fraction": 0.95,
+  "total_seconds": 244.60990241099353,
+  "stage_phase_seconds": {
+    "denoise": 120.41700975099957,
+    "decode": 78.74935597700096
+  },
+  "peak_vram_gib": 82.545,
+  "prior_single_transformer_isolated_phase_seconds": 120.95052147599927,
+  "comparison_caveat": "Prior isolated one-transformer run used no MPS. Staged three-transformer run is not the overlapping pipeline configuration. Single new sample, no uncertainty estimate.",
+  "maximum_concurrent_sampler_calls": 3,
+  "output_matches_previous_standard_hash": true,
+  "ownership_samples": 242,
+  "competing_workload_samples": 0,
+  "audio_check": {
+    "source_samples_8khz": 395264,
+    "output_samples_8khz": 395264,
+    "duration_delta_ms": 0.0,
+    "best_lag_ms": 0.0,
+    "waveform_correlation": 0.999957
+  }
+}

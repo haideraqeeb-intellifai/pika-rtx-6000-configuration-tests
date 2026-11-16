@@ -1,0 +1,26 @@
+{
+  "repo_commit": "7a1bbf944c8e2b99d175ec094768c22a945e75cb",
+  "sage3_revision": "d1a57a546c3d395b1ffcbeecc66d81db76f3b4b5",
+  "cutlass_revision": "0b55a2f691d69981583568fd9eb69687b1f0de8a",
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "sageattention": "2.2.0",
+    "sageattn3": "1.0.0",
+    "comfy-kitchen": "0.2.35",
+    "comfy-aimdo": "0.5.5"
+  },
+  "python": "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+  "overlay": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/fast_dependencies/site-packages",
+  "source_hashes": {
+    "run_fast_comparison.py": "86853766b0e5ca90192b263bdef916188f8c99db64c66d893df2cf3180a2b6ec",
+    "stage_pipeline.py": "2f8bdd8c6bf9fe99bc75790503f6ad4aea7dcf4c252915fd5aaf08c95b7d0bce",
+    "parallel_chunk_resident.py": "4e4ff11a2885c1dd2560771d78a051bad7f0b49119dcb2884cf029ddf5695ce3",
+    "gpu_preencode.py": "4988f120764d496f508f18821a28f1649471f299a2b445b3221716816aaef7de",
+    "runtime.py": "508de516b82e09d103b8077a7fb44fe81020f26c3ca0310e7081a04b7bfb8eb6",
+    "mps_session.py": "13819ec631947631fbea08a3259358c40bca848d19cf7c11d8e148ad1737ecd5",
+    "preencoded_parallel.py": "46b9e1dd87e5440c56015efa971f34b7543b01543dd344d747485a996917ee0c",
+    "fast_inference.py": "35f4cf38a711c416ca702ec069c365e8911e02d264632ca015eb40fa9fa3f037",
+    "runtime.patch": "a05c771cf4b811f5942a52b74d90abcd3d5112c917eac86ca15a5bade3abf7c4"
+  },
+  "protocol": "Same 49.408s podcast, 20 independent hard-anchor chunks, 1T+2V MPS, two steps. Fresh processes per video, resident loaders across chunks. GPU preparation included. Calibration excluded. Repeated controls and fast runs alternate. VAE-only fast validation is stage aware; request-local hook nodes refresh per chunk."
+}

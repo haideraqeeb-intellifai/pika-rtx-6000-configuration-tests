@@ -1,0 +1,15 @@
+sequential_1t2v 1 0.0606
+sequential_1t2v 2 0.0613
+sequential_1t2v 3 0.0569
+batch_compact_1t2v 1 0.0619
+batch_compact_1t2v 2 0.0576
+batch_compact_1t2v 3 0.0596
+concurrent_2t1v 1 0.0588
+concurrent_2t1v 2 0.0561
+concurrent_2t1v 3 0.0583
+concurrent_2t2v 1 0.0596
+concurrent_2t2v 2 0.0558
+concurrent_2t2v 3 0.0608
+batch_1t2v 1 0.0597
+batch_1t2v 2 0.0607
+batch_1t2v 3 0.0594

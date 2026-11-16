@@ -1,0 +1,74 @@
+{
+  "git_revision": "f20fb6b5ab772412efee6e170be1cdd41ab7b9ce",
+  "script_sha256": {
+    "stage_pipeline.py": "0a0283fb171c7039e3ec18117345ef06a3ee6e26059c13cbb0210f153ab688ab",
+    "parallel_chunk_resident.py": "f8f9bf67eb8d7e5f2c8511db9b27c39bfb83dde003d15e6b04b37dd83b09e668",
+    "deferred_encoding.py": "14c856727cf9f9538f0d5630337b1bf1729959e67bcb3451774105c57eef4c1d",
+    "run_chunk_copy_matrix.py": "75f6d76a18991b12642719eedc835ee592f8363c05562393eaf2f4d05248eaa0"
+  },
+  "python_environment": "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+  "input_manifest": {
+    "source_report_video": "raccoon_full_nvenc_chained_assembled.mp4",
+    "source_image_url": "https://cdn.podcastflow.ai/user-assets/staging/2026/11/04/avatars/headshots/rhea-the-raccoon-01a1a544-a3ae-729c-863a-5393d315c56e-headshot.jpg",
+    "audio_note": "PCM decoded from the report chained MP4 AAC track; original WAV was unavailable.",
+    "files": {
+      "report_chained.mp4": {
+        "bytes": 24677325,
+        "sha256": "dfedb3549e712b89f06722e495df2838fc874d26b86694144b9a5b9419d9db19"
+      },
+      "raccoon_headshot.jpg": {
+        "bytes": 170932,
+        "sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1"
+      },
+      "report_audio.wav": {
+        "bytes": 9486414,
+        "sha256": "722f0e915e763d0f1920b4db0ec7ecac421eedb817cdbb5ed0d9f420d8588f88"
+      }
+    }
+  },
+  "protocol": "Fresh GPU prep and worker processes; fixed two-step independent same-image hard-anchored chunks. Source splitting and memory calibration excluded.",
+  "hardware": {
+    "model": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+    "driver": "595.84",
+    "memory_total_mib": 97887,
+    "power_limit_w": 600
+  },
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "sageattention": "2.2.0",
+    "numpy": "1.26.4",
+    "pydantic": "2.13.5",
+    "comfy-aimdo": "0.5.5"
+  },
+  "assets": {
+    "MODEL_REPO_ID": "Comfy-Org/MiniMax-H3",
+    "MODEL_REVISION": "0bd506d2e895983a9663037febda27aa3948cf48",
+    "PIKA_REPO": "Pika-Labs/Pika-H3-Flex",
+    "PIKA_REVISION": "3ff166447d5edb1406107ab8370c42000ce173e4",
+    "FL2VA": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "PIKA_FL2VA": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+    "TEXT_ENCODER": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+    "VIDEO_VAE": "minimax_h3_video_vae_fp16.safetensors",
+    "REQUIRED_MODELS": {
+      "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors": 20970379616,
+      "diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors": 20970379616,
+      "text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors": 15687142551,
+      "vae/minimax_h3_video_vae_fp16.safetensors": 5207808496,
+      "vae/minimax_h3_audio_vae_fp32.safetensors": 605254808
+    },
+    "ADAPTER_HASHES": {
+      "loras/minimax_h3_turbo_v4_step600_ema.safetensors": "5f3a626cd72c93a8b9318d6760c510bc5092d2ab13aaba1f932c5bab07a416d3",
+      "loras/h3_silu_temb_grid.safetensors": "30eb3c2cc7fb6b470d9717ff840d359313ac27cd64b705e32da1baa10f72d6a8",
+      "loras/h3_character_swap_pro4500_1000.safetensors": "4b2a3f420ae804c0aa3422761ff84dbd1bf52eef6900ffab6d2e66df63cb4e79",
+      "loras/pika_h3_flex_fl2va_comfy_bf16.safetensors": "68783e6447696ec365d13c0554941e070bee4cfea13c37da52498ec4f9a53f89",
+      "loras/pika_h3_flex_ref2va_comfy_bf16.safetensors": "e4d058fbd027377b925a0ee607b514ddd9037873fee3afa05d73b302e6f7f8e1"
+    }
+  },
+  "asset_validation": "Loader validates base-file sizes and all adapter SHA-256 hashes. Base checkpoint SHA-256 hashes were not recomputed in this follow-up.",
+  "comfy_pin": {
+    "commit": "e377e263049f9338b4d12a3dd417b36ae62948ff",
+    "version": "0.30.0"
+  },
+  "python_version": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]"
+}

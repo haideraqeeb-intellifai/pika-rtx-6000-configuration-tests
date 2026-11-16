@@ -1,0 +1,13 @@
+{
+  "local_links_checked": 92,
+  "summary_groups_checked": 25,
+  "inventory_files_checked": 1826,
+  "zip_integrity": "passed",
+  "excluded_runs": [
+    "followup_best_combined",
+    "followup_c5_2t_1v",
+    "followup_c5_2t_2v",
+    "followup_mps_3t_2v",
+    "followup_one_mps_repeat2"
+  ]
+}

@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/stage_pipeline.py", line 186, in main
+    combined = run_phase(directory / 'pipeline', counts, audios, prepared, latents,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/stage_pipeline.py", line 23, in run_phase
+    return run_with_mps(lambda: run_phase(directory, counts, audios, prepared, latents,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/mps_session.py", line 36, in run_with_mps
+    result=function()
+           ^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/stage_pipeline.py", line 23, in <lambda>
+    return run_with_mps(lambda: run_phase(directory, counts, audios, prepared, latents,
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/stage_pipeline.py", line 76, in run_phase
+    message = receive()
+              ^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/stage_pipeline.py", line 45, in receive
+    raise RuntimeError(message['traceback'])
+RuntimeError: Traceback (most recent call last):
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/parallel_chunk_resident.py", line 164, in lane_main
+    inferred = infer(models, graph, prompt_id=uuid.uuid4().hex,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/ml_modules/minimax_h3_turbo/infer.py", line 62, in infer
+    return runtime.infer(models, workflow, prompt_id, timeout_seconds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/ml_modules/minimax_h3_turbo/runtime.py", line 450, in infer
+    raise RuntimeError("ComfyUI execution failed: " + json.dumps(failures[-1] if failures else {}))
+RuntimeError: ComfyUI execution failed: {"prompt_id": "a13b293c886f4a6f8118e7199171cf82", "node_id": "c0_11", "node_type": "VAEDecode", "executed": ["load_latent"], "exception_message": "CUDA error: unspecified launch failure\nSearch for `cudaErrorLaunchFailure' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n", "exception_type": "torch.AcceleratorError", "traceback": ["  File \"/home/raqeeb/h3/6000-configuration-optimization/script2video/ml_modules/comfy_ui/comfy_v14/execution.py\", line 550, in execute\n    comfy.model_management.reset_cast_buffers()\n", "  File \"/home/raqeeb/h3/6000-configuration-optimization/script2video/ml_modules/comfy_ui/comfy_v14/comfy/model_management.py\", line 1414, in reset_cast_buffers\n    synchronize()\n", "  File \"/home/raqeeb/h3/6000-configuration-optimization/script2video/ml_modules/comfy_ui/comfy_v14/comfy/model_management.py\", line 2023, in synchronize\n    torch.cuda.synchronize()\n", "  File \"/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/lib/python3.12/site-packages/torch/cuda/__init__.py\", line 1162, in synchronize\n    return torch._C._cuda_synchronize()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"], "current_inputs": {"samples": ["{'samples': <comfy.nested_tensor.NestedTensor object at 0x7dcce47e5a00>}"], "vae": ["<comfy.sd.VAE object at 0x7dcce613da60>"]}, "current_outputs": ["c0_15", "c0_11", "buffer_0", "load_latent", "3", "save_chunks"], "timestamp": 1794265433664}
+

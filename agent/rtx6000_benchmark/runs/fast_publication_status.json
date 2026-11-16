@@ -1,0 +1,7 @@
+{
+  "status": "awaiting_explicit_upload_authorization",
+  "reason": "Automatic approval review: prior approval named a different report bundle and path.",
+  "source": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/h3-pika-flex-fast-rtx6000",
+  "destination": "s3://agent-assets/experiments/raqeeb/h3-pika-flex-fast-rtx6000/",
+  "share_link_created": false
+}

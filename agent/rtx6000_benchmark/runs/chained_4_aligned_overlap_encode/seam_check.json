@@ -1,0 +1,16 @@
+{
+  "frame_count": 1186,
+  "boundaries": [
+    292,
+    584,
+    876
+  ],
+  "seam_mean_absolute_luma_difference": [
+    7.7398,
+    7.7148,
+    7.652
+  ],
+  "nonseam_median_difference": 0.9049,
+  "seam_median_to_nonseam_median_ratio": 8.526,
+  "seams_above_nonseam_95th_percentile": 3
+}

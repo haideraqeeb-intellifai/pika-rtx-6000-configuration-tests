@@ -1,0 +1,22 @@
+{
+  "command": [
+    "nsys",
+    "profile",
+    "--trace=cuda-sw,nvtx,osrt",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "--wait=all",
+    "--output",
+    "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/batch_two/profiles/sequential",
+    "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+    "-m",
+    "agent.rtx6000_benchmark.batch_two.experiment",
+    "--mode",
+    "sequential",
+    "--name",
+    "profile_sequential_v2",
+    "--repeats",
+    "1"
+  ],
+  "purpose": "Diagnostic launch counts; not included in performance averages"
+}

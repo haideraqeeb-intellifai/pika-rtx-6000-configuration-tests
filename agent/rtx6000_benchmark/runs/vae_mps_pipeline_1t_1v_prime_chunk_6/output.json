@@ -1,0 +1,10 @@
+{
+  "encoder": "h264_nvenc",
+  "fallback_reason": null,
+  "encoding_seconds": 0.884,
+  "output_frames": 107,
+  "output_width": 1080,
+  "output_height": 1920,
+  "audio_duration_seconds": 4.458333333333333,
+  "bytes": 2230928
+}

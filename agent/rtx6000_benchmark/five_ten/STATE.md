@@ -1,0 +1,29 @@
+# Active fixed-chunk benchmark
+
+Standing constraint is in workspace /home/raqeeb/h3/6000-configuration-optimization/AGENTS.md: exactly five 10-second chunks, never vary count/duration.
+
+Run directory is five_ten/. GPU is RTX PRO 6000 Blackwell Workstation 96GB. Python and overlay paths recorded in provenance.json. All runs fast mode, independent original portrait anchors, seeds9901..9905. Source audio49.408s gets0.592s silence; delivered240frames/chunk; native243frames. One full video warmup +3 full video repeats per configuration.
+
+Baseline complete: sequential1T2V mean208.868s, peak56.76GiB. Batch1T2V complete:212.59s mean,74.09GiB; pair groups2+2+1. Concurrent2T1V now running, then2T2V. Matrix supervisor exec session96728. Post-matrix supervisor session78891 waits for2T2V result, then summarize, nsys profiles for1T2V/2T1V/2T2V (full warmup+one replay), analyze, isolated NCU full5warm+5replay, analyzeNCU, CPU video checks and latent/SSIM checks. Baseline session24805 finished.
+
+Useful: python five_ten/status.py (from repo parent needsfullrelativepath). Check matrix.log, finish.log, per-runlogs for failures. Ownership checks stop ifforeignGPUworkappears. No other jobs observed.
+
+Report builder/template and Playwright checker prepared, not yet executed. Build only after validation and profiles complete. Need inspect measured numbers/counters, profile output, NCU units, visual outputs. Build report at h3-pika-flex-five-ten-rtx6000/. Then update previously approved h3-pika-flex-batch-two-rtx6000 report directory, preserving original35MB short-chunk report under historical-short-chunks/. User was told this update plan. Upload using uploader skill to same approved prefix, verify signed page/video. Do not silently discard old report.
+
+No production changes made. runtime.py tracked change predates this task; source archive included. New code under ignored agent/benchmark path. RootAGENTS standing note newlyadded. No deploy/merge/Slack. No agents spawned. No goalcreated.
+
+## Update: compact batch correction
+Found initial batch latents retain shared backing storage:51MB vs25.5MB perchunk. Added compact_batch.py (CPUclone after splitting, no inference change). Stopped only old waiting finish supervisor PID762902/session78891. New finish.py session51935 waits forcurrent2T2V then runscheck_compact, batch_compact_1t2v fullwarm+3reps, profiles, NCU, validatesall5configurationsincludinginitialbatch, quality. Logfinish_v2.log. Mainreportusescompactbatch; initialbatchretainedwithnote, total90measuredMP4s/75latentpairs/15fullvideos;4mainpreviews. Sourcevariantsarchivedexperiment_baseline_source.py andexperiment_pre_compact_source.py. Needverifynewbatchartifactfilematches25.5MB andalloutputbitsagainstinitial.
+
+## Update 16:34 UTC
+All primary performance runs complete (1T2V208.868s, compactbatch212.623s,2T1V218.979s,2T2V211.869s). All3NSYS replays/export/analyze complete. profiles_summary.json has all10ranges each,250SA2/250SA3 each,1kHzsamples andmatchingvideoSHA. Baseline initialpureT96.20SMactive/60.74Tensor;2Tlayouts99.7SM/62.5Tensor. Actual2Tkerneloverlap39.50s(2V),39.91s(1V);T/Voverlap38.73baseline→11.08(2T2V). Host2Tcalls overlap133.76s. Reportbuilder/template updated with findings andfailedNCUnote.
+InitialNCUfailedtocapturekernelsbecauseNVTXthreadscope andinferencebackgroundthread. Archivedunderprofiles/initial_thread_scope_attempt andruns/ncu_initial_thread_scope_attempt. Correctedprofile_ncu.py adds --nvtx-push-pop-scope process. Originalsupervisor51935finishedexit1. NEWactiveexecsession24415runscontinue_after_ncu.py→NCU→analyze→CPUvalidate5configs→quality;logfinish_ncu_retry.log. NootherGPUwork. At16:34NCUfull5chunkwarmup4done. Needfinishthenbuildreportandbrowserverify,upload.
+Validatornowcontent-cachesfullAVchecksbySHA256+sourceaudiohash,avoidsre-decodingidenticalcopies;reportdiscloses90filesandactualdistinctfull-decodes. Cachefilevalidation_cache.json. All75latentsstillchecked.
+Oldapprovedreport35MBpreservedalreadyinnewreport/historical-short-chunks;newreporttemplate linkadded. Needbuildnewh3-pika-flex-five-ten-rtx6000 thenreplaceapprovedh3-pika-flex-batch-two-rtx6000 fileswithnewbundleandarchive. Useuploaderapprovedprefix,notnewprefix. BrowsercheckerwaitForFunctionfixedthirdargument. No upload attempted yet.
+
+## Completed 16:45 UTC
+Corrected NCU capture succeeded (process-scoped NVTX); five selected kernels, including SA3 grid170/shared98KiB+1KiBdriver allocation. All NSYS captures and summaries complete. NCU GEMM up to94.9%SMthroughput and90.3%DRAM onanotherkernel.
+Validation found fullassemblyvideoPTS20.996ms vsaudio0. Lossless normalize_timestamps.py preserves original_assembly/video.mp4, fixesall15fullvideos, compressed video/audio payload hashes unchanged. Separately timed correction~0.06s each; original generationtimesimmutable. Delivery sums:1T2V208.927645;batch212.682377;2T1V219.036304;2T2V211.927477. Finalsummary containsboth generationanddeliveryphase sums; explicitlynotnewintegratedrun.
+All90measuredMP4validated(6distinctbytecontent fullydecoded,duplicatesSHAverified);full1200frames24fps50s1080x1920, zeroaudio/video starts. Min audiozero-lagcorr.999723. All75videolatentsbitidenticalbaseline;allconfigs/repeats deliveredMP4sbyteidentical. SSIM1.0 at180x320. Qualitydoesnotcertifyseams/lipsync.
+Localnewreporth3-pika-flex-five-ten-rtx6000 built andbrowserverified;approvedexistingh3-pika-flex-batch-two-rtx6000 updatedwithnewreportplusfullhistorical-short-chunksarchive. Uploadcompletedexit0withlistingusingbundled uploader. publish_verification.jsonholdsnewURLexpiry2026-11-18T16:44:16UTC. SignedGETpage200,ZIP/CSV/video206;remoteChromiumplayed50svideoandchartswork. NoGPUjobsremain(0%util,2MiB). No productionchanges/deploy/merge/Slack.
+NativeNsighttraces,SQLite andalloriginalmedia remainlocal. Reportincludesderivedinteractiveprofilinggraphs,all15deliveredfullvideos,code/input/rawJSON/logZIP. RootAGENTSfixed5x10standingrulepersists.

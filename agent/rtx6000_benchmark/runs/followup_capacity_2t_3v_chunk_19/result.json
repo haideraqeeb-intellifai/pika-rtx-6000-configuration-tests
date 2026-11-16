@@ -1,0 +1,410 @@
+{
+  "name": "followup_capacity_2t_3v_chunk_19",
+  "status": "success",
+  "lane": 3,
+  "index": 19,
+  "frames": 73,
+  "anchor": "hard",
+  "effective": {
+    "input_mode": "fl2v",
+    "requested_width": 720,
+    "requested_height": 1280,
+    "native_width": 736,
+    "native_height": 1280,
+    "requested_frames": 73,
+    "effective_frames": 73,
+    "reference_images": 0,
+    "reference_videos": 0,
+    "reference_audios": 0,
+    "seed": 9920,
+    "optimization": {
+      "profile": "pika_flex",
+      "attention_backend": "sage2",
+      "step_accelerator": "none",
+      "approximate": true
+    },
+    "optimizer_parameters": {
+      "easycache": null,
+      "sol": null,
+      "spectrum": null
+    },
+    "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+    "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+    "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+    "lora_strength": 1.0,
+    "lora_low_vram": false,
+    "turbo_commit": null,
+    "sampler": "MiniMaxH3PikaSampler",
+    "steps": 2,
+    "denoise": 1.0,
+    "scheduler": "pika_knots",
+    "sigma_shift_video": 12.0,
+    "sigma_shift_audio": 3.0,
+    "output_frames": 73,
+    "fps": 24.0,
+    "chunked_mode": true,
+    "chunk_input_modes": [
+      "fl2v"
+    ],
+    "output_width": 1080,
+    "output_height": 1920,
+    "chunk_count": 1,
+    "chunk_seeds": [
+      9920
+    ],
+    "chunk_frames": [
+      73
+    ],
+    "chunk_inference_frames": [
+      73
+    ],
+    "chunk_schedule": [
+      {
+        "duration_seconds": 3.0416666666666665,
+        "reference": "original",
+        "anchor": "hard"
+      }
+    ],
+    "chunk_execution": "stage_grouped",
+    "frame_storage": "memory"
+  },
+  "telemetry": {
+    "stages": {
+      "nodes": [
+        {
+          "node_id": "load_latent",
+          "class_type": "H3LoadLatent",
+          "duration_seconds": 0.0054,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 0.01,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 0.01,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        {
+          "node_id": "c0_11",
+          "class_type": "VAEDecode",
+          "duration_seconds": 7.2157,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 0.01,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.172,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        {
+          "node_id": "c0_15",
+          "class_type": "ImageCrop",
+          "duration_seconds": 0.0009,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.172,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.172,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        {
+          "node_id": "buffer_0",
+          "class_type": "H3StoreChunk",
+          "duration_seconds": 0.0336,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.172,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.172,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        {
+          "node_id": "save_chunks",
+          "class_type": "H3SaveChunks",
+          "duration_seconds": 0.6819,
+          "before": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.172,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          },
+          "after": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.172,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        }
+      ],
+      "stages": [
+        {
+          "stage": "generation",
+          "duration_seconds": 0.0054,
+          "node_count": 1,
+          "peak_cuda_allocated_gib": 0.01,
+          "peak_model_offloaded_gib": 0.225,
+          "mean_model_offloaded_gib": 0.225,
+          "gpu": {
+            "sample_count": 0,
+            "error": "no samples"
+          }
+        },
+        {
+          "stage": "video_decode",
+          "duration_seconds": 7.2157,
+          "node_count": 1,
+          "peak_cuda_allocated_gib": 1.172,
+          "peak_model_offloaded_gib": 0.225,
+          "mean_model_offloaded_gib": 0.225,
+          "gpu": {
+            "sample_count": 36,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 100.0,
+            "gpu_util_p95_pct": 100.0,
+            "memory_used_peak_gib": 63.219,
+            "model_offloaded_mean_gib": 0.225,
+            "model_offloaded_peak_gib": 0.225,
+            "power_mean_w": 600.02,
+            "power_peak_w": 600.53,
+            "energy_wh_estimate": 1.167,
+            "temperature_peak_c": 86.0,
+            "pcie_rx_gib_estimate": 1.104,
+            "pcie_tx_gib_estimate": 3.309
+          },
+          "model_offload_sample_count": 36
+        },
+        {
+          "stage": "crop_mux_save",
+          "duration_seconds": 0.7164,
+          "node_count": 3,
+          "peak_cuda_allocated_gib": 1.172,
+          "peak_model_offloaded_gib": 0.225,
+          "mean_model_offloaded_gib": 0.225,
+          "gpu": {
+            "sample_count": 4,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 30.0,
+            "gpu_util_p95_pct": 100.0,
+            "memory_used_peak_gib": 62.592,
+            "model_offloaded_mean_gib": 0.225,
+            "model_offloaded_peak_gib": 0.225,
+            "power_mean_w": 504.87,
+            "power_peak_w": 600.53,
+            "energy_wh_estimate": 0.084,
+            "temperature_peak_c": 86.0,
+            "pcie_rx_gib_estimate": 0.307,
+            "pcie_tx_gib_estimate": 0.029
+          },
+          "model_offload_sample_count": 4
+        }
+      ],
+      "execution_event_seconds": 7.9515,
+      "final_memory": {
+        "cuda_allocated_gib": 0.01,
+        "cuda_reserved_gib": 0.023,
+        "cuda_peak_allocated_gib": 1.172,
+        "model_total_gib": 4.85,
+        "model_loaded_gib": 4.625,
+        "model_offloaded_gib": 0.225
+      }
+    },
+    "gpu": {
+      "sample_count": 40,
+      "observed_sample_hz": 5.0,
+      "gpu_util_mean_pct": 93.0,
+      "gpu_util_p95_pct": 100.0,
+      "memory_used_peak_gib": 63.219,
+      "model_offloaded_mean_gib": 0.225,
+      "model_offloaded_peak_gib": 0.225,
+      "power_mean_w": 590.51,
+      "power_peak_w": 600.53,
+      "energy_wh_estimate": 1.28,
+      "temperature_peak_c": 86.0,
+      "pcie_rx_gib_estimate": 1.507,
+      "pcie_tx_gib_estimate": 3.356
+    },
+    "easycache": null,
+    "spectrum": null,
+    "sol": null
+  },
+  "output_probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "Main",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1088,
+        "coded_height": 1920,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 37376,
+        "duration": "3.041667",
+        "bit_rate": "3771487",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "73",
+        "nb_read_frames": "73",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc60.5.100 h264_nvenc"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 145968,
+        "duration": "3.041000",
+        "bit_rate": "184511",
+        "nb_frames": "144",
+        "nb_read_frames": "143",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ]
+  },
+  "output_sha256": "a4c2c157d7d94f68c30c41e90745b65b37fda32842c1eed615f5bd666369b438",
+  "total_seconds": 8.381840057001682,
+  "process_started_wall_utc": 1794343159.890388,
+  "process_ended_wall_utc": 1794343168.27223,
+  "inference_started_wall_utc": 1794343159.9652991,
+  "inference_ended_wall_utc": 1794343167.9184778,
+  "sampler_intervals": [],
+  "prepared_dir": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_capacity_2t_3v/prepared",
+  "stage": "decode",
+  "residency": "dynamic",
+  "async_encoding": false,
+  "decode_intervals": [
+    {
+      "started_wall_utc": 1794343159.984364,
+      "ended_wall_utc": 1794343167.1963794
+    }
+  ],
+  "mps_requested": true,
+  "mps_active_thread_percentage": "100",
+  "latent_artifact": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_capacity_2t_3v/latents/latent_19.pt"
+}

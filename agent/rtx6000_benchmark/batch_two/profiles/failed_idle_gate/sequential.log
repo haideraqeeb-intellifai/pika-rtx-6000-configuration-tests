@@ -1,0 +1,19 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:131: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/batch_two/experiment.py", line 134, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--mode',choices=['sequential','batch','concurrent'],required=True);p.add_argument('--name',required=True);p.add_argument('--repeats',type=int,default=3);p.add_argument('--denoise-only',action='store_true');a=p.parse_args();run(a.mode,a.name,a.repeats,a.denoise_only)
+                                                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/batch_two/experiment.py", line 88, in run
+    root.mkdir(parents=True);gate=empty_gpu_gate();write(root/'empty_gpu_gate.json',gate)
+                                  ^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py", line 156, in empty_gpu_gate
+    raise RuntimeError(f'RTX 6000 is not at its observed idle baseline: {samples}')
+RuntimeError: RTX 6000 is not at its observed idle baseline: [{'time': 1794406933.9894056, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794406935.0977573, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794406936.2018776, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}]
+Collecting data...
+Generating '/tmp/nsys-raqeeb/nsys-report-013a.qdstrm'
+[1/1] [0%                          ] sequential.nsys-rep[1/1] [0%                          ] sequential.nsys-rep[1/1] [1%                          ] sequential.nsys-rep[1/1] [2%                          ] sequential.nsys-rep[1/1] [5%                          ] sequential.nsys-rep[1/1] [12%                         ] sequential.nsys-rep[1/1] [==19%                       ] sequential.nsys-rep[1/1] [==20%                       ] sequential.nsys-rep[1/1] [===========51%              ] sequential.nsys-rep[1/1] [==============64%           ] sequential.nsys-rep[1/1] [=======================96%  ] sequential.nsys-rep[1/1] [========================98% ] sequential.nsys-rep[1/1] [========================100%] sequential.nsys-rep[1/1] [========================100%] sequential.nsys-rep
+Generated:
+	/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/batch_two/profiles/sequential.nsys-rep

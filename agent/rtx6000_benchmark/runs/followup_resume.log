@@ -1,0 +1,16 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_one_mps_repeat3
+{"name": "followup_one_mps_repeat3", "status": "success", "timed_total_seconds": 237.36830507999548, "gpu_trace_summary": {"samples": 1135, "peak_vram_gib": 35.013, "gpu_util_mean_pct": 77.90396475770925}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_mps_1t_2v
+{"name": "followup_mps_1t_2v", "status": "success", "timed_total_seconds": 225.46428783699957, "gpu_trace_summary": {"samples": 1077, "peak_vram_gib": 41.301, "gpu_util_mean_pct": 82.81058495821728}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_mps_1t_4v
+{"name": "followup_mps_1t_4v", "status": "success", "timed_total_seconds": 224.7740907960033, "gpu_trace_summary": {"samples": 1072, "peak_vram_gib": 53.714, "gpu_util_mean_pct": 84.55970149253731}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_mps_1t_4v_repeat2
+{"name": "followup_mps_1t_4v_repeat2", "status": "success", "timed_total_seconds": 224.82032494699524, "gpu_trace_summary": {"samples": 1073, "peak_vram_gib": 53.714, "gpu_util_mean_pct": 83.59925442684063}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+MPS VAE sizing complete
+Starting followup_best_combined_repeat3
+{"name": "followup_best_combined_repeat3", "status": "success", "timed_total_seconds": 235.3612448540007, "gpu_trace_summary": {"samples": 1125, "peak_vram_gib": 39.299, "gpu_util_mean_pct": 83.57155555555556}, "calibration_peak_gib": {"denoise": 32.333, "decode": 7.862}}
+Starting followup_best_combined_repeat4
+{"name": "followup_best_combined_repeat4", "status": "success", "timed_total_seconds": 230.47563554200315, "gpu_trace_summary": {"samples": 1101, "peak_vram_gib": 39.299, "gpu_util_mean_pct": 86.82288828337875}, "calibration_peak_gib": {"denoise": 32.333, "decode": 7.862}}
+Resumed GPU comparisons complete

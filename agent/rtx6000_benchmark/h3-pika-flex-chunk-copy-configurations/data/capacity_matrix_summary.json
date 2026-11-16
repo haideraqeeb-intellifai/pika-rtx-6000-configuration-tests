@@ -1,0 +1,267 @@
+{
+  "runs": [
+    {
+      "name": "followup_capacity_1t_2v_control",
+      "status": "success",
+      "transformers": 1,
+      "vaes": 2,
+      "schedule": "pipeline",
+      "mps": true,
+      "timed_total_seconds": 223.3450501930056,
+      "time_to_assembled_valid_video_seconds": 219.26099447700108,
+      "admission_memory_envelope_gib": 44.149,
+      "memory_budget_gib": 90.8105,
+      "output_sha256": "0084bd7f5c25885c692b469c9de71c6d3c482a888cefb05e537296f01531f3d3",
+      "peak_vram_gib": 41.301,
+      "gpu_util_mean_pct": 82.42401500938087,
+      "workers_with_completed_chunks": {
+        "denoise": 1,
+        "decode": 2
+      },
+      "maximum_concurrent_calls": {
+        "denoise": 1,
+        "decode": 2
+      },
+      "maximum_combined_calls": 3,
+      "denoise_decode_overlap_seconds": 119.20372152328491,
+      "stage_call_windows_seconds": {
+        "denoise": 132.82349300384521,
+        "decode": 168.17913913726807
+      },
+      "ownership_samples": 222,
+      "competing_samples": 0,
+      "complete_video_audio_decode": true,
+      "audio_check": {
+        "source_samples_8khz": 395264,
+        "output_samples_8khz": 395264,
+        "duration_delta_ms": 0.0,
+        "best_lag_ms": 0.0,
+        "waveform_correlation": 0.999957
+      },
+      "matches_previous_output": true,
+      "max_reported_offloaded_gib": {
+        "denoise": 0.0,
+        "decode": 0.225
+      }
+    },
+    {
+      "name": "followup_capacity_1t_8v",
+      "status": "success",
+      "transformers": 1,
+      "vaes": 8,
+      "schedule": "pipeline",
+      "mps": true,
+      "timed_total_seconds": 226.10518018699804,
+      "time_to_assembled_valid_video_seconds": 221.9648273269995,
+      "admission_memory_envelope_gib": 90.325,
+      "memory_budget_gib": 90.8105,
+      "output_sha256": "0084bd7f5c25885c692b469c9de71c6d3c482a888cefb05e537296f01531f3d3",
+      "peak_vram_gib": 75.813,
+      "gpu_util_mean_pct": 83.8758109360519,
+      "workers_with_completed_chunks": {
+        "denoise": 1,
+        "decode": 8
+      },
+      "maximum_concurrent_calls": {
+        "denoise": 1,
+        "decode": 6
+      },
+      "maximum_combined_calls": 7,
+      "denoise_decode_overlap_seconds": 158.33868789672852,
+      "stage_call_windows_seconds": {
+        "denoise": 170.61505508422852,
+        "decode": 170.3595974445343
+      },
+      "ownership_samples": 225,
+      "competing_samples": 0,
+      "complete_video_audio_decode": true,
+      "audio_check": {
+        "source_samples_8khz": 395264,
+        "output_samples_8khz": 395264,
+        "duration_delta_ms": 0.0,
+        "best_lag_ms": 0.0,
+        "waveform_correlation": 0.999957
+      },
+      "matches_previous_output": true,
+      "max_reported_offloaded_gib": {
+        "denoise": 0.0,
+        "decode": 0.225
+      }
+    },
+    {
+      "name": "followup_capacity_2t_3v",
+      "status": "success",
+      "transformers": 2,
+      "vaes": 3,
+      "schedule": "pipeline",
+      "mps": true,
+      "timed_total_seconds": 227.31218156500108,
+      "time_to_assembled_valid_video_seconds": 223.06647422000242,
+      "admission_memory_envelope_gib": 80.602,
+      "memory_budget_gib": 90.8105,
+      "output_sha256": "0084bd7f5c25885c692b469c9de71c6d3c482a888cefb05e537296f01531f3d3",
+      "peak_vram_gib": 74.381,
+      "gpu_util_mean_pct": 82.08210332103322,
+      "workers_with_completed_chunks": {
+        "denoise": 2,
+        "decode": 3
+      },
+      "maximum_concurrent_calls": {
+        "denoise": 2,
+        "decode": 3
+      },
+      "maximum_combined_calls": 5,
+      "denoise_decode_overlap_seconds": 113.68961524963379,
+      "stage_call_windows_seconds": {
+        "denoise": 131.5854001045227,
+        "decode": 164.61411809921265
+      },
+      "ownership_samples": 225,
+      "competing_samples": 0,
+      "complete_video_audio_decode": true,
+      "audio_check": {
+        "source_samples_8khz": 395264,
+        "output_samples_8khz": 395264,
+        "duration_delta_ms": 0.0,
+        "best_lag_ms": 0.0,
+        "waveform_correlation": 0.999957
+      },
+      "matches_previous_output": true,
+      "max_reported_offloaded_gib": {
+        "denoise": 0.0,
+        "decode": 0.225
+      }
+    },
+    {
+      "name": "followup_capacity_2t_4v",
+      "status": "success",
+      "transformers": 2,
+      "vaes": 4,
+      "schedule": "pipeline",
+      "mps": true,
+      "timed_total_seconds": 227.0244726700039,
+      "time_to_assembled_valid_video_seconds": 223.02633063100075,
+      "admission_memory_envelope_gib": 88.298,
+      "memory_budget_gib": 90.8105,
+      "output_sha256": "0084bd7f5c25885c692b469c9de71c6d3c482a888cefb05e537296f01531f3d3",
+      "peak_vram_gib": 80.588,
+      "gpu_util_mean_pct": 82.73247232472325,
+      "workers_with_completed_chunks": {
+        "denoise": 2,
+        "decode": 4
+      },
+      "maximum_concurrent_calls": {
+        "denoise": 2,
+        "decode": 4
+      },
+      "maximum_combined_calls": 6,
+      "denoise_decode_overlap_seconds": 120.14729332923889,
+      "stage_call_windows_seconds": {
+        "denoise": 137.93764185905457,
+        "decode": 164.50581097602844
+      },
+      "ownership_samples": 225,
+      "competing_samples": 0,
+      "complete_video_audio_decode": true,
+      "audio_check": {
+        "source_samples_8khz": 395264,
+        "output_samples_8khz": 395264,
+        "duration_delta_ms": 0.0,
+        "best_lag_ms": 0.0,
+        "waveform_correlation": 0.999957
+      },
+      "matches_previous_output": true,
+      "max_reported_offloaded_gib": {
+        "denoise": 0.0,
+        "decode": 0.225
+      }
+    },
+    {
+      "name": "followup_capacity_3t_1v",
+      "status": "success",
+      "transformers": 3,
+      "vaes": 1,
+      "schedule": "pipeline",
+      "mps": true,
+      "timed_total_seconds": 249.06236997700034,
+      "time_to_assembled_valid_video_seconds": 245.10589503200026,
+      "admission_memory_envelope_gib": 90.241,
+      "memory_budget_gib": 90.8105,
+      "output_sha256": "0084bd7f5c25885c692b469c9de71c6d3c482a888cefb05e537296f01531f3d3",
+      "peak_vram_gib": 88.761,
+      "gpu_util_mean_pct": 74.82412060301507,
+      "workers_with_completed_chunks": {
+        "denoise": 3,
+        "decode": 1
+      },
+      "maximum_concurrent_calls": {
+        "denoise": 3,
+        "decode": 1
+      },
+      "maximum_combined_calls": 4,
+      "denoise_decode_overlap_seconds": 93.81659460067749,
+      "stage_call_windows_seconds": {
+        "denoise": 118.42447352409363,
+        "decode": 181.38156938552856
+      },
+      "ownership_samples": 247,
+      "competing_samples": 0,
+      "complete_video_audio_decode": true,
+      "audio_check": {
+        "source_samples_8khz": 395264,
+        "output_samples_8khz": 395264,
+        "duration_delta_ms": 0.0,
+        "best_lag_ms": 0.0,
+        "waveform_correlation": 0.999957
+      },
+      "matches_previous_output": true,
+      "max_reported_offloaded_gib": {
+        "denoise": 0.0,
+        "decode": 0.225
+      }
+    }
+  ],
+  "summary": [
+    {
+      "transformers": 1,
+      "vaes": 2,
+      "n": 1,
+      "mean_seconds": 223.3450501930056,
+      "peak_vram_gib": 41.301
+    },
+    {
+      "transformers": 1,
+      "vaes": 8,
+      "n": 1,
+      "mean_seconds": 226.10518018699804,
+      "peak_vram_gib": 75.813
+    },
+    {
+      "transformers": 2,
+      "vaes": 4,
+      "n": 1,
+      "mean_seconds": 227.0244726700039,
+      "peak_vram_gib": 80.588
+    },
+    {
+      "transformers": 2,
+      "vaes": 3,
+      "n": 1,
+      "mean_seconds": 227.31218156500108,
+      "peak_vram_gib": 74.381
+    },
+    {
+      "transformers": 3,
+      "vaes": 1,
+      "n": 1,
+      "mean_seconds": 249.06236997700034,
+      "peak_vram_gib": 88.761
+    }
+  ],
+  "notes": [
+    "All configurations use MPS and overlapping transformer/VAE stages. Same 20 independent chunks, two steps, 24 fps.",
+    "Wall-clock call overlap is verified; simultaneous GPU kernel execution is not profiled.",
+    "Total includes GPU preparation, loading, pipeline, encoding, assembly and QA. Single samples are screens, not variance estimates.",
+    "Three-transformer admission uses the previous isolated pool whole-device peak plus isolated VAE peak. Other layouts use sum of isolated per-worker peaks. Admission ceiling 95% of 95.59 GiB."
+  ]
+}

@@ -1,0 +1,414 @@
+{
+  "name": "original_image_parallel_eager_1_default",
+  "status": "success",
+  "parallel_processes": 1,
+  "reference": "original",
+  "anchor_mode": "hard",
+  "chunks": 10,
+  "chunk_plan": "aligned",
+  "clip_device": "default",
+  "residency": "dynamic",
+  "total_frames": 1186,
+  "chunk_frames": [
+    106,
+    123,
+    123,
+    107,
+    124,
+    124,
+    107,
+    124,
+    124,
+    124
+  ],
+  "empty_gpu_gate": [
+    {
+      "time": 1794256600.3766823,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794256601.397881,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794256602.4182906,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "calibration_peak_gib": 46.305,
+  "timed_run_empty_gpu_gate": [
+    {
+      "time": 1794256641.5233073,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794256642.5396495,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794256643.557944,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "parallel_generation_seconds": 405.18042134598363,
+  "child_results": [
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_0_efc73b",
+      "total_seconds": 37.83973165194038,
+      "peak_vram_gib": 46.305,
+      "inference_started_wall_utc": 1794256648.9257233,
+      "inference_ended_wall_utc": 1794256681.0478663
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_1_5d2221",
+      "total_seconds": 39.41631845198572,
+      "peak_vram_gib": 47.372,
+      "inference_started_wall_utc": 1794256688.1939652,
+      "inference_ended_wall_utc": 1794256721.874048
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_2_a60a08",
+      "total_seconds": 38.99608652701136,
+      "peak_vram_gib": 47.372,
+      "inference_started_wall_utc": 1794256729.0212326,
+      "inference_ended_wall_utc": 1794256762.2707226
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_3_8dccde",
+      "total_seconds": 37.45227712998167,
+      "peak_vram_gib": 46.305,
+      "inference_started_wall_utc": 1794256769.4596727,
+      "inference_ended_wall_utc": 1794256801.1923153
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_4_1b3d9e",
+      "total_seconds": 39.85648313106503,
+      "peak_vram_gib": 47.372,
+      "inference_started_wall_utc": 1794256808.3308814,
+      "inference_ended_wall_utc": 1794256842.4467504
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_5_ed05f3",
+      "total_seconds": 38.75795779202599,
+      "peak_vram_gib": 47.372,
+      "inference_started_wall_utc": 1794256849.6098957,
+      "inference_ended_wall_utc": 1794256882.6520278
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_6_180f59",
+      "total_seconds": 38.59094569901936,
+      "peak_vram_gib": 46.305,
+      "inference_started_wall_utc": 1794256889.8275328,
+      "inference_ended_wall_utc": 1794256922.7198024
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_7_692aae",
+      "total_seconds": 39.79497818904929,
+      "peak_vram_gib": 47.372,
+      "inference_started_wall_utc": 1794256929.8277884,
+      "inference_ended_wall_utc": 1794256963.8933914
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_8_dedd17",
+      "total_seconds": 40.370400740997866,
+      "peak_vram_gib": 47.372,
+      "inference_started_wall_utc": 1794256971.047718,
+      "inference_ended_wall_utc": 1794257005.654345
+    },
+    {
+      "name": "original_image_parallel_eager_1_default_chunk_9_6db9f1",
+      "total_seconds": 39.838611494982615,
+      "peak_vram_gib": 47.372,
+      "inference_started_wall_utc": 1794257012.7790067,
+      "inference_ended_wall_utc": 1794257046.8928754
+    }
+  ],
+  "inference_overlap": {
+    "maximum_concurrent_inference_calls": 1,
+    "two_or_more_calls_overlap_seconds": 0.0
+  },
+  "gpu_trace_summary": {
+    "samples": 2024,
+    "peak_vram_gib": 47.372,
+    "gpu_util_mean_pct": 53.8
+  },
+  "output_probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "Main",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1088,
+        "coded_height": 1920,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 607232,
+        "duration": "49.416667",
+        "bit_rate": "3766659",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1186",
+        "nb_read_frames": "1186",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc60.5.100 h264_nvenc"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2371584,
+        "duration": "49.408000",
+        "bit_rate": "189886",
+        "nb_frames": "2317",
+        "nb_read_frames": "2316",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ]
+  },
+  "output_sha256": "c8721514e0af73219abb3c3ae800480bd5839a6d32455e52435669640029f8a3",
+  "complete_video_audio_decode": true,
+  "plan": [
+    {
+      "duration_seconds": 4.416666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 0,
+      "start_frame": 0,
+      "frames": 106,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 1,
+      "start_frame": 106,
+      "frames": 123,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 2,
+      "start_frame": 229,
+      "frames": 123,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 3,
+      "start_frame": 352,
+      "frames": 107,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 4,
+      "start_frame": 459,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 5,
+      "start_frame": 583,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 6,
+      "start_frame": 707,
+      "frames": 107,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 7,
+      "start_frame": 814,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 8,
+      "start_frame": 938,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 9,
+      "start_frame": 1062,
+      "frames": 124,
+      "inference_frames": 124
+    }
+  ],
+  "audio_check": {
+    "source_samples_8khz": 395264,
+    "output_samples_8khz": 395264,
+    "duration_delta_ms": 0.0,
+    "best_lag_ms": 0.0,
+    "waveform_correlation": 0.999957
+  },
+  "seam_check": {
+    "frame_count": 1186,
+    "boundaries": [
+      106,
+      229,
+      352,
+      459,
+      583,
+      707,
+      814,
+      938,
+      1062
+    ],
+    "seam_mean_absolute_luma_difference": [
+      3.9899,
+      3.8249,
+      3.812,
+      3.7663,
+      3.9944,
+      4.0448,
+      3.9928,
+      3.8153,
+      3.8179
+    ],
+    "nonseam_median_difference": 0.6663,
+    "seam_median_to_nonseam_median_ratio": 5.741,
+    "seams_above_nonseam_95th_percentile": 9
+  },
+  "timed_total_seconds": 413.9396554499399,
+  "total_seconds": 457.17021503299475
+}

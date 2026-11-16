@@ -1,0 +1,29 @@
+[2026-11-09 22:40:01.066 Control 2811641] Starting control daemon using socket /tmp/h3-vae-mps-zpiofnd3/control
+[2026-11-09 22:40:01.066 Control 2811641] To connect CUDA applications to this daemon, set env CUDA_MPS_PIPE_DIRECTORY=/tmp/h3-vae-mps-zpiofnd3
+[2026-11-09 22:40:01.066 Control 2811641] CUDA MPS Control binary version: 13020
+[2026-11-09 22:40:04.687 Control 2811641] Accepting connection...
+[2026-11-09 22:40:04.687 Control 2811641] User did not send valid credentials
+[2026-11-09 22:40:04.687 Control 2811641] Accepting connection...
+[2026-11-09 22:40:04.687 Control 2811641] NEW CLIENT 2811644 from user 1014: Server is not ready, push client to pending list
+[2026-11-09 22:40:04.687 Control 2811704] Starting new server 2811704 for user 1014
+[2026-11-09 22:40:04.690 Control 2811641] Accepting connection...
+[2026-11-09 22:40:04.835 Control 2811641] NEW SERVER 2811704: Ready
+[2026-11-09 22:40:04.882 Control 2811641] Accepting connection...
+[2026-11-09 22:40:04.882 Control 2811641] NEW CLIENT 2811644 from user 1014: Server already exists
+[2026-11-09 22:40:06.472 Control 2811641] Accepting connection...
+[2026-11-09 22:40:06.472 Control 2811641] NEW UI
+[2026-11-09 22:40:06.472 Control 2811641] Cmd:ps
+[2026-11-09 22:40:06.472 Control 2811641] PID       ID        SERVER         DEVICE                    NAMESPACE      COMMAND        ATTRIBUTES     
+[2026-11-09 22:40:06.472 Control 2811641] 2811644   1         2811704        GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-09 22:40:06.472 Control 2811641] UI closed
+[2026-11-09 22:42:16.109 Control 2811641] Accepting connection...
+[2026-11-09 22:42:16.109 Control 2811641] NEW UI
+[2026-11-09 22:42:16.109 Control 2811641] Cmd:get_server_list
+[2026-11-09 22:42:16.109 Control 2811641] 2811704
+[2026-11-09 22:42:16.109 Control 2811641] UI closed
+[2026-11-09 22:42:16.110 Control 2811641] Accepting connection...
+[2026-11-09 22:42:16.110 Control 2811641] NEW UI
+[2026-11-09 22:42:16.110 Control 2811641] Cmd:quit
+[2026-11-09 22:42:16.110 Control 2811641] Try shutting down server 2811704, backoff is disabled
+[2026-11-09 22:42:16.136 Control 2811641] Server 2811704 exited with status 0
+[2026-11-09 22:42:16.137 Control 2811641] Exit with status 0

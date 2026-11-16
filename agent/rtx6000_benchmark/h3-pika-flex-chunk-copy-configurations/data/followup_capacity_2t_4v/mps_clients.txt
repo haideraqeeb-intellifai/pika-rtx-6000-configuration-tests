@@ -1,0 +1,7 @@
+PID       ID        SERVER         DEVICE                    NAMESPACE      COMMAND        ATTRIBUTES     
+491125    1         491418         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+491124    2         491418         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+491126    3         491418         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+491128    4         491418         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+491123    5         491418         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+491127    6         491418         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               

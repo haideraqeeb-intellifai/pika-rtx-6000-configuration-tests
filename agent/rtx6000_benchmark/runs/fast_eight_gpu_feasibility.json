@@ -1,0 +1,597 @@
+{
+  "status": "THEORETICAL_NOT_EIGHT_GPU_MEASUREMENTS",
+  "baseline": {
+    "boundary": "Fresh-process full video including validation and extra QA; not sustained warm throughput",
+    "seconds": 200.34568004599714,
+    "videos_per_hour_equivalent": 17.968942475692412,
+    "n": 2
+  },
+  "eight_independent_scenarios": [
+    {
+      "assumed_efficiency": 0.8,
+      "speedup": 6.4,
+      "estimated_videos_per_hour": 115.00123184443144
+    },
+    {
+      "assumed_efficiency": 0.9,
+      "speedup": 7.2,
+      "estimated_videos_per_hour": 129.37638582498536
+    },
+    {
+      "assumed_efficiency": 1,
+      "speedup": 8,
+      "estimated_videos_per_hour": 143.7515398055393
+    }
+  ],
+  "greater_than_8x_requires_completion_interval_seconds_below": 25.043210005749643,
+  "stage_model": "interval=max(P/nP,T/nT,V/nV,CPU_tail_capacity_interval)*(1+h)+unhidden_transfer_delay; P,T,V are isolated per-video service demands, not overlapping call sums",
+  "stage_budgets": [
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        25.043210005749643,
+        100.17284002299857,
+        75.12963001724893
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        25.000190118749643,
+        100.00076047499857,
+        75.00057035624893
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        24.573011134749642,
+        98.29204453899857,
+        73.71903340424893
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        22.892215651749645,
+        91.56886260699858,
+        68.67664695524894
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        22.76655455068149,
+        91.06621820272596,
+        68.29966365204447
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        22.727445562499675,
+        90.9097822499987,
+        68.18233668749902
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        22.33910103159058,
+        89.35640412636232,
+        67.01730309477175
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        20.811105137954222,
+        83.24442055181689,
+        62.433315413862665
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        25.043210005749643,
+        125.21605002874821,
+        50.086420011499285
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        25.000190118749643,
+        125.00095059374821,
+        50.000380237499286
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        24.573011134749642,
+        122.8650556737482,
+        49.146022269499284
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        22.892215651749645,
+        114.46107825874822,
+        45.78443130349929
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        22.76655455068149,
+        113.83277275340745,
+        45.53310910136298
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        22.727445562499675,
+        113.63722781249837,
+        45.45489112499935
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        22.33910103159058,
+        111.69550515795291,
+        44.67820206318116
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        20.811105137954222,
+        104.0555256897711,
+        41.622210275908444
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        50.086420011499285,
+        100.17284002299857,
+        50.086420011499285
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        50.000380237499286,
+        100.00076047499857,
+        50.000380237499286
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        49.146022269499284,
+        98.29204453899857,
+        49.146022269499284
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        45.78443130349929,
+        91.56886260699858,
+        45.78443130349929
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        45.53310910136298,
+        91.06621820272596,
+        45.53310910136298
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        45.45489112499935,
+        90.9097822499987,
+        45.45489112499935
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        44.67820206318116,
+        89.35640412636232,
+        44.67820206318116
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        41.622210275908444,
+        83.24442055181689,
+        41.622210275908444
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        50.086420011499285,
+        75.12963001724893,
+        75.12963001724893
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        50.000380237499286,
+        75.00057035624893,
+        75.00057035624893
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        49.146022269499284,
+        73.71903340424893,
+        73.71903340424893
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        45.78443130349929,
+        68.67664695524894,
+        68.67664695524894
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        45.53310910136298,
+        68.29966365204447,
+        68.29966365204447
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        45.45489112499935,
+        68.18233668749902,
+        68.18233668749902
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        44.67820206318116,
+        67.01730309477175,
+        67.01730309477175
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        41.622210275908444,
+        62.433315413862665,
+        62.433315413862665
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        25.043210005749643,
+        75.12963001724893,
+        100.17284002299857
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        25.000190118749643,
+        75.00057035624893,
+        100.00076047499857
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        24.573011134749642,
+        73.71903340424893,
+        98.29204453899857
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        22.892215651749645,
+        68.67664695524894,
+        91.56886260699858
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0,
+      "strict_upper_service_time_seconds": [
+        22.76655455068149,
+        68.29966365204447,
+        91.06621820272596
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.043019887,
+      "strict_upper_service_time_seconds": [
+        22.727445562499675,
+        68.18233668749902,
+        90.9097822499987
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 0.470198871,
+      "strict_upper_service_time_seconds": [
+        22.33910103159058,
+        67.01730309477175,
+        89.35640412636232
+      ]
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "assumed_overhead_fraction": 0.1,
+      "assumed_unhidden_transfer_delay_seconds": 2.150994354,
+      "strict_upper_service_time_seconds": [
+        20.811105137954222,
+        62.433315413862665,
+        83.24442055181689
+      ]
+    }
+  ],
+  "single_video_current_serial_tail_seconds": 33.42086080099398,
+  "notes": [
+    "The efficiencies and overheads are assumptions, not measured confidence intervals.",
+    "Warm multi-GPU versus cold single-GPU can appear superlinear; must repeat with equally warm optimized single-GPU baseline.",
+    "GPU utilization percent is not compute saturation and cannot be inverted to predict speedup.",
+    "8-GPU viability needs system cost, utilization demand, power/topology and measured sustained output rate."
+  ]
+}

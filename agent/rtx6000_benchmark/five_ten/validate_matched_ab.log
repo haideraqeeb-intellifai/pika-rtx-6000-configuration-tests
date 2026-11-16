@@ -1,0 +1,10 @@
+matched_simple_a2 repeat_1 validated
+matched_simple_a2 repeat_2 validated
+matched_parallel_b2 repeat_1 validated
+matched_parallel_b2 repeat_2 validated
+matched_simple_a3 repeat_1 validated
+matched_parallel_b1 repeat_1 validated
+{
+  "all_final_mp4_bytes_equal": true,
+  "all_latent_bytes_equal_per_chunk": true
+}

@@ -1,0 +1,309 @@
+"""Run one local H3 Pika Flex chunk configuration with raw evidence."""
+
+import argparse
+import hashlib
+import json
+import math
+import os
+import resource
+import shutil
+import subprocess
+import time
+import traceback
+import uuid
+from pathlib import Path
+
+from ml_modules.minimax_h3_turbo.chunking import prepare_audio, slice_audio
+from ml_modules.minimax_h3_turbo.infer import infer, load_models
+from ml_modules.minimax_h3_turbo.workflow import build_chunked_workflow
+from workers.image2video_h3_turbo.schema import build_chunk_plan, schema_image2video_h3_turbo
+
+
+ROOT = Path(__file__).resolve().parent
+REPO = ROOT.parents[1]
+MODEL_ROOT = REPO / 'cache' / 'minimax_h3'
+INPUTS = ROOT / 'inputs'
+REFERENCE_COUNTS = [293, 295, 290, 308]
+PROMPT = ('A raccoon podcast host speaks naturally in sync with the supplied recording. '
+          'Preserve its species, face, fur, desk, microphone and framing. '
+          'Subtle paw gestures, fixed camera, no text or music.')
+
+
+def chunk_counts(chunks, strategy, total=1186):
+    if strategy == 'report' and chunks == 4 and total == 1186:
+        return REFERENCE_COUNTS
+    if strategy != 'aligned':
+        return [total // chunks + (i < total % chunks) for i in range(chunks)]
+    blocks = math.ceil((total - 5 * chunks) / 17)
+    low, high_count = divmod(blocks, chunks)
+    capacities = [5 + 17 * (low + (math.floor((i + 1) * high_count / chunks) >
+                                      math.floor(i * high_count / chunks))) for i in range(chunks)]
+    surplus = sum(capacities) - total
+    counts = [capacity - surplus // chunks - (i < surplus % chunks)
+              for i, capacity in enumerate(capacities)]
+    assert sum(counts) == total and all(count > 0 for count in counts)
+    return counts
+
+
+def sha256(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def probe(path):
+    return json.loads(subprocess.run(['ffprobe', '-v', 'error', '-count_frames', '-show_streams',
+                                      '-of', 'json', str(path)], check=True, capture_output=True).stdout)
+
+
+def configure_graph(graph, effective, *, chunks, loader_policy, transformers, vaes, texts,
+                    vae_decode, frame_storage, encoding_overlap, audio_master):
+    """Apply explicit graph variants without changing the frame dependency."""
+    replica_groups = {
+        'shared': (),
+        'repeat_all': ('1', '2', '3', '4', 'pika', 'sage'),
+        'repeat_transformer': ('1', 'pika', 'sage'),
+        'repeat_vae': ('3',),
+        'repeat_text': ('2',),
+    }
+    replica_ids = replica_groups[loader_policy]
+    if loader_policy != 'shared':
+        for index in range(1, chunks):
+            prefix = f'c{index}_'
+            mapping = {node_id: prefix + node_id for node_id in replica_ids if node_id in graph}
+            for node_id in mapping:
+                graph[mapping[node_id]] = json.loads(json.dumps(graph[node_id]))
+            for node_id in list(graph):
+                if node_id.startswith(prefix):
+                    graph[node_id]['inputs'] = _remap_refs(graph[node_id]['inputs'], mapping)
+    elif (transformers, vaes, texts) != (1, 1, 1):
+        groups = {'transformer': (transformers, ('1', 'pika', 'sage')),
+                  'vae': (vaes, ('3',)), 'text': (texts, ('2',))}
+        for group, (count, ids) in groups.items():
+            for pool_index in range(1, count):
+                mapping = {node_id: f'pool_{group}_{pool_index}_{node_id}' for node_id in ids}
+                for node_id in ids:
+                    clone = json.loads(json.dumps(graph[node_id]))
+                    clone['inputs'] = _remap_refs(clone['inputs'], mapping)
+                    graph[mapping[node_id]] = clone
+            for chunk_index in range(chunks):
+                pool_index = chunk_index % count
+                if not pool_index:
+                    continue
+                mapping = {node_id: f'pool_{group}_{pool_index}_{node_id}' for node_id in ids}
+                prefix = f'c{chunk_index}_'
+                for node_id in list(graph):
+                    if node_id.startswith(prefix):
+                        graph[node_id]['inputs'] = _remap_refs(graph[node_id]['inputs'], mapping)
+    if vae_decode == 'tiled':
+        for node in graph.values():
+            if node['class_type'] == 'VAEDecode':
+                node['class_type'] = 'H3NestedVAEDecodeTiled'
+                node['inputs'].update(tile_size=512, overlap=64, temporal_size=64,
+                                      temporal_overlap=8)
+    if frame_storage == 'disk':
+        for node in graph.values():
+            if node['class_type'] == 'H3StoreChunk':
+                node['inputs']['in_memory'] = False
+        effective['frame_storage'] = 'disk'
+    if encoding_overlap:
+        save_inputs = graph['save_chunks']['inputs']
+        for node in graph.values():
+            if node['class_type'] == 'H3StoreChunk':
+                node['class_type'] = 'H3AsyncStoreChunk'
+                node['inputs'].update(output=save_inputs['output'], audio_master=str(audio_master),
+                                      output_width=save_inputs['width'],
+                                      output_height=save_inputs['height'])
+        graph['save_chunks']['class_type'] = 'H3AsyncSaveChunks'
+    effective.update(loader_policy=loader_policy, transformers=transformers, vaes=vaes,
+                     texts=texts, vae_decode=vae_decode, encoding_overlap=encoding_overlap)
+
+
+def _remap_refs(value, mapping):
+    if isinstance(value, list) and len(value) == 2 and isinstance(value[0], str) and value[0] in mapping:
+        return [mapping[value[0]], value[1]]
+    if isinstance(value, dict):
+        return {key: _remap_refs(item, mapping) for key, item in value.items()}
+    return value
+
+
+def empty_gpu_gate():
+    import os
+    import pynvml
+
+    pynvml.nvmlInit()
+    try:
+        handle = pynvml.nvmlDeviceGetHandleByIndex(0)
+        samples = []
+        for index in range(3):
+            reported = subprocess.run([
+                'nvidia-smi', '--query-gpu=uuid,utilization.gpu,memory.used,memory.reserved',
+                '--format=csv,noheader,nounits'], check=True, capture_output=True, text=True).stdout.strip().split(', ')
+            compute = pynvml.nvmlDeviceGetComputeRunningProcesses(handle)
+            graphics = pynvml.nvmlDeviceGetGraphicsRunningProcesses(handle)
+            sample = {'time': time.time(), 'uuid': reported[0],
+                      'gpu_util_pct': int(reported[1]), 'memory_used_mib': int(reported[2]),
+                      'driver_reserved_mib': int(reported[3]),
+                      'compute_pids': [p.pid for p in compute],
+                      'graphics_pids': [p.pid for p in graphics]}
+            samples.append(sample)
+            if index < 2:
+                time.sleep(1)
+        # Nsight GPU-metrics capture adds 2 MiB even with no CUDA application.
+        # Verified by nsight_profile/metrics_idle_baseline.json; normal runs stay at 2 MiB.
+        idle_mib = 4 if os.environ.get('H3_NSYS_GPU_METRICS') == '1' else 2
+        if any(s['gpu_util_pct'] != 0 or s['memory_used_mib'] != idle_mib or s['driver_reserved_mib'] != 638 or
+               s['compute_pids'] or s['graphics_pids'] for s in samples):
+            raise RuntimeError(f'RTX 6000 is not at its observed idle baseline: {samples}')
+        return samples
+    finally:
+        pynvml.nvmlShutdown()
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--name', required=True)
+    parser.add_argument('--reference', choices=['chained', 'original'], default='chained')
+    parser.add_argument('--chunks', type=int, default=4)
+    parser.add_argument('--chunk-plan', choices=['report', 'uniform', 'aligned'], default='report')
+    parser.add_argument('--anchor-mode', choices=['hard', 'first-only', 'every-2', 'every-3', 'none'], default='hard')
+    parser.add_argument('--width', type=int, default=720)
+    parser.add_argument('--height', type=int, default=1280)
+    parser.add_argument('--loader-policy', choices=['shared', 'repeat_all', 'repeat_transformer',
+                                                    'repeat_vae', 'repeat_text'], default='shared')
+    parser.add_argument('--transformers', type=int, default=1)
+    parser.add_argument('--vaes', type=int, default=1)
+    parser.add_argument('--texts', type=int, default=1)
+    parser.add_argument('--vae-decode', choices=['default', 'tiled'], default='default')
+    parser.add_argument('--clip-device', choices=['default', 'cpu'], default='default')
+    parser.add_argument('--frame-storage', choices=['memory', 'disk'], default='memory')
+    parser.add_argument('--residency', choices=['dynamic', 'highvram'], default='dynamic')
+    parser.add_argument('--encoding-overlap', action='store_true')
+    parser.add_argument('--source-audio', type=Path, default=INPUTS / 'report_audio.wav')
+    parser.add_argument('--total-frames', type=int, default=1186)
+    parser.add_argument('--seed-base', type=int, default=9901)
+    parser.add_argument('--supervised-parallel-child', action='store_true')
+    args = parser.parse_args()
+    if args.chunks < 1:
+        raise ValueError('chunks must be positive')
+    if min(args.transformers, args.vaes, args.texts) < 1 or max(args.transformers, args.vaes, args.texts) > args.chunks:
+        raise ValueError('Model instance counts must be between one and the chunk count')
+    if args.loader_policy != 'shared' and (args.transformers, args.vaes, args.texts) != (1, 1, 1):
+        raise ValueError('Use loader-policy or explicit instance counts, not both')
+    if args.supervised_parallel_child and os.environ.get('H3_PARALLEL_SUPERVISOR') != '1':
+        raise ValueError('The idle-GPU gate may be skipped only by the parallel supervisor')
+    case_dir = ROOT / 'runs' / args.name
+    if case_dir.exists():
+        raise FileExistsError(case_dir)
+    case_dir.mkdir(parents=True)
+    runtime_root = case_dir / 'runtime'
+    runtime_input = runtime_root / 'input'
+    runtime_input.mkdir(parents=True)
+    shutil.copy2(INPUTS / 'raccoon_headshot.jpg', runtime_input / 'portrait.jpg')
+    shutil.copy2(args.source_audio, runtime_input / 'source.wav')
+    counts = chunk_counts(args.chunks, args.chunk_plan, args.total_frames)
+    schedule = [{'duration_seconds': frames / 24,
+                 'reference': 'original' if i == 0 or args.reference == 'original' else 'previous_last_frame',
+                 'anchor': ('hard' if args.anchor_mode == 'hard' or
+                            (args.anchor_mode == 'first-only' and i == 0) or
+                            (args.anchor_mode == 'every-2' and i % 2 == 0) or
+                            (args.anchor_mode == 'every-3' and i % 3 == 0) else 'none')}
+                for i, frames in enumerate(counts)]
+    raw = {'uid': args.name, 'webhook_url': 'https://example.test/h3-benchmark',
+           'prompt': PROMPT, 'model': 'pika_flex', 'num_inference_steps': 2,
+           'chunked_mode': True, 'image_path': str(runtime_input / 'portrait.jpg'),
+           'audio_path': str(runtime_input / 'source.wav'), 'chunk_schedule': schedule,
+           'width': args.width, 'height': args.height, 'final_width': 1080,
+           'final_height': 1920, 'fps': 24, 'seed': args.seed_base, 'timeout_seconds': 9000,
+           'clip_device': args.clip_device}
+    message = schema_image2video_h3_turbo.model_validate(raw).model_dump()
+    (case_dir / 'request.json').write_text(json.dumps(message, indent=2) + '\n')
+    evidence = {'name': args.name, 'reference': args.reference, 'chunks': args.chunks,
+                'chunk_plan': args.chunk_plan, 'anchor_mode': args.anchor_mode,
+                'loader_policy': args.loader_policy, 'vae_decode': args.vae_decode,
+                'transformers': args.transformers, 'vaes': args.vaes, 'texts': args.texts,
+                'clip_device': args.clip_device, 'frame_storage': args.frame_storage,
+                'residency': args.residency,
+                'encoding_overlap': args.encoding_overlap,
+                'source_audio': str(args.source_audio), 'total_frames': args.total_frames,
+                'seed_base': args.seed_base,
+                'source_input_manifest': '../inputs/manifest.json', 'code_revision': 'f20fb6b5ab772412efee6e170be1cdd41ab7b9ce',
+                'started_wall_utc': time.time()}
+    started = time.perf_counter()
+    deadline = time.monotonic() + message['timeout_seconds']
+    try:
+        master, duration = prepare_audio(runtime_input / 'source.wav', case_dir, deadline)
+        frames = round(duration * 24)
+        plan = build_chunk_plan(schedule, frames)
+        audio_names = [path.relative_to(runtime_input).as_posix() for path in
+                       slice_audio(master, plan, runtime_input, deadline)]
+        evidence['audio_duration_seconds'] = duration
+        evidence['plan'] = plan
+        evidence['preparation_seconds'] = time.perf_counter() - started
+        evidence['empty_gpu_gate'] = ({'supervised_parallel_child': True}
+                                      if args.supervised_parallel_child else empty_gpu_gate())
+        model_start = time.perf_counter()
+        if args.residency == 'highvram':
+            import sys
+            from ml_modules.minimax_h3_turbo.runtime import COMFY_ROOT
+            if str(COMFY_ROOT) not in sys.path:
+                sys.path.insert(0, str(COMFY_ROOT))
+            from comfy.cli_args import args as comfy_args
+            comfy_args.highvram = True
+        models = load_models(MODEL_ROOT, runtime_root)
+        if args.vae_decode == 'tiled':
+            base_tiled = models['main'].nodes.NODE_CLASS_MAPPINGS['VAEDecodeTiled']
+
+            class H3NestedVAEDecodeTiled(base_tiled):
+                def decode(self, vae, samples, tile_size, overlap=64, temporal_size=64,
+                           temporal_overlap=8):
+                    latent = samples['samples']
+                    if latent.is_nested:
+                        samples = {**samples, 'samples': latent.unbind()[0]}
+                    return super().decode(vae, samples, tile_size, overlap,
+                                          temporal_size, temporal_overlap)
+
+            models['main'].nodes.NODE_CLASS_MAPPINGS['H3NestedVAEDecodeTiled'] = H3NestedVAEDecodeTiled
+        if args.encoding_overlap:
+            from .async_encode_nodes import NODE_CLASS_MAPPINGS
+            models['main'].nodes.NODE_CLASS_MAPPINGS.update(NODE_CLASS_MAPPINGS)
+        evidence['runtime_initialization_seconds'] = time.perf_counter() - model_start
+        output = case_dir / 'output.mp4'
+        graph, effective = build_chunked_workflow(
+            message, plan, first_frame_name='portrait.jpg', audio_names=audio_names,
+            audio_master=master, directory=case_dir, output=output, deadline=deadline)
+        configure_graph(graph, effective, chunks=args.chunks, loader_policy=args.loader_policy,
+                        transformers=args.transformers, vaes=args.vaes, texts=args.texts,
+                        vae_decode=args.vae_decode, frame_storage=args.frame_storage,
+                        encoding_overlap=args.encoding_overlap, audio_master=master)
+        (case_dir / 'workflow.json').write_text(json.dumps(graph, indent=2) + '\n')
+        evidence['effective'] = effective
+        infer_start = time.perf_counter()
+        evidence['inference_started_wall_utc'] = time.time()
+        result = infer(models, graph, prompt_id=uuid.uuid4().hex,
+                       timeout_seconds=deadline - time.monotonic())
+        evidence['inference_ended_wall_utc'] = time.time()
+        evidence['inference_seconds'] = time.perf_counter() - infer_start
+        evidence['telemetry'] = result['telemetry']
+        evidence['encoding'] = json.loads(output.with_suffix('.json').read_text())
+        evidence['output_probe'] = probe(output)
+        evidence['output_sha256'] = sha256(output)
+        subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-i', str(output),
+                        '-map', '0:v:0', '-map', '0:a:0', '-f', 'null', '-'],
+                       check=True, timeout=300, capture_output=True)
+        evidence['complete_video_audio_decode'] = True
+        evidence['status'] = 'success'
+    except BaseException as exc:
+        evidence['status'] = 'failure'
+        evidence['error'] = repr(exc)
+        (case_dir / 'traceback.txt').write_text(traceback.format_exc())
+        raise
+    finally:
+        evidence['total_seconds'] = time.perf_counter() - started
+        evidence['peak_process_rss_gib'] = round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024**2, 3)
+        (case_dir / 'result.json').write_text(json.dumps(evidence, indent=2) + '\n')
+        print(json.dumps({key: evidence.get(key) for key in ('name', 'status', 'total_seconds',
+                         'inference_seconds', 'runtime_initialization_seconds', 'error')}, indent=2), flush=True)
+
+
+if __name__ == '__main__':
+    main()

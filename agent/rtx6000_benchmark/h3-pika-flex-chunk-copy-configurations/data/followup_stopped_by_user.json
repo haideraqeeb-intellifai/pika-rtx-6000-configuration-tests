@@ -1,0 +1,13 @@
+{
+  "stopped_at_epoch": 1794316186.2916162,
+  "reason": "User requested stop for now",
+  "benchmark_pids_signalled": [
+    303277,
+    303276,
+    303275,
+    302002,
+    277577
+  ],
+  "unrelated_processes_signalled": [],
+  "resume_note": "Require idle GPU and resume only when the user asks. Exclude timings listed in timing_exclusions.json; remaining MPS sizing and report publication are unfinished."
+}

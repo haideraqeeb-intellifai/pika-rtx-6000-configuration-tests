@@ -1,0 +1,36 @@
+[2026-11-10 12:42:05.889 Control 264248] Starting control daemon using socket /tmp/h3-vae-mps-tm0hvacy/control
+[2026-11-10 12:42:05.889 Control 264248] To connect CUDA applications to this daemon, set env CUDA_MPS_PIPE_DIRECTORY=/tmp/h3-vae-mps-tm0hvacy
+[2026-11-10 12:42:05.889 Control 264248] CUDA MPS Control binary version: 13020
+[2026-11-10 12:42:06.497 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.497 Control 264248] User did not send valid credentials
+[2026-11-10 12:42:06.497 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.497 Control 264248] NEW CLIENT 264250 from user 1014: Server is not ready, push client to pending list
+[2026-11-10 12:42:06.498 Control 264347] Starting new server 264347 for user 1014
+[2026-11-10 12:42:06.499 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.677 Control 264248] NEW SERVER 264347: Ready
+[2026-11-10 12:42:06.677 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.677 Control 264248] User did not send valid credentials
+[2026-11-10 12:42:06.677 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.677 Control 264248] NEW CLIENT 264251 from user 1014: Server already exists
+[2026-11-10 12:42:06.715 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.715 Control 264248] NEW CLIENT 264251 from user 1014: Server already exists
+[2026-11-10 12:42:06.717 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.717 Control 264248] NEW CLIENT 264250 from user 1014: Server already exists
+[2026-11-10 12:42:06.802 Control 264248] Accepting connection...
+[2026-11-10 12:42:06.802 Control 264248] NEW UI
+[2026-11-10 12:42:06.802 Control 264248] Cmd:ps
+[2026-11-10 12:42:06.802 Control 264248] PID       ID        SERVER         DEVICE                    NAMESPACE      COMMAND        ATTRIBUTES     
+[2026-11-10 12:42:06.802 Control 264248] 264251    1         264347         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-10 12:42:06.802 Control 264248] 264250    2         264347         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-10 12:42:06.802 Control 264248] UI closed
+[2026-11-10 12:42:07.049 Control 264248] Accepting connection...
+[2026-11-10 12:42:07.049 Control 264248] NEW UI
+[2026-11-10 12:42:07.049 Control 264248] Cmd:get_server_list
+[2026-11-10 12:42:07.049 Control 264248] 264347
+[2026-11-10 12:42:07.049 Control 264248] UI closed
+[2026-11-10 12:42:07.051 Control 264248] Accepting connection...
+[2026-11-10 12:42:07.051 Control 264248] NEW UI
+[2026-11-10 12:42:07.051 Control 264248] Cmd:quit
+[2026-11-10 12:42:07.051 Control 264248] Try shutting down server 264347, backoff is disabled
+[2026-11-10 12:42:07.077 Control 264248] Server 264347 exited with status 0
+[2026-11-10 12:42:07.077 Control 264248] Exit with status 0

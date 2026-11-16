@@ -1,0 +1,13 @@
+{
+  "source": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/nsight_profile/2t2v_v2.sqlite",
+  "kernel_events": 318670,
+  "overlap_seconds_recomputed": 1.732589315,
+  "overlap_matches_original_analysis": true,
+  "cpu_call_overlap_seconds": 125.344519477,
+  "counts_by_lane": {
+    "0": 159335,
+    "1": 159335
+  },
+  "payload_sha256": "04efde2b947df65f6dd64c8aa6d4fea0724cb14f016c05b303386faa3830945e",
+  "privacy": "Only selected kernel events and numerical counter evidence exported; no captured host environment tables."
+}

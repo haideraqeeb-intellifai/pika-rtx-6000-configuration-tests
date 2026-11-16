@@ -1,0 +1,56 @@
+{
+  "name": "original_image_parallel_resident_2_cpu_text",
+  "status": "failure",
+  "loader": "resident-process",
+  "parallel_processes": 2,
+  "clip_device": "cpu",
+  "residency": "dynamic",
+  "reference": "original",
+  "anchor_mode": "hard",
+  "chunks": 10,
+  "chunk_plan": "aligned",
+  "chunk_frames": [
+    106,
+    123,
+    123,
+    107,
+    124,
+    124,
+    107,
+    124,
+    124,
+    124
+  ],
+  "empty_gpu_gate": [
+    {
+      "time": 1794254578.9009283,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794254579.9225948,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794254580.9438772,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "calibration_peak_gib": 31.639,
+  "error": "RuntimeError(\"RTX 6000 is not at its observed idle baseline: [{'time': 1794254683.1860642, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 5, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794254684.2026994, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794254685.2197254, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}]\")",
+  "total_seconds": 106.36084245995153
+}

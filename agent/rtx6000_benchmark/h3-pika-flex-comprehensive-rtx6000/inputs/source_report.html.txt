@@ -1,0 +1,1 @@
+The original reference report HTML contained an expired signed S3 URL and is omitted from the public archive. The benchmark input manifest and experiment reports preserve its provenance and measured comparison data.

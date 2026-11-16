@@ -1,0 +1,371 @@
+{
+  "name": "original_image_parallel_resident_1_seven_chunks",
+  "status": "success",
+  "loader": "resident-process",
+  "parallel_processes": 1,
+  "clip_device": "default",
+  "residency": "dynamic",
+  "reference": "original",
+  "anchor_mode": "hard",
+  "chunks": 7,
+  "chunk_plan": "aligned",
+  "chunk_frames": [
+    157,
+    174,
+    174,
+    157,
+    174,
+    175,
+    175
+  ],
+  "empty_gpu_gate": [
+    {
+      "time": 1794255926.4625556,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255927.483597,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255928.5044482,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "calibration_peak_gib": 49.493,
+  "timed_run_empty_gpu_gate": [
+    {
+      "time": 1794255980.039822,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255981.0572069,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255982.0750642,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "parallel_generation_seconds": 265.21050768194254,
+  "lane_startup": [
+    {
+      "lane": 0,
+      "kind": "ready",
+      "load_models_seconds": 5.283113718032837
+    }
+  ],
+  "child_results": [
+    {
+      "name": "original_image_parallel_resident_1_seven_chunks_chunk_0",
+      "lane": 0,
+      "total_seconds": 40.218750540982,
+      "peak_vram_gib": 49.493,
+      "inference_started_wall_utc": 1794255987.507512,
+      "inference_ended_wall_utc": 1794256027.0728476
+    },
+    {
+      "name": "original_image_parallel_resident_1_seven_chunks_chunk_1",
+      "lane": 0,
+      "total_seconds": 36.7462913870113,
+      "peak_vram_gib": 55.257,
+      "inference_started_wall_utc": 1794256027.7274864,
+      "inference_ended_wall_utc": 1794256063.758716
+    },
+    {
+      "name": "original_image_parallel_resident_1_seven_chunks_chunk_2",
+      "lane": 0,
+      "total_seconds": 36.67815646098461,
+      "peak_vram_gib": 55.257,
+      "inference_started_wall_utc": 1794256064.4776165,
+      "inference_ended_wall_utc": 1794256100.4324532
+    },
+    {
+      "name": "original_image_parallel_resident_1_seven_chunks_chunk_3",
+      "lane": 0,
+      "total_seconds": 32.623789887991734,
+      "peak_vram_gib": 53.844,
+      "inference_started_wall_utc": 1794256101.1567132,
+      "inference_ended_wall_utc": 1794256133.135825
+    },
+    {
+      "name": "original_image_parallel_resident_1_seven_chunks_chunk_4",
+      "lane": 0,
+      "total_seconds": 37.12018836499192,
+      "peak_vram_gib": 55.257,
+      "inference_started_wall_utc": 1794256133.783912,
+      "inference_ended_wall_utc": 1794256170.1772838
+    },
+    {
+      "name": "original_image_parallel_resident_1_seven_chunks_chunk_5",
+      "lane": 0,
+      "total_seconds": 36.84321872598957,
+      "peak_vram_gib": 55.257,
+      "inference_started_wall_utc": 1794256170.9070063,
+      "inference_ended_wall_utc": 1794256207.015688
+    },
+    {
+      "name": "original_image_parallel_resident_1_seven_chunks_chunk_6",
+      "lane": 0,
+      "total_seconds": 36.876424231915735,
+      "peak_vram_gib": 55.257,
+      "inference_started_wall_utc": 1794256207.7526987,
+      "inference_ended_wall_utc": 1794256243.9125733
+    }
+  ],
+  "inference_overlap": {
+    "maximum_concurrent_inference_calls": 1,
+    "two_or_more_calls_overlap_seconds": 0.0
+  },
+  "gpu_trace_summary": {
+    "samples": 1326,
+    "peak_vram_gib": 55.257,
+    "gpu_util_mean_pct": 86.53
+  },
+  "output_probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "Main",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1088,
+        "coded_height": 1920,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 607232,
+        "duration": "49.416667",
+        "bit_rate": "3670718",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1186",
+        "nb_read_frames": "1186",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc60.5.100 h264_nvenc"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2371584,
+        "duration": "49.408000",
+        "bit_rate": "189886",
+        "nb_frames": "2317",
+        "nb_read_frames": "2316",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ]
+  },
+  "output_sha256": "d1518e294084a4efab3294715510455d521d583c4e728ea8edfca352519fc094",
+  "complete_video_audio_decode": true,
+  "plan": [
+    {
+      "duration_seconds": 6.541666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 0,
+      "start_frame": 0,
+      "frames": 157,
+      "inference_frames": 158
+    },
+    {
+      "duration_seconds": 7.25,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 1,
+      "start_frame": 157,
+      "frames": 174,
+      "inference_frames": 175
+    },
+    {
+      "duration_seconds": 7.25,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 2,
+      "start_frame": 331,
+      "frames": 174,
+      "inference_frames": 175
+    },
+    {
+      "duration_seconds": 6.541666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 3,
+      "start_frame": 505,
+      "frames": 157,
+      "inference_frames": 158
+    },
+    {
+      "duration_seconds": 7.25,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 4,
+      "start_frame": 662,
+      "frames": 174,
+      "inference_frames": 175
+    },
+    {
+      "duration_seconds": 7.291666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 5,
+      "start_frame": 836,
+      "frames": 175,
+      "inference_frames": 175
+    },
+    {
+      "duration_seconds": 7.291666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 6,
+      "start_frame": 1011,
+      "frames": 175,
+      "inference_frames": 175
+    }
+  ],
+  "audio_check": {
+    "source_samples_8khz": 395264,
+    "output_samples_8khz": 395264,
+    "duration_delta_ms": 0.0,
+    "best_lag_ms": 0.0,
+    "waveform_correlation": 0.999957
+  },
+  "seam_check": {
+    "frame_count": 1186,
+    "boundaries": [
+      157,
+      331,
+      505,
+      662,
+      836,
+      1011
+    ],
+    "seam_mean_absolute_luma_difference": [
+      3.7112,
+      3.6389,
+      3.5887,
+      3.6498,
+      4.0036,
+      3.748
+    ],
+    "nonseam_median_difference": 0.5787,
+    "seam_median_to_nonseam_median_ratio": 6.36,
+    "seams_above_nonseam_95th_percentile": 6
+  },
+  "timed_total_seconds": 273.4255694099702,
+  "total_seconds": 329.0887517440133
+}

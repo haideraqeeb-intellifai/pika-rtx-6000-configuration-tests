@@ -1,0 +1,21 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+{
+  "name": "chained_10_aligned_anchor_every3_overlap_repeat3",
+  "status": "failure",
+  "total_seconds": 2.1095721300225705,
+  "inference_seconds": null,
+  "runtime_initialization_seconds": null,
+  "error": "RuntimeError(\"RTX 6000 is not at its observed idle baseline: [{'time': 1794251110.6440523, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 100, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794251111.6572895, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 100, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794251112.6736052, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 100, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}]\")"
+}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py", line 295, in <module>
+    main()
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py", line 231, in main
+    evidence['empty_gpu_gate'] = empty_gpu_gate()
+                                 ^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py", line 153, in empty_gpu_gate
+    raise RuntimeError(f'RTX 6000 is not at its observed idle baseline: {samples}')
+RuntimeError: RTX 6000 is not at its observed idle baseline: [{'time': 1794251110.6440523, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 100, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794251111.6572895, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 100, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794251112.6736052, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 100, 'memory_used_mib': 2, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}]

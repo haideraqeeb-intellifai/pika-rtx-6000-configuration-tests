@@ -1,0 +1,431 @@
+{
+  "name": "original_image_parallel_resident_1_anchor_every2",
+  "status": "success",
+  "loader": "resident-process",
+  "parallel_processes": 1,
+  "clip_device": "default",
+  "residency": "dynamic",
+  "reference": "original",
+  "anchor_mode": "every-2",
+  "chunks": 10,
+  "chunk_plan": "aligned",
+  "chunk_frames": [
+    106,
+    123,
+    123,
+    107,
+    124,
+    124,
+    107,
+    124,
+    124,
+    124
+  ],
+  "empty_gpu_gate": [
+    {
+      "time": 1794255608.3826544,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255609.4042172,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255610.425253,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "calibration_peak_gib": 46.305,
+  "timed_run_empty_gpu_gate": [
+    {
+      "time": 1794255647.4230886,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255648.4400694,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794255649.4566317,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "parallel_generation_seconds": 247.44303970504552,
+  "lane_startup": [
+    {
+      "lane": 0,
+      "kind": "ready",
+      "load_models_seconds": 5.2328972816467285
+    }
+  ],
+  "child_results": [
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_0",
+      "lane": 0,
+      "total_seconds": 30.70035080704838,
+      "peak_vram_gib": 46.305,
+      "inference_started_wall_utc": 1794255654.83656,
+      "inference_ended_wall_utc": 1794255685.0557666
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_1",
+      "lane": 0,
+      "total_seconds": 23.039207271998748,
+      "peak_vram_gib": 51.153,
+      "inference_started_wall_utc": 1794255685.5396047,
+      "inference_ended_wall_utc": 1794255707.9895828
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_2",
+      "lane": 0,
+      "total_seconds": 24.85816852201242,
+      "peak_vram_gib": 51.723,
+      "inference_started_wall_utc": 1794255708.580978,
+      "inference_ended_wall_utc": 1794255732.875342
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_3",
+      "lane": 0,
+      "total_seconds": 19.5169541380601,
+      "peak_vram_gib": 50.249,
+      "inference_started_wall_utc": 1794255733.438264,
+      "inference_ended_wall_utc": 1794255752.4047995
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_4",
+      "lane": 0,
+      "total_seconds": 25.272866148967296,
+      "peak_vram_gib": 51.723,
+      "inference_started_wall_utc": 1794255752.9580889,
+      "inference_ended_wall_utc": 1794255777.668402
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_5",
+      "lane": 0,
+      "total_seconds": 22.996727379970253,
+      "peak_vram_gib": 51.153,
+      "inference_started_wall_utc": 1794255778.2345698,
+      "inference_ended_wall_utc": 1794255800.6490119
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_6",
+      "lane": 0,
+      "total_seconds": 21.488904570927843,
+      "peak_vram_gib": 50.657,
+      "inference_started_wall_utc": 1794255801.2299578,
+      "inference_ended_wall_utc": 1794255822.226593
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_7",
+      "lane": 0,
+      "total_seconds": 23.071329731028527,
+      "peak_vram_gib": 51.153,
+      "inference_started_wall_utc": 1794255822.7223601,
+      "inference_ended_wall_utc": 1794255845.2196252
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_8",
+      "lane": 0,
+      "total_seconds": 25.457198164076544,
+      "peak_vram_gib": 51.723,
+      "inference_started_wall_utc": 1794255845.793931,
+      "inference_ended_wall_utc": 1794255870.70024
+    },
+    {
+      "name": "original_image_parallel_resident_1_anchor_every2_chunk_9",
+      "lane": 0,
+      "total_seconds": 23.06536722497549,
+      "peak_vram_gib": 51.153,
+      "inference_started_wall_utc": 1794255871.2546656,
+      "inference_ended_wall_utc": 1794255893.7562761
+    }
+  ],
+  "inference_overlap": {
+    "maximum_concurrent_inference_calls": 1,
+    "two_or_more_calls_overlap_seconds": 0.0
+  },
+  "gpu_trace_summary": {
+    "samples": 1237,
+    "peak_vram_gib": 51.723,
+    "gpu_util_mean_pct": 83.83
+  },
+  "output_probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "Main",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1088,
+        "coded_height": 1920,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 607232,
+        "duration": "49.416667",
+        "bit_rate": "4056233",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1186",
+        "nb_read_frames": "1186",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc60.5.100 h264_nvenc"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2371584,
+        "duration": "49.408000",
+        "bit_rate": "189886",
+        "nb_frames": "2317",
+        "nb_read_frames": "2316",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ]
+  },
+  "output_sha256": "1575c8484dae5d41c9ae40cf60294068f53b4f8586b88cdd5d683d4fe5542739",
+  "complete_video_audio_decode": true,
+  "plan": [
+    {
+      "duration_seconds": 4.416666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 0,
+      "start_frame": 0,
+      "frames": 106,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "original",
+      "anchor": "none",
+      "index": 1,
+      "start_frame": 106,
+      "frames": 123,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 2,
+      "start_frame": 229,
+      "frames": 123,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "original",
+      "anchor": "none",
+      "index": 3,
+      "start_frame": 352,
+      "frames": 107,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 4,
+      "start_frame": 459,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "none",
+      "index": 5,
+      "start_frame": 583,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 6,
+      "start_frame": 707,
+      "frames": 107,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "none",
+      "index": 7,
+      "start_frame": 814,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 8,
+      "start_frame": 938,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "none",
+      "index": 9,
+      "start_frame": 1062,
+      "frames": 124,
+      "inference_frames": 124
+    }
+  ],
+  "audio_check": {
+    "source_samples_8khz": 395264,
+    "output_samples_8khz": 395264,
+    "duration_delta_ms": 0.0,
+    "best_lag_ms": 0.0,
+    "waveform_correlation": 0.999957
+  },
+  "seam_check": {
+    "frame_count": 1186,
+    "boundaries": [
+      106,
+      229,
+      352,
+      459,
+      583,
+      707,
+      814,
+      938,
+      1062
+    ],
+    "seam_mean_absolute_luma_difference": [
+      3.9294,
+      12.9141,
+      3.8306,
+      6.942,
+      3.939,
+      7.3248,
+      3.9083,
+      7.0687,
+      3.7601
+    ],
+    "nonseam_median_difference": 0.896,
+    "seam_median_to_nonseam_median_ratio": 4.396,
+    "seams_above_nonseam_95th_percentile": 4
+  },
+  "timed_total_seconds": 256.4016663240036,
+  "total_seconds": 297.52548298507463
+}

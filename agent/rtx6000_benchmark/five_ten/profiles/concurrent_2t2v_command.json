@@ -1,0 +1,28 @@
+{
+  "command": [
+    "nsys",
+    "profile",
+    "--trace=cuda-sw,nvtx,osrt",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "--gpu-metrics-devices=0",
+    "--gpu-metrics-frequency=1000",
+    "--wait=all",
+    "--output",
+    "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/profiles/concurrent_2t2v",
+    "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+    "-m",
+    "agent.rtx6000_benchmark.five_ten.experiment",
+    "--mode",
+    "concurrent",
+    "--name",
+    "profile_concurrent_2t2v",
+    "--transformers",
+    "2",
+    "--vaes",
+    "2",
+    "--repeats",
+    "1"
+  ],
+  "note": "Full 5x10s warmup + one profile repeat; not a speed measurement."
+}

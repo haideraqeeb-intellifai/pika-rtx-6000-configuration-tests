@@ -1,0 +1,36 @@
+{
+  "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/h3-pika-flex-chunk-copy-configurations",
+  "successful_runs": 30,
+  "groups": 21,
+  "best": {
+    "key": [
+      20,
+      1,
+      2,
+      "dynamic",
+      false,
+      true
+    ],
+    "label": "20 chunks \u00b7 1 transformer / 2 VAE \u00b7 MPS",
+    "status": "success",
+    "samples": 2,
+    "mean_total_seconds": 223.69562710100217,
+    "min_total_seconds": 221.92696636500477,
+    "max_total_seconds": 225.46428783699957,
+    "mean_video_ready_seconds": 219.72341296499872,
+    "videos_per_hour_including_qa": 16.093296264457337,
+    "videos_per_hour_ready": 16.38423484971749,
+    "peak_vram_gib": 41.301,
+    "gpu_util_mean_pct": 83.24381939128995,
+    "preparation_mean_seconds": 22.573942920498666,
+    "workers_mean_seconds": 188.99560499100335,
+    "max_concurrent_sampler_calls": 1,
+    "max_concurrent_decode_calls": 2,
+    "sampler_overlap_mean_seconds": 0.0,
+    "decode_overlap_mean_seconds": 144.35899999999998,
+    "run_names": [
+      "followup_mps_1t_2v",
+      "followup_mps_1t_2v_repeat2"
+    ]
+  }
+}

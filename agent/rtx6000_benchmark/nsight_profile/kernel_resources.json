@@ -1,0 +1,78 @@
+{
+  "gpu": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "smCount": 188,
+    "maxShmemPerSm": 102400,
+    "maxRegistersPerSm": 65536,
+    "maxWarpsPerSm": 48,
+    "maxThreadsPerBlock": 1024
+  },
+  "kernels": [
+    {
+      "kernel": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_256x128_32x3_tn_align8>(T1::Params)",
+      "calls": 259840,
+      "registersPerThread": 232,
+      "max_shared_memory_bytes_per_block": 73728,
+      "max_grid_blocks": 960,
+      "max_threads_per_block": 256
+    },
+    {
+      "kernel": "void qk_int_sv_f8_attn_kernel<(unsigned int)128, (unsigned int)64, (unsigned int)32, (unsigned int)64, (unsigned int)128, (DataType)1, (QuantGranularity)2, (QuantGranularity)2, float, (bool)1, __nv_bfloat16, (ComputeUnit)1, (MaskMode)0, (bool)0, (bool)1, (bool)0, (bool)1>(signed char *, signed char *, signed char *, T11 *, float *, float *, float *, float *, float *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, float)",
+      "calls": 2000,
+      "registersPerThread": 255,
+      "max_shared_memory_bytes_per_block": 32768,
+      "max_grid_blocks": 10640,
+      "max_threads_per_block": 128
+    },
+    {
+      "kernel": "void cutlass::Kernel2<cutlass::gemm::kernel::DefaultGemmWithVisitor<signed char, cutlass::layout::RowMajor, (cutlass::ComplexTransform)0, (int)16, signed char, cutlass::layout::ColumnMajor, (cutlass::ComplexTransform)0, (int)16, cutlass::bfloat16_t, cutlass::layout::RowMajor, (int)8, int, float, cutlass::arch::OpClassTensorOp, cutlass::arch::Sm80, cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::gemm::GemmShape<(int)16, (int)8, (int)32>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorAuxStore<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, cutlass::bfloat16_t, (cutlass::FloatRoundStyle)2, cute::tuple<long, cute::C<(int)1>, long>>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorCompute<cutlass::plus, cutlass::bfloat16_t, float, (cutlass::FloatRoundStyle)2, void>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorCompute<cutlass::multiplies, float, float, (cutlass::FloatRoundStyle)2, void>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorCompute<cutlass::multiplies, float, float, (cutlass::FloatRoundStyle)2, void>, cutlass::epilogue::threadblock::VisitorAccFetch, cutlass::epilogue::threadblock::VisitorColBroadcast<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, float, cute::tuple<cute::C<(int)1>, cute::C<(int)0>, int>, (bool)1>>, cutlass::epilogue::threadblock::VisitorRowBroadcast<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, float, cute::tuple<cute::C<(int)0>, cute::C<(int)1>, int>, (bool)1>>, cutlass::epilogue::threadblock::VisitorRowBroadcast<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, cutlass::bfloat16_t, cute::tuple<cute::C<(int)0>, cute::C<(int)1>, int>, (bool)1>>>, cutlass::gemm::threadblock::GemmIdentityThreadblockSwizzle<(int)1>, (int)3, cutlass::arch::OpMultiplyAddSaturate, (int)1>::SelectBase<cutlass::gemm::threadblock::GemmIdentityThreadblockSwizzle<(int)1>, void>>(T1::Params)",
+      "calls": 3600,
+      "registersPerThread": 224,
+      "max_shared_memory_bytes_per_block": 73728,
+      "max_grid_blocks": 21280,
+      "max_threads_per_block": 256
+    },
+    {
+      "kernel": "void cutlass::Kernel2<cutlass::gemm::kernel::DefaultGemmWithVisitor<signed char, cutlass::layout::RowMajor, (cutlass::ComplexTransform)0, (int)16, signed char, cutlass::layout::ColumnMajor, (cutlass::ComplexTransform)0, (int)16, cutlass::bfloat16_t, cutlass::layout::RowMajor, (int)8, int, float, cutlass::arch::OpClassTensorOp, cutlass::arch::Sm80, cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::gemm::GemmShape<(int)16, (int)8, (int)32>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorAuxStore<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, cutlass::bfloat16_t, (cutlass::FloatRoundStyle)2, cute::tuple<long, cute::C<(int)1>, long>>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorCompute<cutlass::plus, cutlass::bfloat16_t, float, (cutlass::FloatRoundStyle)2, void>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorCompute<cutlass::multiplies, float, float, (cutlass::FloatRoundStyle)2, void>, cutlass::epilogue::threadblock::TreeVisitor2x<cutlass::epilogue::threadblock::VisitorCompute<cutlass::multiplies, float, float, (cutlass::FloatRoundStyle)2, void>, cutlass::epilogue::threadblock::VisitorAccFetch, cutlass::epilogue::threadblock::VisitorColBroadcast<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, float, cute::tuple<cute::C<(int)1>, cute::C<(int)0>, int>, (bool)1>>, cutlass::epilogue::threadblock::VisitorRowBroadcast<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, float, cute::tuple<cute::C<(int)0>, cute::C<(int)1>, int>, (bool)1>>, cutlass::epilogue::threadblock::VisitorRowBroadcast<cutlass::epilogue::threadblock::OutputTileThreadLayout<cutlass::gemm::GemmShape<(int)128, (int)256, (int)64>, cutlass::gemm::GemmShape<(int)64, (int)64, (int)64>, cutlass::bfloat16_t, (int)8, (int)1>, cutlass::bfloat16_t, cute::tuple<cute::C<(int)0>, cute::C<(int)1>, int>, (bool)1>>>, comfy_cutlass::ThreadblockSwizzleLeanStreamK, (int)3, cutlass::arch::OpMultiplyAddSaturate, (int)1>::SelectBase<comfy_cutlass::ThreadblockSwizzleLeanStreamK, void>>(T1::Params)",
+      "calls": 4400,
+      "registersPerThread": 254,
+      "max_shared_memory_bytes_per_block": 73728,
+      "max_grid_blocks": 15792,
+      "max_threads_per_block": 256
+    },
+    {
+      "kernel": "void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char *, (unsigned long)3>>(int, T2, T3)",
+      "calls": 6290,
+      "registersPerThread": 40,
+      "max_shared_memory_bytes_per_block": 0,
+      "max_grid_blocks": 678188,
+      "max_threads_per_block": 128
+    },
+    {
+      "kernel": "void pytorch_flash::flash_fwd_kernel<Flash_fwd_kernel_traits<(int)64, (int)128, (int)128, (int)4, (bool)0, (bool)0, cutlass::half_t, Flash_kernel_traits<(int)64, (int)128, (int)128, (int)4, cutlass::half_t>>, (bool)0, (bool)0, (bool)0, (bool)0, (bool)0, (bool)1, (bool)0, (bool)0>(pytorch_flash::Flash_fwd_params)",
+      "calls": 64512,
+      "registersPerThread": 255,
+      "max_shared_memory_bytes_per_block": 49152,
+      "max_grid_blocks": 480,
+      "max_threads_per_block": 128
+    },
+    {
+      "kernel": "void at::native::<unnamed>::vectorized_layer_norm_kernel<c10::Half, float, (bool)1>(int, T2, const T1 *, const T1 *, const T1 *, T2 *, T2 *, T1 *)",
+      "calls": 258048,
+      "registersPerThread": 40,
+      "max_shared_memory_bytes_per_block": 24,
+      "max_grid_blocks": 57504,
+      "max_threads_per_block": 128
+    },
+    {
+      "kernel": "void cutlass::Kernel2<cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_256x128_32x3_tn_align8>(T1::Params)",
+      "calls": 6260,
+      "registersPerThread": 232,
+      "max_shared_memory_bytes_per_block": 73728,
+      "max_grid_blocks": 21280,
+      "max_threads_per_block": 256
+    }
+  ],
+  "source": "1t2v_control_v2.sqlite",
+  "note": "Captured launch attributes;block residency also depends on allocation granularity and other resource limits."
+}

@@ -1,0 +1,232 @@
+"""Separate transformer and video-VAE workers: staged or overlapped execution."""
+import argparse
+import json
+import multiprocessing as mp
+import os
+import queue
+import subprocess
+import sys
+import time
+import traceback
+from pathlib import Path
+from .parallel_chunk_resident import lane_main, wait_for_empty_gpu
+from .parallel_chunk_processes import GPUTrace, RUNS, file_hash, inference_overlap, split_audio, assemble
+from .preencoded_parallel import preencode
+from .run_case import INPUTS, ROOT, chunk_counts
+from ml_modules.minimax_h3_turbo.chunking import prepare_audio
+from workers.image2video_h3_turbo.schema import build_chunk_plan
+
+
+def run_phase(directory, counts, audios, prepared, latents, mode, transformers, vaes, prefix, mps=False, prime_longest=False):
+    if mps:
+        from .mps_session import run_with_mps
+        return run_with_mps(lambda: run_phase(directory, counts, audios, prepared, latents,
+            mode, transformers, vaes, prefix, False, prime_longest), directory)
+    context = mp.get_context('spawn')
+    result_queue = context.Queue()
+    queues = {'denoise': context.Queue(), 'decode': context.Queue()}
+    roles = (['denoise'] * transformers if mode in ('denoise', 'pipeline') else []) + (['decode'] * vaes if mode in ('decode', 'pipeline') else [])
+    processes = [context.Process(target=lane_main, args=(i, str(directory / f'{role}_{i}'),
+        queues[role], result_queue, 'default', 'dynamic', str(prepared), role, str(latents)),
+        name=f'h3-stage-{role}-{i}') for i, role in enumerate(roles)]
+    started = time.perf_counter()
+    for process in processes:
+        process.start()
+    ready, results = [], {'denoise': [], 'decode': []}
+    def receive():
+        while time.perf_counter() - started < 3600:
+            try:
+                message = result_queue.get(timeout=2)
+            except queue.Empty:
+                if any(p.exitcode is not None for p in processes):
+                    raise RuntimeError(f'Worker exited before completion: {[(p.name,p.exitcode) for p in processes]}')
+                continue
+            if message['kind'] == 'error':
+                raise RuntimeError(message['traceback'])
+            return message
+        raise TimeoutError('Stage workers exceeded one hour')
+    def submit(stage, index):
+        name = f'{prefix}_denoise_chunk_{index}' if stage == 'denoise' else f'{prefix}_chunk_{index}'
+        queues[stage].put((index, counts[index], str(audios[index]), name, 'hard'))
+    try:
+        while len(ready) < len(roles):
+            message = receive()
+            if message['kind'] != 'ready':
+                raise RuntimeError('Worker did not announce ready')
+            ready.append({**message, 'stage': roles[message['lane']]})
+        mps_clients = None
+        if os.environ.get('H3_BENCHMARK_MPS') == '1':
+            from .mps_session import control
+            mps_clients = control('ps')
+            (directory / 'mps_clients.txt').write_text(mps_clients)
+            connected = {line.split()[0] for line in mps_clients.splitlines() if line.split()}
+            if not all(str(p.pid) in connected for p in processes):
+                raise RuntimeError(f'MPS client attachment unverified: {mps_clients}')
+        first = 'decode' if mode == 'decode' else 'denoise'
+        prime_index = max(range(len(counts)), key=lambda i: counts[i]) if prime_longest else None
+        if prime_index is not None:
+            if mode != 'pipeline' or transformers != 1 or vaes != 1:
+                raise ValueError('Priming currently supports a one-transformer/one-VAE pipeline')
+            submit(first, prime_index)
+        else:
+            for index in range(len(counts)):
+                submit(first, index)
+        required = len(counts) * (2 if mode == 'pipeline' else 1)
+        while sum(map(len, results.values())) < required:
+            message = receive()
+            if message['kind'] != 'result':
+                raise RuntimeError('Unexpected worker message')
+            result = message['result']
+            results[result['stage']].append(result)
+            if mode == 'pipeline' and result['stage'] == 'denoise':
+                submit('decode', result['index'])
+            if prime_index is not None and result['stage'] == 'decode' and result['index'] == prime_index:
+                for index in range(len(counts)):
+                    if index != prime_index: submit('denoise', index)
+        return {'seconds': time.perf_counter() - started, 'ready': ready, 'mps_clients': mps_clients,
+                **{k: sorted(v, key=lambda c: c['index']) for k, v in results.items()}}
+    finally:
+        for role in roles:
+            queues[role].put(None)
+        for process in processes:
+            process.join(timeout=30)
+            if process.is_alive():
+                if os.environ.get('H3_BENCHMARK_MPS') == '1':
+                    from .mps_session import terminate_client
+                    terminate_client(process.pid)
+                process.terminate()
+                process.join(timeout=10)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--name', required=True)
+    parser.add_argument('--schedule', choices=['staged', 'pipeline'], default='staged')
+    parser.add_argument('--transformers', type=int, choices=[1,2], default=1)
+    parser.add_argument('--vaes', type=int, choices=[1,2,4], default=1)
+    parser.add_argument('--reuse-calibration')
+    parser.add_argument('--mps', action='store_true')
+    parser.add_argument('--prime-longest', action='store_true')
+    parser.add_argument('--denoise-percent', type=int, default=100)
+    parser.add_argument('--decode-percent', type=int, default=100)
+    parser.add_argument('--calibrate-only', action='store_true')
+    parser.add_argument('--run', action='store_true')
+    args = parser.parse_args()
+    if not (1 <= args.denoise_percent <= 100 and 1 <= args.decode_percent <= 100):
+        raise ValueError('MPS percentages must be in 1..100')
+    os.environ['H3_MPS_DENOISE_PERCENT'] = str(args.denoise_percent)
+    os.environ['H3_MPS_DECODE_PERCENT'] = str(args.decode_percent)
+    counts = chunk_counts(10, 'aligned')
+    if not args.run:
+        print(json.dumps({**vars(args), 'chunk_frames': counts, 'text': 'GPU encode once, then release'}, indent=2))
+        return
+    directory = RUNS / args.name
+    directory.mkdir()
+    started = time.perf_counter()
+    evidence = {'name': args.name, 'status': 'running', 'loader': 'separate stage processes',
+        'schedule': args.schedule, 'transformers': args.transformers, 'vaes': args.vaes,
+        'reference': 'original', 'anchor_mode': 'hard', 'chunk_frames': counts,
+        'chunks': 10, 'chunk_plan': 'aligned', 'cache_text': True, 'child_results': [],
+        'mps': args.mps, 'prime_longest': args.prime_longest, 'mps_percentages': {'denoise': args.denoise_percent, 'decode': args.decode_percent}}
+    try:
+        evidence['empty_gpu_gate'] = wait_for_empty_gpu()
+        master, duration = prepare_audio(INPUTS / 'report_audio.wav', directory, time.monotonic() + 9000)
+        assert round(duration * 24) == sum(counts)
+        audios = split_audio(master, counts, directory)
+        if args.reuse_calibration:
+            source = RUNS / args.reuse_calibration / 'result.json'
+            previous = json.loads(source.read_text())
+            if previous['status'] not in ('calibrated', 'success') or previous['chunk_frames'] != counts:
+                raise ValueError('Calibration source has incompatible status or workload')
+            peaks = previous['calibration_peak_gib']
+            evidence['calibration_source'] = str(source)
+            evidence['calibration_source_sha256'] = file_hash(source)
+        else:
+            longest = max(range(len(counts)), key=lambda i: counts[i])
+            cal_counts = [counts[longest]] * 2
+            cal_audios = [audios[longest]] * 2
+            cal_prep, cal_latents = directory / 'calibration_prepared', directory / 'calibration_latents'
+            preencode(cal_prep, cal_counts, cal_audios, 'hard', True)
+            peaks = {}
+            for mode in ('denoise', 'decode'):
+                wait_for_empty_gpu()
+                measured = run_phase(directory / f'calibration_{mode}', cal_counts, cal_audios,
+                    cal_prep, cal_latents, mode, 1, 1, args.name + '_calibration')
+                peaks[mode] = max(c['telemetry']['gpu']['memory_used_peak_gib'] for c in measured[mode])
+        evidence['calibration_peak_gib'] = peaks
+        envelope = (args.transformers * peaks['denoise'] + args.vaes * peaks['decode']
+                    if args.schedule == 'pipeline' else max(args.transformers * peaks['denoise'], args.vaes * peaks['decode']))
+        evidence['conservative_memory_envelope_gib'] = envelope
+        if args.calibrate_only:
+            evidence['status'] = 'calibrated'
+            return
+        if envelope > 95.59 * 0.90:
+            evidence['status'] = 'memory_guard_rejected'
+            return
+        evidence['timed_run_empty_gpu_gate'] = wait_for_empty_gpu()
+        trace = GPUTrace(); trace.start()
+        timed = time.perf_counter()
+        try:
+            prepared, latents = directory / 'prepared', directory / 'latents'
+            prep_seconds, prep_result = preencode(prepared, counts, audios, 'hard', True)
+            evidence.update(preparation_seconds=prep_seconds, preparation=prep_result)
+            evidence['encoder_released_gate'] = wait_for_empty_gpu()
+            work_started = time.perf_counter()
+            if args.schedule == 'staged':
+                denoised = run_phase(directory / 'denoising', counts, audios, prepared, latents,
+                    'denoise', args.transformers, 0, args.name, args.mps)
+                evidence['transformer_released_gate'] = wait_for_empty_gpu()
+                decoded = run_phase(directory / 'decoding', counts, audios, prepared, latents,
+                    'decode', 0, args.vaes, args.name, args.mps)
+                evidence['lane_startup'] = {'denoise': denoised['ready'], 'decode': decoded['ready']}
+                evidence['mps_clients'] = {'denoise': denoised.get('mps_clients'), 'decode': decoded.get('mps_clients')}
+                evidence['stage_phase_seconds'] = {'denoise': denoised['seconds'], 'decode': decoded['seconds']}
+                denoise_results, decode_results = denoised['denoise'], decoded['decode']
+            else:
+                combined = run_phase(directory / 'pipeline', counts, audios, prepared, latents,
+                    'pipeline', args.transformers, args.vaes, args.name, args.mps, args.prime_longest)
+                denoise_results, decode_results = combined['denoise'], combined['decode']
+                evidence['mps_clients'] = combined.get('mps_clients')
+                evidence['lane_startup'] = combined['ready']
+            evidence['parallel_generation_seconds'] = time.perf_counter() - work_started
+        finally:
+            trace.shutdown()
+            (directory / 'gpu_trace.json').write_text(json.dumps(trace.samples))
+        evidence['gpu_trace_summary'] = {'samples': len(trace.samples),
+            'peak_vram_gib': max(s['used_gib'] for s in trace.samples),
+            'gpu_util_mean_pct': sum(s['util_pct'] for s in trace.samples) / len(trace.samples)}
+        evidence['child_results'] = [{'name': c['name'], 'index': c['index'], 'stage': c['stage']} for c in decode_results]
+        evidence['denoise_results'] = [{'name': c['name'], 'index': c['index'], 'stage': c['stage']} for c in denoise_results]
+        for key, children, timer in [('sampler_overlap', denoise_results, 'sampler_intervals'),
+                                     ('decode_overlap', decode_results, 'decode_intervals')]:
+            spans = [{'inference_started_wall_utc': interval['started_wall_utc'],
+                      'inference_ended_wall_utc': interval['ended_wall_utc']}
+                     for c in children for interval in c[timer]]
+            if len(spans) != len(counts):
+                raise ValueError(f'Missing {timer}')
+            evidence[key] = inference_overlap(spans)
+        evidence['inference_overlap'] = inference_overlap(denoise_results + decode_results)
+        evidence['latent_handoff_bytes'] = sum(p.stat().st_size for p in latents.glob('*.pt'))
+        output, parsed = assemble(directory, [c['name'] for c in decode_results], master, sum(counts))
+        evidence['time_to_assembled_valid_video_seconds'] = time.perf_counter() - timed
+        evidence.update(output_probe=parsed, output_sha256=file_hash(output), complete_video_audio_decode=True)
+        evidence['plan'] = build_chunk_plan([{'duration_seconds': f / 24, 'reference': 'original', 'anchor': 'hard'} for f in counts], sum(counts))
+        (directory / 'result.json').write_text(json.dumps(evidence, indent=2))
+        for checker in ('check_audio','check_seams','make_contact_sheet'):
+            subprocess.run([sys.executable,'-m',f'agent.rtx6000_benchmark.{checker}',str(directory)],
+                cwd=ROOT.parents[1],check=True,timeout=300,capture_output=True)
+        evidence['audio_check'] = json.loads((directory / 'audio_check.json').read_text())
+        evidence['seam_check'] = json.loads((directory / 'seam_check.json').read_text())
+        evidence['timed_total_seconds'] = time.perf_counter() - timed
+        evidence['status'] = 'success'
+    except BaseException as exc:
+        evidence.update(status='failure', error=repr(exc))
+        (directory / 'traceback.txt').write_text(traceback.format_exc())
+        raise
+    finally:
+        evidence['total_seconds'] = time.perf_counter() - started
+        (directory / 'result.json').write_text(json.dumps(evidence, indent=2))
+        print(json.dumps({k:v for k,v in evidence.items() if k in ('name','status','calibration_peak_gib','timed_total_seconds','gpu_trace_summary','conservative_memory_envelope_gib')}), flush=True)
+
+if __name__ == '__main__':
+    main()

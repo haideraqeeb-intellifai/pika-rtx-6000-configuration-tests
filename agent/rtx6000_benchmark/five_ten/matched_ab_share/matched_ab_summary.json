@@ -1,0 +1,125 @@
+{
+  "simple": {
+    "runs": [
+      "matched_simple_a2",
+      "matched_simple_a3"
+    ],
+    "seconds": [
+      222.98406683601206,
+      223.01971230198978,
+      223.4292499969888
+    ],
+    "mean_seconds": 223.14434304499687,
+    "stdev_seconds": 0.24737952276044675,
+    "min_seconds": 222.98406683601206,
+    "max_seconds": 223.4292499969888,
+    "peak_vram_gib": 45.0528564453125,
+    "gpu_util_mean_pct": 92.99971832103414,
+    "startup_seconds": [
+      5.454381679999642,
+      5.451642678992357
+    ],
+    "warmup_seconds": [
+      225.89177991700126,
+      226.21836771201924
+    ],
+    "stage_seconds_per_video": {
+      "t": 164.53523980866885,
+      "v": 57.30425729001096
+    },
+    "max_node_end_offloaded_gib": 0.225,
+    "max_model_loaded_gib_by_role": {
+      "t": 19.532,
+      "v": 4.625
+    },
+    "fast_per_video": {
+      "sampler_calls": 5.0,
+      "model_forward_calls": 10.0,
+      "sage2_calls": 250.0,
+      "sage3_calls": 250.0,
+      "sage3_fallback_calls": 0.0,
+      "video_decode_calls": 5.0,
+      "nvfp4_gemm_calls": 282240.0
+    },
+    "outputs": [
+      "runs/matched_simple_a2/repeat_1/video.mp4",
+      "runs/matched_simple_a2/repeat_2/video.mp4",
+      "runs/matched_simple_a3/repeat_1/video.mp4"
+    ],
+    "video_sha256": [
+      "dd98ec8f9fa0b1145ec3be6d8282ea149251fb8f418ba1dd4448c5238534f684",
+      "dd98ec8f9fa0b1145ec3be6d8282ea149251fb8f418ba1dd4448c5238534f684",
+      "dd98ec8f9fa0b1145ec3be6d8282ea149251fb8f418ba1dd4448c5238534f684"
+    ]
+  },
+  "parallel": {
+    "runs": [
+      "matched_parallel_b2",
+      "matched_parallel_b1"
+    ],
+    "seconds": [
+      210.18974756001262,
+      210.46369182798662,
+      210.1649661359843
+    ],
+    "mean_seconds": 210.27280184132783,
+    "stdev_seconds": 0.16577928097069222,
+    "min_seconds": 210.1649661359843,
+    "max_seconds": 210.46369182798662,
+    "peak_vram_gib": 56.763916015625,
+    "gpu_util_mean_pct": 96.93786353431915,
+    "startup_seconds": [
+      5.596568640001351,
+      5.598158920009155
+    ],
+    "warmup_seconds": [
+      210.2510857259913,
+      210.3813996920071
+    ],
+    "stage_seconds_per_video": {
+      "t": 169.0218179516669,
+      "v": 308.3350203210139
+    },
+    "max_node_end_offloaded_gib": 0.225,
+    "max_model_loaded_gib_by_role": {
+      "t": 19.532,
+      "v": 4.625
+    },
+    "fast_per_video": {
+      "sampler_calls": 5.0,
+      "model_forward_calls": 10.0,
+      "sage2_calls": 250.0,
+      "sage3_calls": 250.0,
+      "sage3_fallback_calls": 0.0,
+      "video_decode_calls": 5.0,
+      "nvfp4_gemm_calls": 282240.0
+    },
+    "outputs": [
+      "runs/matched_parallel_b2/repeat_1/video.mp4",
+      "runs/matched_parallel_b2/repeat_2/video.mp4",
+      "runs/matched_parallel_b1/repeat_1/video.mp4"
+    ],
+    "video_sha256": [
+      "dd98ec8f9fa0b1145ec3be6d8282ea149251fb8f418ba1dd4448c5238534f684",
+      "dd98ec8f9fa0b1145ec3be6d8282ea149251fb8f418ba1dd4448c5238534f684",
+      "dd98ec8f9fa0b1145ec3be6d8282ea149251fb8f418ba1dd4448c5238534f684"
+    ]
+  },
+  "preparation_seconds": 16.44073880900396,
+  "seconds_saved": 12.87154120366904,
+  "time_reduction_pct": 5.768257903393725,
+  "speedup_factor": 1.0612135335190993,
+  "threshold_met": false,
+  "real_time_factor": {
+    "simple": 4.462886860899937,
+    "parallel": 4.205456036826557
+  },
+  "request_latency_with_preparation_seconds": {
+    "simple": 239.58508185400083,
+    "parallel": 226.7135406503318
+  },
+  "preparation_note": "Phase-summed, resident request estimate: one measured GPU conditioning preparation pass plus each measured final-MP4 generation run. Startup is separate.",
+  "order": "A warmup+2 measured, B warmup+2 measured, A warmup+1 measured, B warmup+1 measured",
+  "workload": "Five 10-second chunks, 24 fps, 243 native and 240 exported frames per chunk, two-step Pika Flex fast, seeds 9901\u20139905, independent original portrait anchors, 49.408-second source audio padded with 0.592 seconds silence.",
+  "all_output_bytes_equal": true
+}

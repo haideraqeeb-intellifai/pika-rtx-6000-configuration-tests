@@ -1,0 +1,5092 @@
+{
+  "name": "followup_best_resident_repeat2",
+  "status": "success",
+  "loader": "separate stage processes",
+  "schedule": "pipeline",
+  "transformers": 1,
+  "vaes": 1,
+  "reference": "original",
+  "anchor_mode": "hard",
+  "chunk_frames": [
+    55,
+    55,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73
+  ],
+  "chunks": 20,
+  "residency": "highvram",
+  "async_encoding": false,
+  "static_patcher": true,
+  "chunk_plan": "aligned",
+  "cache_text": true,
+  "child_results": [
+    {
+      "name": "followup_best_resident_repeat2_chunk_0",
+      "index": 0,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_1",
+      "index": 1,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_2",
+      "index": 2,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_3",
+      "index": 3,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_4",
+      "index": 4,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_5",
+      "index": 5,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_6",
+      "index": 6,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_7",
+      "index": 7,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_8",
+      "index": 8,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_9",
+      "index": 9,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_10",
+      "index": 10,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_11",
+      "index": 11,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_12",
+      "index": 12,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_13",
+      "index": 13,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_14",
+      "index": 14,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_15",
+      "index": 15,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_16",
+      "index": 16,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_17",
+      "index": 17,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_18",
+      "index": 18,
+      "stage": "decode"
+    },
+    {
+      "name": "followup_best_resident_repeat2_chunk_19",
+      "index": 19,
+      "stage": "decode"
+    }
+  ],
+  "mps": false,
+  "prime_longest": false,
+  "mps_percentages": {
+    "denoise": 100,
+    "decode": 100
+  },
+  "command": [
+    "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+    "-m",
+    "agent.rtx6000_benchmark.stage_pipeline",
+    "--name",
+    "followup_best_resident_repeat2",
+    "--chunks",
+    "20",
+    "--schedule",
+    "pipeline",
+    "--transformers",
+    "1",
+    "--vaes",
+    "1",
+    "--residency",
+    "highvram",
+    "--reuse-calibration",
+    "followup_best_resident",
+    "--run"
+  ],
+  "benchmark_code_sha256": {
+    "stage_pipeline.py": "4b4fe3315f9192d93d293b5fceaaf6282c194b97edba94ef15713d83b4e95836",
+    "parallel_chunk_resident.py": "7f5feb8e425d93f9c2d29399c7d8b125ea0898f355dbdc493445bf1d104c76af",
+    "deferred_encoding.py": "14c856727cf9f9538f0d5630337b1bf1729959e67bcb3451774105c57eef4c1d",
+    "gpu_preencode.py": "4988f120764d496f508f18821a28f1649471f299a2b445b3221716816aaef7de"
+  },
+  "empty_gpu_gate": [
+    {
+      "time": 1794314042.0531814,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794314043.0733476,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794314044.0940611,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "calibration_source": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident/result.json",
+  "calibration_source_sha256": "357e4ee2a6c7855676cb74a9340404dbcbba3abaa54d7a6e7238caab112df37c",
+  "calibration_peak_gib": {
+    "denoise": 32.333,
+    "decode": 7.862
+  },
+  "conservative_memory_envelope_gib": 40.195,
+  "timed_run_empty_gpu_gate": [
+    {
+      "time": 1794314044.176737,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794314045.1979654,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794314046.2182546,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "preparation_seconds": 22.09830875800253,
+  "preparation": {
+    "status": "success",
+    "chunks": [
+      {
+        "frames": 55,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_0.wav",
+        "anchor": "hard",
+        "artifact_sha256": "cd1ca7adaa9fd792e80cb5f866bf4632a417277c22cf899e6cd029d15cf0ef31",
+        "audio_sha256": "6da4b5dbd8cf52088a76c4f411b4b4cdbcffc1837fd0610397557b599538a76e",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 55,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9901,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 55,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9901
+          ],
+          "chunk_frames": [
+            55
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.2916666666666665,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314051.6011527,
+        "ended_wall_utc": 1794314058.489749,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_20",
+                "class_type": "LoadImage",
+                "duration_seconds": 0.0197,
+                "before": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                }
+              },
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0149,
+                "before": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                }
+              },
+              {
+                "node_id": "4",
+                "class_type": "VAELoader",
+                "duration_seconds": 0.0296,
+                "before": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                }
+              },
+              {
+                "node_id": "3",
+                "class_type": "VAELoader",
+                "duration_seconds": 0.1029,
+                "before": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                }
+              },
+              {
+                "node_id": "2",
+                "class_type": "CLIPLoader",
+                "duration_seconds": 0.5199,
+                "before": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 6.1549,
+                "before": {
+                  "cuda_allocated_gib": 0.0,
+                  "cuda_reserved_gib": 0.0,
+                  "cuda_peak_allocated_gib": 0.0,
+                  "model_total_gib": 0.0,
+                  "model_loaded_gib": 0.0,
+                  "model_offloaded_gib": 0.0
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 1.271,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0193,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 1.271,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 1.271,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "model_load",
+                "duration_seconds": 0.6524,
+                "node_count": 3,
+                "peak_cuda_allocated_gib": 0.0,
+                "peak_model_offloaded_gib": 0.0,
+                "mean_model_offloaded_gib": 0.0,
+                "gpu": {
+                  "sample_count": 3,
+                  "observed_sample_hz": 3.39,
+                  "gpu_util_mean_pct": 0.0,
+                  "gpu_util_p95_pct": 0.0,
+                  "memory_used_peak_gib": 1.169,
+                  "model_offloaded_mean_gib": 0.0,
+                  "model_offloaded_peak_gib": 0.0,
+                  "power_mean_w": 92.49,
+                  "power_peak_w": 92.49,
+                  "energy_wh_estimate": 0.015,
+                  "temperature_peak_c": 55.0,
+                  "pcie_rx_gib_estimate": 0.0,
+                  "pcie_tx_gib_estimate": 0.0
+                },
+                "model_offload_sample_count": 3
+              },
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 6.1895,
+                "node_count": 3,
+                "peak_cuda_allocated_gib": 1.271,
+                "peak_model_offloaded_gib": 13.855,
+                "mean_model_offloaded_gib": 7.168,
+                "gpu": {
+                  "sample_count": 31,
+                  "observed_sample_hz": 5.0,
+                  "gpu_util_mean_pct": 35.81,
+                  "gpu_util_p95_pct": 49.0,
+                  "memory_used_peak_gib": 19.065,
+                  "model_offloaded_mean_gib": 7.168,
+                  "model_offloaded_peak_gib": 13.855,
+                  "power_mean_w": 288.87,
+                  "power_peak_w": 363.18,
+                  "energy_wh_estimate": 0.482,
+                  "temperature_peak_c": 67.0,
+                  "pcie_rx_gib_estimate": 16.858,
+                  "pcie_tx_gib_estimate": 1.61
+                },
+                "model_offload_sample_count": 31
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0193,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 1.271,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 6.8657,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 1.271,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 34,
+            "observed_sample_hz": 4.86,
+            "gpu_util_mean_pct": 32.65,
+            "gpu_util_p95_pct": 49.0,
+            "memory_used_peak_gib": 19.065,
+            "model_offloaded_mean_gib": 6.536,
+            "model_offloaded_peak_gib": 13.855,
+            "power_mean_w": 271.54,
+            "power_peak_w": 363.18,
+            "energy_wh_estimate": 0.512,
+            "temperature_peak_c": 67.0,
+            "pcie_rx_gib_estimate": 17.393,
+            "pcie_tx_gib_estimate": 1.661
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 55,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_1.wav",
+        "anchor": "hard",
+        "artifact_sha256": "0d2f1f6413d13380c4d0473705eb4b270235322facbf159411e30d94251a64ce",
+        "audio_sha256": "66f91c1ae311087bcda6e3b5edbaa306028347335632e8b25ea8261f9ec1a2d3",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 55,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9902,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 55,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9902
+          ],
+          "chunk_frames": [
+            55
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.2916666666666665,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314058.490707,
+        "ended_wall_utc": 1794314058.8887239,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0158,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3218,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0192,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3376,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.98,
+                  "gpu_util_mean_pct": 54.0,
+                  "gpu_util_p95_pct": 54.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 304.11,
+                  "power_peak_w": 304.11,
+                  "energy_wh_estimate": 0.017,
+                  "temperature_peak_c": 61.0,
+                  "pcie_rx_gib_estimate": 0.044,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0192,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3611,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.98,
+            "gpu_util_mean_pct": 54.0,
+            "gpu_util_p95_pct": 54.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 304.11,
+            "power_peak_w": 304.11,
+            "energy_wh_estimate": 0.017,
+            "temperature_peak_c": 61.0,
+            "pcie_rx_gib_estimate": 0.044,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_2.wav",
+        "anchor": "hard",
+        "artifact_sha256": "046c249521a046a26ea3d93fed89155db562c5c8e7bbff96a3f4307e695cd209",
+        "audio_sha256": "84b6e172a7665d0e20f705fd4ec34493810f653823fa5a31f837ac9a31ac270e",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9903,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9903
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314058.889662,
+        "ended_wall_utc": 1794314059.2873573,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0159,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3211,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0188,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.337,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.96,
+                  "gpu_util_mean_pct": 84.0,
+                  "gpu_util_p95_pct": 84.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 255.08,
+                  "power_peak_w": 255.08,
+                  "energy_wh_estimate": 0.014,
+                  "temperature_peak_c": 65.0,
+                  "pcie_rx_gib_estimate": 0.047,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0188,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3607,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.96,
+            "gpu_util_mean_pct": 84.0,
+            "gpu_util_p95_pct": 84.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 255.08,
+            "power_peak_w": 255.08,
+            "energy_wh_estimate": 0.014,
+            "temperature_peak_c": 65.0,
+            "pcie_rx_gib_estimate": 0.047,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_3.wav",
+        "anchor": "hard",
+        "artifact_sha256": "c25965846dcc409eecb4ce02bd764de754927ed3c9635279b4ca47d9bb734746",
+        "audio_sha256": "5a2982df0bb777fc59c2d87077fb3773591afbb6cbf2ec0dfa6a95fd46ddd164",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9904,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9904
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314059.288259,
+        "ended_wall_utc": 1794314059.6885054,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0157,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3253,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0176,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.341,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.94,
+                  "gpu_util_mean_pct": 52.0,
+                  "gpu_util_p95_pct": 84.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 263.11,
+                  "power_peak_w": 271.13,
+                  "energy_wh_estimate": 0.015,
+                  "temperature_peak_c": 65.0,
+                  "pcie_rx_gib_estimate": 0.045,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0176,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3633,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.94,
+            "gpu_util_mean_pct": 52.0,
+            "gpu_util_p95_pct": 84.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 263.11,
+            "power_peak_w": 271.13,
+            "energy_wh_estimate": 0.015,
+            "temperature_peak_c": 65.0,
+            "pcie_rx_gib_estimate": 0.045,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 73,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_4.wav",
+        "anchor": "hard",
+        "artifact_sha256": "e94c7cc91e9f9f66504435a46eb912b017d2a07f36e80ccf993db3674e383c41",
+        "audio_sha256": "927b49a6ab69cf33be4c2a3f504237f7db809c136e89e737b8976db799ae7ddc",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 73,
+          "effective_frames": 73,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9905,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 73,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9905
+          ],
+          "chunk_frames": [
+            73
+          ],
+          "chunk_inference_frames": [
+            73
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 3.0416666666666665,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314059.6894596,
+        "ended_wall_utc": 1794314060.3494225,
+        "artifact_bytes": 47410360,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0173,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.5591,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0197,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.5764,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.414,
+                "gpu": {
+                  "sample_count": 3,
+                  "observed_sample_hz": 3.89,
+                  "gpu_util_mean_pct": 6.67,
+                  "gpu_util_p95_pct": 20.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.414,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 281.58,
+                  "power_peak_w": 286.81,
+                  "energy_wh_estimate": 0.04,
+                  "temperature_peak_c": 59.0,
+                  "pcie_rx_gib_estimate": 0.091,
+                  "pcie_tx_gib_estimate": 0.01
+                },
+                "model_offload_sample_count": 3
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0197,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.6022,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.297,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 3,
+            "observed_sample_hz": 3.89,
+            "gpu_util_mean_pct": 6.67,
+            "gpu_util_p95_pct": 20.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.414,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 281.58,
+            "power_peak_w": 286.81,
+            "energy_wh_estimate": 0.04,
+            "temperature_peak_c": 59.0,
+            "pcie_rx_gib_estimate": 0.091,
+            "pcie_tx_gib_estimate": 0.01
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_5.wav",
+        "anchor": "hard",
+        "artifact_sha256": "4bd160316e1ae1da705bd7b3cccfd6c31fffe73115cbcf0777779466ca685f5f",
+        "audio_sha256": "df2b37ebabf571fbc06a42235a398aa0b65640d3be5810236f7998a473b0a722",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9906,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9906
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314060.3503563,
+        "ended_wall_utc": 1794314060.7497158,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0159,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3242,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0176,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3401,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.99,
+                  "gpu_util_mean_pct": 62.0,
+                  "gpu_util_p95_pct": 62.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 260.05,
+                  "power_peak_w": 260.05,
+                  "energy_wh_estimate": 0.014,
+                  "temperature_peak_c": 60.0,
+                  "pcie_rx_gib_estimate": 0.042,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0176,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.362,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.99,
+            "gpu_util_mean_pct": 62.0,
+            "gpu_util_p95_pct": 62.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 260.05,
+            "power_peak_w": 260.05,
+            "energy_wh_estimate": 0.014,
+            "temperature_peak_c": 60.0,
+            "pcie_rx_gib_estimate": 0.042,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_6.wav",
+        "anchor": "hard",
+        "artifact_sha256": "4f358396029e65de41e7c8571e5f9b48cff78177bd8cbbe7199d6e54b297a49c",
+        "audio_sha256": "1768d47ade7849c0907451b733619d3f26b38da3a46abd79a452bcf3e7e97945",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9907,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9907
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314060.7506056,
+        "ended_wall_utc": 1794314061.1522946,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0172,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3241,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0185,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3413,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.02,
+                  "gpu_util_mean_pct": 34.5,
+                  "gpu_util_p95_pct": 62.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 260.26,
+                  "power_peak_w": 260.48,
+                  "energy_wh_estimate": 0.014,
+                  "temperature_peak_c": 60.0,
+                  "pcie_rx_gib_estimate": 0.041,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0185,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.364,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.02,
+            "gpu_util_mean_pct": 34.5,
+            "gpu_util_p95_pct": 62.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 260.26,
+            "power_peak_w": 260.48,
+            "energy_wh_estimate": 0.014,
+            "temperature_peak_c": 60.0,
+            "pcie_rx_gib_estimate": 0.041,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_7.wav",
+        "anchor": "hard",
+        "artifact_sha256": "c044b5b141c02f9ae098982d8373da1b513c0d46f9806d65c7f23aad6f6c3f1f",
+        "audio_sha256": "e992333fc13b97661d400ff77eef2f64789cdb1e1f0bf99535f3dfce4b5bcd26",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9908,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9908
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314061.1531851,
+        "ended_wall_utc": 1794314061.553399,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0159,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3238,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0181,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3397,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.01,
+                  "gpu_util_mean_pct": 11.5,
+                  "gpu_util_p95_pct": 16.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 267.7,
+                  "power_peak_w": 274.91,
+                  "energy_wh_estimate": 0.015,
+                  "temperature_peak_c": 58.0,
+                  "pcie_rx_gib_estimate": 0.042,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0181,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3626,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.01,
+            "gpu_util_mean_pct": 11.5,
+            "gpu_util_p95_pct": 16.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 267.7,
+            "power_peak_w": 274.91,
+            "energy_wh_estimate": 0.015,
+            "temperature_peak_c": 58.0,
+            "pcie_rx_gib_estimate": 0.042,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_8.wav",
+        "anchor": "hard",
+        "artifact_sha256": "70cc4cd528fe661288eb18b8dc341f99d72798f970dfb59f012afc1bc30fff02",
+        "audio_sha256": "a91737e9633d76a6a9eac00fd6e1a66df35fa6bbc0925da2a2085b4f7502e05f",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9909,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9909
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314061.554285,
+        "ended_wall_utc": 1794314061.9522202,
+        "artifact_bytes": 45629112,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0155,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3208,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0184,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3363,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.03,
+                  "gpu_util_mean_pct": 16.0,
+                  "gpu_util_p95_pct": 16.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 274.91,
+                  "power_peak_w": 274.91,
+                  "energy_wh_estimate": 0.015,
+                  "temperature_peak_c": 58.0,
+                  "pcie_rx_gib_estimate": 0.043,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0184,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3606,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.03,
+            "gpu_util_mean_pct": 16.0,
+            "gpu_util_p95_pct": 16.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 274.91,
+            "power_peak_w": 274.91,
+            "energy_wh_estimate": 0.015,
+            "temperature_peak_c": 58.0,
+            "pcie_rx_gib_estimate": 0.043,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 73,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_9.wav",
+        "anchor": "hard",
+        "artifact_sha256": "09cee840b01e1e50123f4a9c2dd9e32389bb5186573d832fe8a2a0539fd91f01",
+        "audio_sha256": "8e1815a6f9abe5ed6c957d146249b68d2f69293a98ad775c8fb58b4264b84eae",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 73,
+          "effective_frames": 73,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9910,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 73,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9910
+          ],
+          "chunk_frames": [
+            73
+          ],
+          "chunk_inference_frames": [
+            73
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 3.0416666666666665,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314061.9531791,
+        "ended_wall_utc": 1794314062.3710585,
+        "artifact_bytes": 47410360,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0178,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.324,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0198,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3418,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.99,
+                  "gpu_util_mean_pct": 84.0,
+                  "gpu_util_p95_pct": 84.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 295.09,
+                  "power_peak_w": 295.09,
+                  "energy_wh_estimate": 0.016,
+                  "temperature_peak_c": 61.0,
+                  "pcie_rx_gib_estimate": 0.041,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0198,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3672,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.297,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.99,
+            "gpu_util_mean_pct": 84.0,
+            "gpu_util_p95_pct": 84.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 295.09,
+            "power_peak_w": 295.09,
+            "energy_wh_estimate": 0.016,
+            "temperature_peak_c": 61.0,
+            "pcie_rx_gib_estimate": 0.041,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_10.wav",
+        "anchor": "hard",
+        "artifact_sha256": "84fa7e4ad677c1978818026fffbfdad23563b89ca7baf049d4dcc501c0f1c8cc",
+        "audio_sha256": "ef0e2e27d9bab4454f778f2b5e40e95e755d864a96a0df734014f4b7877af486",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9911,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9911
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314062.371933,
+        "ended_wall_utc": 1794314062.7692785,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0156,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3204,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0185,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.336,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.0,
+                  "gpu_util_mean_pct": 81.0,
+                  "gpu_util_p95_pct": 81.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 324.25,
+                  "power_peak_w": 324.25,
+                  "energy_wh_estimate": 0.018,
+                  "temperature_peak_c": 64.0,
+                  "pcie_rx_gib_estimate": 0.044,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0185,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3598,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 81.0,
+            "gpu_util_p95_pct": 81.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 324.25,
+            "power_peak_w": 324.25,
+            "energy_wh_estimate": 0.018,
+            "temperature_peak_c": 64.0,
+            "pcie_rx_gib_estimate": 0.044,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_11.wav",
+        "anchor": "hard",
+        "artifact_sha256": "ca499b4fda481b4f935ed1037de968a833e0b93bdbf3fce85e2dd69e96eca9d2",
+        "audio_sha256": "121f4e18f612b1f1e79e608e3216d8745e834e191b94d43126795b19ae0dad89",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9912,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9912
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314062.7701726,
+        "ended_wall_utc": 1794314063.1671073,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0151,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3217,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0181,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3368,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.99,
+                  "gpu_util_mean_pct": 44.0,
+                  "gpu_util_p95_pct": 81.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 316.66,
+                  "power_peak_w": 324.25,
+                  "energy_wh_estimate": 0.018,
+                  "temperature_peak_c": 64.0,
+                  "pcie_rx_gib_estimate": 0.044,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0181,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3597,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.99,
+            "gpu_util_mean_pct": 44.0,
+            "gpu_util_p95_pct": 81.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 316.66,
+            "power_peak_w": 324.25,
+            "energy_wh_estimate": 0.018,
+            "temperature_peak_c": 64.0,
+            "pcie_rx_gib_estimate": 0.044,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_12.wav",
+        "anchor": "hard",
+        "artifact_sha256": "1d6747d7e449ddd4c733dabef7ba85a57127803cac09eadfce06a69ab2e21057",
+        "audio_sha256": "8320b193d26d11dd9435cde5c42b142f21588f1608f965b931f97268d10a8829",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9913,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9913
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314063.1679993,
+        "ended_wall_utc": 1794314063.881022,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0157,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.6191,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0192,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.6348,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.414,
+                "gpu": {
+                  "sample_count": 3,
+                  "observed_sample_hz": 3.51,
+                  "gpu_util_mean_pct": 2.33,
+                  "gpu_util_p95_pct": 7.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.414,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 290.58,
+                  "power_peak_w": 309.07,
+                  "energy_wh_estimate": 0.046,
+                  "temperature_peak_c": 59.0,
+                  "pcie_rx_gib_estimate": 0.101,
+                  "pcie_tx_gib_estimate": 0.012
+                },
+                "model_offload_sample_count": 3
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0192,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.6585,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 3,
+            "observed_sample_hz": 3.51,
+            "gpu_util_mean_pct": 2.33,
+            "gpu_util_p95_pct": 7.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.414,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 290.58,
+            "power_peak_w": 309.07,
+            "energy_wh_estimate": 0.046,
+            "temperature_peak_c": 59.0,
+            "pcie_rx_gib_estimate": 0.101,
+            "pcie_tx_gib_estimate": 0.012
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_13.wav",
+        "anchor": "hard",
+        "artifact_sha256": "aefa0228dc79d37734bd5388bdcd1c309071f68ed3b2f14b6ab1e19a976fd50c",
+        "audio_sha256": "17e56cd204cf441b019badbecae5392b730eb96aafad69dcc7b0c893fccea95a",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9914,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9914
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314063.8819437,
+        "ended_wall_utc": 1794314064.2819986,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0159,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.321,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.018,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3369,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.99,
+                  "gpu_util_mean_pct": 88.0,
+                  "gpu_util_p95_pct": 88.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 256.14,
+                  "power_peak_w": 256.14,
+                  "energy_wh_estimate": 0.014,
+                  "temperature_peak_c": 65.0,
+                  "pcie_rx_gib_estimate": 0.044,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.018,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3607,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.99,
+            "gpu_util_mean_pct": 88.0,
+            "gpu_util_p95_pct": 88.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 256.14,
+            "power_peak_w": 256.14,
+            "energy_wh_estimate": 0.014,
+            "temperature_peak_c": 65.0,
+            "pcie_rx_gib_estimate": 0.044,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 73,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_14.wav",
+        "anchor": "hard",
+        "artifact_sha256": "5cf7d3b9044666a11f3add1315081a8626a75e527b2cc454010bd2ed4107ea21",
+        "audio_sha256": "57cb9833ac4820aae6e89cdc62e8035e66ec4affd07ffda0ef2d726451c87505",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 73,
+          "effective_frames": 73,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9915,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 73,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9915
+          ],
+          "chunk_frames": [
+            73
+          ],
+          "chunk_inference_frames": [
+            73
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 3.0416666666666665,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314064.283101,
+        "ended_wall_utc": 1794314064.6814945,
+        "artifact_bytes": 47410373,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0174,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3176,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0198,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.335,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.02,
+                  "gpu_util_mean_pct": 50.5,
+                  "gpu_util_p95_pct": 88.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 257.63,
+                  "power_peak_w": 259.12,
+                  "energy_wh_estimate": 0.014,
+                  "temperature_peak_c": 65.0,
+                  "pcie_rx_gib_estimate": 0.046,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0198,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3594,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.297,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.02,
+            "gpu_util_mean_pct": 50.5,
+            "gpu_util_p95_pct": 88.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 257.63,
+            "power_peak_w": 259.12,
+            "energy_wh_estimate": 0.014,
+            "temperature_peak_c": 65.0,
+            "pcie_rx_gib_estimate": 0.046,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_15.wav",
+        "anchor": "hard",
+        "artifact_sha256": "604eaf3d4fcb7b41a3c06dd70281d7f8ae328b21f3ce3b986215034faa8338b4",
+        "audio_sha256": "94b9e1fd6955405224dc6f7c70acc71c65f527cafc33ef46ef4755ac263f6aea",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9916,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9916
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314064.6824653,
+        "ended_wall_utc": 1794314065.077126,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0161,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3187,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0177,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3348,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.94,
+                  "gpu_util_mean_pct": 7.5,
+                  "gpu_util_p95_pct": 13.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 261.4,
+                  "power_peak_w": 263.68,
+                  "energy_wh_estimate": 0.015,
+                  "temperature_peak_c": 59.0,
+                  "pcie_rx_gib_estimate": 0.05,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0177,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3574,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.94,
+            "gpu_util_mean_pct": 7.5,
+            "gpu_util_p95_pct": 13.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 261.4,
+            "power_peak_w": 263.68,
+            "energy_wh_estimate": 0.015,
+            "temperature_peak_c": 59.0,
+            "pcie_rx_gib_estimate": 0.05,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_16.wav",
+        "anchor": "hard",
+        "artifact_sha256": "b97da9925639502698aae72d95e1c025f3441df1fb5f75b8331c293518e460a6",
+        "audio_sha256": "91deb3c1fa437228ba5700911a4ef2767d76fc3c2b531dacc3e6b3d3955ea2a2",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9917,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9917
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314065.0780764,
+        "ended_wall_utc": 1794314065.4743211,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0168,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3197,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0181,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3365,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.0,
+                  "gpu_util_mean_pct": 2.0,
+                  "gpu_util_p95_pct": 2.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 263.68,
+                  "power_peak_w": 263.68,
+                  "energy_wh_estimate": 0.015,
+                  "temperature_peak_c": 57.0,
+                  "pcie_rx_gib_estimate": 0.046,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0181,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3588,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 2.0,
+            "gpu_util_p95_pct": 2.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 263.68,
+            "power_peak_w": 263.68,
+            "energy_wh_estimate": 0.015,
+            "temperature_peak_c": 57.0,
+            "pcie_rx_gib_estimate": 0.046,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_17.wav",
+        "anchor": "hard",
+        "artifact_sha256": "3f65dee4a0f30be151fa38318b4b80afcb6f0ac0d3cfdba7e34ccd4c32a36330",
+        "audio_sha256": "149d92dbcbccbb8d7c17e1082e7a5345872e512f2479682d9c9b64136cf41b18",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9918,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9918
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314065.47523,
+        "ended_wall_utc": 1794314065.8712673,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0164,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.318,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0181,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3344,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.0,
+                  "gpu_util_mean_pct": 86.0,
+                  "gpu_util_p95_pct": 86.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 285.12,
+                  "power_peak_w": 285.12,
+                  "energy_wh_estimate": 0.016,
+                  "temperature_peak_c": 65.0,
+                  "pcie_rx_gib_estimate": 0.046,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0181,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3588,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 86.0,
+            "gpu_util_p95_pct": 86.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 285.12,
+            "power_peak_w": 285.12,
+            "energy_wh_estimate": 0.016,
+            "temperature_peak_c": 65.0,
+            "pcie_rx_gib_estimate": 0.046,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 56,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_18.wav",
+        "anchor": "hard",
+        "artifact_sha256": "968251375b6c4727385b13c5be46ec595e36067167301c4f1c1df7fd3b18f0a6",
+        "audio_sha256": "22d80c51466733c897f817a971348133e6da3e6c12d029ae47c0fd471113f2c0",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 56,
+          "effective_frames": 56,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9919,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 56,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9919
+          ],
+          "chunk_frames": [
+            56
+          ],
+          "chunk_inference_frames": [
+            56
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 2.3333333333333335,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314065.8722153,
+        "ended_wall_utc": 1794314066.2705176,
+        "artifact_bytes": 45629125,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0166,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3188,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0194,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.229,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3354,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 5.0,
+                  "gpu_util_mean_pct": 90.0,
+                  "gpu_util_p95_pct": 90.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 307.32,
+                  "power_peak_w": 307.32,
+                  "energy_wh_estimate": 0.017,
+                  "temperature_peak_c": 65.0,
+                  "pcie_rx_gib_estimate": 0.046,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0194,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.229,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3593,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.229,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 5.0,
+            "gpu_util_mean_pct": 90.0,
+            "gpu_util_p95_pct": 90.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 307.32,
+            "power_peak_w": 307.32,
+            "energy_wh_estimate": 0.017,
+            "temperature_peak_c": 65.0,
+            "pcie_rx_gib_estimate": 0.046,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      },
+      {
+        "frames": 73,
+        "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_best_resident_repeat2/audio_19.wav",
+        "anchor": "hard",
+        "artifact_sha256": "3a2be79cdb9e425e92413d607ee7b02b84e9bc41c1f4bba7e0c09725607f8c0a",
+        "audio_sha256": "217c51f2302b08062ac240c861ab8b3a9a722af844650f31616932e049202a0d",
+        "portrait_sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1",
+        "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+        "effective": {
+          "input_mode": "fl2v",
+          "requested_width": 720,
+          "requested_height": 1280,
+          "native_width": 736,
+          "native_height": 1280,
+          "requested_frames": 73,
+          "effective_frames": 73,
+          "reference_images": 0,
+          "reference_videos": 0,
+          "reference_audios": 0,
+          "seed": 9920,
+          "optimization": {
+            "profile": "pika_flex",
+            "attention_backend": "sage2",
+            "step_accelerator": "none",
+            "approximate": true
+          },
+          "optimizer_parameters": {
+            "easycache": null,
+            "sol": null,
+            "spectrum": null
+          },
+          "diffusion_checkpoint": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+          "model_revision": "0bd506d2e895983a9663037febda27aa3948cf48",
+          "lora": "pika_h3_flex_fl2va_comfy_bf16.safetensors",
+          "lora_revision": "Pika-Labs/Pika-H3-Flex@3ff166447d5edb1406107ab8370c42000ce173e4",
+          "lora_strength": 1.0,
+          "lora_low_vram": false,
+          "turbo_commit": null,
+          "sampler": "MiniMaxH3PikaSampler",
+          "steps": 2,
+          "denoise": 1.0,
+          "scheduler": "pika_knots",
+          "sigma_shift_video": 12.0,
+          "sigma_shift_audio": 3.0,
+          "output_frames": 73,
+          "fps": 24.0,
+          "chunked_mode": true,
+          "chunk_input_modes": [
+            "fl2v"
+          ],
+          "output_width": 1080,
+          "output_height": 1920,
+          "chunk_count": 1,
+          "chunk_seeds": [
+            9920
+          ],
+          "chunk_frames": [
+            73
+          ],
+          "chunk_inference_frames": [
+            73
+          ],
+          "chunk_schedule": [
+            {
+              "duration_seconds": 3.0416666666666665,
+              "reference": "original",
+              "anchor": "hard"
+            }
+          ],
+          "chunk_execution": "stage_grouped",
+          "frame_storage": "memory"
+        },
+        "started_wall_utc": 1794314066.2714605,
+        "ended_wall_utc": 1794314066.6732104,
+        "artifact_bytes": 47410373,
+        "telemetry": {
+          "stages": {
+            "nodes": [
+              {
+                "node_id": "c0_22",
+                "class_type": "LoadAudio",
+                "duration_seconds": 0.0173,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "c0_5",
+                "class_type": "MiniMaxH3ImageToVideo",
+                "duration_seconds": 0.3201,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.015,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              },
+              {
+                "node_id": "save_prepared",
+                "class_type": "H3SavePrepared",
+                "duration_seconds": 0.0197,
+                "before": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                },
+                "after": {
+                  "cuda_allocated_gib": 0.015,
+                  "cuda_reserved_gib": 0.037,
+                  "cuda_peak_allocated_gib": 0.297,
+                  "model_total_gib": 20.023,
+                  "model_loaded_gib": 15.568,
+                  "model_offloaded_gib": 4.456
+                }
+              }
+            ],
+            "stages": [
+              {
+                "stage": "condition_pack",
+                "duration_seconds": 0.3374,
+                "node_count": 2,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 2,
+                  "observed_sample_hz": 4.97,
+                  "gpu_util_mean_pct": 48.5,
+                  "gpu_util_p95_pct": 90.0,
+                  "memory_used_peak_gib": 17.143,
+                  "model_offloaded_mean_gib": 4.456,
+                  "model_offloaded_peak_gib": 4.456,
+                  "power_mean_w": 302.21,
+                  "power_peak_w": 307.32,
+                  "energy_wh_estimate": 0.017,
+                  "temperature_peak_c": 65.0,
+                  "pcie_rx_gib_estimate": 0.044,
+                  "pcie_tx_gib_estimate": 0.005
+                },
+                "model_offload_sample_count": 2
+              },
+              {
+                "stage": "generation",
+                "duration_seconds": 0.0197,
+                "node_count": 1,
+                "peak_cuda_allocated_gib": 0.297,
+                "peak_model_offloaded_gib": 4.456,
+                "mean_model_offloaded_gib": 4.456,
+                "gpu": {
+                  "sample_count": 0,
+                  "error": "no samples"
+                }
+              }
+            ],
+            "execution_event_seconds": 0.3628,
+            "final_memory": {
+              "cuda_allocated_gib": 0.015,
+              "cuda_reserved_gib": 0.037,
+              "cuda_peak_allocated_gib": 0.297,
+              "model_total_gib": 20.023,
+              "model_loaded_gib": 15.568,
+              "model_offloaded_gib": 4.456
+            }
+          },
+          "gpu": {
+            "sample_count": 2,
+            "observed_sample_hz": 4.97,
+            "gpu_util_mean_pct": 48.5,
+            "gpu_util_p95_pct": 90.0,
+            "memory_used_peak_gib": 17.143,
+            "model_offloaded_mean_gib": 4.456,
+            "model_offloaded_peak_gib": 4.456,
+            "power_mean_w": 302.21,
+            "power_peak_w": 307.32,
+            "energy_wh_estimate": 0.017,
+            "temperature_peak_c": 65.0,
+            "pcie_rx_gib_estimate": 0.044,
+            "pcie_tx_gib_estimate": 0.005
+          },
+          "easycache": null,
+          "spectrum": null,
+          "sol": null
+        }
+      }
+    ],
+    "text_encoder_device": "gpu",
+    "text_cache": {
+      "encoder_calls": 1,
+      "cache_hits": 19
+    },
+    "model_release": "preparation process exits before worker launch"
+  },
+  "encoder_released_gate": [
+    {
+      "time": 1794314072.390794,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794314073.4054983,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794314074.422805,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "encoder_release_gate_seconds": 6.09432847700009,
+  "mps_clients": null,
+  "lane_startup": [
+    {
+      "lane": 0,
+      "kind": "ready",
+      "effective_multiprocessor_count": 188,
+      "load_models_seconds": 5.384914875030518,
+      "static_residency_requested": true,
+      "core_model_patcher": "ModelPatcher",
+      "vram_state": "VRAMState.HIGH_VRAM",
+      "stage": "denoise"
+    },
+    {
+      "lane": 1,
+      "kind": "ready",
+      "effective_multiprocessor_count": 188,
+      "load_models_seconds": 5.409209489822388,
+      "static_residency_requested": true,
+      "core_model_patcher": "ModelPatcher",
+      "vram_state": "VRAMState.HIGH_VRAM",
+      "stage": "decode"
+    }
+  ],
+  "parallel_generation_seconds": 199.76472699900114,
+  "gpu_trace_summary": {
+    "samples": 1139,
+    "peak_vram_gib": 39.299,
+    "gpu_util_mean_pct": 83.57857769973661
+  },
+  "denoise_results": [
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_0",
+      "index": 0,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_1",
+      "index": 1,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_2",
+      "index": 2,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_3",
+      "index": 3,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_4",
+      "index": 4,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_5",
+      "index": 5,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_6",
+      "index": 6,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_7",
+      "index": 7,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_8",
+      "index": 8,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_9",
+      "index": 9,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_10",
+      "index": 10,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_11",
+      "index": 11,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_12",
+      "index": 12,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_13",
+      "index": 13,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_14",
+      "index": 14,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_15",
+      "index": 15,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_16",
+      "index": 16,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_17",
+      "index": 17,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_18",
+      "index": 18,
+      "stage": "denoise"
+    },
+    {
+      "name": "followup_best_resident_repeat2_denoise_chunk_19",
+      "index": 19,
+      "stage": "denoise"
+    }
+  ],
+  "sampler_overlap": {
+    "maximum_concurrent_inference_calls": 1,
+    "two_or_more_calls_overlap_seconds": 0.0
+  },
+  "decode_overlap": {
+    "maximum_concurrent_inference_calls": 1,
+    "two_or_more_calls_overlap_seconds": 0.0
+  },
+  "inference_overlap": {
+    "maximum_concurrent_inference_calls": 2,
+    "two_or_more_calls_overlap_seconds": 159.559
+  },
+  "latent_handoff_bytes": 127724756,
+  "assembly_and_full_validation_seconds": 5.907905761003349,
+  "time_to_assembled_valid_video_seconds": 233.87084000800314,
+  "output_probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "Main",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1088,
+        "coded_height": 1920,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 607232,
+        "duration": "49.416667",
+        "bit_rate": "3838379",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1186",
+        "nb_read_frames": "1186",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc60.5.100 h264_nvenc"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2371584,
+        "duration": "49.408000",
+        "bit_rate": "189886",
+        "nb_frames": "2317",
+        "nb_read_frames": "2316",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ]
+  },
+  "output_sha256": "13b459eaac87703356729ba26e491b2028a4f9af7f97dd1cd88d828df2ee826f",
+  "complete_video_audio_decode": true,
+  "plan": [
+    {
+      "duration_seconds": 2.2916666666666665,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 0,
+      "start_frame": 0,
+      "frames": 55,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.2916666666666665,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 1,
+      "start_frame": 55,
+      "frames": 55,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 2,
+      "start_frame": 110,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 3,
+      "start_frame": 166,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 3.0416666666666665,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 4,
+      "start_frame": 222,
+      "frames": 73,
+      "inference_frames": 73
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 5,
+      "start_frame": 295,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 6,
+      "start_frame": 351,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 7,
+      "start_frame": 407,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 8,
+      "start_frame": 463,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 3.0416666666666665,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 9,
+      "start_frame": 519,
+      "frames": 73,
+      "inference_frames": 73
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 10,
+      "start_frame": 592,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 11,
+      "start_frame": 648,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 12,
+      "start_frame": 704,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 13,
+      "start_frame": 760,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 3.0416666666666665,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 14,
+      "start_frame": 816,
+      "frames": 73,
+      "inference_frames": 73
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 15,
+      "start_frame": 889,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 16,
+      "start_frame": 945,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 17,
+      "start_frame": 1001,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 2.3333333333333335,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 18,
+      "start_frame": 1057,
+      "frames": 56,
+      "inference_frames": 56
+    },
+    {
+      "duration_seconds": 3.0416666666666665,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 19,
+      "start_frame": 1113,
+      "frames": 73,
+      "inference_frames": 73
+    }
+  ],
+  "audio_check": {
+    "source_samples_8khz": 395264,
+    "output_samples_8khz": 395264,
+    "duration_delta_ms": 0.0,
+    "best_lag_ms": 0.0,
+    "waveform_correlation": 0.999957
+  },
+  "seam_check": {
+    "frame_count": 1186,
+    "boundaries": [
+      55,
+      110,
+      166,
+      222,
+      295,
+      351,
+      407,
+      463,
+      519,
+      592,
+      648,
+      704,
+      760,
+      816,
+      889,
+      945,
+      1001,
+      1057,
+      1113
+    ],
+    "seam_mean_absolute_luma_difference": [
+      3.8055,
+      4.1875,
+      3.8083,
+      3.8692,
+      3.7955,
+      3.8822,
+      3.6948,
+      3.5357,
+      3.8062,
+      3.8378,
+      3.8623,
+      3.6023,
+      4.0918,
+      3.7674,
+      3.821,
+      3.5296,
+      3.9857,
+      3.7859,
+      3.8136
+    ],
+    "nonseam_median_difference": 0.7066,
+    "seam_median_to_nonseam_median_ratio": 5.39,
+    "seams_above_nonseam_95th_percentile": 19
+  },
+  "timed_total_seconds": 237.9657562450011,
+  "total_seconds": 242.1815160030019
+}

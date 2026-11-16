@@ -1,0 +1,51 @@
+{
+  "batch_size": 1,
+  "latent_shape": [
+    1,
+    24,
+    37,
+    80,
+    46
+  ],
+  "decoded_shape": [
+    1,
+    124,
+    1280,
+    736,
+    3
+  ],
+  "actual_model_input_shapes": [
+    [
+      1,
+      24,
+      37,
+      80,
+      46
+    ]
+  ],
+  "decode_seconds": 7.762678146362305,
+  "decode_started": 1794264788.5311537,
+  "decode_ended": 1794264796.2938318,
+  "chunks": [
+    {
+      "index": 2,
+      "name": "vae_batch_1_chunk_2",
+      "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_2.pt",
+      "latent_sha256": "21f0ddb09c2387d8dce9b21a64108b72b375c643ea3e3bb8f659577268c15cbc",
+      "frames": 123,
+      "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_2.wav",
+      "encoding": {
+        "encoder": "h264_nvenc",
+        "fallback_reason": null,
+        "encoding_seconds": 1.002,
+        "output_frames": 123,
+        "output_width": 1080,
+        "output_height": 1920,
+        "audio_duration_seconds": 5.125,
+        "bytes": 2622058
+      },
+      "crop_encode_seconds": 1.059740072931163,
+      "output_sha256": "7965e1110cfa11b403a81b4a54807ee9d3c6c3528786f493e2587ce99b3e5779"
+    }
+  ]
+}

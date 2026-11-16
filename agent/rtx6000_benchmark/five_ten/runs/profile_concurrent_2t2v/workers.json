@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "ready",
+    "role": "v",
+    "lane": 1,
+    "pid": 787385
+  },
+  {
+    "kind": "ready",
+    "role": "t",
+    "lane": 0,
+    "pid": 787382
+  },
+  {
+    "kind": "ready",
+    "role": "t",
+    "lane": 1,
+    "pid": 787383
+  },
+  {
+    "kind": "ready",
+    "role": "v",
+    "lane": 0,
+    "pid": 787384
+  }
+]

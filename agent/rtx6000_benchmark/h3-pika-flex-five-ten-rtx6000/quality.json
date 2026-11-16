@@ -1,0 +1,2347 @@
+{
+  "latents": [
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 1,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 1,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 1,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 1,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 1,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 2,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 2,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 2,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 2,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 2,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 3,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 3,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 3,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 3,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "sequential_1t2v",
+      "repeat": 3,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 1,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 1,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 1,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 1,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 1,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 2,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 2,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 2,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 2,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 2,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 3,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 3,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 3,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 3,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "batch_compact_1t2v",
+      "repeat": 3,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 1,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 1,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 1,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 1,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 1,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 2,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 2,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 2,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 2,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 2,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 3,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 3,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 3,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 3,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "repeat": 3,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 1,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 1,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 1,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 1,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 1,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 2,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 2,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 2,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 2,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 2,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 3,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 3,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 3,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 3,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "repeat": 3,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 1,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 1,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 1,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 1,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 1,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 2,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 2,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 2,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 2,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 2,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 3,
+      "chunk": 0,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002810955047607
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 3,
+      "chunk": 1,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002883672714233
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 3,
+      "chunk": 2,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002846717834473
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 3,
+      "chunk": 3,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.000288963317871
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000004768371582
+      }
+    },
+    {
+      "configuration": "batch_1t2v",
+      "repeat": 3,
+      "chunk": 4,
+      "video": {
+        "shape": [
+          1,
+          24,
+          72,
+          80,
+          46
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0002796649932861
+      },
+      "unused_generated_audio": {
+        "shape": [
+          1,
+          32,
+          2,
+          405
+        ],
+        "finite": true,
+        "bit_equal": true,
+        "rmse": 0.0,
+        "cosine": 1.0000001192092896
+      }
+    }
+  ],
+  "visual_comparisons": [
+    {
+      "configuration": "batch_compact_1t2v",
+      "ssim_vs_sequential": 1.0,
+      "resolution": [
+        180,
+        320
+      ],
+      "frames": 1200,
+      "repeat": 1
+    },
+    {
+      "configuration": "concurrent_2t1v",
+      "ssim_vs_sequential": 1.0,
+      "resolution": [
+        180,
+        320
+      ],
+      "frames": 1200,
+      "repeat": 1
+    },
+    {
+      "configuration": "concurrent_2t2v",
+      "ssim_vs_sequential": 1.0,
+      "resolution": [
+        180,
+        320
+      ],
+      "frames": 1200,
+      "repeat": 1
+    },
+    {
+      "configuration": "batch_1t2v",
+      "ssim_vs_sequential": 1.0,
+      "resolution": [
+        180,
+        320
+      ],
+      "frames": 1200,
+      "repeat": 1
+    }
+  ],
+  "prepared_input_integrity": [
+    {
+      "chunk": 0,
+      "sha256": "a36f6dcb7e0a7fb90b257eaf14e80965fe04e71737489e861b93f963533924e9",
+      "native_frames": 243,
+      "output_frames": 240,
+      "seed": 9901
+    },
+    {
+      "chunk": 1,
+      "sha256": "79d461a78acc92b242e36eaf18da90a1571436635f260da686e5f34f871438f2",
+      "native_frames": 243,
+      "output_frames": 240,
+      "seed": 9902
+    },
+    {
+      "chunk": 2,
+      "sha256": "da519bec53014b99b078507d6fb3276a4bc65cdd782b190f00c57c96719347e2",
+      "native_frames": 243,
+      "output_frames": 240,
+      "seed": 9903
+    },
+    {
+      "chunk": 3,
+      "sha256": "cddfc6b2c5b16db7186524c2257029e991b51c7be145084b70101231638c6373",
+      "native_frames": 243,
+      "output_frames": 240,
+      "seed": 9904
+    },
+    {
+      "chunk": 4,
+      "sha256": "c6812202b823ae794d342cd8ab53339963d3b981754a25c6de7c7ef59dee4d6e",
+      "native_frames": 243,
+      "output_frames": 240,
+      "seed": 9905
+    }
+  ],
+  "compact_vs_initial_video_bytes": [
+    {
+      "repeat": 1,
+      "equal": true
+    },
+    {
+      "repeat": 2,
+      "equal": true
+    },
+    {
+      "repeat": 3,
+      "equal": true
+    }
+  ]
+}

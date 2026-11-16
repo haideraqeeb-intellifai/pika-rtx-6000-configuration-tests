@@ -1,0 +1,7 @@
+{
+  "denoise_samples": 22,
+  "decode_samples": 8,
+  "successful_uncontended_captures": 2,
+  "transformer_GEMM_register_and_shared_memory_block_limits": 1,
+  "report_metric_coverage": "passed"
+}

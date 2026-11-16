@@ -1,0 +1,47 @@
+"""Unmeasured MPS attachment smoke check, on an idle dedicated GPU."""
+import json
+import select
+import subprocess
+import sys
+from .parallel_chunk_processes import RUNS
+from .parallel_chunk_resident import wait_for_empty_gpu
+from .mps_session import run_with_mps, control, terminate_client
+
+
+def main():
+    directory=RUNS/'vae_mps_smoke';directory.mkdir()
+    evidence={'empty_gpu_gate':wait_for_empty_gpu()}
+    def check():
+        processes=[]
+        code="import torch,sys,json; x=torch.ones(8,device='cuda'); torch.cuda.synchronize(); print(json.dumps({'sum':x.sum().item(),'sms':torch.cuda.get_device_properties(0).multi_processor_count}),flush=True); sys.stdin.readline(); torch.cuda.synchronize()"
+        try:
+            for _ in range(2):
+                processes.append(subprocess.Popen([sys.executable,'-u','-c',code],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True))
+            ready=[]
+            for p in processes:
+                if not select.select([p.stdout],[],[],60)[0]: raise TimeoutError('MPS CUDA initialization timed out')
+                ready.append(p.stdout.readline().strip())
+            clients=control('ps')
+            connected={line.split()[0] for line in clients.splitlines() if line.split()}
+            if not all(str(p.pid) in connected for p in processes): raise RuntimeError(f'MPS attachment failed: {clients}; outputs={ready}')
+            for p in processes:
+                p.stdin.write('\n');p.stdin.flush()
+            for p in processes:
+                out,err=p.communicate(timeout=60)
+                if p.returncode: raise RuntimeError(err)
+            return {'status':'success','ready':ready,'clients':clients}
+        finally:
+            for p in processes:
+                if p.poll() is None:
+                    terminate_client(p.pid);p.terminate();p.wait(timeout=30)
+    try:
+        evidence.update(run_with_mps(check,directory))
+    except BaseException as exc:
+        evidence.update(status='failure',error=repr(exc));raise
+    finally:
+        (directory/'result.json').write_text(json.dumps(evidence,indent=2))
+    evidence['post_shutdown_idle_gate']=wait_for_empty_gpu()
+    (directory/'result.json').write_text(json.dumps(evidence,indent=2))
+    print(json.dumps(evidence),flush=True)
+
+if __name__=='__main__':main()

@@ -1,0 +1,235 @@
+{
+  "recorded_utc": "2026-11-10T19:43:39.569879+00:00",
+  "python": "3.12.13",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "cpu": {
+    "lscpu": [
+      {
+        "field": "Architecture:",
+        "data": "x86_64"
+      },
+      {
+        "field": "CPU op-mode(s):",
+        "data": "32-bit, 64-bit"
+      },
+      {
+        "field": "Address sizes:",
+        "data": "52 bits physical, 57 bits virtual"
+      },
+      {
+        "field": "Byte Order:",
+        "data": "Little Endian"
+      },
+      {
+        "field": "CPU(s):",
+        "data": "48"
+      },
+      {
+        "field": "On-line CPU(s) list:",
+        "data": "0-47"
+      },
+      {
+        "field": "Vendor ID:",
+        "data": "AuthenticAMD"
+      },
+      {
+        "field": "Model name:",
+        "data": "AMD EPYC 9275F 24-Core Processor"
+      },
+      {
+        "field": "CPU family:",
+        "data": "26"
+      },
+      {
+        "field": "Model:",
+        "data": "2"
+      },
+      {
+        "field": "Thread(s) per core:",
+        "data": "2"
+      },
+      {
+        "field": "Core(s) per socket:",
+        "data": "24"
+      },
+      {
+        "field": "Socket(s):",
+        "data": "1"
+      },
+      {
+        "field": "Stepping:",
+        "data": "1"
+      },
+      {
+        "field": "Frequency boost:",
+        "data": "enabled"
+      },
+      {
+        "field": "CPU max MHz:",
+        "data": "4816.6992"
+      },
+      {
+        "field": "CPU min MHz:",
+        "data": "1500.0000"
+      },
+      {
+        "field": "BogoMIPS:",
+        "data": "8199.75"
+      },
+      {
+        "field": "Flags:",
+        "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx_vnni avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin cppc amd_ibpb_ret arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect movdiri movdir64b overflow_recov succor smca fsrm avx512_vp2intersect flush_l1d debug_swap srso_user_kernel_no"
+      },
+      {
+        "field": "Virtualization:",
+        "data": "AMD-V"
+      },
+      {
+        "field": "L1d cache:",
+        "data": "1.1 MiB (24 instances)"
+      },
+      {
+        "field": "L1i cache:",
+        "data": "768 KiB (24 instances)"
+      },
+      {
+        "field": "L2 cache:",
+        "data": "24 MiB (24 instances)"
+      },
+      {
+        "field": "L3 cache:",
+        "data": "256 MiB (8 instances)"
+      },
+      {
+        "field": "NUMA node(s):",
+        "data": "1"
+      },
+      {
+        "field": "NUMA node0 CPU(s):",
+        "data": "0-47"
+      },
+      {
+        "field": "Vulnerability Gather data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Indirect target selection:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Itlb multihit:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability L1tf:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Meltdown:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mmio stale data:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Reg file data sampling:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Retbleed:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec rstack overflow:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec store bypass:",
+        "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+      },
+      {
+        "field": "Vulnerability Spectre v1:",
+        "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+      },
+      {
+        "field": "Vulnerability Spectre v2:",
+        "data": "Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected"
+      },
+      {
+        "field": "Vulnerability Srbds:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsa:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsx async abort:",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Vmscape:",
+        "data": "Not affected"
+      }
+    ]
+  },
+  "memory": "               total        used        free      shared  buff/cache   available\nMem:     405114544128 13520424960 250483736576    27062272 141110382592 388607057920\nSwap:     4294963200           0  4294963200\n",
+  "gpu_hardware": "name, uuid, driver_version, memory.total [MiB], power.limit [W], pci.bus_id\nNVIDIA RTX PRO 6000 Blackwell Workstation Edition, GPU-95524f71-5100-f040-aebf-67296c094563, 595.84, 97887 MiB, 600.00 W, 00000000:21:00.0\n",
+  "ffmpeg_version": "ffmpeg version N-109937-g05438db024-20230228 Copyright (c) 2000-2023 the FFmpeg developers",
+  "source_revision": "f20fb6b5ab772412efee6e170be1cdd41ab7b9ce",
+  "benchmark_script_sha256": {
+    "run_original_image_matrix.py": "a7ed887e1b18d8dab68aa98cd7dfaa6ad39876f9240bc6e152e499e844bded7d",
+    "run_vae_stage_matrix.py": "2116914fd727ab0b87b7901f11fe61da3dde3d95a0d4394b506acf1ea8e79331",
+    "run_two_jobs.py": "d3dca5e861495c9e13e671b1ba723b5fb1dd50bbcd5ed3b1a36cedd9af60ba18",
+    "summarize_runs.py": "a6d7f9f46d2ea114c3da1bc6424cecc3d117e3dacfbbfb2caeff9e765e5c7c97",
+    "project_chunk_copy_eight.py": "8123eeee8134d1de0c19eacb0374456cf0dfd2a1763fee56e76f3dd53d811f40",
+    "run_vae_final_checks.py": "d68a4e5c68f4dc9ad96fa741ce2e947ec622ed7b1528ca30c6e1fc8aee024866",
+    "run_resume_finish.py": "1cf39d90fbe9832ebd91606df6d51cb3a6b5201fbf9babb273f8c297b4da6dec",
+    "extend_followup.py": "fa5e3c7d8def0a8220d83299b0468f8132174ccd7456830368e0de9a6e47f7d3",
+    "latent_stage_nodes.py": "2457130f37aa7a94cba80779695e5dec3a679359569c68e80195f28ae06a7d3e",
+    "async_encode_nodes.py": "194c0c436a579a78506231110f061577e334e6783beeeb72864edad0ccd96823",
+    "matrix_status.py": "faeac7fa06eb71292052aafb57364ce911da41bb5527baae9eec4b15a33fe3e6",
+    "analyze_vae_trace.py": "e996282031981a590ebf37d953416067a92c1a625d8d9e212b8e2ba441272cd4",
+    "build_original_image_report.py": "c59c4fbbd838a248818dc884ffbc6ec6d4dbbedb74fa00eaf390bda470992691",
+    "run_resume_followup.py": "e53afe03e8f6c54a42c894091ccdbe54c6b98184848dbc5f9a9a13f1cd4ebf61",
+    "batch_decode.py": "e7f8eda7cc82b3ba4405a30fb60ad4b37cb8156e3006f8578c83f7fe5613b707",
+    "stage_pipeline.py": "4b4fe3315f9192d93d293b5fceaaf6282c194b97edba94ef15713d83b4e95836",
+    "parallel_chunk_resident.py": "7f5feb8e425d93f9c2d29399c7d8b125ea0898f355dbdc493445bf1d104c76af",
+    "gpu_preencode.py": "4988f120764d496f508f18821a28f1649471f299a2b445b3221716816aaef7de",
+    "run_chunk_copy_matrix.py": "581b19b2b8473cd5b3b04e8a4a7df258329e31b675493805f3f29bea098de6f3",
+    "run_mps_vae_sizing.py": "cb1fc86e5b640ea1d2827b3c5ac5505d748b382751e8e1a5262465586b3b5c2c",
+    "mps_session.py": "13819ec631947631fbea08a3259358c40bca848d19cf7c11d8e148ad1737ecd5",
+    "build_report_html.py": "e80ce46f676ed3b79dc3759713c012d669dbc74df99de5a29f8cf65e8c5244be",
+    "compare_vae_outputs.py": "0ef7c22abb49f1009e788157c632b2c9ea9d8fed55e3ccccd160d607ea6d9b7e",
+    "preencoded_parallel.py": "46b9e1dd87e5440c56015efa971f34b7543b01543dd344d747485a996917ee0c",
+    "check_mps.py": "b2a0f91f6e6055f23b7c1f2aef16bf5cc6a0e5cd0d126972dd24377c017a38f1",
+    "check_audio.py": "b87c7ea6123100e768109c08d63cf91b8538fd82f5e603b25d230378b42d5b5d",
+    "run_mps_control_followup.py": "709e82f1f34572a070e52cae45c66d397291dc34748d20ecee300ab57c8ce9ed",
+    "run_parallel_loading_matrix.py": "206943d0e4f898da37e371d017531aff70ccdc0024dcd2b788bcb703600fd90b",
+    "audit_resumed_runs.py": "cd430ab78eb8ddd8ef9183f483519727685f1e0872567046598b1bc8b11fbde8",
+    "run_vae_followup.py": "c5c9e525a0b8cfd8e1e956730ceaa1e1a835f8d77d3dc5cb4a20aeb0168a9f43",
+    "run_final_followups.py": "4fc366af20c53bd74aa9c09b546ce6d534489550c9a94403e33b99305c7450b4",
+    "check_seams.py": "bf9fb65ca49dfef72016d8b381bb52d653e41aa1511d8f4116a502fd053567d6",
+    "deferred_encoding.py": "14c856727cf9f9538f0d5630337b1bf1729959e67bcb3451774105c57eef4c1d",
+    "download_assets.py": "4dfc734080ea6646a2f7c994a9ca4437d8f3c3baf009c956b00838a5e801ebe6",
+    "watch_gpu_ownership.py": "331abc01a60a67b7b81674f3fd7e3a5ec1736dc4a988c4efd6e5f4dc7bb6f186",
+    "estimate_eight.py": "7043d7a8781c5cab54899988b194f0a7f991b0d468b01fbd02fe22bc1881456c",
+    "build_chunk_copy_report.py": "708e0d1e3dab1719d7740aaaa85d3bd685128e7bf16a6ba1a517e90839576b09",
+    "run_chunk_copy_confirm.py": "7376436afddeef486b8ef1f68072b4c525e9c5162c3c6a4756b3678739334dc5",
+    "verify_chunk_copy_report.py": "9b60a9e24162bea523e736ff3dffe1fdaff45fbbf3deeae610d3efc19d9a71c4",
+    "run_combined_followup.py": "2f106b4559fbeb513b06775745e0ef7804646c31eb3a662d7d93d1c9a9239310",
+    "prepare_inputs.py": "4272e86686638712af1e02799ca9f103a5c22640f50715f7f4d4d05428e9e6b5",
+    "run_case.py": "aa0d104011f2f02190abf4e3c8ce6ba63e61bebd1bc25382f16b7ca8f4848729",
+    "followup_quality.py": "35ea5da4e4d82a3f3568195c41dc01432bf2baa2dda76af97d13973509c1ad9f",
+    "parallel_chunk_processes.py": "ac6a421ca551c9b2ea88889ff48f8e68b1964cbfd961973841b85b27ae631112",
+    "make_contact_sheet.py": "e24194e56cc29ab9db6bd6637bdaaeafd6bd60f40732573c9e84958ee379f671",
+    "build_vae_report.py": "7edf1cb537f46b403d02e04389fe7ec6143765d335add9e6fcde5583908ad0cf",
+    "profile_vae_pool.py": "5a2262e3c9a84cb90571f45409466ba5d0f5649273d6b99343e137c83ad29e4d",
+    "write_chunk_copy_findings.py": "f734a6968f83da9ae80aab5b610a52f29148e7979d210afc4817f3a9bbdedc82"
+  }
+}

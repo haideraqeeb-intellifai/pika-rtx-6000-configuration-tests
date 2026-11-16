@@ -1,0 +1,121 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "c0_5": {
+    "class_type": "H3LoadPrepared",
+    "inputs": {
+      "path": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_nsys_v2_3t1v/prepared/prepared_18.pt"
+    }
+  },
+  "pika": {
+    "class_type": "MiniMaxH3PikaLoRA",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "pika_h3_flex_fl2va_comfy_bf16.safetensors"
+    }
+  },
+  "sage": {
+    "class_type": "MiniMaxH3SageAttentionPatch",
+    "inputs": {
+      "model": [
+        "pika",
+        0
+      ]
+    }
+  },
+  "c0_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9919
+    }
+  },
+  "c0_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "prepared_0",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "MiniMaxH3PikaSampler",
+    "inputs": {}
+  },
+  "9": {
+    "class_type": "ManualSigmas",
+    "inputs": {
+      "sigmas": "1.000000000, 0.923076923, 0.000000000"
+    }
+  },
+  "c0_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c0_6",
+        0
+      ],
+      "guider": [
+        "c0_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "prepared_0",
+        1
+      ]
+    }
+  },
+  "prepare_0": {
+    "class_type": "H3AppendPreparation",
+    "inputs": {
+      "conditioning": [
+        "c0_5",
+        0
+      ],
+      "latent": [
+        "c0_5",
+        1
+      ]
+    }
+  },
+  "prepared_0": {
+    "class_type": "H3SelectPreparation",
+    "inputs": {
+      "prepared": [
+        "prepare_0",
+        0
+      ],
+      "index": 0
+    }
+  },
+  "save_latent": {
+    "class_type": "H3SaveLatent",
+    "inputs": {
+      "samples": [
+        "c0_10",
+        0
+      ],
+      "path": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_nsys_v2_3t1v/latents/latent_18.pt"
+    }
+  }
+}

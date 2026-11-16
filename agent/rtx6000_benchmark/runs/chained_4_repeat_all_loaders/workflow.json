@@ -1,0 +1,743 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "c0_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c0_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_0.wav"
+    }
+  },
+  "c0_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 294,
+      "first_frame": [
+        "c0_20",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c0_22",
+        0
+      ],
+      "last_frame": [
+        "c0_20",
+        0
+      ]
+    }
+  },
+  "pika": {
+    "class_type": "MiniMaxH3PikaLoRA",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "pika_h3_flex_fl2va_comfy_bf16.safetensors"
+    }
+  },
+  "sage": {
+    "class_type": "MiniMaxH3SageAttentionPatch",
+    "inputs": {
+      "model": [
+        "pika",
+        0
+      ]
+    }
+  },
+  "c0_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9901
+    }
+  },
+  "c0_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c0_5",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "MiniMaxH3PikaSampler",
+    "inputs": {}
+  },
+  "9": {
+    "class_type": "ManualSigmas",
+    "inputs": {
+      "sigmas": "1.000000000, 0.923076923, 0.000000000"
+    }
+  },
+  "c0_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c0_6",
+        0
+      ],
+      "guider": [
+        "c0_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c0_5",
+        1
+      ]
+    }
+  },
+  "c0_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c0_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c0_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c0_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_0": {
+    "class_type": "H3StoreChunk",
+    "inputs": {
+      "images": [
+        "c0_15",
+        0
+      ],
+      "index": 0,
+      "frames": 293,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_4_repeat_all_loaders",
+      "deadline": 782656.758875484
+    }
+  },
+  "c1_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c1_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_1.wav"
+    }
+  },
+  "c1_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "c1_2",
+        0
+      ],
+      "vae": [
+        "c1_3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 311,
+      "first_frame": [
+        "buffer_0",
+        2
+      ],
+      "audio_vae": [
+        "c1_4",
+        0
+      ],
+      "audio": [
+        "c1_22",
+        0
+      ],
+      "last_frame": [
+        "c1_20",
+        0
+      ]
+    }
+  },
+  "c1_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9902
+    }
+  },
+  "c1_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "c1_sage",
+        0
+      ],
+      "conditioning": [
+        "c1_5",
+        0
+      ]
+    }
+  },
+  "c1_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c1_6",
+        0
+      ],
+      "guider": [
+        "c1_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c1_5",
+        1
+      ]
+    }
+  },
+  "c1_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c1_10",
+        0
+      ],
+      "vae": [
+        "c1_3",
+        0
+      ]
+    }
+  },
+  "c1_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c1_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_1": {
+    "class_type": "H3StoreChunk",
+    "inputs": {
+      "images": [
+        "c1_15",
+        0
+      ],
+      "index": 1,
+      "frames": 295,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_4_repeat_all_loaders",
+      "deadline": 782656.758875484,
+      "previous": [
+        "buffer_0",
+        0
+      ]
+    }
+  },
+  "c2_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c2_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_2.wav"
+    }
+  },
+  "c2_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "c2_2",
+        0
+      ],
+      "vae": [
+        "c2_3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 294,
+      "first_frame": [
+        "buffer_1",
+        2
+      ],
+      "audio_vae": [
+        "c2_4",
+        0
+      ],
+      "audio": [
+        "c2_22",
+        0
+      ],
+      "last_frame": [
+        "c2_20",
+        0
+      ]
+    }
+  },
+  "c2_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9903
+    }
+  },
+  "c2_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "c2_sage",
+        0
+      ],
+      "conditioning": [
+        "c2_5",
+        0
+      ]
+    }
+  },
+  "c2_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c2_6",
+        0
+      ],
+      "guider": [
+        "c2_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c2_5",
+        1
+      ]
+    }
+  },
+  "c2_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c2_10",
+        0
+      ],
+      "vae": [
+        "c2_3",
+        0
+      ]
+    }
+  },
+  "c2_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c2_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_2": {
+    "class_type": "H3StoreChunk",
+    "inputs": {
+      "images": [
+        "c2_15",
+        0
+      ],
+      "index": 2,
+      "frames": 290,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_4_repeat_all_loaders",
+      "deadline": 782656.758875484,
+      "previous": [
+        "buffer_1",
+        0
+      ]
+    }
+  },
+  "c3_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c3_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_3.wav"
+    }
+  },
+  "c3_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "c3_2",
+        0
+      ],
+      "vae": [
+        "c3_3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 311,
+      "first_frame": [
+        "buffer_2",
+        2
+      ],
+      "audio_vae": [
+        "c3_4",
+        0
+      ],
+      "audio": [
+        "c3_22",
+        0
+      ],
+      "last_frame": [
+        "c3_20",
+        0
+      ]
+    }
+  },
+  "c3_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9904
+    }
+  },
+  "c3_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "c3_sage",
+        0
+      ],
+      "conditioning": [
+        "c3_5",
+        0
+      ]
+    }
+  },
+  "c3_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c3_6",
+        0
+      ],
+      "guider": [
+        "c3_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c3_5",
+        1
+      ]
+    }
+  },
+  "c3_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c3_10",
+        0
+      ],
+      "vae": [
+        "c3_3",
+        0
+      ]
+    }
+  },
+  "c3_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c3_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_3": {
+    "class_type": "H3StoreChunk",
+    "inputs": {
+      "images": [
+        "c3_15",
+        0
+      ],
+      "index": 3,
+      "frames": 308,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_4_repeat_all_loaders",
+      "deadline": 782656.758875484,
+      "previous": [
+        "buffer_2",
+        0
+      ]
+    }
+  },
+  "save_chunks": {
+    "class_type": "H3SaveChunks",
+    "inputs": {
+      "chunks": [
+        "buffer_3",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_4_repeat_all_loaders/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_4_repeat_all_loaders/audio_master.wav",
+      "width": 1080,
+      "height": 1920,
+      "crf": 23,
+      "deadline": 782656.758875484
+    }
+  },
+  "c1_1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "c1_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "c1_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "c1_4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "c1_pika": {
+    "class_type": "MiniMaxH3PikaLoRA",
+    "inputs": {
+      "model": [
+        "c1_1",
+        0
+      ],
+      "lora_name": "pika_h3_flex_fl2va_comfy_bf16.safetensors"
+    }
+  },
+  "c1_sage": {
+    "class_type": "MiniMaxH3SageAttentionPatch",
+    "inputs": {
+      "model": [
+        "c1_pika",
+        0
+      ]
+    }
+  },
+  "c2_1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "c2_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "c2_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "c2_4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "c2_pika": {
+    "class_type": "MiniMaxH3PikaLoRA",
+    "inputs": {
+      "model": [
+        "c2_1",
+        0
+      ],
+      "lora_name": "pika_h3_flex_fl2va_comfy_bf16.safetensors"
+    }
+  },
+  "c2_sage": {
+    "class_type": "MiniMaxH3SageAttentionPatch",
+    "inputs": {
+      "model": [
+        "c2_pika",
+        0
+      ]
+    }
+  },
+  "c3_1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "c3_2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "c3_3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "c3_4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "c3_pika": {
+    "class_type": "MiniMaxH3PikaLoRA",
+    "inputs": {
+      "model": [
+        "c3_1",
+        0
+      ],
+      "lora_name": "pika_h3_flex_fl2va_comfy_bf16.safetensors"
+    }
+  },
+  "c3_sage": {
+    "class_type": "MiniMaxH3SageAttentionPatch",
+    "inputs": {
+      "model": [
+        "c3_pika",
+        0
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/profile_vae_pool.py", line 32, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/profile_vae_pool.py", line 19, in main
+    'empty_gpu_gate':wait_for_empty_gpu()}
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/parallel_chunk_resident.py", line 246, in wait_for_empty_gpu
+    return empty_gpu_gate()
+           ^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py", line 153, in empty_gpu_gate
+    raise RuntimeError(f'RTX 6000 is not at its observed idle baseline: {samples}')
+RuntimeError: RTX 6000 is not at its observed idle baseline: [{'time': 1794263836.0986934, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794263837.1856523, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}, {'time': 1794263838.272781, 'uuid': 'GPU-95524f71-5100-f040-aebf-67296c094563', 'gpu_util_pct': 0, 'memory_used_mib': 4, 'driver_reserved_mib': 638, 'compute_pids': [], 'graphics_pids': []}]
+Collecting data...
+Generating '/tmp/nsys-raqeeb/nsys-report-d124.qdstrm'
+[1/1] [0%                          ] vae_profile_mps_four_trace.nsys-rep[1/1] [0%                          ] vae_profile_mps_four_trace.nsys-rep[1/1] [1%                          ] vae_profile_mps_four_trace.nsys-rep[1/1] [2%                          ] vae_profile_mps_four_trace.nsys-rep[1/1] [5%                          ] vae_profile_mps_four_trace.nsys-rep[1/1] [9%                          ] vae_profile_mps_four_trace.nsys-rep[1/1] [10%                         ] vae_profile_mps_four_trace.nsys-rep[1/1] [11%                         ] vae_profile_mps_four_trace.nsys-rep[1/1] [12%                         ] vae_profile_mps_four_trace.nsys-rep[1/1] [13%                         ] vae_profile_mps_four_trace.nsys-rep[1/1] [14%                         ] vae_profile_mps_four_trace.nsys-rep[1/1] [=15%                        ] vae_profile_mps_four_trace.nsys-rep[1/1] [=16%                        ] vae_profile_mps_four_trace.nsys-rep[1/1] [=17%                        ] vae_profile_mps_four_trace.nsys-rep[1/1] [==18%                       ] vae_profile_mps_four_trace.nsys-rep[1/1] [==19%                       ] vae_profile_mps_four_trace.nsys-rep[1/1] [==20%                       ] vae_profile_mps_four_trace.nsys-rep[1/1] [===23%                      ] vae_profile_mps_four_trace.nsys-rep[1/1] [======34%                   ] vae_profile_mps_four_trace.nsys-rep[1/1] [=======================96%  ] vae_profile_mps_four_trace.nsys-rep[1/1] [========================98% ] vae_profile_mps_four_trace.nsys-rep[1/1] [========================100%] vae_profile_mps_four_trace.nsys-rep[1/1] [========================100%] vae_profile_mps_four_trace.nsys-rep
+Generated:
+	/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_profile_mps_four_trace.nsys-rep

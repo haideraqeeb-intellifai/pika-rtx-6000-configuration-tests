@@ -1,0 +1,27 @@
+[
+  {
+    "frames": 223,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_c5_1t_1v/audio_0.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 240,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_c5_1t_1v/audio_1.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 241,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_c5_1t_1v/audio_2.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 241,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_c5_1t_1v/audio_3.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 241,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_c5_1t_1v/audio_4.wav",
+    "anchor": "hard"
+  }
+]

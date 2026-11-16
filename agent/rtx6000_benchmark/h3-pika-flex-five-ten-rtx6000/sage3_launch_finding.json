@@ -1,0 +1,14 @@
+{
+  "status": "observed in existing fast implementation; no library changes made",
+  "source_path": "script2video/agent/rtx6000_benchmark/fast_dependencies/SageAttention/sageattention3_blackwell/sageattn3/blackwell/launch.h",
+  "line": 89,
+  "source_line": "dim3 grid_dims = Scheduler::get_grid_dim(scheduler_args, 170);",
+  "source_sha256": "999a6cfffeda96da05115b9d35c7a1f8e222bb14db2eb8f1be11db2f90f93e48",
+  "observed_grid_blocks": 170,
+  "gpu_sms": 188,
+  "observed_threads_per_block": 384,
+  "observed_registers_per_thread": 168,
+  "observed_shared_memory_per_block_bytes": 100352,
+  "per_sm_shared_memory_bytes": 102400,
+  "note": "This persistent kernel leaves an SM-count tuning opportunity. No performance gain from changing its grid has been measured."
+}

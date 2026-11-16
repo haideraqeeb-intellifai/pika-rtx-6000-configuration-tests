@@ -1,0 +1,18 @@
+{
+  "scope": "First measured 10-second chunk on one transformer, before any VAE is dispatched",
+  "window_seconds": 33.57955183,
+  "metrics": {
+    "SMs Active [Throughput %]": {
+      "mean": 96.2003573555688,
+      "samples": 33580
+    },
+    "SM Issue [Throughput %]": {
+      "mean": 28.461137581893986,
+      "samples": 33580
+    },
+    "Tensor Active [Throughput %]": {
+      "mean": 60.73832638475283,
+      "samples": 33580
+    }
+  }
+}

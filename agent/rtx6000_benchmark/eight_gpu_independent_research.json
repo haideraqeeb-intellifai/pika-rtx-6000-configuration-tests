@@ -1,0 +1,247 @@
+{
+  "title": "Independent assessment: eight RTX PRO 6000 Blackwell GPUs for H3 Pika Flex",
+  "date_utc": "2026-11-10",
+  "status": "RESEARCH_ONLY_NO_NEW_GPU_MEASUREMENTS",
+  "verdict": {
+    "possible": "Greater than 8x versus the measured fresh-process single-GPU latency is technically plausible. Startup amortization alone can create that ratio; stage isolation and better scheduling are additional paths.",
+    "likely": "The evidence does not establish that greater than 8x is likely, either against the current cold measurement or a matched warm single-GPU service. There is no measured full-video fast isolated service profile or two/eight-GPU result.",
+    "purchase_premise": "Do not make the purchase depend on greater than 8x. Evaluate the economics using an explicit conservative capacity scenario and require a pilot on the quoted server SKU. Treat greater than 8x as upside until measured.",
+    "limits": "The supplied 200.345680-second mean is two fresh-process jobs, not a statistically characterized sustained-throughput baseline. The scenarios below are arithmetic assumptions, not expected hardware rates."
+  },
+  "baseline": {
+    "total_seconds": 200.34568004599714,
+    "fresh_video_ready_seconds": 196.12531551649954,
+    "videos_per_hour_equivalent": 17.968942475692412,
+    "strict_interval_for_gt_8x_seconds": 25.043210005749643,
+    "preparation_seconds": 22.79971100849798,
+    "encoder_release_gate_seconds": 4.069109432999539,
+    "pipeline_seconds": 162.84968862899768,
+    "assembly_validation_seconds": 6.400785262998397,
+    "extra_qa_seconds": 4.220364529497601,
+    "peak_vram_gib": 43.904,
+    "measured_runs": 2,
+    "output": "49.408 seconds; 1186 delivered frames; 20 independent chunks; unchanged anchors; two Pika steps; fast attention/FP4 VAE configuration"
+  },
+  "replica_scenarios": [
+    {
+      "assumed_scaling_efficiency": 0.8,
+      "assumed_per_gpu_equivalence_to_measured_workstation": 1,
+      "speedup_vs_cold": 6.4,
+      "videos_per_hour": 115.00123184443144,
+      "interpretation": "Same measured lifecycle per GPU; scenario only, not forecast."
+    },
+    {
+      "assumed_scaling_efficiency": 0.9,
+      "assumed_per_gpu_equivalence_to_measured_workstation": 1,
+      "speedup_vs_cold": 7.2,
+      "videos_per_hour": 129.37638582498536,
+      "interpretation": "Same measured lifecycle per GPU; scenario only, not forecast."
+    },
+    {
+      "assumed_scaling_efficiency": 1,
+      "assumed_per_gpu_equivalence_to_measured_workstation": 1,
+      "speedup_vs_cold": 8,
+      "videos_per_hour": 143.7515398055393,
+      "interpretation": "Same measured lifecycle per GPU; scenario only, not forecast."
+    }
+  ],
+  "lifecycle_correction": {
+    "formula": "S_cold = 8 * eta * g * (t_cold / w); S_matched_warm = 8 * eta * g. w is the optimized warm workstation completion interval; g is measured target-SKU throughput divided by workstation throughput under the same warm policy.",
+    "gt_8x_condition": "w < eta * g * t_cold",
+    "same_sku_warm_interval_thresholds_seconds": {
+      "0.8": 160.27654403679773,
+      "0.9": 180.31111204139742,
+      "0.95": 190.32839604369727,
+      "1": 200.34568004599714
+    },
+    "example": {
+      "assumed_warm_single_gpu_interval_seconds": 180,
+      "assumed_scaling_efficiency": 0.9,
+      "assumed_sku_factor": 1,
+      "speedup_vs_cold": 8.013827201839886,
+      "speedup_vs_matched_warm": 7.2
+    },
+    "fair_comparison": "Use identical resolution, frames, anchors, steps, precision policy, quality gates, host provision, cache rules, input mix and successful-output boundary. Compare cold-to-cold and warm-to-warm separately. A warm single GPU may keep stage workers resident, batch requests, overlap CPU tails and avoid process/encoder-release gaps too.",
+    "cache_constraint": "The observed one text-encoder call plus nineteen cache hits reflects identical text within this video. It does not establish reuse across different customer prompts or images."
+  },
+  "stage_capacity_model": {
+    "definitions": "P,T,V are measured full-video service demands of preparation, transformer and VAE when isolated on the target GPU, after warmup. Count GPU occupancy caused by transfers and synchronous CPU waits where relevant; expose CPU, storage, serializer and link demands separately. Do not substitute overlapping call sums or cold phase durations.",
+    "formula": "For fixed roles: I >= max((1+hP)*P/nP, (1+hT)*T/nT, (1+hV)*V/nV, C_CPU, C_link, C_storage, C_scheduler), with nP+nT+nV=8. This is a capacity bound, not an achieved interval or latency guarantee.",
+    "transfer_correction": "The parent max(stage)*(1+h)+delta model is a deliberately pessimistic serialization scenario only when delta is globally unhidden each cycle. A pipelined transfer is normally its own capacity demand, or consumes a particular worker/link. Sum delays for individual-job critical paths; do not automatically sum all edge delays into the steady-state completion interval. Conversely a single uniform percentage can miss real CPU/NUMA/link bottlenecks.",
+    "overhead_note": "Ten percent is a sensitivity assumption. Per-stage penalties can differ, be workload dependent, or disappear with persistent residency.",
+    "strict_stage_budgets_10pct_overhead_no_extra_global_serial_delay": [
+      {
+        "gpus_preparation_transformer_vae": [
+          1,
+          4,
+          3
+        ],
+        "P_T_V_seconds_each_strictly_below": [
+          22.76655455068149,
+          91.06621820272596,
+          68.29966365204447
+        ]
+      },
+      {
+        "gpus_preparation_transformer_vae": [
+          1,
+          5,
+          2
+        ],
+        "P_T_V_seconds_each_strictly_below": [
+          22.76655455068149,
+          113.83277275340745,
+          45.53310910136298
+        ]
+      },
+      {
+        "gpus_preparation_transformer_vae": [
+          2,
+          4,
+          2
+        ],
+        "P_T_V_seconds_each_strictly_below": [
+          45.53310910136298,
+          91.06621820272596,
+          45.53310910136298
+        ]
+      }
+    ],
+    "parent_serialized_transfer_sensitivity": {
+      "assumed_overhead": 0.1,
+      "assumed_global_unhidden_delta_seconds": 0.470198871,
+      "strict_stage_budgets": [
+        {
+          "gpus_preparation_transformer_vae": [
+            1,
+            4,
+            3
+          ],
+          "P_T_V_seconds_each_strictly_below": [
+            22.33910103159058,
+            89.35640412636232,
+            67.01730309477175
+          ]
+        },
+        {
+          "gpus_preparation_transformer_vae": [
+            1,
+            5,
+            2
+          ],
+          "P_T_V_seconds_each_strictly_below": [
+            22.33910103159058,
+            111.69550515795291,
+            44.67820206318116
+          ]
+        }
+      ]
+    },
+    "flexible_roles": "Fixed role counts waste capacity when stage ratios vary. If every stage can run on each GPU and resident models fit, a queue can time-share roles or whole chunks. Under the simplified exclusive-stage-work model D=P+T+V, an ideal eight-GPU scheduler has I>=D/8; at uniform 10% overhead, I>=1.1*D/8. Beating 8x cold requires D<200.345680s, or D<182.132436s with that overhead. These are necessary conditions within this model, not universal physical bounds or sufficient guarantees. Memory constraints, concurrency effects, per-chunk dependencies and switching overhead can prevent the ideal.",
+    "serial_latency": "Current unchanged preparation+assembly+extra-QA totals 33.420861s, already exceeding the 25.043210s target for 8x individual-video latency. This is not an intrinsic lower bound after streaming/residency changes. Throughput overlaps these stages across videos and does not obey that per-video serial floor.",
+    "queues": "At least several independent videos should be in flight to fill stage pools. A 25-second completion interval does not mean a 25-second response time. Sustained arrival rates need headroom below bottleneck capacity for acceptable tail latency."
+  },
+  "transfer_analysis": {
+    "old_default_artifact_payload_gib": 0.975497177,
+    "provenance": "followup_eight_gpu_estimates.json: old DEFAULT-mode serialized prepared and latent files. This is a coarse transport proxy, not a fast-mode communication measurement.",
+    "one_traversal_average_mib_per_second_at_8x": 39.887422938938805,
+    "two_traversal_average_mib_per_second_at_8x": 79.77484587787761,
+    "handoffs_per_second_if_40_per_video": 1.597239331172659,
+    "inference": "The proxy is only about 40 MiB/s averaged across the whole system at the target, or 80 MiB/s for two traversals. Coarse stage-edge bandwidth alone is unlikely to dominate if those assumptions hold. Bursts, CPU serialization, duplicate reads, disk staging, host memory traffic and shared switch uplinks remain unmeasured. The current implementation writes/loads .pt artifacts; a PCIe peak is not its effective application bandwidth.",
+    "exclusions": "The file-size proxy excludes model loading, decoded frames, input/output storage traffic and layer-level tensor/attention collectives. Never use it to justify tensor-parallel communication costs.",
+    "docs": "CUDA supports overlap with appropriate asynchronous copies, pinned host memory and streams; device-to-device P2P depends on topology and support queries. No NVLink does not imply no PCIe P2P."
+  },
+  "evidence_interpretation": [
+    "MPS permits concurrent kernels when resources are available; it does not multiply one GPU compute or memory bandwidth. The measured 77.44% utilization is activity time, not a FLOP-saturation measurement; 1/0.7744 is not a justified speedup ceiling.",
+    "Fast runs already use SA2 on the first forward, SA3 FP4 on the second, and NVFP4 VAE decoder projections. Do not count those existing gains again as an eight-GPU advantage.",
+    "Fast sampler call sums (~120.38s) and VAE call sums (~258.42s) include overlap and contention. Adding them or treating them as isolated per-video GPU seconds is invalid.",
+    "Two longest-chunk calibration samples show the second 73-frame transformer call around 6.67s and VAE call around 2.72s. They are too few, and the wrong length distribution, to estimate warm 20-chunk service demands. VAE total includes encode/validation and cannot be compared directly with GPU-only call time.",
+    "The main fast traces support contention: later VAE calls with no sampler overlap are much shorter than early calls with sampler overlap. The later calls still overlap another VAE worker. This establishes a reason to test isolation, not a proportional independent-throughput gain.",
+    "A 43.904GiB peak makes memory capacity look less restrictive than compute/contention for the measured transient workload, but does not prove all preparation/transformer/VAE models plus concurrent activations fit when permanently resident. Measure that envelope.",
+    "All 20 chunks can be distributed without a previous-chunk latent dependency under the measured anchor policy. Preserve seeds, anchors, temporal alignment, output ordering and the full 1186-frame/audio contract.",
+    "Fast output differs from default (reported SSIM about .980473 at 180x320); deterministic repeats and 19 flagged joins in both modes do not establish production visual acceptance. Capacity economics must count accepted outputs under a fixed quality gate."
+  ],
+  "architectures_ranked": [
+    {
+      "rank": 1,
+      "architecture": "Persistent independent replicas with CPU tails overlapped",
+      "reason": "Lowest communication complexity; each GPU receives independent jobs and retains models. Tune batching and MPS versus serialized stage scheduling on one GPU first. This also establishes the fair warm reference. Use local queues across GPUs and sufficient CPU/RAM/IO. Distributed inference docs demonstrate the general replica pattern, not H3-specific compatibility or scaling."
+    },
+    {
+      "rank": 2,
+      "architecture": "Dynamic pool of independent chunks, retaining T+V per worker where memory allows",
+      "reason": "The 20 independent chunks provide natural coarse tasks. Assign by measured chunk cost, mix chunks from multiple videos, and keep intermediates local through T then V. A bounded CPU assembly queue preserves ordering. Shared or replicated prep must be included inside the eight-GPU budget. No per-layer collective is necessary."
+    },
+    {
+      "rank": 3,
+      "architecture": "Persistent stage pools with flexible roles and measured isolation",
+      "reason": "Separate transformer and VAE work where contention is costly; use chunk queues and asynchronous handoffs. Evaluate 1/5/2 versus 1/4/3 only after fast warm service measurements. Allow a preparation GPU to process other work when idle if residency and scheduling costs permit. Dynamic role changes should avoid repeatedly loading large weights."
+    }
+  ],
+  "lower_priority": "Tensor/sequence parallelism may help single-chunk latency or model memory limits but introduces repeated synchronization/communication. This workload already fits one GPU and exposes independent chunks. Validate tensor/attention kernel compatibility and quality if pursuing it; generic PyTorch TP support and vendor benchmark scaling do not establish H3 performance. Two denoising steps also provide little inter-step overlap to amortize schemes that depend on many repeated steps.",
+  "hardware": {
+    "verified_published_specs": "NVIDIA server page and Dec2025 server datasheet:96GB GDDR7,1597GB/s,up to600W,PCIe5.0x16. Workstation page and Jun2026 datasheet:96GB GDDR7,1792GB/s,600W. Lenovo explicitly lists no NVLink for the server GPU and an eight-GPU SR675 V3 configuration with 5thGen EPYC;600W configurations require specified high-performance fans.",
+    "spec_difference": "Published bandwidth differs by10.88%. Both current pages agree with their respective datasheets. This is not a measured H3 slowdown and the exact quoted board/firmware/ECC/clocks/power cap still needs verification. Do not substitute a Max-Q or450W server configuration for the measured600W workstation without measuring.",
+    "memory_bandwidth_ratio_sensitivity_only": 0.8911830357142857,
+    "required_quote_details": [
+      "Exact GPU part number and edition",
+      "600W sustained versus450W cap",
+      "CPU sockets/cores and populated memory channels",
+      "GPU-to-CPU and GPU-to-switch topology plus uplink widths",
+      "P2P supported pairs and measured simultaneous copy bandwidth",
+      "NVMe and storage layout",
+      "Chassis cooling/PSU configuration sustaining all eight cards"
+    ],
+    "power_capacity": "Eight600W GPUs total4.8kW of board power ceilings, before CPUs, fans and other components. This is a provisioning figure, not measured wall power or an energy-per-video estimate."
+  },
+  "cost_per_accepted_video": {
+    "formula": "cost_i = H_i / (q_i * u_i * y_i), where H_i is fully loaded whole-system hourly cost, q_i sustained benchmark videos/hour, u_i realized productive fraction and y_i accepted-output yield.",
+    "break_even": "Let S=q8/q1. Eight GPUs are cheaper per accepted video iff S > (H8/H1)*(u1*y1)/(u8*y8). With equal use and yield, the required speedup equals the hourly cost ratio, not necessarily8.",
+    "include": [
+      "Amortized purchase/financing",
+      "Host, RAM, NVMe and network",
+      "Energy using measured wall power and facility overhead",
+      "Support/operations/software",
+      "Idle time, failures and quality retries"
+    ],
+    "caution": "No quoted system price or utilization forecast was supplied; this study makes no payback claim. Demand below the measured service capacity reduces economic benefit even when benchmark throughput scales."
+  },
+  "minimal_validation_plan": {
+    "one_gpu_before_hardware_purchase": [
+      "Measure a persistent service across multiple complete videos, with representative prompts/images and all observed chunk lengths; separate cold start, warm completion interval and end-to-end latency. Preserve quality gates and avoid cross-request caches unless valid.",
+      "Measure fast preparation, transformer and VAE service demands separately over the full20-chunk distribution; log CUDA spans and actual CPU/IO service, startup, model residency and memory envelope. Compare serialized versusMPS overlap and modest batching to identify contention.",
+      "Measure encoding/assembly/validation throughput at the required offered load using existing outputs; include accepted-output yield. Derive a stage-allocation capacity model with uncertainty from those measurements."
+    ],
+    "actual_two_gpu": [
+      "On the quoted SKU, compare two independent warm replicas with transformer/VAE isolation and a whole-chunk pool under the same work/quality boundary. Measure link/P2P or host-staged transfers, busy-time and overlap; validate outputs and audio.",
+      "Use the two-GPU result to establish contention benefit, transfer/NUMA behavior and per-card performance. It cannot certify eight-GPU aggregate throughput."
+    ],
+    "actual_eight_gpu": [
+      "Run the exact topology with sustained representative load until startup/fill effects are separated; collect multiple steady windows and enough completed jobs to quantify variability. Measure aggregate accepted videos/hour,p50/p95 latency,CPU/RAM/IO/link saturation,queue growth,temperature/clocks/power and errors.",
+      "Re-run the best matched single-GPU warm service on the same server SKU/host resources. Claim greater than8x only if the uncertainty interval for the measured throughput ratio supports it. Report the cold comparison separately and use the achieved cost-per-accepted-video for purchase acceptance."
+    ]
+  },
+  "local_evidence": [
+    "runs/fast_comparison_summary.json",
+    "h3-pika-flex-fast-rtx6000/results.json",
+    "runs/followup_fast_cal20_calibration_denoise_chunk_1/result.json",
+    "runs/followup_fast_cal20_calibration_chunk_1/result.json",
+    "runs/followup_eight_gpu_estimates.json",
+    "runs/fast_eight_gpu_feasibility.json",
+    "stage_pipeline.py",
+    "parallel_chunk_resident.py"
+  ],
+  "primary_sources": {
+    "nvidia_server": "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/",
+    "nvidia_server_datasheet": "https://dam-cdn.nvd.orangelogic.com/AssetLink/707m1632ypg4du1fj3ci1jo3h4w1k78j.pdf",
+    "nvidia_workstation": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+    "nvidia_workstation_datasheet": "https://www.nvidia.com/content/dam/en-zz/Solutions/data-center/rtx-pro-6000-blackwell-workstation-edition/workstation-blackwell-rtx-pro-6000-workstation-edition-nvidia-us-3519208-web.pdf",
+    "lenovo_gpu": "https://lenovopress.lenovo.com/lp2263-thinksystem-nvidia-rtx-pro-6000-blackwell-server-edition-pcie-gen5-gpu",
+    "lenovo_server": "https://lenovopress.lenovo.com/lp1611-thinksystem-sr675-v3-server",
+    "cuda_transfer_overlap": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/",
+    "cuda_multigpu": "https://docs.nvidia.com/cuda/cuda-programming-guide/03-advanced/multi-gpu-systems.html",
+    "mps": "https://docs.nvidia.com/deploy/mps/when-to-use-mps.html",
+    "diffusers_distributed": "https://huggingface.co/docs/diffusers/training/distributed_inference",
+    "pytorch_tensor_parallel": "https://docs.pytorch.org/docs/main/distributed/tensor.parallel.html"
+  }
+}

@@ -1,0 +1,6 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_mps_3t_2v
+{"name": "followup_mps_3t_2v", "status": "memory_guard_rejected", "timed_total_seconds": null, "gpu_trace_summary": null, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_mps_3t_2v_staged
+{"name": "followup_mps_3t_2v_staged", "status": "success", "timed_total_seconds": 244.60990241099353, "gpu_trace_summary": {"samples": 1171, "peak_vram_gib": 82.545, "gpu_util_mean_pct": 75.58411614005124}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}

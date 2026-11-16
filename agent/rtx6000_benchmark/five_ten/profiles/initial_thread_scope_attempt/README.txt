@@ -1,0 +1,1 @@
+Initial NCU capture used default thread-scoped NVTX filtering. H3 launches CUDA work from a different inference thread, so this captured no requested kernels. Corrected capture uses --nvtx-push-pop-scope process. No performance results are derived from either diagnostic replay.

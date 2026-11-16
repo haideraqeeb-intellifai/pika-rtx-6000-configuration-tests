@@ -1,0 +1,375 @@
+"""Independent-chunk process pool: each lane keeps one H3 model set loaded.
+
+This is a benchmark worker, separate from the production Comfy executor. One
+process owns one Comfy runtime, so its process-local inference lock does not
+serialize other lanes. Every chunk starts from the original portrait.
+"""
+
+import argparse
+import json
+import multiprocessing as mp
+import os
+import shutil
+import subprocess
+import sys
+import time
+import traceback
+import uuid
+from pathlib import Path
+
+from ml_modules.minimax_h3_turbo.chunking import prepare_audio, slice_audio
+from ml_modules.minimax_h3_turbo.infer import infer, load_models
+from ml_modules.minimax_h3_turbo.workflow import build_chunked_workflow
+from workers.image2video_h3_turbo.schema import build_chunk_plan, schema_image2video_h3_turbo
+
+from .parallel_chunk_processes import (GPUTrace, RUNS, anchor_at, assemble, file_hash,
+                                       inference_overlap, split_audio)
+from .run_case import INPUTS, MODEL_ROOT, ROOT, PROMPT, chunk_counts, empty_gpu_gate, probe
+
+
+def lane_main(lane_id, lane_root, task_queue, result_queue, clip_device, residency, prepared_dir=None, stage="full", latent_dir=None):
+    """Own one Comfy runtime and execute successive independent chunks."""
+    if os.environ.get('H3_BENCHMARK_MPS') == '1':
+        percent = os.environ.get('H3_MPS_DENOISE_PERCENT' if stage == 'denoise' else 'H3_MPS_DECODE_PERCENT', '100')
+        os.environ['CUDA_MPS_ACTIVE_THREAD_PERCENTAGE'] = percent
+    lane_root = Path(lane_root)
+    runtime_root = lane_root / 'runtime'
+    runtime_input = runtime_root / 'input'
+    runtime_input.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(INPUTS / 'raccoon_headshot.jpg', runtime_input / 'portrait.jpg')
+    encoder = None
+    try:
+        if residency == 'highvram':
+            from ml_modules.minimax_h3_turbo.runtime import COMFY_ROOT
+            if str(COMFY_ROOT) not in sys.path:
+                sys.path.insert(0, str(COMFY_ROOT))
+            from comfy.cli_args import args as comfy_args
+            comfy_args.highvram = True
+        loaded_at = time.time()
+        models = load_models(MODEL_ROOT, runtime_root)
+        main = models['main']
+        if residency == 'highvram' and os.environ.get('H3_STATIC_STAGE_PATCHER') == '1':
+            # The production loader explicitly enables dynamic VRAM. For this
+            # experimental branch select Comfy's ordinary patcher before any
+            # checkpoint is instantiated; HIGH_VRAM retains its GPU weights.
+            # Keep this local to the benchmark process.
+            import comfy.model_patcher
+            comfy.model_patcher.CoreModelPatcher = comfy.model_patcher.ModelPatcher
+        if stage != 'full':
+            from .latent_stage_nodes import NODE_CLASS_MAPPINGS
+            main.nodes.NODE_CLASS_MAPPINGS.update(NODE_CLASS_MAPPINGS)
+        if prepared_dir:
+            from .gpu_preencode import register
+            register(models)
+        async_encoding = os.environ.get('H3_ASYNC_ENCODING') == '1' and stage == 'decode'
+        if async_encoding:
+            from .deferred_encoding import DeferredEncoding
+            encoder = DeferredEncoding(main.nodes.NODE_CLASS_MAPPINGS['H3SaveChunks'], lane_id, result_queue)
+        # Wall intervals around the actual sampler call, synchronized in this
+        # CUDA context. These establish overlapping calls, not simultaneous kernels.
+        sampler_intervals = []
+        decode_intervals = []
+        decode_cls = main.nodes.NODE_CLASS_MAPPINGS['VAEDecode']
+        original_decode = decode_cls.decode
+        def traced_decode(instance, *args, **kwargs):
+            import torch
+            torch.cuda.synchronize()
+            begin = time.time()
+            try:
+                return original_decode(instance, *args, **kwargs)
+            finally:
+                torch.cuda.synchronize()
+                decode_intervals.append({'started_wall_utc': begin, 'ended_wall_utc': time.time()})
+        decode_cls.decode = traced_decode
+        sampler_cls = main.nodes.NODE_CLASS_MAPPINGS['SamplerCustomAdvanced']
+        original_execute = sampler_cls.execute
+        def traced_execute(cls, *args, **kwargs):
+            import torch
+            torch.cuda.synchronize()
+            begin = time.time()
+            try:
+                return original_execute(*args, **kwargs)
+            finally:
+                torch.cuda.synchronize()
+                sampler_intervals.append({'started_wall_utc': begin, 'ended_wall_utc': time.time()})
+        sampler_cls.execute = classmethod(traced_execute)
+        sampler_cls.sample = sampler_cls.execute
+        # Cache identical loader nodes across prompts in this lane. Audio filenames
+        # below are unique per chunk so their conditioning cannot be reused by mistake.
+        models['executor'] = main.execution.PromptExecutor(
+            models['progress'], cache_type=main.execution.CacheType.CLASSIC,
+            cache_args={'lru': 0, 'ram': 0, 'ram_inactive': 0})
+        import torch
+        effective_sms = torch.cuda.get_device_properties(0).multi_processor_count
+        result_queue.put({'lane': lane_id, 'kind': 'ready',
+                          'effective_multiprocessor_count': effective_sms,
+                          'load_models_seconds': time.time() - loaded_at,
+                          'static_residency_requested': os.environ.get('H3_STATIC_STAGE_PATCHER') == '1',
+                          'core_model_patcher': main.comfy.model_patcher.CoreModelPatcher.__name__,
+                          'vram_state': str(main.comfy.model_management.vram_state)})
+        while (task := task_queue.get()) is not None:
+            if encoder:
+                encoder.limit_pending()
+            index, frames, audio, name, anchor = task
+            case_dir = RUNS / name
+            try:
+                if case_dir.exists():
+                    raise FileExistsError(case_dir)
+                case_dir.mkdir(parents=True)
+                audio_name = f'lane_{lane_id}_audio_{index}.wav'
+                shutil.copy2(audio, runtime_input / audio_name)
+                started = time.perf_counter()
+                started_wall = time.time()
+                deadline = time.monotonic() + 9000
+                master, duration = prepare_audio(runtime_input / audio_name, case_dir, deadline)
+                if round(duration * 24) != frames:
+                    raise ValueError(f'Chunk {index} audio duration maps to {round(duration * 24)} frames, expected {frames}')
+                schedule = [{'duration_seconds': frames / 24, 'reference': 'original', 'anchor': anchor}]
+                plan = build_chunk_plan(schedule, frames)
+                segment_names = []
+                for segment in slice_audio(master, plan, runtime_input, deadline):
+                    unique_segment = runtime_input / f'lane_{lane_id}_segment_{index}.wav'
+                    segment.replace(unique_segment)
+                    segment_names.append(unique_segment.relative_to(runtime_input).as_posix())
+                raw = {'uid': name, 'webhook_url': 'https://example.test/h3-benchmark',
+                       'prompt': PROMPT, 'model': 'pika_flex', 'num_inference_steps': 2,
+                       'chunked_mode': True, 'image_path': str(runtime_input / 'portrait.jpg'),
+                       'audio_path': str(runtime_input / audio_name), 'chunk_schedule': schedule,
+                       'width': 720, 'height': 1280, 'final_width': 1080,
+                       'final_height': 1920, 'fps': 24, 'seed': 9901 + index,
+                       'timeout_seconds': 9000, 'clip_device': clip_device}
+                message = schema_image2video_h3_turbo.model_validate(raw).model_dump()
+                output = case_dir / 'output.mp4'
+                graph, effective = build_chunked_workflow(
+                    message, plan, first_frame_name='portrait.jpg', audio_names=segment_names,
+                    audio_master=master, directory=case_dir, output=output, deadline=deadline)
+                if prepared_dir:
+                    from .gpu_preencode import reachable
+                    artifact = Path(prepared_dir) / f'prepared_{index}.pt'
+                    meta = json.loads(artifact.with_suffix('.json').read_text())
+                    if (meta['frames'] != frames or meta['anchor'] != anchor or
+                            meta['audio_sha256'] != file_hash(Path(audio)) or
+                            meta['artifact_sha256'] != file_hash(artifact) or
+                            meta['portrait_sha256'] != file_hash(runtime_input / 'portrait.jpg') or
+                            meta['prompt'] != PROMPT):
+                        raise ValueError('Prepared conditioning does not match this chunk')
+                    graph['c0_5'] = {'class_type': 'H3LoadPrepared', 'inputs': {'path': str(artifact)}}
+                    graph = reachable(graph, ['save_chunks'])
+                    if any(n['class_type'] == 'CLIPLoader' for n in graph.values()):
+                        raise ValueError('A text encoder remains in the prepared worker graph')
+                if stage != 'full':
+                    from .gpu_preencode import reachable
+                    latent_path = str(Path(latent_dir) / f'latent_{index}.pt')
+                    if stage == 'denoise':
+                        graph['save_latent'] = {'class_type': 'H3SaveLatent', 'inputs': {
+                            'samples': ['c0_10', 0], 'path': latent_path}}
+                        graph = reachable(graph, ['save_latent'])
+                        if any(n['class_type'] == 'VAELoader' for n in graph.values()):
+                            raise ValueError('Denoise worker still contains VAE loader')
+                    elif stage == 'decode':
+                        graph['load_latent'] = {'class_type': 'H3LoadLatent', 'inputs': {'path': latent_path}}
+                        graph['c0_11']['inputs']['samples'] = ['load_latent', 0]
+                        graph = reachable(graph, ['save_chunks'])
+                        if any(n['class_type'] in ('UNETLoader', 'CLIPLoader') for n in graph.values()):
+                            raise ValueError('Decode worker still contains transformer or text encoder')
+                    else:
+                        raise ValueError(stage)
+                (case_dir / 'workflow.json').write_text(json.dumps(graph, indent=2) + '\n')
+                sampler_intervals.clear()
+                decode_intervals.clear()
+                inference_started_wall = time.time()
+                inferred = infer(models, graph, prompt_id=uuid.uuid4().hex,
+                                 timeout_seconds=deadline - time.monotonic())
+                inference_ended_wall = time.time()
+                parsed = None
+                if stage != 'denoise' and not encoder:
+                    parsed = probe(output)
+                    video = next(s for s in parsed['streams'] if s['codec_type'] == 'video')
+                    if int(video.get('nb_read_frames', -1)) != frames:
+                        raise ValueError(f'Chunk {index} produced the wrong frame count')
+                    subprocess.run(['ffmpeg', '-nostdin', '-hide_banner', '-loglevel', 'error',
+                                    '-i', str(output), '-map', '0:v:0', '-map', '0:a:0',
+                                    '-f', 'null', '-'], check=True, timeout=300, capture_output=True)
+                result = {'name': name, 'status': 'success', 'lane': lane_id, 'index': index,
+                          'frames': frames, 'anchor': anchor, 'effective': effective,
+                          'telemetry': inferred['telemetry'], 'output_probe': parsed,
+                          'output_sha256': file_hash(output) if stage != 'denoise' and not encoder else None, 'total_seconds': time.perf_counter() - started,
+                          'process_started_wall_utc': started_wall,
+                          'process_ended_wall_utc': time.time(),
+                          'inference_started_wall_utc': inference_started_wall,
+                          'inference_ended_wall_utc': inference_ended_wall,
+                          'sampler_intervals': list(sampler_intervals),
+                          'prepared_dir': prepared_dir, 'stage': stage, 'residency': residency, 'async_encoding': async_encoding,
+                          'decode_intervals': list(decode_intervals),
+                          'mps_requested': os.environ.get('H3_BENCHMARK_MPS') == '1',
+                          'mps_active_thread_percentage': os.environ.get('CUDA_MPS_ACTIVE_THREAD_PERCENTAGE'),
+                          'latent_artifact': latent_path if stage != 'full' else None}
+                if encoder:
+                    encoder.finish_later(result, case_dir, output, frames, started)
+                else:
+                    (case_dir / 'result.json').write_text(json.dumps(result, indent=2) + '\n')
+                    result_queue.put({'lane': lane_id, 'kind': 'result', 'index': index, 'result': result})
+            except BaseException as exc:
+                (case_dir / 'traceback.txt').write_text(traceback.format_exc()) if case_dir.exists() else None
+                result_queue.put({'lane': lane_id, 'kind': 'error', 'index': index,
+                                  'error': repr(exc), 'traceback': traceback.format_exc()})
+                return
+    except BaseException as exc:
+        result_queue.put({'lane': lane_id, 'kind': 'error', 'index': None,
+                          'error': repr(exc), 'traceback': traceback.format_exc()})
+
+    finally:
+        if encoder:
+            encoder.close()
+
+
+def one_pool_run(args, case_dir, counts, audios, copies, name_prefix):
+    context = mp.get_context('spawn')
+    result_queue = context.Queue()
+    queues = [context.Queue() for _ in range(copies)]
+    processes = [context.Process(target=lane_main, args=(i, str(case_dir / f'lane_{i}'),
+                 queues[i], result_queue, args.clip_device, args.residency,
+                 getattr(args, 'prepared_dir', None)),
+                 name=f'h3-resident-lane-{i}') for i in range(copies)]
+    for process in processes:
+        process.start()
+    try:
+        ready = []
+        while len(ready) < copies:
+            message = result_queue.get(timeout=120)
+            if message['kind'] == 'error':
+                raise RuntimeError(message['traceback'])
+            if message['kind'] != 'ready':
+                raise RuntimeError(f'Unexpected lane message before ready: {message["kind"]}')
+            ready.append(message)
+        for index, frames in enumerate(counts):
+            name = f'{name_prefix}_chunk_{index}'
+            queues[index % copies].put((index, frames, str(audios[index]), name,
+                                        anchor_at(index, args.anchor_mode)))
+        results = [None] * len(counts)
+        while any(result is None for result in results):
+            message = result_queue.get(timeout=9000)
+            if message['kind'] == 'error':
+                raise RuntimeError(message['traceback'])
+            if message['kind'] != 'result':
+                raise RuntimeError(f'Unexpected lane message: {message["kind"]}')
+            results[message['index']] = message['result']
+        return ready, results
+    finally:
+        for queue in queues:
+            queue.put(None)
+        for process in processes:
+            process.join(timeout=30)
+            if process.is_alive():
+                process.terminate()
+                process.join(timeout=10)
+
+
+def wait_for_empty_gpu(max_wait_seconds=30):
+    """Require the usual three clean samples after transient teardown activity."""
+    deadline = time.monotonic() + max_wait_seconds
+    while True:
+        try:
+            return empty_gpu_gate()
+        except RuntimeError:
+            if time.monotonic() >= deadline:
+                raise
+            time.sleep(2)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--name', required=True)
+    parser.add_argument('--chunks', type=int, default=10)
+    parser.add_argument('--chunk-plan', choices=['report', 'uniform', 'aligned'], default='aligned')
+    parser.add_argument('--copies', type=int, choices=[1, 2, 3], default=2)
+    parser.add_argument('--clip-device', choices=['default', 'cpu'], default='default')
+    parser.add_argument('--residency', choices=['dynamic', 'highvram'], default='dynamic')
+    parser.add_argument('--anchor-mode', choices=['hard', 'every-2', 'every-3', 'first-only'], default='hard')
+    parser.add_argument('--run', action='store_true')
+    args = parser.parse_args()
+    counts = chunk_counts(args.chunks, args.chunk_plan)
+    if not args.run:
+        print(json.dumps({'name': args.name, 'loader': 'one persistent model set per process',
+                          'copies': args.copies, 'clip_device': args.clip_device,
+                          'residency': args.residency, 'anchor_mode': args.anchor_mode,
+                          'chunk_frames': counts}, indent=2))
+        return
+    case_dir = RUNS / args.name
+    if case_dir.exists():
+        raise FileExistsError(case_dir)
+    case_dir.mkdir(parents=True)
+    started = time.perf_counter()
+    evidence = {'name': args.name, 'status': 'running', 'loader': 'resident-process',
+                'parallel_processes': args.copies, 'clip_device': args.clip_device,
+                'residency': args.residency, 'reference': 'original',
+                'anchor_mode': args.anchor_mode, 'chunks': args.chunks,
+                'chunk_plan': args.chunk_plan, 'chunk_frames': counts}
+    try:
+        evidence['empty_gpu_gate'] = empty_gpu_gate()
+        master, duration = prepare_audio(INPUTS / 'report_audio.wav', case_dir,
+                                         time.monotonic() + 9000)
+        if round(duration * 24) != sum(counts):
+            raise ValueError('Source audio no longer matches the 1,186-frame workload')
+        audios = split_audio(master, counts, case_dir)
+        # Calibrate the exact lane code and reject unsafe replication before timed work.
+        calibration_name = f'{args.name}_calibration'
+        _, calibration = one_pool_run(args, case_dir / 'calibration', counts[:1], audios[:1],
+                                      1, calibration_name)
+        peak = calibration[0]['telemetry']['gpu']['memory_used_peak_gib']
+        evidence['calibration_peak_gib'] = peak
+        if args.copies * peak > 95.59 * 0.90:
+            raise MemoryError(f'{args.copies} copies × {peak:.2f} GiB exceeds 90% of 95.59 GiB')
+        evidence['timed_run_empty_gpu_gate'] = wait_for_empty_gpu()
+        trace = GPUTrace()
+        trace.start()
+        timed_started = time.perf_counter()
+        try:
+            ready, children = one_pool_run(args, case_dir, counts, audios,
+                                           args.copies, args.name)
+        finally:
+            trace.shutdown()
+        evidence['parallel_generation_seconds'] = time.perf_counter() - timed_started
+        evidence['lane_startup'] = ready
+        evidence['child_results'] = [{'name': child['name'], 'lane': child['lane'],
+                                     'total_seconds': child['total_seconds'],
+                                     'peak_vram_gib': child['telemetry']['gpu']['memory_used_peak_gib'],
+                                     'inference_started_wall_utc': child['inference_started_wall_utc'],
+                                     'inference_ended_wall_utc': child['inference_ended_wall_utc']}
+                                    for child in children]
+        evidence['inference_overlap'] = inference_overlap(children)
+        evidence['gpu_trace_summary'] = {
+            'samples': len(trace.samples),
+            'peak_vram_gib': max((s['used_gib'] for s in trace.samples), default=0),
+            'gpu_util_mean_pct': round(sum(s['util_pct'] for s in trace.samples) / len(trace.samples), 2)
+            if trace.samples else None}
+        names = [child['name'] for child in children]
+        output, parsed = assemble(case_dir, names, master, sum(counts))
+        evidence['output_probe'] = parsed
+        evidence['output_sha256'] = file_hash(output)
+        evidence['complete_video_audio_decode'] = True
+        evidence['plan'] = build_chunk_plan([
+            {'duration_seconds': count / 24, 'reference': 'original',
+             'anchor': anchor_at(index, args.anchor_mode)}
+            for index, count in enumerate(counts)], sum(counts))
+        (case_dir / 'result.json').write_text(json.dumps(evidence, indent=2) + '\n')
+        for checker in ('check_audio', 'check_seams', 'make_contact_sheet'):
+            subprocess.run([sys.executable, '-m', f'agent.rtx6000_benchmark.{checker}',
+                            str(case_dir)], cwd=ROOT.parents[1], check=True,
+                           timeout=300, capture_output=True)
+        evidence['audio_check'] = json.loads((case_dir / 'audio_check.json').read_text())
+        evidence['seam_check'] = json.loads((case_dir / 'seam_check.json').read_text())
+        evidence['timed_total_seconds'] = time.perf_counter() - timed_started
+        evidence['status'] = 'success'
+    except BaseException as exc:
+        evidence['status'] = 'failure'
+        evidence['error'] = repr(exc)
+        (case_dir / 'traceback.txt').write_text(traceback.format_exc())
+        raise
+    finally:
+        evidence['total_seconds'] = time.perf_counter() - started
+        (case_dir / 'result.json').write_text(json.dumps(evidence, indent=2) + '\n')
+
+
+if __name__ == '__main__':
+    main()

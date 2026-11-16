@@ -1,0 +1,7 @@
+Using CPython 3.12.13 interpreter at: /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python
+Resolved 1 package in 1.04s
+   Building sageattn3 @ file:///home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/fast_dependencies/SageAttention/sageattention3_blackwell
+      Built sageattn3 @ file:///home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/fast_dependencies/SageAttention/sageattention3_blackwell
+Prepared 1 package in 1m 58s
+Installed 1 package in 0.53ms
+ + sageattn3==1.0.0 (from file:///home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/fast_dependencies/SageAttention/sageattention3_blackwell)

@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTX PRO 6000 · same-image parallel chunk experiment</title>
+<style>body{font:17px/1.55 system-ui,sans-serif;color:#17212b;background:#f5f7fb;margin:0 auto;padding:24px;max-width:1050px}
+h1,h2{line-height:1.2}.note,section{background:white;border:1px solid #dbe2eb;border-radius:12px;padding:20px;margin:18px 0}
+table{border-collapse:collapse;width:100%;background:white}th,td{border:1px solid #dbe2eb;padding:10px;text-align:left}th{background:#eef2f8}
+video{width:min(100%,540px);display:block;margin:16px 0}img{max-width:100%;height:auto}a{color:#0759ae}summary{cursor:pointer}
+small{color:#526173}</style>
+<h1>Same-image chunks on one RTX PRO 6000</h1>
+<div class="note"><strong>What changed:</strong> Every chunk starts from the same source portrait. Hard-anchor runs also
+condition each chunk's last frame on that portrait. This removes the previous-last-frame dependency and permits independent
+chunk workers. The final frames are generated, not pixel-locked to the portrait, so a join can still jump.</div>
+<div class="note"><strong>GPU encoding first works:</strong> Encode the shared prompt/portrait on the GPU once,
+prepare each chunk's audio and latents, release that process, then run workers. Two workers fit at about 72.1 GiB.
+Across two runs, one worker averaged 257.5 seconds and two averaged 252.2 seconds,
+giving 2.1% more videos per hour for this workload. This is a small measured gain, not a doubling.
+Both workers share the single GPU's compute and memory bandwidth. Two repetitions are initial evidence; they do not establish a precise long-run speedup. All 70 cached preparation tensors were exactly equal
+to the uncached GPU preparation in the <a href="data/cache_equivalence_check.json">equivalence check</a>.</div>
+<div class="note"><strong>Practical choice:</strong> GPU encode once, then release the encoder. Use one worker for the lower-memory option (36.4 GiB); use two workers for the fastest measured hard-anchor option (72.1 GiB), accepting nearly twice the memory for this modest gain. More worker copies do not fit the measured safety margin. Shared-VAE scheduling remains untested.</div>
+<h2>Measured results</h2><p>All rows use the same 49.4-second source audio, 24 fps, two denoising steps, 1080 × 1920
+output and a single RTX PRO 6000. “Videos/hour” is 3600 divided by measured timed seconds for one video.
+Worker totals include all lanes, final assembly, and CPU media validation. Calibration and initial source-audio preparation/splitting are excluded. These are timed benchmark runs, not service request-to-response measurements.
+GPU preparation rows also include preparation, serialization, model release, and worker startup time.</p>
+<table><thead><tr><th>Configuration</th><th>Time</th><th>Videos/hour</th><th>Peak VRAM</th><th>Mean GPU use</th><th>Unusual joins</th></tr></thead>
+<tbody><tr><th>10 chunks · GPU encode once and release · one worker</th><td>257.7 s</td><td>13.97</td><td>36.4 GiB</td><td>80%</td><td>9 / 9</td></tr><tr><th>10 chunks · GPU encode once and release · two workers</th><td>251.9 s</td><td>14.29</td><td>72.1 GiB</td><td>88%</td><td>9 / 9</td></tr><tr><th>10 chunks · GPU prepare all and release · two workers</th><td>271.8 s</td><td>13.25</td><td>72.1 GiB</td><td>88%</td><td>9 / 9</td></tr><tr><th>10 chunks · one resident model · hard anchor</th><td>265.5 s</td><td>13.56</td><td>51.7 GiB</td><td>84%</td><td>9 / 9</td></tr><tr><th>10 chunks · fresh model process per chunk · hard anchor</th><td>413.9 s</td><td>8.70</td><td>47.4 GiB</td><td>54%</td><td>9 / 9</td></tr><tr><th>10 chunks · one resident model · anchor every 2</th><td>256.4 s</td><td>14.04</td><td>51.7 GiB</td><td>84%</td><td>4 / 9</td></tr><tr><th>7 chunks · one resident model · hard anchor</th><td>273.4 s</td><td>13.17</td><td>55.3 GiB</td><td>87%</td><td>6 / 6</td></tr><tr><th>14 chunks · one resident model · hard anchor</th><td>271.1 s</td><td>13.28</td><td>49.6 GiB</td><td>83%</td><td>13 / 13</td></tr><tr><th>10 chunks · two resident models · CPU text · hard anchor</th><td>754.1 s</td><td>4.77</td><td>73.5 GiB</td><td>27%</td><td>9 / 9</td></tr></tbody></table>
+<h2>Repeat check for the leading settings</h2>
+<table><thead><tr><th>Ten-chunk policy</th><th>Run 1</th><th>Run 2</th><th>Mean time</th><th>Flagged joins on run 2</th></tr></thead>
+<tbody><tr><th>Hard anchor</th><td>265.5 s</td><td>265.7 s</td><td>265.6 s</td><td>9/9</td></tr><tr><th>Anchor every 2</th><td>256.4 s</td><td>257.5 s</td><td>257.0 s</td><td>4/9</td></tr><tr><th>GPU encode once · one worker</th><td>257.7 s</td><td>257.2 s</td><td>257.5 s</td><td>9/9</td></tr><tr><th>GPU encode once · two workers</th><td>251.9 s</td><td>252.5 s</td><td>252.2 s</td><td>9/9</td></tr></tbody></table>
+<p>Compared with the earlier fully resident hard-anchor baseline, the periodic-anchor setting averaged 8.7 seconds faster across these two runs, about 3.3%.
+This is a small sample and it changes the end-image condition on alternating chunks.</p>
+<div class="note"><strong>Correction to the initial full-copy experiment:</strong> CPU text encoding is not required to
+fit two denoising workers. Preparing conditioning on the GPU first and releasing the encoder lets two workers fit.
+The first such test peaked at 72.1 GiB and took 271.8 seconds, including 38.3 seconds of preparation. The new cache
+encodes identical prompt/image inputs once and reuses that result; audio and latent preparation remain specific to each chunk.
+Workers each retain a transformer and video VAE. Concurrent shared-VAE decoding is not tested here. Sampler-call overlap
+is measured with synchronized wall intervals; proving simultaneous CUDA kernels requires a GPU profiler.</div>
+<div class="note"><strong>Quality:</strong> Every final MP4 decoded fully, contained exactly 1,186 video frames at 24 fps,
+and matched source audio to 0 ms at the checker’s 8 kHz resolution. The luma join statistic is a screening signal,
+not a human seam rating. Watch the videos below before deciding whether the pose resets are acceptable.</div>
+<section id="gpu_preencoded_cached_one"><h2>10 chunks · GPU encode once and release · one worker</h2>
+<p><strong>257.7 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+36.4 GiB; mean sampled GPU utilization 80%. Inference calls overlapped for
+0.0 seconds.
+9 of 9 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p><p>Preparation, serialization and preparation-process startup took 19.4 s, included in the total above. Sampler calls overlapped for 0.0 s. Text cache: {&#x27;encoder_calls&#x27;: 1, &#x27;cache_hits&#x27;: 9}.</p>
+<p><a href="data/gpu_preencoded_cached_one/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="gpu_preencoded_cached_one_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="gpu_preencoded_cached_one_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 0.1 s summed across chunks</li><li>condition_pack: 0.0 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 127.1 s summed across chunks</li><li>video_decode: 76.5 s summed across chunks</li><li>crop_mux_save: 10.3 s summed across chunks</li></ul></details></section><section id="gpu_preencoded_cached_two"><h2>10 chunks · GPU encode once and release · two workers</h2>
+<p><strong>251.9 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+72.1 GiB; mean sampled GPU utilization 88%. Inference calls overlapped for
+207.2 seconds.
+9 of 9 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p><p>Preparation, serialization and preparation-process startup took 18.7 s, included in the total above. Sampler calls overlapped for 118.0 s. Text cache: {&#x27;encoder_calls&#x27;: 1, &#x27;cache_hits&#x27;: 9}.</p>
+<p><a href="data/gpu_preencoded_cached_two/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="gpu_preencoded_cached_two_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="gpu_preencoded_cached_two_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 0.3 s summed across chunks</li><li>condition_pack: 0.0 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 258.8 s summed across chunks</li><li>video_decode: 148.7 s summed across chunks</li><li>crop_mux_save: 13.1 s summed across chunks</li></ul></details></section><section id="gpu_preencoded_two"><h2>10 chunks · GPU prepare all and release · two workers</h2>
+<p><strong>271.8 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+72.1 GiB; mean sampled GPU utilization 88%. Inference calls overlapped for
+207.9 seconds.
+9 of 9 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p><p>Preparation, serialization and preparation-process startup took 38.3 s, included in the total above. Sampler calls overlapped for 119.6 s. Text cache: None.</p>
+<p><a href="data/gpu_preencoded_two/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="gpu_preencoded_two_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="gpu_preencoded_two_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 0.3 s summed across chunks</li><li>condition_pack: 0.0 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 258.8 s summed across chunks</li><li>video_decode: 149.6 s summed across chunks</li><li>crop_mux_save: 13.4 s summed across chunks</li></ul></details></section><section id="original_image_parallel_resident_1_default"><h2>10 chunks · one resident model · hard anchor</h2>
+<p><strong>265.5 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+51.7 GiB; mean sampled GPU utilization 84%. Inference calls overlapped for
+0.0 seconds.
+9 of 9 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p>
+<p><a href="data/original_image_parallel_resident_1_default/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="original_image_parallel_resident_1_default_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="original_image_parallel_resident_1_default_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 0.6 s summed across chunks</li><li>condition_pack: 29.9 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 125.9 s summed across chunks</li><li>video_decode: 76.3 s summed across chunks</li><li>crop_mux_save: 10.1 s summed across chunks</li></ul></details></section><section id="original_image_parallel_eager_1_default"><h2>10 chunks · fresh model process per chunk · hard anchor</h2>
+<p><strong>413.9 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+47.4 GiB; mean sampled GPU utilization 54%. Inference calls overlapped for
+0.0 seconds.
+9 of 9 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p>
+<p><a href="data/original_image_parallel_eager_1_default/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="original_image_parallel_eager_1_default_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="original_image_parallel_eager_1_default_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 5.9 s summed across chunks</li><li>condition_pack: 66.5 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 147.5 s summed across chunks</li><li>video_decode: 91.0 s summed across chunks</li><li>crop_mux_save: 10.7 s summed across chunks</li></ul></details></section><section id="original_image_parallel_resident_1_anchor_every2"><h2>10 chunks · one resident model · anchor every 2</h2>
+<p><strong>256.4 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+51.7 GiB; mean sampled GPU utilization 84%. Inference calls overlapped for
+0.0 seconds.
+4 of 9 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p>
+<p><a href="data/original_image_parallel_resident_1_anchor_every2/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="original_image_parallel_resident_1_anchor_every2_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="original_image_parallel_resident_1_anchor_every2_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 0.6 s summed across chunks</li><li>condition_pack: 24.5 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 121.9 s summed across chunks</li><li>video_decode: 76.1 s summed across chunks</li><li>crop_mux_save: 10.4 s summed across chunks</li></ul></details></section><section id="original_image_parallel_resident_1_seven_chunks"><h2>7 chunks · one resident model · hard anchor</h2>
+<p><strong>273.4 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+55.3 GiB; mean sampled GPU utilization 87%. Inference calls overlapped for
+0.0 seconds.
+6 of 6 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p>
+<p><a href="data/original_image_parallel_resident_1_seven_chunks/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="original_image_parallel_resident_1_seven_chunks_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="original_image_parallel_resident_1_seven_chunks_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 0.6 s summed across chunks</li><li>condition_pack: 22.3 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 141.8 s summed across chunks</li><li>video_decode: 77.8 s summed across chunks</li><li>crop_mux_save: 9.3 s summed across chunks</li></ul></details></section><section id="original_image_parallel_resident_1_fourteen_chunks"><h2>14 chunks · one resident model · hard anchor</h2>
+<p><strong>271.1 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+49.6 GiB; mean sampled GPU utilization 83%. Inference calls overlapped for
+0.0 seconds.
+13 of 13 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p>
+<p><a href="data/original_image_parallel_resident_1_fourteen_chunks/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="original_image_parallel_resident_1_fourteen_chunks_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="original_image_parallel_resident_1_fourteen_chunks_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 0.6 s summed across chunks</li><li>condition_pack: 40.2 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 119.4 s summed across chunks</li><li>video_decode: 75.6 s summed across chunks</li><li>crop_mux_save: 11.4 s summed across chunks</li></ul></details></section><section id="original_image_parallel_resident_2_cpu_text_retry"><h2>10 chunks · two resident models · CPU text · hard anchor</h2>
+<p><strong>754.1 seconds</strong> for a 49.4-second, 1,186-frame video; peak VRAM
+73.5 GiB; mean sampled GPU utilization 27%. Inference calls overlapped for
+723.5 seconds.
+9 of 9 joins exceeded
+the ordinary-frame 95th percentile. The audio check found 0 ms lag
+and 0 ms duration difference.</p>
+<p><a href="data/original_image_parallel_resident_2_cpu_text_retry/result.json">Raw measurement JSON</a></p>
+<video controls preload="metadata" src="original_image_parallel_resident_2_cpu_text_retry_output.mp4"></video>
+<details><summary>Boundary contact sheet and stage timings</summary>
+<img loading="lazy" src="original_image_parallel_resident_2_cpu_text_retry_contact_sheet.jpg" alt="Frames near each chunk boundary">
+<ul><li>model_load: 1.6 s summed across chunks</li><li>condition_pack: 1090.9 s summed across chunks</li><li>optimizer_patch: 0.0 s summed across chunks</li><li>generation: 228.2 s summed across chunks</li><li>video_decode: 125.5 s summed across chunks</li><li>crop_mux_save: 13.5 s summed across chunks</li></ul></details></section>
+<section><h2>Reproduce and inspect</h2><p><a href="configuration_matrix.csv">Configuration matrix CSV</a> ·
+<a href="reproducibility.zip">Source and raw measurements ZIP</a></p>
+<p><a href="code/preencoded_parallel.py.txt">preencoded_parallel.py</a> · <a href="code/gpu_preencode.py.txt">gpu_preencode.py</a> · <a href="code/parallel_chunk_resident.py.txt">parallel_chunk_resident.py</a> · <a href="code/parallel_chunk_processes.py.txt">parallel_chunk_processes.py</a> · <a href="code/run_case.py.txt">run_case.py</a> · <a href="code/async_encode_nodes.py.txt">async_encode_nodes.py</a> · <a href="code/check_audio.py.txt">check_audio.py</a> · <a href="code/check_seams.py.txt">check_seams.py</a> · <a href="code/make_contact_sheet.py.txt">make_contact_sheet.py</a> · <a href="code/ORIGINAL_IMAGE_POLICY.md.txt">ORIGINAL_IMAGE_POLICY.md</a> · <a href="code/README.md.txt">README.md</a></p><pre>python -m agent.rtx6000_benchmark.preencoded_parallel --name YOUR_RUN --copies 2 --cache-text --run</pre>
+<p>Run from the pinned script2video checkout with the benchmark virtual environment described in README.
+Extract the ZIP into the pinned checkout: its agent/rtx6000_benchmark directory contains runnable source. Model files and the input audio/portrait are required; this upload contains results and source, not model weights.</p></section>
+<div class="note"><strong>Scope:</strong> The original leading two settings and both GPU-encode-once settings have two complete runs each; other rows have one
+run each. GPU preparation workers calibrate two longest chunks to check warm memory use; older workers calibrated one chunk.
+This report measures only one GPU and makes no eight-GPU speedup claim. The runnable
+supervisors and raw JSON are in the local script2video benchmark directory.</div>
+</html>

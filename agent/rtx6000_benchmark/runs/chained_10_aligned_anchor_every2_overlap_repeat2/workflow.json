@@ -1,0 +1,1429 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "c0_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c0_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_0.wav"
+    }
+  },
+  "c0_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 107,
+      "first_frame": [
+        "c0_20",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c0_22",
+        0
+      ],
+      "last_frame": [
+        "c0_20",
+        0
+      ]
+    }
+  },
+  "pika": {
+    "class_type": "MiniMaxH3PikaLoRA",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "lora_name": "pika_h3_flex_fl2va_comfy_bf16.safetensors"
+    }
+  },
+  "sage": {
+    "class_type": "MiniMaxH3SageAttentionPatch",
+    "inputs": {
+      "model": [
+        "pika",
+        0
+      ]
+    }
+  },
+  "c0_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9901
+    }
+  },
+  "c0_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c0_5",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "MiniMaxH3PikaSampler",
+    "inputs": {}
+  },
+  "9": {
+    "class_type": "ManualSigmas",
+    "inputs": {
+      "sigmas": "1.000000000, 0.923076923, 0.000000000"
+    }
+  },
+  "c0_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c0_6",
+        0
+      ],
+      "guider": [
+        "c0_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c0_5",
+        1
+      ]
+    }
+  },
+  "c0_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c0_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c0_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c0_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_0": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c0_15",
+        0
+      ],
+      "index": 0,
+      "frames": 106,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c1_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c1_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_1.wav"
+    }
+  },
+  "c1_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 124,
+      "first_frame": [
+        "buffer_0",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c1_22",
+        0
+      ]
+    }
+  },
+  "c1_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9902
+    }
+  },
+  "c1_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c1_5",
+        0
+      ]
+    }
+  },
+  "c1_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c1_6",
+        0
+      ],
+      "guider": [
+        "c1_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c1_5",
+        1
+      ]
+    }
+  },
+  "c1_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c1_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c1_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c1_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_1": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c1_15",
+        0
+      ],
+      "index": 1,
+      "frames": 123,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_0",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c2_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c2_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_2.wav"
+    }
+  },
+  "c2_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 124,
+      "first_frame": [
+        "buffer_1",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c2_22",
+        0
+      ],
+      "last_frame": [
+        "c2_20",
+        0
+      ]
+    }
+  },
+  "c2_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9903
+    }
+  },
+  "c2_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c2_5",
+        0
+      ]
+    }
+  },
+  "c2_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c2_6",
+        0
+      ],
+      "guider": [
+        "c2_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c2_5",
+        1
+      ]
+    }
+  },
+  "c2_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c2_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c2_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c2_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_2": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c2_15",
+        0
+      ],
+      "index": 2,
+      "frames": 123,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_1",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c3_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c3_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_3.wav"
+    }
+  },
+  "c3_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 107,
+      "first_frame": [
+        "buffer_2",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c3_22",
+        0
+      ]
+    }
+  },
+  "c3_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9904
+    }
+  },
+  "c3_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c3_5",
+        0
+      ]
+    }
+  },
+  "c3_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c3_6",
+        0
+      ],
+      "guider": [
+        "c3_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c3_5",
+        1
+      ]
+    }
+  },
+  "c3_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c3_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c3_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c3_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_3": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c3_15",
+        0
+      ],
+      "index": 3,
+      "frames": 107,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_2",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c4_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c4_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_4.wav"
+    }
+  },
+  "c4_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 124,
+      "first_frame": [
+        "buffer_3",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c4_22",
+        0
+      ],
+      "last_frame": [
+        "c4_20",
+        0
+      ]
+    }
+  },
+  "c4_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9905
+    }
+  },
+  "c4_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c4_5",
+        0
+      ]
+    }
+  },
+  "c4_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c4_6",
+        0
+      ],
+      "guider": [
+        "c4_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c4_5",
+        1
+      ]
+    }
+  },
+  "c4_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c4_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c4_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c4_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_4": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c4_15",
+        0
+      ],
+      "index": 4,
+      "frames": 124,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_3",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c5_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c5_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_5.wav"
+    }
+  },
+  "c5_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 124,
+      "first_frame": [
+        "buffer_4",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c5_22",
+        0
+      ]
+    }
+  },
+  "c5_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9906
+    }
+  },
+  "c5_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c5_5",
+        0
+      ]
+    }
+  },
+  "c5_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c5_6",
+        0
+      ],
+      "guider": [
+        "c5_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c5_5",
+        1
+      ]
+    }
+  },
+  "c5_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c5_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c5_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c5_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_5": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c5_15",
+        0
+      ],
+      "index": 5,
+      "frames": 124,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_4",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c6_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c6_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_6.wav"
+    }
+  },
+  "c6_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 107,
+      "first_frame": [
+        "buffer_5",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c6_22",
+        0
+      ],
+      "last_frame": [
+        "c6_20",
+        0
+      ]
+    }
+  },
+  "c6_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9907
+    }
+  },
+  "c6_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c6_5",
+        0
+      ]
+    }
+  },
+  "c6_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c6_6",
+        0
+      ],
+      "guider": [
+        "c6_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c6_5",
+        1
+      ]
+    }
+  },
+  "c6_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c6_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c6_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c6_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_6": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c6_15",
+        0
+      ],
+      "index": 6,
+      "frames": 107,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_5",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c7_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c7_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_7.wav"
+    }
+  },
+  "c7_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 124,
+      "first_frame": [
+        "buffer_6",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c7_22",
+        0
+      ]
+    }
+  },
+  "c7_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9908
+    }
+  },
+  "c7_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c7_5",
+        0
+      ]
+    }
+  },
+  "c7_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c7_6",
+        0
+      ],
+      "guider": [
+        "c7_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c7_5",
+        1
+      ]
+    }
+  },
+  "c7_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c7_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c7_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c7_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_7": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c7_15",
+        0
+      ],
+      "index": 7,
+      "frames": 124,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_6",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c8_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c8_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_8.wav"
+    }
+  },
+  "c8_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 124,
+      "first_frame": [
+        "buffer_7",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c8_22",
+        0
+      ],
+      "last_frame": [
+        "c8_20",
+        0
+      ]
+    }
+  },
+  "c8_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9909
+    }
+  },
+  "c8_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c8_5",
+        0
+      ]
+    }
+  },
+  "c8_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c8_6",
+        0
+      ],
+      "guider": [
+        "c8_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c8_5",
+        1
+      ]
+    }
+  },
+  "c8_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c8_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c8_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c8_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_8": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c8_15",
+        0
+      ],
+      "index": 8,
+      "frames": 124,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_7",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "c9_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c9_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_9.wav"
+    }
+  },
+  "c9_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 124,
+      "first_frame": [
+        "buffer_8",
+        2
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c9_22",
+        0
+      ]
+    }
+  },
+  "c9_6": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 9910
+    }
+  },
+  "c9_7": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "sage",
+        0
+      ],
+      "conditioning": [
+        "c9_5",
+        0
+      ]
+    }
+  },
+  "c9_10": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "c9_6",
+        0
+      ],
+      "guider": [
+        "c9_7",
+        0
+      ],
+      "sampler": [
+        "8",
+        0
+      ],
+      "sigmas": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "c9_5",
+        1
+      ]
+    }
+  },
+  "c9_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "c9_10",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c9_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c9_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_9": {
+    "class_type": "H3AsyncStoreChunk",
+    "inputs": {
+      "images": [
+        "c9_15",
+        0
+      ],
+      "index": 9,
+      "frames": 124,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2",
+      "deadline": 784198.757145285,
+      "previous": [
+        "buffer_8",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "output_width": 1080,
+      "output_height": 1920
+    }
+  },
+  "save_chunks": {
+    "class_type": "H3AsyncSaveChunks",
+    "inputs": {
+      "chunks": [
+        "buffer_9",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/chained_10_aligned_anchor_every2_overlap_repeat2/audio_master.wav",
+      "width": 1080,
+      "height": 1920,
+      "crf": 23,
+      "deadline": 784198.757145285
+    }
+  }
+}

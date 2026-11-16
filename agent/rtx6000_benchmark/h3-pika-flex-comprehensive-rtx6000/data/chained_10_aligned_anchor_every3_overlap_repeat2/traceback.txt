@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py", line 269, in main
+    result = infer(models, graph, prompt_id=uuid.uuid4().hex,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/ml_modules/minimax_h3_turbo/infer.py", line 62, in infer
+    return runtime.infer(models, workflow, prompt_id, timeout_seconds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/ml_modules/minimax_h3_turbo/runtime.py", line 434, in infer
+    thread.join(timeout_seconds)
+  File "/home/raqeeb/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/threading.py", line 1153, in join
+    self._wait_for_tstate_lock(timeout=max(timeout, 0))
+  File "/home/raqeeb/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/threading.py", line 1169, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

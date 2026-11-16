@@ -1,0 +1,35 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_cal_20
+{"name": "followup_cal_20", "status": "calibrated", "timed_total_seconds": null, "gpu_trace_summary": null, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_c20_1t_1v
+{"name": "followup_c20_1t_1v", "status": "success", "timed_total_seconds": 235.0800579429997, "gpu_trace_summary": {"samples": 1124, "peak_vram_gib": 35.547, "gpu_util_mean_pct": 83.3202846975089}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_c20_2t_1v
+{"name": "followup_c20_2t_1v", "status": "success", "timed_total_seconds": 244.5012146150002, "gpu_trace_summary": {"samples": 1171, "peak_vram_gib": 62.425, "gpu_util_mean_pct": 80.93424423569599}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_c20_1t_2v
+{"name": "followup_c20_1t_2v", "status": "success", "timed_total_seconds": 235.68417536999914, "gpu_trace_summary": {"samples": 1127, "peak_vram_gib": 40.953, "gpu_util_mean_pct": 84.28127772848269}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_c20_2t_2v
+{"name": "followup_c20_2t_2v", "status": "success", "timed_total_seconds": 237.95168600499892, "gpu_trace_summary": {"samples": 1138, "peak_vram_gib": 69.227, "gpu_util_mean_pct": 85.16608084358523}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_c20_1t_4v
+{"name": "followup_c20_1t_4v", "status": "success", "timed_total_seconds": 235.90851736399782, "gpu_trace_summary": {"samples": 1127, "peak_vram_gib": 51.772, "gpu_util_mean_pct": 84.39307897071872}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_cal_5
+{"name": "followup_cal_5", "status": "calibrated", "timed_total_seconds": null, "gpu_trace_summary": null, "calibration_peak_gib": {"denoise": 39.647, "decode": 10.411}}
+Starting followup_c5_1t_1v
+{"name": "followup_c5_1t_1v", "status": "success", "timed_total_seconds": 286.80790105500273, "gpu_trace_summary": {"samples": 1394, "peak_vram_gib": 49.401, "gpu_util_mean_pct": 90.1441893830703}, "calibration_peak_gib": {"denoise": 39.647, "decode": 10.411}}
+Starting followup_c5_2t_1v
+{"name": "followup_c5_2t_1v", "status": "memory_guard_rejected", "timed_total_seconds": null, "gpu_trace_summary": null, "calibration_peak_gib": {"denoise": 39.647, "decode": 10.411}}
+Starting followup_c5_1t_2v
+{"name": "followup_c5_1t_2v", "status": "success", "timed_total_seconds": 287.550969377, "gpu_trace_summary": {"samples": 1397, "peak_vram_gib": 54.806, "gpu_util_mean_pct": 89.88976377952756}, "calibration_peak_gib": {"denoise": 39.647, "decode": 10.411}}
+Starting followup_c5_2t_2v
+{"name": "followup_c5_2t_2v", "status": "memory_guard_rejected", "timed_total_seconds": null, "gpu_trace_summary": null, "calibration_peak_gib": {"denoise": 39.647, "decode": 10.411}}
+Starting followup_c5_1t_4v
+{"name": "followup_c5_1t_4v", "status": "success", "timed_total_seconds": 287.4126793760006, "gpu_trace_summary": {"samples": 1397, "peak_vram_gib": 65.615, "gpu_util_mean_pct": 89.74373657838225}, "calibration_peak_gib": {"denoise": 39.647, "decode": 10.411}}
+Starting followup_c10_2t_1v
+{"name": "followup_c10_2t_1v", "status": "success", "timed_total_seconds": 252.86256273099934, "gpu_trace_summary": {"samples": 1220, "peak_vram_gib": 70.701, "gpu_util_mean_pct": 86.20573770491804}, "calibration_peak_gib": {"denoise": 31.757, "decode": 8.503}}
+Starting followup_c10_1t_2v
+{"name": "followup_c10_1t_2v", "status": "success", "timed_total_seconds": 247.74496106600054, "gpu_trace_summary": {"samples": 1194, "peak_vram_gib": 45.009, "gpu_util_mean_pct": 87.14572864321607}, "calibration_peak_gib": {"denoise": 31.757, "decode": 8.503}}
+Starting followup_c10_2t_2v
+{"name": "followup_c10_2t_2v", "status": "success", "timed_total_seconds": 248.61762501999692, "gpu_trace_summary": {"samples": 1199, "peak_vram_gib": 77.005, "gpu_util_mean_pct": 88.1326105087573}, "calibration_peak_gib": {"denoise": 31.757, "decode": 8.503}}
+Starting followup_c10_1t_4v
+{"name": "followup_c10_1t_4v", "status": "success", "timed_total_seconds": 248.23698530899856, "gpu_trace_summary": {"samples": 1197, "peak_vram_gib": 55.818, "gpu_util_mean_pct": 86.45530492898914}, "calibration_peak_gib": {"denoise": 31.757, "decode": 8.503}}
+Matrix complete

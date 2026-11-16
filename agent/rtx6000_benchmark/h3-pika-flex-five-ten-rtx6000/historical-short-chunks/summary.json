@@ -1,0 +1,1184 @@
+{
+  "workload": {
+    "source": "followup_fast_comparison_fast_1",
+    "chunks": [
+      0,
+      1
+    ],
+    "requested_frames_each": 55,
+    "native_frames_each": 56,
+    "fps": 24,
+    "seeds": [
+      9901,
+      9902
+    ],
+    "steps": 2,
+    "mode": "fast",
+    "anchors": "Original portrait at first and last native frame; independent chunks.",
+    "text_and_audio_preparation": "Existing GPU-prepared artifacts reused identically; excluded from warm request timings.",
+    "timing_boundary": "Dispatch first denoise through completion of both decoded, encoded and saved 1080x1920 MP4s; model loading/warm-up and post-run validation excluded.",
+    "decode_policy": "One shared resident VAE; decode chunks sequentially after both denoises finish, identical for all modes.",
+    "mps": "Enabled for all configurations, 100% active-thread allowance.",
+    "repeats": "One warm-up and three measured repetitions per resident configuration. Configurations run sequential, batch, concurrent; no simultaneous unrelated tests."
+  },
+  "results": {
+    "sequential": {
+      "n": 3,
+      "metrics": {
+        "time_to_both_saved_seconds": {
+          "mean": 15.367139483666202,
+          "median": 15.376457252990804,
+          "stddev": 0.0769029421375462,
+          "min": 15.286002191001899,
+          "max": 15.438959007005906,
+          "values": [
+            15.286002191001899,
+            15.376457252990804,
+            15.438959007005906
+          ]
+        },
+        "denoise_pair_seconds": {
+          "mean": 9.879665622996981,
+          "median": 9.884205350987031,
+          "stddev": 0.06422061576016663,
+          "min": 9.81329559799633,
+          "max": 9.941495920007583,
+          "values": [
+            9.81329559799633,
+            9.884205350987031,
+            9.941495920007583
+          ]
+        },
+        "decode_and_save_seconds": {
+          "mean": 5.487473860669222,
+          "median": 5.492251902003773,
+          "stddev": 0.013051561513831546,
+          "min": 5.472706593005569,
+          "max": 5.497463086998323,
+          "values": [
+            5.472706593005569,
+            5.492251902003773,
+            5.497463086998323
+          ]
+        },
+        "peak_vram_gib": {
+          "mean": 32.98785400390625,
+          "median": 32.98785400390625,
+          "stddev": 0.0,
+          "min": 32.98785400390625,
+          "max": 32.98785400390625,
+          "values": [
+            32.98785400390625,
+            32.98785400390625,
+            32.98785400390625
+          ]
+        },
+        "gpu_util_mean_pct": {
+          "mean": 88.28673957621326,
+          "median": 88.57142857142857,
+          "stddev": 1.9234199266164194,
+          "min": 86.23684210526316,
+          "max": 90.05194805194805,
+          "values": [
+            86.23684210526316,
+            88.57142857142857,
+            90.05194805194805
+          ]
+        }
+      },
+      "phase_metrics": [
+        {
+          "repeat": 1,
+          "denoise_gpu_util_mean_pct": 93,
+          "denoise_peak_gib": 32.98785400390625
+        },
+        {
+          "repeat": 2,
+          "denoise_gpu_util_mean_pct": 95.56,
+          "denoise_peak_gib": 32.98785400390625
+        },
+        {
+          "repeat": 3,
+          "denoise_gpu_util_mean_pct": 95.48,
+          "denoise_peak_gib": 32.98785400390625
+        }
+      ],
+      "fast_counters": [
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          },
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          },
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          },
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ]
+      ],
+      "batch_stats": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "validation": [
+        {
+          "file": "runs/sequential_v2/repeat_1/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "fc7365406c88a1ef325b6019cee0f8ac638f73dfd06cb6015fe252ac5cc56e3c",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592
+        },
+        {
+          "file": "runs/sequential_v2/repeat_1/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "c63103ce6ff9b8fb8d2b5a3aa7a910aa5666064a51fc844db0d2374b7180f43c",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592
+        },
+        {
+          "file": "runs/sequential_v2/repeat_2/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "fc7365406c88a1ef325b6019cee0f8ac638f73dfd06cb6015fe252ac5cc56e3c",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592
+        },
+        {
+          "file": "runs/sequential_v2/repeat_2/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "c63103ce6ff9b8fb8d2b5a3aa7a910aa5666064a51fc844db0d2374b7180f43c",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592
+        },
+        {
+          "file": "runs/sequential_v2/repeat_3/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "fc7365406c88a1ef325b6019cee0f8ac638f73dfd06cb6015fe252ac5cc56e3c",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592
+        },
+        {
+          "file": "runs/sequential_v2/repeat_3/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "c63103ce6ff9b8fb8d2b5a3aa7a910aa5666064a51fc844db0d2374b7180f43c",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592
+        }
+      ],
+      "speedup_vs_sequential": 1.0,
+      "denoise_speedup_vs_sequential": 1.0
+    },
+    "batch": {
+      "n": 3,
+      "metrics": {
+        "time_to_both_saved_seconds": {
+          "mean": 15.935405082331272,
+          "median": 15.907642927995767,
+          "stddev": 0.08727140814665811,
+          "min": 15.865391906001605,
+          "max": 16.033180412996444,
+          "values": [
+            16.033180412996444,
+            15.865391906001605,
+            15.907642927995767
+          ]
+        },
+        "denoise_pair_seconds": {
+          "mean": 10.414422230334216,
+          "median": 10.377833701000782,
+          "stddev": 0.08952865505990885,
+          "min": 10.348982751995209,
+          "max": 10.516450238006655,
+          "values": [
+            10.516450238006655,
+            10.348982751995209,
+            10.377833701000782
+          ]
+        },
+        "decode_and_save_seconds": {
+          "mean": 5.520982851997057,
+          "median": 5.516730174989789,
+          "stddev": 0.007645550033907468,
+          "min": 5.516409154006396,
+          "max": 5.529809226994985,
+          "values": [
+            5.516730174989789,
+            5.516409154006396,
+            5.529809226994985
+          ]
+        },
+        "peak_vram_gib": {
+          "mean": 38.21441650390625,
+          "median": 38.21441650390625,
+          "stddev": 0.0,
+          "min": 38.21441650390625,
+          "max": 38.21441650390625,
+          "values": [
+            38.21441650390625,
+            38.21441650390625,
+            38.21441650390625
+          ]
+        },
+        "gpu_util_mean_pct": {
+          "mean": 87.42885021097047,
+          "median": 87.27848101265823,
+          "stddev": 1.863022016461969,
+          "min": 85.64556962025317,
+          "max": 89.3625,
+          "values": [
+            89.3625,
+            87.27848101265823,
+            85.64556962025317
+          ]
+        }
+      },
+      "phase_metrics": [
+        {
+          "repeat": 1,
+          "denoise_gpu_util_mean_pct": 95.56603773584905,
+          "denoise_peak_gib": 38.21441650390625
+        },
+        {
+          "repeat": 2,
+          "denoise_gpu_util_mean_pct": 95.67307692307692,
+          "denoise_peak_gib": 38.21441650390625
+        },
+        {
+          "repeat": 3,
+          "denoise_gpu_util_mean_pct": 93.76923076923077,
+          "denoise_peak_gib": 38.21441650390625
+        }
+      ],
+      "fast_counters": [
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ]
+      ],
+      "batch_stats": [
+        {
+          "batch_forwards": 4,
+          "block_calls": 200,
+          "attention_batch_shapes": [
+            [
+              1,
+              56,
+              1897,
+              128
+            ],
+            [
+              2,
+              56,
+              19563,
+              128
+            ]
+          ]
+        },
+        {
+          "batch_forwards": 6,
+          "block_calls": 300,
+          "attention_batch_shapes": [
+            [
+              1,
+              56,
+              1897,
+              128
+            ],
+            [
+              2,
+              56,
+              19563,
+              128
+            ]
+          ]
+        },
+        {
+          "batch_forwards": 8,
+          "block_calls": 400,
+          "attention_batch_shapes": [
+            [
+              1,
+              56,
+              1897,
+              128
+            ],
+            [
+              2,
+              56,
+              19563,
+              128
+            ]
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "file": "runs/batch_v2/repeat_1/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.969167
+        },
+        {
+          "file": "runs/batch_v2/repeat_1/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.934825
+        },
+        {
+          "file": "runs/batch_v2/repeat_2/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.969167
+        },
+        {
+          "file": "runs/batch_v2/repeat_2/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.934825
+        },
+        {
+          "file": "runs/batch_v2/repeat_3/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.969167
+        },
+        {
+          "file": "runs/batch_v2/repeat_3/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.934825
+        }
+      ],
+      "speedup_vs_sequential": 0.9643394318670225,
+      "denoise_speedup_vs_sequential": 0.9486523020182874
+    },
+    "concurrent": {
+      "n": 3,
+      "metrics": {
+        "time_to_both_saved_seconds": {
+          "mean": 15.279320057001314,
+          "median": 15.293228312002611,
+          "stddev": 0.03447182120533168,
+          "min": 15.240066908008885,
+          "max": 15.304664950992446,
+          "values": [
+            15.240066908008885,
+            15.293228312002611,
+            15.304664950992446
+          ]
+        },
+        "denoise_pair_seconds": {
+          "mean": 9.770432393003526,
+          "median": 9.77667369300616,
+          "stddev": 0.03520599958326489,
+          "min": 9.732523138009128,
+          "max": 9.802100347995292,
+          "values": [
+            9.732523138009128,
+            9.77667369300616,
+            9.802100347995292
+          ]
+        },
+        "decode_and_save_seconds": {
+          "mean": 5.508887663997787,
+          "median": 5.5075437699997565,
+          "stddev": 0.007091168819285602,
+          "min": 5.502564602997154,
+          "max": 5.516554618996452,
+          "values": [
+            5.5075437699997565,
+            5.516554618996452,
+            5.502564602997154
+          ]
+        },
+        "peak_vram_gib": {
+          "mean": 59.861572265625,
+          "median": 59.861572265625,
+          "stddev": 0.0,
+          "min": 59.861572265625,
+          "max": 59.861572265625,
+          "values": [
+            59.861572265625,
+            59.861572265625,
+            59.861572265625
+          ]
+        },
+        "gpu_util_mean_pct": {
+          "mean": 89.27631578947368,
+          "median": 88.94736842105263,
+          "stddev": 0.957818822902812,
+          "min": 88.52631578947368,
+          "max": 90.35526315789474,
+          "values": [
+            90.35526315789474,
+            88.52631578947368,
+            88.94736842105263
+          ]
+        }
+      },
+      "phase_metrics": [
+        {
+          "repeat": 1,
+          "denoise_gpu_util_mean_pct": 98.04081632653062,
+          "denoise_peak_gib": 59.861572265625
+        },
+        {
+          "repeat": 2,
+          "denoise_gpu_util_mean_pct": 95.91836734693878,
+          "denoise_peak_gib": 59.861572265625
+        },
+        {
+          "repeat": 3,
+          "denoise_gpu_util_mean_pct": 97.42857142857143,
+          "denoise_peak_gib": 59.861572265625
+        }
+      ],
+      "fast_counters": [
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          },
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          },
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          },
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ]
+      ],
+      "batch_stats": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "validation": [
+        {
+          "file": "runs/concurrent_v2/repeat_1/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "fc7365406c88a1ef325b6019cee0f8ac638f73dfd06cb6015fe252ac5cc56e3c",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 1.0
+        },
+        {
+          "file": "runs/concurrent_v2/repeat_1/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "c63103ce6ff9b8fb8d2b5a3aa7a910aa5666064a51fc844db0d2374b7180f43c",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 1.0
+        },
+        {
+          "file": "runs/concurrent_v2/repeat_2/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "fc7365406c88a1ef325b6019cee0f8ac638f73dfd06cb6015fe252ac5cc56e3c",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 1.0
+        },
+        {
+          "file": "runs/concurrent_v2/repeat_2/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "c63103ce6ff9b8fb8d2b5a3aa7a910aa5666064a51fc844db0d2374b7180f43c",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 1.0
+        },
+        {
+          "file": "runs/concurrent_v2/repeat_3/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "fc7365406c88a1ef325b6019cee0f8ac638f73dfd06cb6015fe252ac5cc56e3c",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 1.0
+        },
+        {
+          "file": "runs/concurrent_v2/repeat_3/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "c63103ce6ff9b8fb8d2b5a3aa7a910aa5666064a51fc844db0d2374b7180f43c",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 1.0
+        }
+      ],
+      "speedup_vs_sequential": 1.005747600438846,
+      "denoise_speedup_vs_sequential": 1.0111799791042693
+    },
+    "batch_modulation": {
+      "n": 3,
+      "metrics": {
+        "time_to_both_saved_seconds": {
+          "mean": 15.748346309002955,
+          "median": 15.76772643699951,
+          "stddev": 0.07792315006803334,
+          "min": 15.66256205800164,
+          "max": 15.814750432007713,
+          "values": [
+            15.814750432007713,
+            15.66256205800164,
+            15.76772643699951
+          ]
+        },
+        "denoise_pair_seconds": {
+          "mean": 10.254115807668617,
+          "median": 10.249562491007964,
+          "stddev": 0.07968247158962953,
+          "min": 10.176807625990477,
+          "max": 10.335977306007408,
+          "values": [
+            10.335977306007408,
+            10.176807625990477,
+            10.249562491007964
+          ]
+        },
+        "decode_and_save_seconds": {
+          "mean": 5.494230501334338,
+          "median": 5.485754432011163,
+          "stddev": 0.021018848405039425,
+          "min": 5.478773126000306,
+          "max": 5.518163945991546,
+          "values": [
+            5.478773126000306,
+            5.485754432011163,
+            5.518163945991546
+          ]
+        },
+        "peak_vram_gib": {
+          "mean": 38.21441650390625,
+          "median": 38.21441650390625,
+          "stddev": 0.0,
+          "min": 38.21441650390625,
+          "max": 38.21441650390625,
+          "values": [
+            38.21441650390625,
+            38.21441650390625,
+            38.21441650390625
+          ]
+        },
+        "gpu_util_mean_pct": {
+          "mean": 87.08714703018501,
+          "median": 86.96153846153847,
+          "stddev": 1.5461876763596991,
+          "min": 85.60759493670886,
+          "max": 88.6923076923077,
+          "values": [
+            88.6923076923077,
+            86.96153846153847,
+            85.60759493670886
+          ]
+        }
+      },
+      "phase_metrics": [
+        {
+          "repeat": 1,
+          "denoise_gpu_util_mean_pct": 95.2156862745098,
+          "denoise_peak_gib": 38.21441650390625
+        },
+        {
+          "repeat": 2,
+          "denoise_gpu_util_mean_pct": 93.74509803921569,
+          "denoise_peak_gib": 38.21441650390625
+        },
+        {
+          "repeat": 3,
+          "denoise_gpu_util_mean_pct": 95.6470588235294,
+          "denoise_peak_gib": 38.21441650390625
+        }
+      ],
+      "fast_counters": [
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ],
+        [
+          {
+            "sampler_calls": 1,
+            "model_forward_calls": 2,
+            "sage2_calls": 50,
+            "sage3_calls": 50,
+            "sage3_fallback_calls": 0,
+            "video_decode_calls": 0,
+            "nvfp4_gemm_calls": 0,
+            "weight_quantizations": 0,
+            "weight_cache_hits": 0
+          }
+        ]
+      ],
+      "batch_stats": [
+        {
+          "modulation_batched": true,
+          "batch_forwards": 4,
+          "block_calls": 200,
+          "attention_batch_shapes": [
+            [
+              1,
+              56,
+              1897,
+              128
+            ],
+            [
+              2,
+              56,
+              19563,
+              128
+            ]
+          ]
+        },
+        {
+          "modulation_batched": true,
+          "batch_forwards": 6,
+          "block_calls": 300,
+          "attention_batch_shapes": [
+            [
+              1,
+              56,
+              1897,
+              128
+            ],
+            [
+              2,
+              56,
+              19563,
+              128
+            ]
+          ]
+        },
+        {
+          "modulation_batched": true,
+          "batch_forwards": 8,
+          "block_calls": 400,
+          "attention_batch_shapes": [
+            [
+              1,
+              56,
+              1897,
+              128
+            ],
+            [
+              2,
+              56,
+              19563,
+              128
+            ]
+          ]
+        }
+      ],
+      "validation": [
+        {
+          "file": "runs/batch_modulation_v1/repeat_1/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.969167
+        },
+        {
+          "file": "runs/batch_modulation_v1/repeat_1/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.934825
+        },
+        {
+          "file": "runs/batch_modulation_v1/repeat_2/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.969167
+        },
+        {
+          "file": "runs/batch_modulation_v1/repeat_2/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.934825
+        },
+        {
+          "file": "runs/batch_modulation_v1/repeat_3/chunk_0.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+          "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.969167
+        },
+        {
+          "file": "runs/batch_modulation_v1/repeat_3/chunk_1.mp4",
+          "frames": 55,
+          "fps": 24,
+          "dimensions": [
+            1080,
+            1920
+          ],
+          "video_duration": 2.291667,
+          "audio_duration": 2.291,
+          "audio_start": 0.0,
+          "video_start": 0.0,
+          "constant_frame_timestamps": true,
+          "full_av_decode": "passed",
+          "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+          "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+          "decoded_audio_samples": 110592,
+          "ssim_vs_sequential": 0.934825
+        }
+      ],
+      "speedup_vs_sequential": 0.9757938504870937,
+      "denoise_speedup_vs_sequential": 0.9634829378080946
+    }
+  },
+  "validation": {
+    "same_audio_across_modes": true
+  }
+}

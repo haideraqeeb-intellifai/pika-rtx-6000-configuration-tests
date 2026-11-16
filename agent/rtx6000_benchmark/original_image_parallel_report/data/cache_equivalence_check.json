@@ -1,0 +1,352 @@
+[
+  {
+    "path": "chunk_0.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_0.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_0.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_0.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_0.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_0.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_0.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_1.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_1.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_1.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_1.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_1.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_1.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_1.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_2.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_2.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_2.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_2.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_2.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_2.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_2.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_3.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_3.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_3.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_3.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_3.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_3.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_3.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_4.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_4.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_4.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_4.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_4.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_4.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_4.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_5.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_5.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_5.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_5.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_5.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_5.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_5.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_6.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_6.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_6.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_6.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_6.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_6.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_6.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_7.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_7.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_7.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_7.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_7.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_7.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_7.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_8.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_8.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_8.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_8.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_8.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_8.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_8.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_9.conditioning[0][0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_9.conditioning[0][1].minimax_token_tags",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_9.conditioning[0][1].minimax_keyframes[0].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_9.conditioning[0][1].minimax_keyframes[1].latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_9.conditioning[0][1].minimax_audio_latent",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_9.latent.samples.__h3_nested_tensors__[0]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "path": "chunk_9.latent.samples.__h3_nested_tensors__[1]",
+    "exact": true,
+    "max_abs_difference": 0.0
+  }
+]

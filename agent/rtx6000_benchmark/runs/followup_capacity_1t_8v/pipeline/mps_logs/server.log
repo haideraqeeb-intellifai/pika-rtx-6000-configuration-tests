@@ -1,0 +1,459 @@
+[2026-11-10 20:32:29.268 Server 498125] Startup
+[2026-11-10 20:32:29.268 Server 498125] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.268 Server 498125] Connecting to control daemon on socket: /tmp/h3-vae-mps-gg4yubpb/control
+[2026-11-10 20:32:29.268 Server 498125] Initializing server process
+[2026-11-10 20:32:29.366 Server 498125] Creating server context on device 0 (NVIDIA RTX PRO 6000 Blackwell Workstation Edition)
+[2026-11-10 20:32:29.410 Server 498125] Created anonymous shared memory region mps.shm.1014.498125
+[2026-11-10 20:32:29.410 Server 498125] CUDA MPS Server for Linux/Unix. Binary version: 13020
+[2026-11-10 20:32:29.410 Server 498125] Display Driver version: 595
+[2026-11-10 20:32:29.411 Server 498125] Active Threads Percentage set to 100.0
+[2026-11-10 20:32:29.411 Server 498125] Server Priority set to 0
+[2026-11-10 20:32:29.411 Server 498125] Static Partitioning mode disabled
+[2026-11-10 20:32:29.411 Server 498125] Server has started
+[2026-11-10 20:32:29.411 Server 498125] Received new client request from PID 497684
+[2026-11-10 20:32:29.411 Server 498125] Priority level of client {497684} is: 0 (NORMAL)
+[2026-11-10 20:32:29.411 Server 498125] Client {PID: 497684, Context ID: 0} connected
+[2026-11-10 20:32:29.411 Server 498125] Creating worker thread for client {PID: 497684, Context ID: 0}
+[2026-11-10 20:32:29.411 Server 498125] Received new client request from PID 497691
+[2026-11-10 20:32:29.411 Server 498125] Priority level of client {497691} is: 0 (NORMAL)
+[2026-11-10 20:32:29.411 Server 498125] Client {PID: 497691, Context ID: 0} connected
+[2026-11-10 20:32:29.411 Server 498125] Creating worker thread for client {PID: 497691, Context ID: 0}
+[2026-11-10 20:32:29.411 Server 498125] Received new client request from PID 497686
+[2026-11-10 20:32:29.411 Server 498125] Priority level of client {497686} is: 0 (NORMAL)
+[2026-11-10 20:32:29.411 Server 498125] Client {PID: 497686, Context ID: 0} connected
+[2026-11-10 20:32:29.411 Server 498125] Creating worker thread for client {PID: 497686, Context ID: 0}
+[2026-11-10 20:32:29.423 Server 498125] Received new client request from PID 497685
+[2026-11-10 20:32:29.424 Server 498125] Priority level of client {497685} is: 0 (NORMAL)
+[2026-11-10 20:32:29.424 Server 498125] Client {PID: 497685, Context ID: 0} connected
+[2026-11-10 20:32:29.424 Server 498125] Creating worker thread for client {PID: 497685, Context ID: 0}
+[2026-11-10 20:32:29.424 Server 498125] Received new client request from PID 497683
+[2026-11-10 20:32:29.424 Server 498125] Priority level of client {497683} is: 0 (NORMAL)
+[2026-11-10 20:32:29.424 Server 498125] Client {PID: 497683, Context ID: 0} connected
+[2026-11-10 20:32:29.424 Server 498125] Creating worker thread for client {PID: 497683, Context ID: 0}
+[2026-11-10 20:32:29.424 Server 498125] Received new client request from PID 497689
+[2026-11-10 20:32:29.424 Server 498125] Priority level of client {497689} is: 0 (NORMAL)
+[2026-11-10 20:32:29.424 Server 498125] Client {PID: 497689, Context ID: 0} connected
+[2026-11-10 20:32:29.424 Server 498125] Creating worker thread for client {PID: 497689, Context ID: 0}
+[2026-11-10 20:32:29.424 Server 498125] Received new client request from PID 497687
+[2026-11-10 20:32:29.424 Server 498125] Priority level of client {497687} is: 0 (NORMAL)
+[2026-11-10 20:32:29.424 Server 498125] Client {PID: 497687, Context ID: 0} connected
+[2026-11-10 20:32:29.424 Server 498125] Creating worker thread for client {PID: 497687, Context ID: 0}
+[2026-11-10 20:32:29.464 Server 498125] Received new client request from PID 497688
+[2026-11-10 20:32:29.464 Server 498125] Priority level of client {497688} is: 0 (NORMAL)
+[2026-11-10 20:32:29.464 Server 498125] Client {PID: 497688, Context ID: 0} connected
+[2026-11-10 20:32:29.464 Server 498125] Creating worker thread for client {PID: 497688, Context ID: 0}
+[2026-11-10 20:32:29.468 Server 498125] Received new client request from PID 497690
+[2026-11-10 20:32:29.468 Server 498125] Priority level of client {497690} is: 0 (NORMAL)
+[2026-11-10 20:32:29.468 Server 498125] Client {PID: 497690, Context ID: 0} connected
+[2026-11-10 20:32:29.468 Server 498125] Creating worker thread for client {PID: 497690, Context ID: 0}
+[2026-11-10 20:32:29.492 Client 497684] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.492 Server 498125] Received new client request from PID 497684
+[2026-11-10 20:32:29.492 Server 498125] Priority level of client {497684} is: 0 (NORMAL)
+[2026-11-10 20:32:29.492 Server 498125] Client {PID: 497684, Context ID: 1} connected
+[2026-11-10 20:32:29.492 Server 498125] Creating worker thread for client {PID: 497684, Context ID: 1}
+[2026-11-10 20:32:29.492 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.492 Server 498125] Status of client {PID: 497684, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.493 Client 497684] Static partitioning mode disabled
+[2026-11-10 20:32:29.494 Client 497691] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.494 Server 498125] Received new client request from PID 497691
+[2026-11-10 20:32:29.494 Server 498125] Priority level of client {497691} is: 0 (NORMAL)
+[2026-11-10 20:32:29.494 Server 498125] Client {PID: 497691, Context ID: 1} connected
+[2026-11-10 20:32:29.494 Server 498125] Creating worker thread for client {PID: 497691, Context ID: 1}
+[2026-11-10 20:32:29.494 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.494 Server 498125] Status of client {PID: 497691, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.495 Client 497691] Static partitioning mode disabled
+[2026-11-10 20:32:29.501 Client 497686] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.502 Server 498125] Received new client request from PID 497686
+[2026-11-10 20:32:29.502 Server 498125] Priority level of client {497686} is: 0 (NORMAL)
+[2026-11-10 20:32:29.502 Server 498125] Client {PID: 497686, Context ID: 1} connected
+[2026-11-10 20:32:29.502 Server 498125] Creating worker thread for client {PID: 497686, Context ID: 1}
+[2026-11-10 20:32:29.502 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.502 Server 498125] Status of client {PID: 497686, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.504 Client 497686] Static partitioning mode disabled
+[2026-11-10 20:32:29.522 Client 497687] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.522 Server 498125] Received new client request from PID 497687
+[2026-11-10 20:32:29.522 Server 498125] Priority level of client {497687} is: 0 (NORMAL)
+[2026-11-10 20:32:29.522 Server 498125] Client {PID: 497687, Context ID: 1} connected
+[2026-11-10 20:32:29.522 Server 498125] Creating worker thread for client {PID: 497687, Context ID: 1}
+[2026-11-10 20:32:29.522 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.522 Server 498125] Status of client {PID: 497687, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.523 Client 497687] Static partitioning mode disabled
+[2026-11-10 20:32:29.539 Client 497689] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.539 Server 498125] Received new client request from PID 497689
+[2026-11-10 20:32:29.539 Server 498125] Priority level of client {497689} is: 0 (NORMAL)
+[2026-11-10 20:32:29.539 Server 498125] Client {PID: 497689, Context ID: 1} connected
+[2026-11-10 20:32:29.539 Server 498125] Creating worker thread for client {PID: 497689, Context ID: 1}
+[2026-11-10 20:32:29.539 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.539 Server 498125] Status of client {PID: 497689, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.540 Client 497689] Static partitioning mode disabled
+[2026-11-10 20:32:29.549 Client 497683] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.549 Server 498125] Received new client request from PID 497683
+[2026-11-10 20:32:29.549 Server 498125] Priority level of client {497683} is: 0 (NORMAL)
+[2026-11-10 20:32:29.549 Server 498125] Client {PID: 497683, Context ID: 1} connected
+[2026-11-10 20:32:29.549 Server 498125] Creating worker thread for client {PID: 497683, Context ID: 1}
+[2026-11-10 20:32:29.549 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.549 Server 498125] Status of client {PID: 497683, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.552 Client 497683] Static partitioning mode disabled
+[2026-11-10 20:32:29.565 Client 497685] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.565 Server 498125] Received new client request from PID 497685
+[2026-11-10 20:32:29.565 Server 498125] Priority level of client {497685} is: 0 (NORMAL)
+[2026-11-10 20:32:29.565 Server 498125] Client {PID: 497685, Context ID: 1} connected
+[2026-11-10 20:32:29.565 Server 498125] Creating worker thread for client {PID: 497685, Context ID: 1}
+[2026-11-10 20:32:29.565 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.565 Server 498125] Status of client {PID: 497685, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.566 Client 497685] Static partitioning mode disabled
+[2026-11-10 20:32:29.590 Client 497690] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.597 Server 498125] Received new client request from PID 497690
+[2026-11-10 20:32:29.598 Server 498125] Priority level of client {497690} is: 0 (NORMAL)
+[2026-11-10 20:32:29.598 Server 498125] Client {PID: 497690, Context ID: 1} connected
+[2026-11-10 20:32:29.598 Server 498125] Creating worker thread for client {PID: 497690, Context ID: 1}
+[2026-11-10 20:32:29.598 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.598 Server 498125] Status of client {PID: 497690, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.598 Client 497690] Static partitioning mode disabled
+[2026-11-10 20:32:29.609 Client 497688] Attempting to raise file descriptor limit from 1024 to 4096
+[2026-11-10 20:32:29.609 Server 498125] Received new client request from PID 497688
+[2026-11-10 20:32:29.609 Server 498125] Priority level of client {497688} is: 0 (NORMAL)
+[2026-11-10 20:32:29.609 Server 498125] Client {PID: 497688, Context ID: 1} connected
+[2026-11-10 20:32:29.609 Server 498125] Creating worker thread for client {PID: 497688, Context ID: 1}
+[2026-11-10 20:32:29.609 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:32:29.609 Server 498125] Status of client {PID: 497688, Context ID: 1} is ACTIVE
+[2026-11-10 20:32:29.610 Client 497688] Static partitioning mode disabled
+[2026-11-10 20:33:17.900 Server 498125] Received new client request from PID 499352
+[2026-11-10 20:33:17.900 Server 498125] Priority level of client {499352} is: 0 (NORMAL)
+[2026-11-10 20:33:17.900 Server 498125] Client {PID: 499352, Context ID: 0} connected
+[2026-11-10 20:33:17.901 Server 498125] Creating worker thread for client {PID: 499352, Context ID: 0}
+[2026-11-10 20:33:17.915 Server 498125] Received new client request from PID 499352
+[2026-11-10 20:33:17.915 Server 498125] Priority level of client {499352} is: 0 (NORMAL)
+[2026-11-10 20:33:17.915 Server 498125] Client {PID: 499352, Context ID: 1} connected
+[2026-11-10 20:33:17.915 Server 498125] Creating worker thread for client {PID: 499352, Context ID: 1}
+[2026-11-10 20:33:17.915 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:33:17.915 Server 498125] Status of client {PID: 499352, Context ID: 1} is ACTIVE
+[2026-11-10 20:33:17.916 Client 499352] Static partitioning mode disabled
+[2026-11-10 20:33:18.611 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 499352, Context ID: 1} exit
+[2026-11-10 20:33:18.611 Server 498125] Client {PID: 499352, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:33:18.613 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 499352, Context ID: 0} exit
+[2026-11-10 20:33:18.613 Server 498125] Client process 499352 disconnected
+[2026-11-10 20:33:24.532 Server 498125] Received new client request from PID 499572
+[2026-11-10 20:33:24.532 Server 498125] Priority level of client {499572} is: 0 (NORMAL)
+[2026-11-10 20:33:24.532 Server 498125] Client {PID: 499572, Context ID: 0} connected
+[2026-11-10 20:33:24.532 Server 498125] Creating worker thread for client {PID: 499572, Context ID: 0}
+[2026-11-10 20:33:24.546 Server 498125] Received new client request from PID 499572
+[2026-11-10 20:33:24.546 Server 498125] Priority level of client {499572} is: 0 (NORMAL)
+[2026-11-10 20:33:24.546 Server 498125] Client {PID: 499572, Context ID: 1} connected
+[2026-11-10 20:33:24.546 Server 498125] Creating worker thread for client {PID: 499572, Context ID: 1}
+[2026-11-10 20:33:24.546 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:33:24.546 Server 498125] Status of client {PID: 499572, Context ID: 1} is ACTIVE
+[2026-11-10 20:33:24.547 Client 499572] Static partitioning mode disabled
+[2026-11-10 20:33:25.214 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 499572, Context ID: 1} exit
+[2026-11-10 20:33:25.214 Server 498125] Client {PID: 499572, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:33:25.216 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 499572, Context ID: 0} exit
+[2026-11-10 20:33:25.216 Server 498125] Client process 499572 disconnected
+[2026-11-10 20:33:31.350 Server 498125] Received new client request from PID 499805
+[2026-11-10 20:33:31.350 Server 498125] Priority level of client {499805} is: 0 (NORMAL)
+[2026-11-10 20:33:31.350 Server 498125] Client {PID: 499805, Context ID: 0} connected
+[2026-11-10 20:33:31.351 Server 498125] Creating worker thread for client {PID: 499805, Context ID: 0}
+[2026-11-10 20:33:31.366 Server 498125] Received new client request from PID 499805
+[2026-11-10 20:33:31.366 Server 498125] Priority level of client {499805} is: 0 (NORMAL)
+[2026-11-10 20:33:31.366 Server 498125] Client {PID: 499805, Context ID: 1} connected
+[2026-11-10 20:33:31.366 Server 498125] Creating worker thread for client {PID: 499805, Context ID: 1}
+[2026-11-10 20:33:31.366 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:33:31.366 Server 498125] Status of client {PID: 499805, Context ID: 1} is ACTIVE
+[2026-11-10 20:33:31.368 Client 499805] Static partitioning mode disabled
+[2026-11-10 20:33:32.046 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 499805, Context ID: 1} exit
+[2026-11-10 20:33:32.046 Server 498125] Client {PID: 499805, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:33:32.048 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 499805, Context ID: 0} exit
+[2026-11-10 20:33:32.048 Server 498125] Client process 499805 disconnected
+[2026-11-10 20:33:38.344 Server 498125] Received new client request from PID 500021
+[2026-11-10 20:33:38.344 Server 498125] Priority level of client {500021} is: 0 (NORMAL)
+[2026-11-10 20:33:38.344 Server 498125] Client {PID: 500021, Context ID: 0} connected
+[2026-11-10 20:33:38.344 Server 498125] Creating worker thread for client {PID: 500021, Context ID: 0}
+[2026-11-10 20:33:38.369 Server 498125] Received new client request from PID 500021
+[2026-11-10 20:33:38.369 Server 498125] Priority level of client {500021} is: 0 (NORMAL)
+[2026-11-10 20:33:38.369 Server 498125] Client {PID: 500021, Context ID: 1} connected
+[2026-11-10 20:33:38.369 Server 498125] Creating worker thread for client {PID: 500021, Context ID: 1}
+[2026-11-10 20:33:38.369 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:33:38.369 Server 498125] Status of client {PID: 500021, Context ID: 1} is ACTIVE
+[2026-11-10 20:33:38.369 Client 500021] Static partitioning mode disabled
+[2026-11-10 20:33:39.035 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500021, Context ID: 1} exit
+[2026-11-10 20:33:39.035 Server 498125] Client {PID: 500021, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:33:39.036 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500021, Context ID: 0} exit
+[2026-11-10 20:33:39.036 Server 498125] Client process 500021 disconnected
+[2026-11-10 20:33:57.851 Server 498125] Received new client request from PID 500397
+[2026-11-10 20:33:57.851 Server 498125] Priority level of client {500397} is: 0 (NORMAL)
+[2026-11-10 20:33:57.851 Server 498125] Client {PID: 500397, Context ID: 0} connected
+[2026-11-10 20:33:57.851 Server 498125] Creating worker thread for client {PID: 500397, Context ID: 0}
+[2026-11-10 20:33:57.870 Server 498125] Received new client request from PID 500397
+[2026-11-10 20:33:57.870 Server 498125] Priority level of client {500397} is: 0 (NORMAL)
+[2026-11-10 20:33:57.870 Server 498125] Client {PID: 500397, Context ID: 1} connected
+[2026-11-10 20:33:57.870 Server 498125] Creating worker thread for client {PID: 500397, Context ID: 1}
+[2026-11-10 20:33:57.870 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:33:57.870 Server 498125] Status of client {PID: 500397, Context ID: 1} is ACTIVE
+[2026-11-10 20:33:57.870 Client 500397] Static partitioning mode disabled
+[2026-11-10 20:33:58.553 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500397, Context ID: 1} exit
+[2026-11-10 20:33:58.553 Server 498125] Client {PID: 500397, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:33:58.554 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500397, Context ID: 0} exit
+[2026-11-10 20:33:58.554 Server 498125] Client process 500397 disconnected
+[2026-11-10 20:34:01.178 Server 498125] Received new client request from PID 500518
+[2026-11-10 20:34:01.178 Server 498125] Priority level of client {500518} is: 0 (NORMAL)
+[2026-11-10 20:34:01.178 Server 498125] Client {PID: 500518, Context ID: 0} connected
+[2026-11-10 20:34:01.178 Server 498125] Creating worker thread for client {PID: 500518, Context ID: 0}
+[2026-11-10 20:34:01.195 Server 498125] Received new client request from PID 500518
+[2026-11-10 20:34:01.195 Server 498125] Priority level of client {500518} is: 0 (NORMAL)
+[2026-11-10 20:34:01.195 Server 498125] Client {PID: 500518, Context ID: 1} connected
+[2026-11-10 20:34:01.195 Server 498125] Creating worker thread for client {PID: 500518, Context ID: 1}
+[2026-11-10 20:34:01.195 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:01.195 Server 498125] Status of client {PID: 500518, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:01.196 Client 500518] Static partitioning mode disabled
+[2026-11-10 20:34:01.970 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500518, Context ID: 1} exit
+[2026-11-10 20:34:01.970 Server 498125] Client {PID: 500518, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:01.972 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500518, Context ID: 0} exit
+[2026-11-10 20:34:01.972 Server 498125] Client process 500518 disconnected
+[2026-11-10 20:34:06.528 Server 498125] Received new client request from PID 500730
+[2026-11-10 20:34:06.528 Server 498125] Priority level of client {500730} is: 0 (NORMAL)
+[2026-11-10 20:34:06.528 Server 498125] Client {PID: 500730, Context ID: 0} connected
+[2026-11-10 20:34:06.528 Server 498125] Creating worker thread for client {PID: 500730, Context ID: 0}
+[2026-11-10 20:34:06.546 Server 498125] Received new client request from PID 500730
+[2026-11-10 20:34:06.546 Server 498125] Priority level of client {500730} is: 0 (NORMAL)
+[2026-11-10 20:34:06.546 Server 498125] Client {PID: 500730, Context ID: 1} connected
+[2026-11-10 20:34:06.546 Server 498125] Creating worker thread for client {PID: 500730, Context ID: 1}
+[2026-11-10 20:34:06.546 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:06.546 Server 498125] Status of client {PID: 500730, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:06.547 Client 500730] Static partitioning mode disabled
+[2026-11-10 20:34:07.217 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500730, Context ID: 1} exit
+[2026-11-10 20:34:07.217 Server 498125] Client {PID: 500730, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:07.220 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500730, Context ID: 0} exit
+[2026-11-10 20:34:07.220 Server 498125] Client process 500730 disconnected
+[2026-11-10 20:34:14.731 Server 498125] Received new client request from PID 500948
+[2026-11-10 20:34:14.731 Server 498125] Priority level of client {500948} is: 0 (NORMAL)
+[2026-11-10 20:34:14.731 Server 498125] Client {PID: 500948, Context ID: 0} connected
+[2026-11-10 20:34:14.732 Server 498125] Creating worker thread for client {PID: 500948, Context ID: 0}
+[2026-11-10 20:34:14.746 Server 498125] Received new client request from PID 500948
+[2026-11-10 20:34:14.746 Server 498125] Priority level of client {500948} is: 0 (NORMAL)
+[2026-11-10 20:34:14.746 Server 498125] Client {PID: 500948, Context ID: 1} connected
+[2026-11-10 20:34:14.746 Server 498125] Creating worker thread for client {PID: 500948, Context ID: 1}
+[2026-11-10 20:34:14.746 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:14.746 Server 498125] Status of client {PID: 500948, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:14.746 Client 500948] Static partitioning mode disabled
+[2026-11-10 20:34:15.422 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500948, Context ID: 1} exit
+[2026-11-10 20:34:15.422 Server 498125] Client {PID: 500948, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:15.424 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 500948, Context ID: 0} exit
+[2026-11-10 20:34:15.424 Server 498125] Client process 500948 disconnected
+[2026-11-10 20:34:21.311 Server 498125] Received new client request from PID 501160
+[2026-11-10 20:34:21.311 Server 498125] Priority level of client {501160} is: 0 (NORMAL)
+[2026-11-10 20:34:21.311 Server 498125] Client {PID: 501160, Context ID: 0} connected
+[2026-11-10 20:34:21.311 Server 498125] Creating worker thread for client {PID: 501160, Context ID: 0}
+[2026-11-10 20:34:21.326 Server 498125] Received new client request from PID 501160
+[2026-11-10 20:34:21.326 Server 498125] Priority level of client {501160} is: 0 (NORMAL)
+[2026-11-10 20:34:21.326 Server 498125] Client {PID: 501160, Context ID: 1} connected
+[2026-11-10 20:34:21.326 Server 498125] Creating worker thread for client {PID: 501160, Context ID: 1}
+[2026-11-10 20:34:21.326 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:21.326 Server 498125] Status of client {PID: 501160, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:21.327 Client 501160] Static partitioning mode disabled
+[2026-11-10 20:34:22.017 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501160, Context ID: 1} exit
+[2026-11-10 20:34:22.017 Server 498125] Client {PID: 501160, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:22.019 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501160, Context ID: 0} exit
+[2026-11-10 20:34:22.019 Server 498125] Client process 501160 disconnected
+[2026-11-10 20:34:40.825 Server 498125] Received new client request from PID 501507
+[2026-11-10 20:34:40.825 Server 498125] Priority level of client {501507} is: 0 (NORMAL)
+[2026-11-10 20:34:40.825 Server 498125] Client {PID: 501507, Context ID: 0} connected
+[2026-11-10 20:34:40.825 Server 498125] Creating worker thread for client {PID: 501507, Context ID: 0}
+[2026-11-10 20:34:40.844 Server 498125] Received new client request from PID 501507
+[2026-11-10 20:34:40.844 Server 498125] Priority level of client {501507} is: 0 (NORMAL)
+[2026-11-10 20:34:40.844 Server 498125] Client {PID: 501507, Context ID: 1} connected
+[2026-11-10 20:34:40.844 Server 498125] Creating worker thread for client {PID: 501507, Context ID: 1}
+[2026-11-10 20:34:40.844 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:40.844 Server 498125] Status of client {PID: 501507, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:40.845 Client 501507] Static partitioning mode disabled
+[2026-11-10 20:34:41.522 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501507, Context ID: 1} exit
+[2026-11-10 20:34:41.522 Server 498125] Client {PID: 501507, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:41.524 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501507, Context ID: 0} exit
+[2026-11-10 20:34:41.524 Server 498125] Client process 501507 disconnected
+[2026-11-10 20:34:44.389 Server 498125] Received new client request from PID 501623
+[2026-11-10 20:34:44.389 Server 498125] Priority level of client {501623} is: 0 (NORMAL)
+[2026-11-10 20:34:44.389 Server 498125] Client {PID: 501623, Context ID: 0} connected
+[2026-11-10 20:34:44.389 Server 498125] Creating worker thread for client {PID: 501623, Context ID: 0}
+[2026-11-10 20:34:44.409 Server 498125] Received new client request from PID 501623
+[2026-11-10 20:34:44.409 Server 498125] Priority level of client {501623} is: 0 (NORMAL)
+[2026-11-10 20:34:44.409 Server 498125] Client {PID: 501623, Context ID: 1} connected
+[2026-11-10 20:34:44.409 Server 498125] Creating worker thread for client {PID: 501623, Context ID: 1}
+[2026-11-10 20:34:44.409 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:44.409 Server 498125] Status of client {PID: 501623, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:44.410 Client 501623] Static partitioning mode disabled
+[2026-11-10 20:34:45.215 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501623, Context ID: 1} exit
+[2026-11-10 20:34:45.215 Server 498125] Client {PID: 501623, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:45.217 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501623, Context ID: 0} exit
+[2026-11-10 20:34:45.217 Server 498125] Client process 501623 disconnected
+[2026-11-10 20:34:49.359 Server 498125] Received new client request from PID 501830
+[2026-11-10 20:34:49.359 Server 498125] Priority level of client {501830} is: 0 (NORMAL)
+[2026-11-10 20:34:49.359 Server 498125] Client {PID: 501830, Context ID: 0} connected
+[2026-11-10 20:34:49.359 Server 498125] Creating worker thread for client {PID: 501830, Context ID: 0}
+[2026-11-10 20:34:49.373 Server 498125] Received new client request from PID 501830
+[2026-11-10 20:34:49.373 Server 498125] Priority level of client {501830} is: 0 (NORMAL)
+[2026-11-10 20:34:49.373 Server 498125] Client {PID: 501830, Context ID: 1} connected
+[2026-11-10 20:34:49.373 Server 498125] Creating worker thread for client {PID: 501830, Context ID: 1}
+[2026-11-10 20:34:49.373 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:49.373 Server 498125] Status of client {PID: 501830, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:49.373 Client 501830] Static partitioning mode disabled
+[2026-11-10 20:34:50.045 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501830, Context ID: 1} exit
+[2026-11-10 20:34:50.045 Server 498125] Client {PID: 501830, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:50.046 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 501830, Context ID: 0} exit
+[2026-11-10 20:34:50.046 Server 498125] Client process 501830 disconnected
+[2026-11-10 20:34:57.546 Server 498125] Received new client request from PID 502045
+[2026-11-10 20:34:57.546 Server 498125] Priority level of client {502045} is: 0 (NORMAL)
+[2026-11-10 20:34:57.546 Server 498125] Client {PID: 502045, Context ID: 0} connected
+[2026-11-10 20:34:57.546 Server 498125] Creating worker thread for client {PID: 502045, Context ID: 0}
+[2026-11-10 20:34:57.569 Server 498125] Received new client request from PID 502045
+[2026-11-10 20:34:57.569 Server 498125] Priority level of client {502045} is: 0 (NORMAL)
+[2026-11-10 20:34:57.569 Server 498125] Client {PID: 502045, Context ID: 1} connected
+[2026-11-10 20:34:57.569 Server 498125] Creating worker thread for client {PID: 502045, Context ID: 1}
+[2026-11-10 20:34:57.569 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:34:57.569 Server 498125] Status of client {PID: 502045, Context ID: 1} is ACTIVE
+[2026-11-10 20:34:57.569 Client 502045] Static partitioning mode disabled
+[2026-11-10 20:34:58.237 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502045, Context ID: 1} exit
+[2026-11-10 20:34:58.237 Server 498125] Client {PID: 502045, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:34:58.239 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502045, Context ID: 0} exit
+[2026-11-10 20:34:58.239 Server 498125] Client process 502045 disconnected
+[2026-11-10 20:35:05.681 Server 498125] Received new client request from PID 502265
+[2026-11-10 20:35:05.681 Server 498125] Priority level of client {502265} is: 0 (NORMAL)
+[2026-11-10 20:35:05.681 Server 498125] Client {PID: 502265, Context ID: 0} connected
+[2026-11-10 20:35:05.681 Server 498125] Creating worker thread for client {PID: 502265, Context ID: 0}
+[2026-11-10 20:35:05.698 Server 498125] Received new client request from PID 502265
+[2026-11-10 20:35:05.698 Server 498125] Priority level of client {502265} is: 0 (NORMAL)
+[2026-11-10 20:35:05.698 Server 498125] Client {PID: 502265, Context ID: 1} connected
+[2026-11-10 20:35:05.698 Server 498125] Creating worker thread for client {PID: 502265, Context ID: 1}
+[2026-11-10 20:35:05.698 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:35:05.698 Server 498125] Status of client {PID: 502265, Context ID: 1} is ACTIVE
+[2026-11-10 20:35:05.699 Client 502265] Static partitioning mode disabled
+[2026-11-10 20:35:06.341 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502265, Context ID: 1} exit
+[2026-11-10 20:35:06.341 Server 498125] Client {PID: 502265, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:35:06.343 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502265, Context ID: 0} exit
+[2026-11-10 20:35:06.343 Server 498125] Client process 502265 disconnected
+[2026-11-10 20:35:23.904 Server 498125] Received new client request from PID 502550
+[2026-11-10 20:35:23.904 Server 498125] Priority level of client {502550} is: 0 (NORMAL)
+[2026-11-10 20:35:23.904 Server 498125] Client {PID: 502550, Context ID: 0} connected
+[2026-11-10 20:35:23.904 Server 498125] Creating worker thread for client {PID: 502550, Context ID: 0}
+[2026-11-10 20:35:23.917 Server 498125] Received new client request from PID 502550
+[2026-11-10 20:35:23.917 Server 498125] Priority level of client {502550} is: 0 (NORMAL)
+[2026-11-10 20:35:23.917 Server 498125] Client {PID: 502550, Context ID: 1} connected
+[2026-11-10 20:35:23.917 Server 498125] Creating worker thread for client {PID: 502550, Context ID: 1}
+[2026-11-10 20:35:23.917 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:35:23.917 Server 498125] Status of client {PID: 502550, Context ID: 1} is ACTIVE
+[2026-11-10 20:35:23.918 Client 502550] Static partitioning mode disabled
+[2026-11-10 20:35:24.418 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502550, Context ID: 1} exit
+[2026-11-10 20:35:24.419 Server 498125] Client {PID: 502550, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:35:24.421 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502550, Context ID: 0} exit
+[2026-11-10 20:35:24.421 Server 498125] Client process 502550 disconnected
+[2026-11-10 20:35:25.474 Server 498125] Received new client request from PID 502663
+[2026-11-10 20:35:25.474 Server 498125] Priority level of client {502663} is: 0 (NORMAL)
+[2026-11-10 20:35:25.474 Server 498125] Client {PID: 502663, Context ID: 0} connected
+[2026-11-10 20:35:25.474 Server 498125] Creating worker thread for client {PID: 502663, Context ID: 0}
+[2026-11-10 20:35:25.489 Server 498125] Received new client request from PID 502663
+[2026-11-10 20:35:25.489 Server 498125] Priority level of client {502663} is: 0 (NORMAL)
+[2026-11-10 20:35:25.489 Server 498125] Client {PID: 502663, Context ID: 1} connected
+[2026-11-10 20:35:25.489 Server 498125] Creating worker thread for client {PID: 502663, Context ID: 1}
+[2026-11-10 20:35:25.489 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:35:25.489 Server 498125] Status of client {PID: 502663, Context ID: 1} is ACTIVE
+[2026-11-10 20:35:25.490 Client 502663] Static partitioning mode disabled
+[2026-11-10 20:35:26.059 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502663, Context ID: 1} exit
+[2026-11-10 20:35:26.059 Server 498125] Client {PID: 502663, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:35:26.061 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502663, Context ID: 0} exit
+[2026-11-10 20:35:26.061 Server 498125] Client process 502663 disconnected
+[2026-11-10 20:35:27.225 Server 498125] Received new client request from PID 502776
+[2026-11-10 20:35:27.225 Server 498125] Priority level of client {502776} is: 0 (NORMAL)
+[2026-11-10 20:35:27.225 Server 498125] Client {PID: 502776, Context ID: 0} connected
+[2026-11-10 20:35:27.225 Server 498125] Creating worker thread for client {PID: 502776, Context ID: 0}
+[2026-11-10 20:35:27.238 Server 498125] Received new client request from PID 502776
+[2026-11-10 20:35:27.238 Server 498125] Priority level of client {502776} is: 0 (NORMAL)
+[2026-11-10 20:35:27.238 Server 498125] Client {PID: 502776, Context ID: 1} connected
+[2026-11-10 20:35:27.238 Server 498125] Creating worker thread for client {PID: 502776, Context ID: 1}
+[2026-11-10 20:35:27.238 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:35:27.238 Server 498125] Status of client {PID: 502776, Context ID: 1} is ACTIVE
+[2026-11-10 20:35:27.238 Client 502776] Static partitioning mode disabled
+[2026-11-10 20:35:27.736 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502776, Context ID: 1} exit
+[2026-11-10 20:35:27.736 Server 498125] Client {PID: 502776, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:35:27.738 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502776, Context ID: 0} exit
+[2026-11-10 20:35:27.738 Server 498125] Client process 502776 disconnected
+[2026-11-10 20:35:29.509 Server 498125] Received new client request from PID 502888
+[2026-11-10 20:35:29.509 Server 498125] Priority level of client {502888} is: 0 (NORMAL)
+[2026-11-10 20:35:29.509 Server 498125] Client {PID: 502888, Context ID: 0} connected
+[2026-11-10 20:35:29.509 Server 498125] Creating worker thread for client {PID: 502888, Context ID: 0}
+[2026-11-10 20:35:29.525 Server 498125] Received new client request from PID 502888
+[2026-11-10 20:35:29.525 Server 498125] Priority level of client {502888} is: 0 (NORMAL)
+[2026-11-10 20:35:29.525 Server 498125] Client {PID: 502888, Context ID: 1} connected
+[2026-11-10 20:35:29.525 Server 498125] Creating worker thread for client {PID: 502888, Context ID: 1}
+[2026-11-10 20:35:29.525 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:35:29.525 Server 498125] Status of client {PID: 502888, Context ID: 1} is ACTIVE
+[2026-11-10 20:35:29.525 Client 502888] Static partitioning mode disabled
+[2026-11-10 20:35:30.015 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502888, Context ID: 1} exit
+[2026-11-10 20:35:30.015 Server 498125] Client {PID: 502888, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:35:30.017 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 502888, Context ID: 0} exit
+[2026-11-10 20:35:30.017 Server 498125] Client process 502888 disconnected
+[2026-11-10 20:35:30.984 Server 498125] Received new client request from PID 503000
+[2026-11-10 20:35:30.984 Server 498125] Priority level of client {503000} is: 0 (NORMAL)
+[2026-11-10 20:35:30.984 Server 498125] Client {PID: 503000, Context ID: 0} connected
+[2026-11-10 20:35:30.984 Server 498125] Creating worker thread for client {PID: 503000, Context ID: 0}
+[2026-11-10 20:35:30.998 Server 498125] Received new client request from PID 503000
+[2026-11-10 20:35:30.998 Server 498125] Priority level of client {503000} is: 0 (NORMAL)
+[2026-11-10 20:35:30.998 Server 498125] Client {PID: 503000, Context ID: 1} connected
+[2026-11-10 20:35:30.998 Server 498125] Creating worker thread for client {PID: 503000, Context ID: 1}
+[2026-11-10 20:35:30.998 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:35:30.998 Server 498125] Status of client {PID: 503000, Context ID: 1} is ACTIVE
+[2026-11-10 20:35:30.999 Client 503000] Static partitioning mode disabled
+[2026-11-10 20:35:31.475 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 503000, Context ID: 1} exit
+[2026-11-10 20:35:31.475 Server 498125] Client {PID: 503000, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:35:31.477 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 503000, Context ID: 0} exit
+[2026-11-10 20:35:31.477 Server 498125] Client process 503000 disconnected
+[2026-11-10 20:35:32.880 Server 498125] Received new client request from PID 503129
+[2026-11-10 20:35:32.880 Server 498125] Priority level of client {503129} is: 0 (NORMAL)
+[2026-11-10 20:35:32.880 Server 498125] Client {PID: 503129, Context ID: 0} connected
+[2026-11-10 20:35:32.880 Server 498125] Creating worker thread for client {PID: 503129, Context ID: 0}
+[2026-11-10 20:35:32.888 Server 498125] Received new client request from PID 503129
+[2026-11-10 20:35:32.888 Server 498125] Priority level of client {503129} is: 0 (NORMAL)
+[2026-11-10 20:35:32.888 Server 498125] Client {PID: 503129, Context ID: 1} connected
+[2026-11-10 20:35:32.888 Server 498125] Creating worker thread for client {PID: 503129, Context ID: 1}
+[2026-11-10 20:35:32.888 Server 498125] Device NVIDIA RTX PRO 6000 Blackwell Workstation Edition (uuid GPU-95524f71-5100-f040-aebf-67296c094563) is associated
+[2026-11-10 20:35:32.888 Server 498125] Status of client {PID: 503129, Context ID: 1} is ACTIVE
+[2026-11-10 20:35:32.888 Client 503129] Static partitioning mode disabled
+[2026-11-10 20:35:33.284 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 503129, Context ID: 1} exit
+[2026-11-10 20:35:33.284 Server 498125] Client {PID: 503129, Context ID: 1} exiting. Number of active client contexts is 9.
+[2026-11-10 20:35:33.285 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 503129, Context ID: 0} exit
+[2026-11-10 20:35:33.285 Server 498125] Client process 503129 disconnected
+[2026-11-10 20:35:35.998 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497686, Context ID: 1} exit
+[2026-11-10 20:35:35.998 Server 498125] Client {PID: 497686, Context ID: 1} exiting. Number of active client contexts is 8.
+[2026-11-10 20:35:36.061 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497687, Context ID: 1} exit
+[2026-11-10 20:35:36.061 Server 498125] Client {PID: 497687, Context ID: 1} exiting. Number of active client contexts is 7.
+[2026-11-10 20:35:36.075 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497691, Context ID: 1} exit
+[2026-11-10 20:35:36.075 Server 498125] Client {PID: 497691, Context ID: 1} exiting. Number of active client contexts is 6.
+[2026-11-10 20:35:36.078 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497686, Context ID: 0} exit
+[2026-11-10 20:35:36.078 Server 498125] Client process 497686 disconnected
+[2026-11-10 20:35:36.111 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497685, Context ID: 1} exit
+[2026-11-10 20:35:36.111 Server 498125] Client {PID: 497685, Context ID: 1} exiting. Number of active client contexts is 5.
+[2026-11-10 20:35:36.119 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497688, Context ID: 1} exit
+[2026-11-10 20:35:36.119 Server 498125] Client {PID: 497688, Context ID: 1} exiting. Number of active client contexts is 4.
+[2026-11-10 20:35:36.140 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497691, Context ID: 0} exit
+[2026-11-10 20:35:36.140 Server 498125] Client process 497691 disconnected
+[2026-11-10 20:35:36.150 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497687, Context ID: 0} exit
+[2026-11-10 20:35:36.150 Server 498125] Client process 497687 disconnected
+[2026-11-10 20:35:36.182 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497685, Context ID: 0} exit
+[2026-11-10 20:35:36.182 Server 498125] Client process 497685 disconnected
+[2026-11-10 20:35:36.196 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497688, Context ID: 0} exit
+[2026-11-10 20:35:36.197 Server 498125] Client process 497688 disconnected
+[2026-11-10 20:35:36.227 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497690, Context ID: 1} exit
+[2026-11-10 20:35:36.227 Server 498125] Client {PID: 497690, Context ID: 1} exiting. Number of active client contexts is 3.
+[2026-11-10 20:35:36.228 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497684, Context ID: 1} exit
+[2026-11-10 20:35:36.228 Server 498125] Client {PID: 497684, Context ID: 1} exiting. Number of active client contexts is 2.
+[2026-11-10 20:35:36.251 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497689, Context ID: 1} exit
+[2026-11-10 20:35:36.251 Server 498125] Client {PID: 497689, Context ID: 1} exiting. Number of active client contexts is 1.
+[2026-11-10 20:35:36.309 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497684, Context ID: 0} exit
+[2026-11-10 20:35:36.309 Server 498125] Client process 497684 disconnected
+[2026-11-10 20:35:36.316 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497690, Context ID: 0} exit
+[2026-11-10 20:35:36.316 Server 498125] Client process 497690 disconnected
+[2026-11-10 20:35:36.328 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497689, Context ID: 0} exit
+[2026-11-10 20:35:36.328 Server 498125] Client process 497689 disconnected
+[2026-11-10 20:35:36.694 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497683, Context ID: 1} exit
+[2026-11-10 20:35:36.694 Server 498125] Client {PID: 497683, Context ID: 1} exiting. Number of active client contexts is 0.
+[2026-11-10 20:35:36.803 Server 498125] Server failed to receive command: the remote procedural call between the MPS server and the MPS client failed, assuming client {PID: 497683, Context ID: 0} exit
+[2026-11-10 20:35:36.803 Server 498125] Client process 497683 disconnected
+[2026-11-10 20:35:36.831 Server 498125] Server has been notified to shutdown
+[2026-11-10 20:35:36.831 Server 498125] Waiting for current clients to finish
+[2026-11-10 20:35:36.831 Server 498125] Exiting

@@ -1,0 +1,81 @@
+{
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "c0_20": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait.jpg"
+    }
+  },
+  "c0_22": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "audio_9.wav"
+    }
+  },
+  "c0_5": {
+    "class_type": "MiniMaxH3ImageToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "prompt": "A raccoon podcast host speaks naturally in sync with the supplied recording. Preserve its species, face, fur, desk, microphone and framing. Subtle paw gestures, fixed camera, no text or music.",
+      "width": 736,
+      "height": 1280,
+      "length": 73,
+      "first_frame": [
+        "c0_20",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "audio": [
+        "c0_22",
+        0
+      ],
+      "last_frame": [
+        "c0_20",
+        0
+      ]
+    }
+  },
+  "save_prepared": {
+    "class_type": "H3SavePrepared",
+    "inputs": {
+      "conditioning": [
+        "c0_5",
+        0
+      ],
+      "latent": [
+        "c0_5",
+        1
+      ],
+      "path": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_mps_2t_1v/prepared/prepared_9.pt"
+    }
+  }
+}

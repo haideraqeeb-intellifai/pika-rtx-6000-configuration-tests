@@ -1,0 +1,8 @@
+{
+  "status": "user_cancelled",
+  "reason": "User stopped benchmark before final result; no valid full-video timing.",
+  "resume_replacements": [
+    "followup_best_combined_repeat3",
+    "followup_best_combined_repeat4"
+  ]
+}

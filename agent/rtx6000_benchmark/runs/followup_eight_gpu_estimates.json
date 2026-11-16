@@ -1,0 +1,1053 @@
+{
+  "uniform_stage_time_reduction_to_match_eight_independent": {
+    "0": 0.17324419772540878,
+    "0.1": 0.24840381611400808
+  },
+  "status": "ESTIMATES_NOT_EIGHT_GPU_MEASUREMENTS",
+  "measured_stage_profile_run": "followup_isolated_20",
+  "measured_stage_seconds_including_fresh_stage_loading": {
+    "preparation": 22.499046529002953,
+    "denoise": 120.95052147599927,
+    "decode": 99.5922584689979
+  },
+  "measured_prepared_artifact_bytes": 919707362,
+  "measured_latent_artifact_bytes": 127724756,
+  "serialized_artifact_payload_GiB": 0.9754971768707037,
+  "single_gpu_baseline": {
+    "key": [
+      20,
+      1,
+      2,
+      "dynamic",
+      false,
+      true
+    ],
+    "label": "20 chunks \u00b7 1 transformer / 2 VAE \u00b7 MPS",
+    "status": "success",
+    "samples": 3,
+    "mean_total_seconds": 223.57876813167,
+    "min_total_seconds": 221.92696636500477,
+    "max_total_seconds": 225.46428783699957,
+    "mean_video_ready_seconds": 219.5692734689995,
+    "videos_per_hour_including_qa": 16.101707823525928,
+    "videos_per_hour_ready": 16.395736721824495,
+    "peak_vram_gib": 41.301,
+    "gpu_util_mean_pct": 82.97055126398692,
+    "preparation_mean_seconds": 22.54930136466525,
+    "workers_mean_seconds": 188.8978120246708,
+    "max_concurrent_sampler_calls": 1,
+    "max_concurrent_decode_calls": 2,
+    "sampler_overlap_mean_seconds": 0.0,
+    "decode_overlap_mean_seconds": 143.58266666666665,
+    "run_names": [
+      "followup_capacity_1t_2v_control",
+      "followup_mps_1t_2v",
+      "followup_mps_1t_2v_repeat2"
+    ]
+  },
+  "eight_independent_worker_scenarios": [
+    {
+      "efficiency_assumption": 0.8,
+      "estimated_videos_per_hour": 104.93271501967678
+    },
+    {
+      "efficiency_assumption": 0.9,
+      "estimated_videos_per_hour": 118.04930439713637
+    },
+    {
+      "efficiency_assumption": 1,
+      "estimated_videos_per_hour": 131.16589377459596
+    }
+  ],
+  "stage_allocation_scenarios": [
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 47.804284065118985,
+      "estimated_videos_per_hour": 75.30705815186106,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 71.70642609767847,
+      "estimated_videos_per_hour": 50.20470543457404,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 71.70642609767847,
+      "estimated_videos_per_hour": 50.20470543457404,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 58.056250308479655,
+      "estimated_videos_per_hour": 62.0088273161208,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 58.056250308479655,
+      "estimated_videos_per_hour": 62.0088273161208,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 143.41285219535695,
+      "estimated_videos_per_hour": 25.10235271728702,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 47.804284065118985,
+      "estimated_videos_per_hour": 75.30705815186106,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 71.70642609767847,
+      "estimated_videos_per_hour": 50.20470543457404,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 71.70642609767847,
+      "estimated_videos_per_hour": 50.20470543457404,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 58.056250308479655,
+      "estimated_videos_per_hour": 62.0088273161208,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 58.056250308479655,
+      "estimated_videos_per_hour": 62.0088273161208,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 143.41285219535695,
+      "estimated_videos_per_hour": 25.10235271728702,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 47.804284065118985,
+      "estimated_videos_per_hour": 75.30705815186106,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 71.70642609767847,
+      "estimated_videos_per_hour": 50.20470543457404,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 71.70642609767847,
+      "estimated_videos_per_hour": 50.20470543457404,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 58.056250308479655,
+      "estimated_videos_per_hour": 62.0088273161208,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 58.056250308479655,
+      "estimated_videos_per_hour": 62.0088273161208,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Slower stages + overhead",
+      "stage_time_multiplier": 1.2,
+      "stage_overhead_fraction": 0.2,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 143.41285219535695,
+      "estimated_videos_per_hour": 25.10235271728702,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 36.51716143863256,
+      "estimated_videos_per_hour": 98.58378521698172,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 54.77574215794885,
+      "estimated_videos_per_hour": 65.7225234779878,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 54.77574215794885,
+      "estimated_videos_per_hour": 65.7225234779878,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 44.34852454119974,
+      "estimated_videos_per_hour": 81.17519212292177,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 44.34852454119974,
+      "estimated_videos_per_hour": 81.17519212292177,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 109.5514843158977,
+      "estimated_videos_per_hour": 32.8612617389939,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 36.51716143863256,
+      "estimated_videos_per_hour": 98.58378521698172,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 54.77574215794885,
+      "estimated_videos_per_hour": 65.7225234779878,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 54.77574215794885,
+      "estimated_videos_per_hour": 65.7225234779878,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 44.34852454119974,
+      "estimated_videos_per_hour": 81.17519212292177,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 44.34852454119974,
+      "estimated_videos_per_hour": 81.17519212292177,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 109.5514843158977,
+      "estimated_videos_per_hour": 32.8612617389939,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 36.51716143863256,
+      "estimated_videos_per_hour": 98.58378521698172,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 54.77574215794885,
+      "estimated_videos_per_hour": 65.7225234779878,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 54.77574215794885,
+      "estimated_videos_per_hour": 65.7225234779878,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 44.34852454119974,
+      "estimated_videos_per_hour": 81.17519212292177,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 44.34852454119974,
+      "estimated_videos_per_hour": 81.17519212292177,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Measured stage proxy + overhead",
+      "stage_time_multiplier": 1.0,
+      "stage_overhead_fraction": 0.1,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 109.5514843158977,
+      "estimated_videos_per_hour": 32.8612617389939,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 26.557935591732775,
+      "estimated_videos_per_hour": 135.55270467334987,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 39.836903387599165,
+      "estimated_videos_per_hour": 90.36846978223323,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 39.836903387599165,
+      "estimated_videos_per_hour": 90.36846978223323,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 32.25347239359981,
+      "estimated_videos_per_hour": 111.61588916901745,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 32.25347239359981,
+      "estimated_videos_per_hour": 111.61588916901745,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Slow host-mediated",
+      "effective_bandwidth_GiB_s": 1,
+      "latency_ms_per_handoff": 5,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 2.1509943537414076,
+      "interval_seconds": 79.67380677519833,
+      "estimated_videos_per_hour": 45.18423489111662,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 26.557935591732775,
+      "estimated_videos_per_hour": 135.55270467334987,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 39.836903387599165,
+      "estimated_videos_per_hour": 90.36846978223323,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 39.836903387599165,
+      "estimated_videos_per_hour": 90.36846978223323,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 32.25347239359981,
+      "estimated_videos_per_hour": 111.61588916901745,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 32.25347239359981,
+      "estimated_videos_per_hour": 111.61588916901745,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Moderate host-mediated",
+      "effective_bandwidth_GiB_s": 5,
+      "latency_ms_per_handoff": 2,
+      "payload_link_traversals": 2,
+      "transfer_seconds_per_video": 0.4701988707482815,
+      "interval_seconds": 79.67380677519833,
+      "estimated_videos_per_hour": 45.18423489111662,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        4,
+        3
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 26.557935591732775,
+      "estimated_videos_per_hour": 135.55270467334987,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        5,
+        2
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 39.836903387599165,
+      "estimated_videos_per_hour": 90.36846978223323,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        4,
+        2
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 39.836903387599165,
+      "estimated_videos_per_hour": 90.36846978223323,
+      "bottleneck": "VAE/export"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        2,
+        3,
+        3
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 32.25347239359981,
+      "estimated_videos_per_hour": 111.61588916901745,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        3,
+        4
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 32.25347239359981,
+      "estimated_videos_per_hour": 111.61588916901745,
+      "bottleneck": "denoising"
+    },
+    {
+      "GPUs_preparation_transformer_VAE": [
+        1,
+        6,
+        1
+      ],
+      "stage_scenario": "Optimistic warm-stage improvement",
+      "stage_time_multiplier": 0.8,
+      "stage_overhead_fraction": 0,
+      "transfer_scenario": "Fast direct transfer",
+      "effective_bandwidth_GiB_s": 25,
+      "latency_ms_per_handoff": 0.1,
+      "payload_link_traversals": 1,
+      "transfer_seconds_per_video": 0.04301988707482815,
+      "interval_seconds": 79.67380677519833,
+      "estimated_videos_per_hour": 45.18423489111662,
+      "bottleneck": "VAE/export"
+    }
+  ],
+  "assumptions": [
+    "Stage service includes fresh process/model load and local validation; it is a conservative proxy for dedicated warm workers, not a warm measurement.",
+    "The preparation GPU handles text/image/audio conditioning; the VAE GPU also exports locally. Full decoded frames do not cross GPUs.",
+    "Enough independent videos/chunks are queued to keep stages fed. Steady-state throughput is not single-video latency.",
+    "No shared CPU, RAM, storage or final assembly bottleneck is assumed. Actual rates can be lower.",
+    "Bandwidth is aggregate effective shared bandwidth in GiB/s, not a link specification; latency charged for 40 logical handoffs per video.",
+    "File sizes include serialization overhead and duplicated conditioning. Direct tensor transfer and exact cache reuse may need fewer bytes.",
+    "Scenario ranges are assumptions, not confidence intervals. No measured superlinear scaling is claimed."
+  ],
+  "memory_limits": {
+    "GPU_GiB": 95.59,
+    "independent_peak_GiB": 41.301,
+    "sampled_preparation_peak_GiB": 18.94,
+    "isolated_transformer_calibrated_peak_GiB": 28.757,
+    "isolated_VAE_calibrated_peak_GiB": 7.696,
+    "note": "One stage worker per allocated GPU; preparation peak is a sampled per-operation maximum; no eight-GPU memory fit verified. Queued tensors and in-flight activations need headroom."
+  }
+}

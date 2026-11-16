@@ -1,0 +1,116 @@
+[
+  {
+    "file": "runs/batch_modulation_v1/repeat_1/chunk_0.mp4",
+    "frames": 55,
+    "fps": 24,
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "video_duration": 2.291667,
+    "audio_duration": 2.291,
+    "audio_start": 0.0,
+    "video_start": 0.0,
+    "constant_frame_timestamps": true,
+    "full_av_decode": "passed",
+    "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+    "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+    "decoded_audio_samples": 110592,
+    "ssim_vs_sequential": 0.969167
+  },
+  {
+    "file": "runs/batch_modulation_v1/repeat_1/chunk_1.mp4",
+    "frames": 55,
+    "fps": 24,
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "video_duration": 2.291667,
+    "audio_duration": 2.291,
+    "audio_start": 0.0,
+    "video_start": 0.0,
+    "constant_frame_timestamps": true,
+    "full_av_decode": "passed",
+    "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+    "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+    "decoded_audio_samples": 110592,
+    "ssim_vs_sequential": 0.934825
+  },
+  {
+    "file": "runs/batch_modulation_v1/repeat_2/chunk_0.mp4",
+    "frames": 55,
+    "fps": 24,
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "video_duration": 2.291667,
+    "audio_duration": 2.291,
+    "audio_start": 0.0,
+    "video_start": 0.0,
+    "constant_frame_timestamps": true,
+    "full_av_decode": "passed",
+    "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+    "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+    "decoded_audio_samples": 110592,
+    "ssim_vs_sequential": 0.969167
+  },
+  {
+    "file": "runs/batch_modulation_v1/repeat_2/chunk_1.mp4",
+    "frames": 55,
+    "fps": 24,
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "video_duration": 2.291667,
+    "audio_duration": 2.291,
+    "audio_start": 0.0,
+    "video_start": 0.0,
+    "constant_frame_timestamps": true,
+    "full_av_decode": "passed",
+    "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+    "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+    "decoded_audio_samples": 110592,
+    "ssim_vs_sequential": 0.934825
+  },
+  {
+    "file": "runs/batch_modulation_v1/repeat_3/chunk_0.mp4",
+    "frames": 55,
+    "fps": 24,
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "video_duration": 2.291667,
+    "audio_duration": 2.291,
+    "audio_start": 0.0,
+    "video_start": 0.0,
+    "constant_frame_timestamps": true,
+    "full_av_decode": "passed",
+    "file_sha256": "cb70367036f0fab41621076c30a76aad14b56c9c6bb3d9b78153f66f6a1b9a7d",
+    "decoded_audio_sha256": "239e083123f9d4d614b54c881e0d5ae0956bb51f49c81ed422a69fd4dd9cca4e",
+    "decoded_audio_samples": 110592,
+    "ssim_vs_sequential": 0.969167
+  },
+  {
+    "file": "runs/batch_modulation_v1/repeat_3/chunk_1.mp4",
+    "frames": 55,
+    "fps": 24,
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "video_duration": 2.291667,
+    "audio_duration": 2.291,
+    "audio_start": 0.0,
+    "video_start": 0.0,
+    "constant_frame_timestamps": true,
+    "full_av_decode": "passed",
+    "file_sha256": "914337618c16e1b904fe1208e3d23ca312ffcfed4df74b123d8b644ac49e0ae5",
+    "decoded_audio_sha256": "9e665eaa4a88668fd5d2205171e9a32c1052466abfa4fc8fad8aa94f62588465",
+    "decoded_audio_samples": 110592,
+    "ssim_vs_sequential": 0.934825
+  }
+]

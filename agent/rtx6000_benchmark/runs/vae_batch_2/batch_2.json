@@ -1,0 +1,71 @@
+{
+  "batch_size": 2,
+  "latent_shape": [
+    2,
+    24,
+    37,
+    80,
+    46
+  ],
+  "decoded_shape": [
+    2,
+    124,
+    1280,
+    736,
+    3
+  ],
+  "actual_model_input_shapes": [
+    [
+      2,
+      24,
+      37,
+      80,
+      46
+    ]
+  ],
+  "decode_seconds": 15.0000741481781,
+  "decode_started": 1794264888.6733537,
+  "decode_ended": 1794264903.6734278,
+  "chunks": [
+    {
+      "index": 1,
+      "name": "vae_batch_2_chunk_1",
+      "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_1.pt",
+      "latent_sha256": "87a790d58e38b9bdf6e3a5da4f8265ed3ee9b5cbecc0757207afaecb68741c65",
+      "frames": 123,
+      "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_1.wav",
+      "encoding": {
+        "encoder": "h264_nvenc",
+        "fallback_reason": null,
+        "encoding_seconds": 0.978,
+        "output_frames": 123,
+        "output_width": 1080,
+        "output_height": 1920,
+        "audio_duration_seconds": 5.125,
+        "bytes": 2497890
+      },
+      "crop_encode_seconds": 1.0305810909485444,
+      "output_sha256": "483c43151cb8236c58f3af8bbc8624ce8301dc93228b94a30bfeb6c509f94529"
+    },
+    {
+      "index": 2,
+      "name": "vae_batch_2_chunk_2",
+      "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_2.pt",
+      "latent_sha256": "21f0ddb09c2387d8dce9b21a64108b72b375c643ea3e3bb8f659577268c15cbc",
+      "frames": 123,
+      "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_2.wav",
+      "encoding": {
+        "encoder": "h264_nvenc",
+        "fallback_reason": null,
+        "encoding_seconds": 0.999,
+        "output_frames": 123,
+        "output_width": 1080,
+        "output_height": 1920,
+        "audio_duration_seconds": 5.125,
+        "bytes": 2621967
+      },
+      "crop_encode_seconds": 1.06127532501705,
+      "output_sha256": "6af49e420a692234b40f0584f08be083f2be79606e653c19841b74b045443b67"
+    }
+  ]
+}

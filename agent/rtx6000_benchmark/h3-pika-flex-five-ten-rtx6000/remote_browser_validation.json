@@ -1,0 +1,13 @@
+{
+  "url_type": "signed_remote",
+  "videos": 4,
+  "measurements_match": true,
+  "links_validated": false,
+  "playback": {
+    "duration": 50,
+    "time": 1.124393,
+    "width": 1080,
+    "height": 1920
+  },
+  "js_errors": []
+}

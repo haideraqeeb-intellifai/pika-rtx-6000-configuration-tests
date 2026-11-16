@@ -1,0 +1,54 @@
+{
+  "benchmark_status": "complete",
+  "valid_full_video_trials": 4,
+  "repeats_per_mode": 2,
+  "frames_per_video": 1186,
+  "fps": "24/1",
+  "audio_lag_ms": 0,
+  "full_video_audio_decode": "passed",
+  "fast_path_counters": "passed",
+  "source_diff_check": "passed",
+  "local_links": "passed",
+  "archive_crc": "passed",
+  "credential_pattern_scan": "passed",
+  "browser": {
+    "viewport": "1440x1000",
+    "horizontal_overflow": false,
+    "playback": [
+      {
+        "src": "followup_fast_comparison_default_1/output.mp4",
+        "time": 0.614698,
+        "duration": 49.416667,
+        "width": 1080,
+        "height": 1920,
+        "paused": false
+      },
+      {
+        "src": "followup_fast_comparison_fast_1/output.mp4",
+        "time": 0.674535,
+        "duration": 49.416667,
+        "width": 1080,
+        "height": 1920,
+        "paused": false
+      },
+      {
+        "src": "followup_fast_comparison_default_2/output.mp4",
+        "time": 0.674691,
+        "duration": 49.416667,
+        "width": 1080,
+        "height": 1920,
+        "paused": false
+      },
+      {
+        "src": "followup_fast_comparison_fast_2/output.mp4",
+        "time": 0.674854,
+        "duration": 49.416667,
+        "width": 1080,
+        "height": 1920,
+        "paused": false
+      }
+    ],
+    "errors": []
+  },
+  "manual_inspection": "Control and fast contact sheets inspected; similar framing and subject appearance. This does not establish perceptual quality equivalence or seamless joins."
+}

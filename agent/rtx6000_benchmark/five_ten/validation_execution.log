@@ -1,0 +1,18 @@
+sequential_1t2v repeat_1 validated
+sequential_1t2v repeat_2 validated
+sequential_1t2v repeat_3 validated
+batch_compact_1t2v repeat_1 validated
+batch_compact_1t2v repeat_2 validated
+batch_compact_1t2v repeat_3 validated
+concurrent_2t1v repeat_1 validated
+concurrent_2t1v repeat_2 validated
+concurrent_2t1v repeat_3 validated
+concurrent_2t2v repeat_1 validated
+concurrent_2t2v repeat_2 validated
+concurrent_2t2v repeat_3 validated
+batch_1t2v repeat_1 validated
+batch_1t2v repeat_2 validated
+batch_1t2v repeat_3 validated
+/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Finite latents and visual comparisons complete

@@ -1,0 +1,36 @@
+{
+  "configuration": "concurrent_2t1v",
+  "repeat": 3,
+  "original_video_start_seconds": 0.020996,
+  "normalization_seconds": 0.058273592992918566,
+  "measured_generation_seconds": 218.86957068399352,
+  "combined_generation_plus_separately_timed_normalization_seconds": 218.92784427698643,
+  "original_sha256": "952ccc1a3f6ebe53df627588e15021d0c13426a08de0434a430b521e163f20f3",
+  "delivered_sha256": "dd98ec8f9fa0b1145ec3be6d8282ea149251fb8f418ba1dd4448c5238534f684",
+  "compressed_stream_payloads_unchanged": {
+    "v": true,
+    "a": true
+  },
+  "command": [
+    "ffmpeg",
+    "-v",
+    "error",
+    "-y",
+    "-i",
+    "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/runs/concurrent_2t1v/repeat_3/original_assembly/video.mp4",
+    "-map",
+    "0:v:0",
+    "-map",
+    "0:a:0",
+    "-c",
+    "copy",
+    "-bsf:v",
+    "setts=pts=PTS-STARTPTS:dts=DTS-STARTPTS",
+    "-avoid_negative_ts",
+    "disabled",
+    "-movflags",
+    "+faststart",
+    "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/runs/concurrent_2t1v/repeat_3/video.mp4"
+  ],
+  "note": "Timestamp-only remux after measurement. Video/audio packets preserved, no inference or encoding repeated. Verification cost excluded."
+}

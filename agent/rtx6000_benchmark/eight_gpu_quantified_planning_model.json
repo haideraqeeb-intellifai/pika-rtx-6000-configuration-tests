@@ -1,0 +1,197 @@
+{
+  "title": "Concrete eight-GPU H3 planning estimate from existing stage evidence",
+  "date_utc": "2026-11-10",
+  "status": "THEORETICAL_EXTRAPOLATION_NO_NEW_GPU_BENCHMARK",
+  "answer": {
+    "central": "Plan around145 videos/hour:8.1x the current200.346-second cold result. Use about115/hour for a downside capacity budget and175/hour as an optimistic engineering target. These are planning scenarios, not measured results or a statistical confidence interval.",
+    "matched_warm": "Central gain is7.05x versus an estimated174.7-second warm workstation, or7.42x versus an estimated183.9-second warm single target-SKU GPU. Greater than8x matched-warm scaling is not the central expectation.",
+    "architecture": "Five dedicated transformer GPUs and three GPUs sharing preparation/VAE work; persistent stage models, independent chunk queues and asynchronous CPU encoding/validation.",
+    "purchase": "Buy for required capacity if economics work at the conservative115/hour case. Do not justify the purchase solely by superlinear cost savings. At8x whole-system hourly cost, central accepted-video cost is approximately unchanged versus today\u2019s cold run and about8% higher than the estimated same-SKU warm baseline, assuming equal use and acceptance."
+  },
+  "measured_baseline": {
+    "cold_full_video_seconds": 200.34568004599714,
+    "videos_per_hour_equivalent": 17.968942475692412,
+    "repeat_count": 2,
+    "workload": "49.408-second podcast;1186 deliveredframes;20 independent anchoredchunks;twoPika steps;fastSA2/SA3 plusNVFP4VAE;fullvalidation andextraQA",
+    "baseline_limit": "Fresh model/process lifecycle per video;resident loaders across chunks. Historical cross-video two-job test exists for older chained10 configuration, not fast20."
+  },
+  "data_derivation": {
+    "T": {
+      "default_full20_warm_call_seconds_estimate": 107.18011426925659,
+      "method": "Replace first cold55-frame call by second55-frame call; other18 calls unchanged. This is a constructed warm estimate from an isolated DEFAULT run.",
+      "default_warm73_call_seconds": 6.876894950866699,
+      "fast_warm73_call_seconds": 6.670703649520874,
+      "fast_default_ratio": 0.9700168022313851,
+      "extrapolated_fast_full20_call_seconds": 103.96651170625873,
+      "ratio_caveat": "One post-first-call73-frame sample per mode. Applying the ratio to55/56-frame chunks is an extrapolation; concurrent call sums are not used."
+    },
+    "V": {
+      "default_full20_warm_call_seconds_estimate": 71.28737187385559,
+      "method": "Replace first cold55-frame call by second55-frame call; other18 calls unchanged. This is a constructed warm estimate from an isolated DEFAULT run.",
+      "default_warm73_call_seconds": 4.334028720855713,
+      "fast_warm73_call_seconds": 2.7169065475463867,
+      "fast_default_ratio": 0.6268778364278951,
+      "extrapolated_fast_full20_call_seconds": 44.68847344491337,
+      "ratio_caveat": "One post-first-call73-frame sample per mode. Applying the ratio to55/56-frame chunks is an extrapolation; concurrent call sums are not used."
+    }
+  },
+  "service_assumptions": {
+    "P": "Central15s preserves the measured approximately13.2\u201313.7s conditioning-node work, including first-prompt encoding, and allows wrappers. It removes process/bootstrap costs from22.8s cold preparation; it does not assume cache hits across distinct customer prompts. Conservative20s,optimistic14s.",
+    "T": "Central106s rounds103.9665s extrapolated fast isolated GPU-call work plus1.9702s observed per-chunk wrapper cost. Conservative114s allows length-ratio mismatch and staging variation;optimistic100s assumes a further~6% improvement versus the central service demand from scheduling/residency/batching.",
+    "V": "Central45s rounds44.6885s extrapolated fast isolated call work. Approximately21s of historical per-video chunk save/probe/validation wall time is placed in the CPU/output pipeline, not erased. Conservative52s allows~16% extra decode demand;optimistic40s assumes~11% reduction, e.g. avoiding recurring projection-copy/setup work or batching. Those extra gains are hypotheses.",
+    "CPU": "Sufficient independent host encoding/validation workers must sustain at least175 completedvideos/hour, with bounded queues. Current background-encoding mechanism is a precedent, but this aggregate rate is assumed, not measured. Same frame/audio/quality acceptance criteria apply.",
+    "efficiency": "85/90/97% are explicit engineering allowances for load imbalance, role transitions, launch gaps and scheduling; they are not experimentally fitted scaling efficiencies.",
+    "SKU": "90/95/100% are target-SKU sensitivities relative to the measured600W workstation. Published server bandwidth1597GB/s versus workstation1792GB/s motivates checking a penalty but does not measure H3 speed. No additional penalty is charged elsewhere.",
+    "single_warm": "Estimated single-GPU warm interval D/0.95; targetSKU additionally divides by g. Five percent allows schedule/transition gaps with CPU tails overlapped. These are constructed comparable warm service estimates, not measured sustainable throughput."
+  },
+  "scenarios": [
+    {
+      "name": "conservative",
+      "estimated_warm_service_seconds_P_T_V": [
+        20,
+        114,
+        52
+      ],
+      "total_service_seconds": 186,
+      "assumed_pool_efficiency": 0.85,
+      "assumed_target_sku_throughput_factor": 0.9,
+      "allocation": "5 dedicated transformer GPUs;3 GPUs share preparation and VAE tasks",
+      "ideal_bottleneck_seconds": 24.0,
+      "completion_interval_seconds": 31.372549019607842,
+      "videos_per_hour": 114.75,
+      "speedup_vs_measured_cold": 6.386018551466159,
+      "estimated_single_gpu_warm_interval_workstation_seconds": 195.78947368421055,
+      "speedup_vs_that_estimated_warm_workstation": 6.240789473684211,
+      "estimated_single_gpu_warm_interval_target_sku_seconds": 217.54385964912282,
+      "speedup_vs_that_estimated_warm_target_sku": 6.93421052631579,
+      "cost_per_video_ratio_if_system_hourly_cost_ratio_is_8_vs_cold": 1.2527367303314971,
+      "cost_per_video_ratio_if_system_hourly_cost_ratio_is_8_vs_warm_target": 1.1537001897533206
+    },
+    {
+      "name": "central",
+      "estimated_warm_service_seconds_P_T_V": [
+        15,
+        106,
+        45
+      ],
+      "total_service_seconds": 166,
+      "assumed_pool_efficiency": 0.9,
+      "assumed_target_sku_throughput_factor": 0.95,
+      "allocation": "5 dedicated transformer GPUs;3 GPUs share preparation and VAE tasks",
+      "ideal_bottleneck_seconds": 21.2,
+      "completion_interval_seconds": 24.795321637426902,
+      "videos_per_hour": 145.188679245283,
+      "speedup_vs_measured_cold": 8.07997907732677,
+      "estimated_single_gpu_warm_interval_workstation_seconds": 174.73684210526318,
+      "speedup_vs_that_estimated_warm_workstation": 7.047169811320755,
+      "estimated_single_gpu_warm_interval_target_sku_seconds": 183.93351800554018,
+      "speedup_vs_that_estimated_warm_target_sku": 7.418073485600795,
+      "cost_per_video_ratio_if_system_hourly_cost_ratio_is_8_vs_cold": 0.9901015737093677,
+      "cost_per_video_ratio_if_system_hourly_cost_ratio_is_8_vs_warm_target": 1.0784471218206158
+    },
+    {
+      "name": "optimistic",
+      "estimated_warm_service_seconds_P_T_V": [
+        14,
+        100,
+        40
+      ],
+      "total_service_seconds": 154,
+      "assumed_pool_efficiency": 0.97,
+      "assumed_target_sku_throughput_factor": 1.0,
+      "allocation": "5 dedicated transformer GPUs;3 GPUs share preparation and VAE tasks",
+      "ideal_bottleneck_seconds": 20.0,
+      "completion_interval_seconds": 20.61855670103093,
+      "videos_per_hour": 174.6,
+      "speedup_vs_measured_cold": 9.71676548223086,
+      "estimated_single_gpu_warm_interval_workstation_seconds": 162.10526315789474,
+      "speedup_vs_that_estimated_warm_workstation": 7.862105263157894,
+      "estimated_single_gpu_warm_interval_target_sku_seconds": 162.10526315789474,
+      "speedup_vs_that_estimated_warm_target_sku": 7.862105263157894,
+      "cost_per_video_ratio_if_system_hourly_cost_ratio_is_8_vs_cold": 0.8233192428725047,
+      "cost_per_video_ratio_if_system_hourly_cost_ratio_is_8_vs_warm_target": 1.0175391618690588
+    }
+  ],
+  "capacity_model": {
+    "formula": "I = max(P/(eta*g), T/(5*eta*g), (P+V)/(3*eta*g), C_CPU, C_storage, C_link, C_scheduler). One preparation-capable GPU shares its spare time with VAE tasks; two further GPUs run VAE tasks. CPU and link capacities are not GPU-scaled.",
+    "precise_formula": "I = max(P/(eta*g), T/(5*eta*g), (P+V)/(3*eta*g), C_CPU, C_storage, C_link, C_scheduler). One preparation-capable GPU shares its spare time with VAE tasks; two further GPUs run VAE tasks. CPU and link capacities are not GPU-scaled.",
+    "physical_mapping": "Central ideal interval21.2s:GPU0 performs15s preparation plus6.2s VAE work;GPU1/2 each perform19.4s VAE work;GPU3\u20137 each perform21.2s transformer work. These are average service budgets over several videos. Whole chunks and whole preparation jobs are scheduled discretely;the10%efficiency allowance covers imperfect packing. No arbitrary fractionalGPU splitting is required.",
+    "queue_requirement": "Keep several videos in flight so the mixedGPU can decode prior-video chunks while preparation for later videos is scheduled. Bounded queues and backpressure protect latency and memory. One isolated video will not fill the steady pipeline.",
+    "fixed_role_fallback": {
+      "allocation": [
+        1,
+        5,
+        2
+      ],
+      "central_interval_seconds": 26.315789473684212,
+      "central_videos_per_hour": 136.8,
+      "central_speedup_vs_cold": 7.613135841747892,
+      "meaning": "About137/hour,7.6x currentcold if preparationGPU cannotlend sparetime to decoding. This is the simpler initialimplementation."
+    },
+    "fluid_pool_reference": {
+      "central_ideal_all_roles_interval_before_penalties": 20.75,
+      "central_videos_per_hour_with_penalties": 148.33734939759037,
+      "note": "148.3/hour requires moreflexible three-role assignment;not used as centralrecommendation."
+    },
+    "upper_sensitivity": "With optimisticP14,T100,V40,97%pool efficiency and noSKUpenalty, the recommended layout reaches174.6/hour,9.72xcold. Removing all those residual overheads gives180/hour,10.02xcold for thisT100/5 layout. This is a conditional model limit, not an absolute hardwarebound;morekernel optimization or changing roles can change it. Do not budget16x or20x from these timings."
+  },
+  "latency": {
+    "illustrative_warm_first_video_seconds": 59.51191747518892,
+    "method": "OfflineLPT schedule of20 calibrated-shape transformer tasks on5GPUs after15s prep;VAE on3GPUs;GPUservice scaled by0.9*0.95;add1.3s finalchunkencode plus measured6.40s assembly/fullvalidation and4.22s extraQA. No admissionqueue, no freshmodelstartup.",
+    "user_interpretation": "Approximately55\u201365s for an individual warm video in this illustration, versus one completion every24.8s under steady load. Throughput8.1x does not mean8.1x per-video latency."
+  },
+  "transfer_and_memory": {
+    "payload_proxy_gib_per_video": 0.975497177,
+    "payload_provenance": "Old DEFAULT serializedprepared+latent files;proxy only,excludes models/decodedframes andadditional copies.",
+    "central_one_traversal_mib_per_second": 40.28619284938867,
+    "method": "Model transport as a link/serializer capacity and overlap it across chunks/jobs. Do not add the whole per-video transfer time to every pipeline cycle unless synchronization actually forces it. Coarse transfers are small at these rates;host-staging bursts,NUMA,storage and CPU serialization need allowance.",
+    "memory": "Central mixedGPU needs preparation andVAE models concurrently resident. Existing measured fullfast1T+2V peak43.904GiB and isolated T28.757GiB/V9.061GiB suggest ample96GB capacity for simplerP/V colocation, but this is not a measured combined residency envelope. The implementation must keep preparation alive instead of its currentexit and avoid waitingforanemptyGPU between stages.",
+    "interconnect": "ServerGPU isPCIe5x16 with noNVLink. CUDA P2P must be verified for actualGPU pairs;host-staged asynchronous copies remain anoption. No per-layer tensorcollectives are assumed.",
+    "power": "Assumes rated600W cards with sustained cooling and adequateCPU/RAM/NVMe. Eightboards have4.8kW aggregatepower ceilings beforehost/fans;450W orMaxQ configurations need newtiming factors."
+  },
+  "economic_formula": "cost_per_accepted_video=H/(q*u*y). Requiredthroughputmultiplier forlowercost is(H8/H1)*(u1*y1)/(u8*y8). H iswhole-system amortizedhourlycost;u productiveuse;y acceptanceyield. Noactualquote supplied.",
+  "validation": "No newGPU runs. Numericalderivation usesrawisolated20 children andpaired73framecalibration;scenarios areinternallycalculated. Largestuncertainties arecross-lengthfastVAE ratio,targetSKU throughput,mixedP/V transitions and aggregateCPUtailcapacity.",
+  "sources": [
+    {
+      "url": "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/",
+      "supports": "96GB,1597GB/s,configurableup-to600W serverGPU"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+      "supports": "Measuredclassworkstation published1792GB/s and600W"
+    },
+    {
+      "url": "https://lenovopress.lenovo.com/lp2263-thinksystem-nvidia-rtx-pro-6000-blackwell-server-edition-pcie-gen5-gpu",
+      "supports": "PCIe5x16,noNVLink,serverSKU/powerand8GPUcompatibility"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/",
+      "supports": "Asynchronouscopy/computeoverlapandresource-awareparallelization"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/03-advanced/multi-gpu-systems.html",
+      "supports": "ExplicitmultiGPUworkdistribution,P2P/topologyrequirements"
+    },
+    {
+      "url": "https://docs.nvidia.com/deploy/mps/when-to-use-mps.html",
+      "supports": "MPS fillsunusedGPUcapacity;notmultiplicativecompute"
+    },
+    {
+      "url": "https://huggingface.co/docs/diffusers/training/distributed_inference",
+      "supports": "Independentreplicas asgeneraldistributedinferencepattern;notH3measurement"
+    }
+  ],
+  "local_evidence": [
+    "runs/fast_comparison_summary.json",
+    "runs/followup_isolated_20/result.json",
+    "runs/followup_isolated_20_denoise_chunk_*/result.json",
+    "runs/followup_isolated_20_chunk_*/result.json",
+    "runs/followup_cal_20_calibration_denoise_chunk_1/result.json",
+    "runs/followup_cal_20_calibration_chunk_1/result.json",
+    "runs/followup_fast_cal20_calibration_denoise_chunk_1/result.json",
+    "runs/followup_fast_cal20_calibration_chunk_1/result.json",
+    "runs/followup_fast_comparison_fast_1/prepared/result.json",
+    "runs/followup_fast_comparison_fast_2/prepared/result.json",
+    "fast_comparison_source/fast_inference.py"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "built_at_ist": "2026-11-11T03:07:20.890502+05:30",
+  "top_level_result_records": 120,
+  "cancelled_records": 1,
+  "supporting_top_level_result_records": 1982,
+  "all_nested_result_records": 2172,
+  "archived_json_artifacts": 7667,
+  "status_counts": {
+    "success": 104,
+    "interrupted": 1,
+    "failure": 4,
+    "timing_excluded": 2,
+    "memory_guard_rejected": 3,
+    "calibrated": 4,
+    "preflight_failure": 1,
+    "baseline_recorded": 1,
+    "cancelled": 1
+  },
+  "scope_counts": {
+    "full-video": 107,
+    "diagnostic": 10,
+    "two-video batch": 1,
+    "decode-only": 3
+  },
+  "unique_video_assets": 30,
+  "video_bytes": 709239381,
+  "notes": [
+    "Experiments are top-level result records plus explicit cancellations. Chunk results, preparation records and calibration children are supporting evidence, not separate full-video trials.",
+    "No global ranking across chained versus independent generation policies, decoder-only diagnostics, and two-video batches.",
+    "Calibration and failures have no successful-generation latency. Contended timings are excluded. Missing metrics stay null."
+  ],
+  "historical_default_recommendation": {
+    "key": [
+      20,
+      1,
+      2,
+      "dynamic",
+      false,
+      true
+    ],
+    "label": "20 chunks \u00b7 1 transformer / 2 VAE \u00b7 MPS",
+    "status": "success",
+    "samples": 3,
+    "mean_total_seconds": 223.57876813167,
+    "min_total_seconds": 221.92696636500477,
+    "max_total_seconds": 225.46428783699957,
+    "mean_video_ready_seconds": 219.5692734689995,
+    "videos_per_hour_including_qa": 16.101707823525928,
+    "videos_per_hour_ready": 16.395736721824495,
+    "peak_vram_gib": 41.301,
+    "gpu_util_mean_pct": 82.97055126398692,
+    "preparation_mean_seconds": 22.54930136466525,
+    "workers_mean_seconds": 188.8978120246708,
+    "max_concurrent_sampler_calls": 1,
+    "max_concurrent_decode_calls": 2,
+    "sampler_overlap_mean_seconds": 0.0,
+    "decode_overlap_mean_seconds": 143.58266666666665,
+    "run_names": [
+      "followup_capacity_1t_2v_control",
+      "followup_mps_1t_2v",
+      "followup_mps_1t_2v_repeat2"
+    ]
+  },
+  "fast_comparison": {
+    "historical_total_seconds": 223.57876813167,
+    "reduction_vs_historical_pct": 10.391455449826259,
+    "reduction_vs_control_pct": 10.500425395562086,
+    "speedup_vs_control": 1.1173237464197
+  },
+  "clean_successful_full_video_trials": 96
+}

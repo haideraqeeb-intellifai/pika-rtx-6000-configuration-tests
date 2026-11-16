@@ -1,0 +1,19 @@
+profile_ncu complete
+analyze_ncu complete
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/validate.py", line 36, in <module>
+    validate(P/'runs'/sys.argv[1])
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/validate.py", line 25, in validate
+    frames=json.loads(call(['ffprobe','-v','error','-select_streams','v:0','-show_entries','frame=best_effort_timestamp_time','-of','json',str(p)]).stdout)['frames'];ts=np.array([float(f['best_effort_timestamp_time']) for f in frames]);assert abs(ts[0])<1e-6 and np.max(abs(np.diff(ts)-1/24))<2e-6
+                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/continue_after_ncu.py", line 10, in <module>
+    subprocess.run([sys.executable,'-m','agent.rtx6000_benchmark.five_ten.validate',name],check=True,timeout=1800)
+  File "/home/raqeeb/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python', '-m', 'agent.rtx6000_benchmark.five_ten.validate', 'sequential_1t2v']' returned non-zero exit status 1.

@@ -1,0 +1,102 @@
+[
+  {
+    "frames": 55,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_0.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 55,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_1.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_2.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_3.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 73,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_4.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_5.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_6.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_7.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_8.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 73,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_9.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_10.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_11.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_12.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_13.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 73,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_14.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_15.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_16.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_17.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 56,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_18.wav",
+    "anchor": "hard"
+  },
+  {
+    "frames": 73,
+    "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_one_mps_repeat2/audio_19.wav",
+    "anchor": "hard"
+  }
+]

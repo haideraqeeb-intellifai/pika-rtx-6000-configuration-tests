@@ -1,0 +1,111 @@
+{
+  "batch_size": 4,
+  "latent_shape": [
+    4,
+    24,
+    37,
+    80,
+    46
+  ],
+  "decoded_shape": [
+    4,
+    124,
+    1280,
+    736,
+    3
+  ],
+  "actual_model_input_shapes": [
+    [
+      4,
+      24,
+      37,
+      80,
+      46
+    ]
+  ],
+  "decode_seconds": 30.040278434753418,
+  "decode_started": 1794264991.300108,
+  "decode_ended": 1794265021.3403864,
+  "chunks": [
+    {
+      "index": 1,
+      "name": "vae_batch_4_chunk_1",
+      "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_1.pt",
+      "latent_sha256": "87a790d58e38b9bdf6e3a5da4f8265ed3ee9b5cbecc0757207afaecb68741c65",
+      "frames": 123,
+      "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_1.wav",
+      "encoding": {
+        "encoder": "h264_nvenc",
+        "fallback_reason": null,
+        "encoding_seconds": 0.987,
+        "output_frames": 123,
+        "output_width": 1080,
+        "output_height": 1920,
+        "audio_duration_seconds": 5.125,
+        "bytes": 2499449
+      },
+      "crop_encode_seconds": 1.0385919749969617,
+      "output_sha256": "744e783a95c3357d4617e2dd95836e7ff345076d169d29d28235e7521145bb22"
+    },
+    {
+      "index": 2,
+      "name": "vae_batch_4_chunk_2",
+      "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_2.pt",
+      "latent_sha256": "21f0ddb09c2387d8dce9b21a64108b72b375c643ea3e3bb8f659577268c15cbc",
+      "frames": 123,
+      "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_2.wav",
+      "encoding": {
+        "encoder": "h264_nvenc",
+        "fallback_reason": null,
+        "encoding_seconds": 1.01,
+        "output_frames": 123,
+        "output_width": 1080,
+        "output_height": 1920,
+        "audio_duration_seconds": 5.125,
+        "bytes": 2627422
+      },
+      "crop_encode_seconds": 1.0746057119686157,
+      "output_sha256": "7a5e9b1c68b69957d1532aa7619edbd7afc78c6771835c0096c5654d6a707c49"
+    },
+    {
+      "index": 4,
+      "name": "vae_batch_4_chunk_4",
+      "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_4.pt",
+      "latent_sha256": "9ea896b9cead69f6b19049857a592ca0b09ff7068bc63dc8fef3433fe396bcea",
+      "frames": 124,
+      "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_4.wav",
+      "encoding": {
+        "encoder": "h264_nvenc",
+        "fallback_reason": null,
+        "encoding_seconds": 0.998,
+        "output_frames": 124,
+        "output_width": 1080,
+        "output_height": 1920,
+        "audio_duration_seconds": 5.166666666666667,
+        "bytes": 2618897
+      },
+      "crop_encode_seconds": 1.0451148039428517,
+      "output_sha256": "2749c28a69c23c5f17a6733dbb2fdd2d843a1fe59450fff5c305947bf720919d"
+    },
+    {
+      "index": 5,
+      "name": "vae_batch_4_chunk_5",
+      "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_5.pt",
+      "latent_sha256": "49b5cc432cbeebec768e40ca4278af405533c7c509cb43a6965ac2a6c8c3bbc9",
+      "frames": 124,
+      "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_5.wav",
+      "encoding": {
+        "encoder": "h264_nvenc",
+        "fallback_reason": null,
+        "encoding_seconds": 0.996,
+        "output_frames": 124,
+        "output_width": 1080,
+        "output_height": 1920,
+        "audio_duration_seconds": 5.166666666666667,
+        "bytes": 2544299
+      },
+      "crop_encode_seconds": 1.0444882219890133,
+      "output_sha256": "ff9019a676c85bfa01355c5511b8d8c6d92e78757031007b2cba14ab69d83d5b"
+    }
+  ]
+}

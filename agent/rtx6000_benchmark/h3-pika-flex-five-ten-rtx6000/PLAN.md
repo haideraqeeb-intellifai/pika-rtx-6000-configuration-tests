@@ -1,0 +1,9 @@
+# Fixed workload experiment
+
+Standing rule: exactly five 10-second chunks (240 delivered frames each at 24 fps), 1,200 frames / 50 seconds. Native frame alignment is 243 frames per chunk; existing export trims to 240. Original portrait anchors every chunk independently at both native endpoints. Seeds 9901..9905, two steps, existing fast mode, same prompt and audio slices. Existing 49.408-second audio receives 0.592 seconds of trailing silence. No chunk-count sweep.
+
+Matrix: resident 1T/2V sequential, resident 1T/2V batch-two (2+2+1), resident 2T/1V and 2T/2V concurrently. Assess 3T/1V and 3T/2V against observed large-chunk memory before launch. One GPU-preparation pass shared identically by all layouts, GPU encoder then released. One complete 50-second warmup and three complete repetitions per admitted layout. Persistent T/V processes, MPS, asynchronous stage dispatch; decode each chunk as soon as its denoising finishes. Final MP4 assembly included. GPU preparation and process/model warmup reported separately; no direct speed ratio to historical fresh-process 20-chunk totals.
+
+Monitor whole-device VRAM and utilization every 200ms, worker CUDA allocated/reserved peaks, stage events, actual fast-mode counters and offload telemetry. Enforce clean host-level gate and exclude contention. Full AV decode, 1,200 frames, 24fps, timing, waveform alignment, nonfinite latent checks, sample imagery and actual videos. Similarity does not establish lip-sync or seam quality.
+
+Profile after uncontended performance runs. Nsight Systems CUDA/NVTX plus 1kHz SM metrics on baseline and successful multi-T configurations; distinguish actual kernel overlap from overlapping host calls. Targeted NCU dominant denoising kernels for occupancy, SM/memory throughput and launch resource limits, separate from timing means. Keep failures and omissions explicit. Publish separate readable report with 50-second videos and reproducible evidence.

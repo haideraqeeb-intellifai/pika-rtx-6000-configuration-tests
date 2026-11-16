@@ -1,0 +1,1 @@
+{"time_utc_epoch": 1794312028.3495796, "gpu_processes": [{"gpu_pid": 208396, "used_mib": 31802, "ancestor_pids": [208396, 207834, 164233, 164230, 6439]}, {"gpu_pid": 208398, "used_mib": 5520, "ancestor_pids": [208398, 207834, 164233, 164230, 6439]}, {"gpu_pid": 208397, "used_mib": 30710, "ancestor_pids": [208397, 207834, 164233, 164230, 6439]}]}

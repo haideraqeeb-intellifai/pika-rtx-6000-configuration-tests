@@ -1,0 +1,8 @@
+/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/lib/python3.12/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[{'chunk': 0, 'tensor_values_bit_equal': True, 'original_bytes': 51081581, 'compact_bytes': 25541797}, {'chunk': 1, 'tensor_values_bit_equal': True, 'original_bytes': 51081581, 'compact_bytes': 25541797}, {'chunk': 2, 'tensor_values_bit_equal': True, 'original_bytes': 51081581, 'compact_bytes': 25541797}, {'chunk': 3, 'tensor_values_bit_equal': True, 'original_bytes': 51081581, 'compact_bytes': 25541797}, {'chunk': 4, 'tensor_values_bit_equal': True, 'original_bytes': 25541741, 'compact_bytes': 25541797}]
+Compact batch repeated
+summarize 0
+profile 0
+analyze_profiles 0
+profile_ncu 1

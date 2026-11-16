@@ -1,0 +1,19 @@
+{
+  "source_report_video": "raccoon_full_nvenc_chained_assembled.mp4",
+  "source_image_url": "https://cdn.podcastflow.ai/user-assets/staging/2026/11/04/avatars/headshots/rhea-the-raccoon-01a1a544-a3ae-729c-863a-5393d315c56e-headshot.jpg",
+  "audio_note": "PCM decoded from the report chained MP4 AAC track; original WAV was unavailable.",
+  "files": {
+    "report_chained.mp4": {
+      "bytes": 24677325,
+      "sha256": "dfedb3549e712b89f06722e495df2838fc874d26b86694144b9a5b9419d9db19"
+    },
+    "raccoon_headshot.jpg": {
+      "bytes": 170932,
+      "sha256": "c9f3b03b7b772047cafe9349fda736046169cd262858b76e9505fc908422e6c1"
+    },
+    "report_audio.wav": {
+      "bytes": 9486414,
+      "sha256": "722f0e915e763d0f1920b4db0ec7ecac421eedb817cdbb5ed0d9f420d8588f88"
+    }
+  }
+}

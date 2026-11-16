@@ -1,0 +1,13 @@
+{
+  "url_type": "local",
+  "videos": 4,
+  "measurements_match": true,
+  "links_validated": true,
+  "playback": {
+    "duration": 50,
+    "time": 1.131004,
+    "width": 1080,
+    "height": 1920
+  },
+  "js_errors": []
+}

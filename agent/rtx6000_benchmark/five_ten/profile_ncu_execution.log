@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/profile_ncu.py", line 10, in <module>
+    with (P/'profiles/ncu.csv').open('w') as f:subprocess.run(['ncu','--import',str(prefix)+'.ncu-rep','--csv','--page','raw'],stdout=f,check=True,timeout=120)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raqeeb/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ncu', '--import', '/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/five_ten/profiles/ncu_transformer.ncu-rep', '--csv', '--page', 'raw']' returned non-zero exit status 1.

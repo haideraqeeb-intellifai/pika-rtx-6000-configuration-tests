@@ -1,0 +1,1647 @@
+{
+  "name": "vae_batch_1",
+  "scope": "decoder-only fixed-latent replay",
+  "source_run": "vae_staged_1t_1v",
+  "source_result_sha256": "ee128697bfa5dc313e45cac306c4d6b227651db640e2d737fed8838acf00c048",
+  "batch_size": 1,
+  "status": "success",
+  "empty_gpu_gate": [
+    {
+      "time": 1794264747.2850244,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794264748.3065703,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794264749.3268306,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "decoder_phase_seconds": 93.04439064895269,
+  "batches": [
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        32,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        107,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          32,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 8.48558521270752,
+      "decode_started": 1794264754.809737,
+      "decode_ended": 1794264763.2953222,
+      "chunks": [
+        {
+          "index": 0,
+          "name": "vae_batch_1_chunk_0",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_0.pt",
+          "latent_sha256": "c6cd176a37f01101dbd3261e26cb65ce462ecc229fd13ae299d06f93f1dab4ee",
+          "frames": 106,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_0.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.883,
+            "output_frames": 106,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 4.416666666666667,
+            "bytes": 2139512
+          },
+          "crop_encode_seconds": 0.9354308369802311,
+          "output_sha256": "ee330398dffefcfd3ef879e4ec6e931e30c54521c6a6572d0d1d41052352524f"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "vae",
+              "class_type": "VAELoader",
+              "duration_seconds": 0.0889,
+              "before": {
+                "cuda_allocated_gib": 0.0,
+                "cuda_reserved_gib": 0.0,
+                "cuda_peak_allocated_gib": 0.0,
+                "model_total_gib": 0.0,
+                "model_loaded_gib": 0.0,
+                "model_offloaded_gib": 0.0
+              },
+              "after": {
+                "cuda_allocated_gib": 0.0,
+                "cuda_reserved_gib": 0.0,
+                "cuda_peak_allocated_gib": 0.0,
+                "model_total_gib": 0.0,
+                "model_loaded_gib": 0.0,
+                "model_offloaded_gib": 0.0
+              }
+            },
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 9.5072,
+              "before": {
+                "cuda_allocated_gib": 0.0,
+                "cuda_reserved_gib": 0.0,
+                "cuda_peak_allocated_gib": 0.0,
+                "model_total_gib": 0.0,
+                "model_loaded_gib": 0.0,
+                "model_offloaded_gib": 0.0
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.71,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "model_load",
+              "duration_seconds": 0.0889,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 0.0,
+              "peak_model_offloaded_gib": 0.0,
+              "mean_model_offloaded_gib": 0.0,
+              "gpu": {
+                "sample_count": 1,
+                "observed_sample_hz": 0.0,
+                "gpu_util_mean_pct": 0.0,
+                "gpu_util_p95_pct": 0.0,
+                "memory_used_peak_gib": 1.169,
+                "model_offloaded_mean_gib": 0.0,
+                "model_offloaded_peak_gib": 0.0,
+                "power_mean_w": 97.49,
+                "power_peak_w": 97.49,
+                "energy_wh_estimate": 0.0,
+                "temperature_peak_c": 58.0,
+                "pcie_rx_gib_estimate": 0.0,
+                "pcie_tx_gib_estimate": 0.0
+              },
+              "model_offload_sample_count": 1
+            },
+            {
+              "stage": "generation",
+              "duration_seconds": 9.5072,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.71,
+              "peak_model_offloaded_gib": 4.819,
+              "mean_model_offloaded_gib": 0.687,
+              "gpu": {
+                "sample_count": 47,
+                "observed_sample_hz": 5.0,
+                "gpu_util_mean_pct": 69.43,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 8.953,
+                "model_offloaded_mean_gib": 0.687,
+                "model_offloaded_peak_gib": 4.819,
+                "power_mean_w": 434.86,
+                "power_peak_w": 605.4,
+                "energy_wh_estimate": 1.112,
+                "temperature_peak_c": 76.0,
+                "pcie_rx_gib_estimate": 5.442,
+                "pcie_tx_gib_estimate": 1.637
+              },
+              "model_offload_sample_count": 47
+            }
+          ],
+          "execution_event_seconds": 9.599,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 48,
+          "observed_sample_hz": 5.0,
+          "gpu_util_mean_pct": 67.98,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 8.953,
+          "model_offloaded_mean_gib": 0.673,
+          "model_offloaded_peak_gib": 4.819,
+          "power_mean_w": 427.83,
+          "power_peak_w": 605.4,
+          "energy_wh_estimate": 1.117,
+          "temperature_peak_c": 76.0,
+          "pcie_rx_gib_estimate": 5.444,
+          "pcie_tx_gib_estimate": 1.638
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        32,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        107,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          32,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 6.603606700897217,
+      "decode_started": 1794264764.324073,
+      "decode_ended": 1794264770.9276798,
+      "chunks": [
+        {
+          "index": 3,
+          "name": "vae_batch_1_chunk_3",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_3.pt",
+          "latent_sha256": "759bb42f23740297f0d7ee4351c0bc82818e757f5ee2171b28a410ac5fc7078a",
+          "frames": 107,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_3.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.896,
+            "output_frames": 107,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 4.458333333333333,
+            "bytes": 2331134
+          },
+          "crop_encode_seconds": 0.9498639761004597,
+          "output_sha256": "b63ac9fe0862cbde87e5c559ae6f73db271c94e5f47ec83d6ce93bca4f9d3d24"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 7.646,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.71,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 7.646,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.71,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 39,
+                "observed_sample_hz": 5.0,
+                "gpu_util_mean_pct": 84.79,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 8.924,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 508.66,
+                "power_peak_w": 610.38,
+                "energy_wh_estimate": 1.074,
+                "temperature_peak_c": 78.0,
+                "pcie_rx_gib_estimate": 1.006,
+                "pcie_tx_gib_estimate": 1.166
+              },
+              "model_offload_sample_count": 39
+            }
+          ],
+          "execution_event_seconds": 7.6492,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 39,
+          "observed_sample_hz": 5.0,
+          "gpu_util_mean_pct": 84.79,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 8.924,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 508.66,
+          "power_peak_w": 610.38,
+          "energy_wh_estimate": 1.074,
+          "temperature_peak_c": 78.0,
+          "pcie_rx_gib_estimate": 1.006,
+          "pcie_tx_gib_estimate": 1.166
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        32,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        107,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          32,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 6.624889850616455,
+      "decode_started": 1794264771.9716508,
+      "decode_ended": 1794264778.5965407,
+      "chunks": [
+        {
+          "index": 6,
+          "name": "vae_batch_1_chunk_6",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_6.pt",
+          "latent_sha256": "4cb88afb0cfa741d7bd440f00c7e36c8e2b6571e7edfdc1b975dbffae1a0a988",
+          "frames": 107,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_6.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.894,
+            "output_frames": 107,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 4.458333333333333,
+            "bytes": 2230928
+          },
+          "crop_encode_seconds": 0.9468867880059406,
+          "output_sha256": "0786971397999244253c4582e33f06356b37a00614359fbe21e603a558baca89"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 7.6534,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.71,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 7.6534,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.71,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 39,
+                "observed_sample_hz": 5.0,
+                "gpu_util_mean_pct": 78.08,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 8.924,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 510.19,
+                "power_peak_w": 600.21,
+                "energy_wh_estimate": 1.078,
+                "temperature_peak_c": 79.0,
+                "pcie_rx_gib_estimate": 0.666,
+                "pcie_tx_gib_estimate": 1.165
+              },
+              "model_offload_sample_count": 39
+            }
+          ],
+          "execution_event_seconds": 7.6554,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.71,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 39,
+          "observed_sample_hz": 5.0,
+          "gpu_util_mean_pct": 78.08,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 8.924,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 510.19,
+          "power_peak_w": 600.21,
+          "energy_wh_estimate": 1.078,
+          "temperature_peak_c": 79.0,
+          "pcie_rx_gib_estimate": 0.666,
+          "pcie_tx_gib_estimate": 1.165
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        37,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        124,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          37,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 7.750461578369141,
+      "decode_started": 1794264779.638273,
+      "decode_ended": 1794264787.3887346,
+      "chunks": [
+        {
+          "index": 1,
+          "name": "vae_batch_1_chunk_1",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_1.pt",
+          "latent_sha256": "87a790d58e38b9bdf6e3a5da4f8265ed3ee9b5cbecc0757207afaecb68741c65",
+          "frames": 123,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_1.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.973,
+            "output_frames": 123,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 5.125,
+            "bytes": 2501154
+          },
+          "crop_encode_seconds": 1.027669636067003,
+          "output_sha256": "5a211eed9735f06cd509df7c8a8dabf3f62c1d245fcaa5b4280817e414b85cb3"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 8.864,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.981,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 8.864,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.981,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 45,
+                "observed_sample_hz": 5.0,
+                "gpu_util_mean_pct": 84.58,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 9.193,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 515.34,
+                "power_peak_w": 601.36,
+                "energy_wh_estimate": 1.26,
+                "temperature_peak_c": 80.0,
+                "pcie_rx_gib_estimate": 0.919,
+                "pcie_tx_gib_estimate": 2.163
+              },
+              "model_offload_sample_count": 45
+            }
+          ],
+          "execution_event_seconds": 8.8758,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.981,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 45,
+          "observed_sample_hz": 5.0,
+          "gpu_util_mean_pct": 84.58,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 9.193,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 515.34,
+          "power_peak_w": 601.36,
+          "energy_wh_estimate": 1.26,
+          "temperature_peak_c": 80.0,
+          "pcie_rx_gib_estimate": 0.919,
+          "pcie_tx_gib_estimate": 2.163
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        37,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        124,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          37,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 7.762678146362305,
+      "decode_started": 1794264788.5311537,
+      "decode_ended": 1794264796.2938318,
+      "chunks": [
+        {
+          "index": 2,
+          "name": "vae_batch_1_chunk_2",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_2.pt",
+          "latent_sha256": "21f0ddb09c2387d8dce9b21a64108b72b375c643ea3e3bb8f659577268c15cbc",
+          "frames": 123,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_2.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 1.002,
+            "output_frames": 123,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 5.125,
+            "bytes": 2622058
+          },
+          "crop_encode_seconds": 1.059740072931163,
+          "output_sha256": "7965e1110cfa11b403a81b4a54807ee9d3c6c3528786f493e2587ce99b3e5779"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 8.9027,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.981,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 8.9027,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.981,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 45,
+                "observed_sample_hz": 5.01,
+                "gpu_util_mean_pct": 79.73,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 9.193,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 517.03,
+                "power_peak_w": 600.31,
+                "energy_wh_estimate": 1.261,
+                "temperature_peak_c": 81.0,
+                "pcie_rx_gib_estimate": 0.919,
+                "pcie_tx_gib_estimate": 2.099
+              },
+              "model_offload_sample_count": 45
+            }
+          ],
+          "execution_event_seconds": 8.9266,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.981,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 45,
+          "observed_sample_hz": 5.01,
+          "gpu_util_mean_pct": 79.73,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 9.193,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 517.03,
+          "power_peak_w": 600.31,
+          "energy_wh_estimate": 1.261,
+          "temperature_peak_c": 81.0,
+          "pcie_rx_gib_estimate": 0.919,
+          "pcie_tx_gib_estimate": 2.099
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        37,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        124,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          37,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 7.773334741592407,
+      "decode_started": 1794264797.4432232,
+      "decode_ended": 1794264805.216558,
+      "chunks": [
+        {
+          "index": 4,
+          "name": "vae_batch_1_chunk_4",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_4.pt",
+          "latent_sha256": "9ea896b9cead69f6b19049857a592ca0b09ff7068bc63dc8fef3433fe396bcea",
+          "frames": 124,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_4.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.999,
+            "output_frames": 124,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 5.166666666666667,
+            "bytes": 2617630
+          },
+          "crop_encode_seconds": 1.0656616690102965,
+          "output_sha256": "65976e8d7c7bc2d94f0e405271e4af80e3b706158b180976210ef326ae8c5342"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 8.9348,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.981,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 8.9348,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.981,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 45,
+                "observed_sample_hz": 5.0,
+                "gpu_util_mean_pct": 78.78,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 9.193,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 515.87,
+                "power_peak_w": 609.94,
+                "energy_wh_estimate": 1.262,
+                "temperature_peak_c": 82.0,
+                "pcie_rx_gib_estimate": 0.921,
+                "pcie_tx_gib_estimate": 2.178
+              },
+              "model_offload_sample_count": 45
+            }
+          ],
+          "execution_event_seconds": 8.9433,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.981,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 45,
+          "observed_sample_hz": 5.0,
+          "gpu_util_mean_pct": 78.78,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 9.193,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 515.87,
+          "power_peak_w": 609.94,
+          "energy_wh_estimate": 1.262,
+          "temperature_peak_c": 82.0,
+          "pcie_rx_gib_estimate": 0.921,
+          "pcie_tx_gib_estimate": 2.178
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        37,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        124,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          37,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 7.778796911239624,
+      "decode_started": 1794264806.3790643,
+      "decode_ended": 1794264814.1578612,
+      "chunks": [
+        {
+          "index": 5,
+          "name": "vae_batch_1_chunk_5",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_5.pt",
+          "latent_sha256": "49b5cc432cbeebec768e40ca4278af405533c7c509cb43a6965ac2a6c8c3bbc9",
+          "frames": 124,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_5.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.992,
+            "output_frames": 124,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 5.166666666666667,
+            "bytes": 2546208
+          },
+          "crop_encode_seconds": 1.0550036499043927,
+          "output_sha256": "9dccc09cc3b158811e7cdc82f40f42135b8ccf006d61f670378b31725216dc50"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 8.9193,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.981,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 8.9193,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.981,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 45,
+                "observed_sample_hz": 5.0,
+                "gpu_util_mean_pct": 82.96,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 9.193,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 513.08,
+                "power_peak_w": 600.07,
+                "energy_wh_estimate": 1.255,
+                "temperature_peak_c": 82.0,
+                "pcie_rx_gib_estimate": 0.925,
+                "pcie_tx_gib_estimate": 2.101
+              },
+              "model_offload_sample_count": 45
+            }
+          ],
+          "execution_event_seconds": 8.9212,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.981,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 45,
+          "observed_sample_hz": 5.0,
+          "gpu_util_mean_pct": 82.96,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 9.193,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 513.08,
+          "power_peak_w": 600.07,
+          "energy_wh_estimate": 1.255,
+          "temperature_peak_c": 82.0,
+          "pcie_rx_gib_estimate": 0.925,
+          "pcie_tx_gib_estimate": 2.101
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        37,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        124,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          37,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 7.787640333175659,
+      "decode_started": 1794264815.3148012,
+      "decode_ended": 1794264823.1024415,
+      "chunks": [
+        {
+          "index": 7,
+          "name": "vae_batch_1_chunk_7",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_7.pt",
+          "latent_sha256": "781f8be291843621eb792a5d435726d6609a33981eb22ab40d7a7f91ec65405f",
+          "frames": 124,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_7.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.98,
+            "output_frames": 124,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 5.166666666666667,
+            "bytes": 2445565
+          },
+          "crop_encode_seconds": 1.0351685259956867,
+          "output_sha256": "f1b7eb8a5866c4236aa9e9e1094743f9c94c83a682122f9c9f1b26adec5511a7"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 8.9064,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.981,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 8.9064,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.981,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 45,
+                "observed_sample_hz": 5.0,
+                "gpu_util_mean_pct": 85.11,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 9.193,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 519.72,
+                "power_peak_w": 601.78,
+                "energy_wh_estimate": 1.271,
+                "temperature_peak_c": 82.0,
+                "pcie_rx_gib_estimate": 0.923,
+                "pcie_tx_gib_estimate": 2.076
+              },
+              "model_offload_sample_count": 45
+            }
+          ],
+          "execution_event_seconds": 8.9209,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.981,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 45,
+          "observed_sample_hz": 5.0,
+          "gpu_util_mean_pct": 85.11,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 9.193,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 519.72,
+          "power_peak_w": 601.78,
+          "energy_wh_estimate": 1.271,
+          "temperature_peak_c": 82.0,
+          "pcie_rx_gib_estimate": 0.923,
+          "pcie_tx_gib_estimate": 2.076
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        37,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        124,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          37,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 8.018104076385498,
+      "decode_started": 1794264824.237725,
+      "decode_ended": 1794264832.255829,
+      "chunks": [
+        {
+          "index": 8,
+          "name": "vae_batch_1_chunk_8",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_8.pt",
+          "latent_sha256": "39fc3e28da57915188da1e5ad5cf7d3d908faec54ceba3e5bd0ae554319d5eab",
+          "frames": 124,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_8.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 0.986,
+            "output_frames": 124,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 5.166666666666667,
+            "bytes": 2522174
+          },
+          "crop_encode_seconds": 1.0471356180496514,
+          "output_sha256": "24f6166c4808294cb219e200228525447897cb4620e0739b1618ae1d519aa675"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 9.1478,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.981,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 9.1478,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.981,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.22,
+              "gpu": {
+                "sample_count": 46,
+                "observed_sample_hz": 5.09,
+                "gpu_util_mean_pct": 76.83,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 9.193,
+                "model_offloaded_mean_gib": 0.22,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 509.81,
+                "power_peak_w": 604.56,
+                "energy_wh_estimate": 1.253,
+                "temperature_peak_c": 82.0,
+                "pcie_rx_gib_estimate": 0.977,
+                "pcie_tx_gib_estimate": 2.037
+              },
+              "model_offload_sample_count": 46
+            }
+          ],
+          "execution_event_seconds": 9.1639,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.981,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 46,
+          "observed_sample_hz": 5.09,
+          "gpu_util_mean_pct": 76.83,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 9.193,
+          "model_offloaded_mean_gib": 0.22,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 509.81,
+          "power_peak_w": 604.56,
+          "energy_wh_estimate": 1.253,
+          "temperature_peak_c": 82.0,
+          "pcie_rx_gib_estimate": 0.977,
+          "pcie_tx_gib_estimate": 2.037
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    },
+    {
+      "batch_size": 1,
+      "latent_shape": [
+        1,
+        24,
+        37,
+        80,
+        46
+      ],
+      "decoded_shape": [
+        1,
+        124,
+        1280,
+        736,
+        3
+      ],
+      "actual_model_input_shapes": [
+        [
+          1,
+          24,
+          37,
+          80,
+          46
+        ]
+      ],
+      "decode_seconds": 7.78807806968689,
+      "decode_started": 1794264833.4140697,
+      "decode_ended": 1794264841.2021477,
+      "chunks": [
+        {
+          "index": 9,
+          "name": "vae_batch_1_chunk_9",
+          "latent": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/latents/latent_9.pt",
+          "latent_sha256": "ef49196f6594866eabbf5a36f8c38932dc340a344cbca6001f5dbe30a2eaa630",
+          "frames": 124,
+          "audio": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/vae_staged_1t_1v/audio_9.wav",
+          "encoding": {
+            "encoder": "h264_nvenc",
+            "fallback_reason": null,
+            "encoding_seconds": 1.041,
+            "output_frames": 124,
+            "output_width": 1080,
+            "output_height": 1920,
+            "audio_duration_seconds": 5.166666666666667,
+            "bytes": 2574388
+          },
+          "crop_encode_seconds": 1.096506552072242,
+          "output_sha256": "1950d1441392da91a1ce36f4ecad3589fc2c63df56dfa9d21149dc5aec72845c"
+        }
+      ],
+      "telemetry": {
+        "stages": {
+          "nodes": [
+            {
+              "node_id": "decode",
+              "class_type": "H3BatchDecodeSave",
+              "duration_seconds": 8.9759,
+              "before": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 0.01,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              },
+              "after": {
+                "cuda_allocated_gib": 0.01,
+                "cuda_reserved_gib": 0.023,
+                "cuda_peak_allocated_gib": 1.981,
+                "model_total_gib": 4.85,
+                "model_loaded_gib": 4.625,
+                "model_offloaded_gib": 0.225
+              }
+            }
+          ],
+          "stages": [
+            {
+              "stage": "generation",
+              "duration_seconds": 8.9759,
+              "node_count": 1,
+              "peak_cuda_allocated_gib": 1.981,
+              "peak_model_offloaded_gib": 0.225,
+              "mean_model_offloaded_gib": 0.225,
+              "gpu": {
+                "sample_count": 45,
+                "observed_sample_hz": 5.01,
+                "gpu_util_mean_pct": 80.31,
+                "gpu_util_p95_pct": 100.0,
+                "memory_used_peak_gib": 9.193,
+                "model_offloaded_mean_gib": 0.225,
+                "model_offloaded_peak_gib": 0.225,
+                "power_mean_w": 516.11,
+                "power_peak_w": 600.12,
+                "energy_wh_estimate": 1.259,
+                "temperature_peak_c": 82.0,
+                "pcie_rx_gib_estimate": 0.967,
+                "pcie_tx_gib_estimate": 1.796
+              },
+              "model_offload_sample_count": 45
+            }
+          ],
+          "execution_event_seconds": 9.0028,
+          "final_memory": {
+            "cuda_allocated_gib": 0.01,
+            "cuda_reserved_gib": 0.023,
+            "cuda_peak_allocated_gib": 1.981,
+            "model_total_gib": 4.85,
+            "model_loaded_gib": 4.625,
+            "model_offloaded_gib": 0.225
+          }
+        },
+        "gpu": {
+          "sample_count": 45,
+          "observed_sample_hz": 5.01,
+          "gpu_util_mean_pct": 80.31,
+          "gpu_util_p95_pct": 100.0,
+          "memory_used_peak_gib": 9.193,
+          "model_offloaded_mean_gib": 0.225,
+          "model_offloaded_peak_gib": 0.225,
+          "power_mean_w": 516.11,
+          "power_peak_w": 600.12,
+          "energy_wh_estimate": 1.259,
+          "temperature_peak_c": 82.0,
+          "pcie_rx_gib_estimate": 0.967,
+          "pcie_tx_gib_estimate": 1.796
+        },
+        "easycache": null,
+        "spectrum": null,
+        "sol": null
+      }
+    }
+  ],
+  "gpu_trace_summary": {
+    "peak_vram_gib": 9.193,
+    "gpu_util_mean_pct": 75.85129310344827
+  },
+  "output_probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "Main",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1088,
+        "coded_height": 1920,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 607232,
+        "duration": "49.416667",
+        "bit_rate": "3773588",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1186",
+        "nb_read_frames": "1186",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc60.5.100 h264_nvenc"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2371584,
+        "duration": "49.408000",
+        "bit_rate": "189886",
+        "nb_frames": "2317",
+        "nb_read_frames": "2316",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ]
+  },
+  "output_sha256": "9178b1c62d3eb1613f93cc20c5ad2f6e3f65c15f6f2c28f6a3f2b78d38fb0bf2",
+  "plan": [
+    {
+      "duration_seconds": 4.416666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 0,
+      "start_frame": 0,
+      "frames": 106,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 1,
+      "start_frame": 106,
+      "frames": 123,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.125,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 2,
+      "start_frame": 229,
+      "frames": 123,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 3,
+      "start_frame": 352,
+      "frames": 107,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 4,
+      "start_frame": 459,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 5,
+      "start_frame": 583,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 4.458333333333333,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 6,
+      "start_frame": 707,
+      "frames": 107,
+      "inference_frames": 107
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 7,
+      "start_frame": 814,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 8,
+      "start_frame": 938,
+      "frames": 124,
+      "inference_frames": 124
+    },
+    {
+      "duration_seconds": 5.166666666666667,
+      "reference": "original",
+      "anchor": "hard",
+      "index": 9,
+      "start_frame": 1062,
+      "frames": 124,
+      "inference_frames": 124
+    }
+  ],
+  "complete_video_audio_decode": true,
+  "audio_check": {
+    "source_samples_8khz": 395264,
+    "output_samples_8khz": 395264,
+    "duration_delta_ms": 0.0,
+    "best_lag_ms": 0.0,
+    "waveform_correlation": 0.999957
+  },
+  "seam_check": {
+    "frame_count": 1186,
+    "boundaries": [
+      106,
+      229,
+      352,
+      459,
+      583,
+      707,
+      814,
+      938,
+      1062
+    ],
+    "seam_mean_absolute_luma_difference": [
+      3.9964,
+      3.8264,
+      3.7574,
+      3.7663,
+      3.9944,
+      4.0448,
+      3.9928,
+      3.8153,
+      3.8179
+    ],
+    "nonseam_median_difference": 0.6743,
+    "seam_median_to_nonseam_median_ratio": 5.675,
+    "seams_above_nonseam_95th_percentile": 9
+  },
+  "decoder_plus_validation_seconds": 101.89259390998632
+}

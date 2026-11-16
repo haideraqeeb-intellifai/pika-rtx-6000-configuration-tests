@@ -1,0 +1,29 @@
+[
+  {
+    "time": 1794413104.5596335,
+    "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+    "gpu_util_pct": 0,
+    "memory_used_mib": 4,
+    "driver_reserved_mib": 638,
+    "compute_pids": [],
+    "graphics_pids": []
+  },
+  {
+    "time": 1794413105.6396854,
+    "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+    "gpu_util_pct": 0,
+    "memory_used_mib": 4,
+    "driver_reserved_mib": 638,
+    "compute_pids": [],
+    "graphics_pids": []
+  },
+  {
+    "time": 1794413106.7203228,
+    "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+    "gpu_util_pct": 0,
+    "memory_used_mib": 4,
+    "driver_reserved_mib": 638,
+    "compute_pids": [],
+    "graphics_pids": []
+  }
+]

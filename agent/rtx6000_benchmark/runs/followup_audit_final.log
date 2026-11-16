@@ -1,0 +1,95 @@
+[
+  {
+    "name": "followup_one_mps_repeat3",
+    "start_epoch": 1794337959.4465137,
+    "end_epoch": 1794338200.9855964,
+    "samples": 236,
+    "resolved_private_MPS_server_pids": [
+      409385
+    ],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.0268752574920654
+  },
+  {
+    "name": "followup_mps_1t_2v",
+    "start_epoch": 1794338203.2651336,
+    "end_epoch": 1794338432.904068,
+    "samples": 224,
+    "resolved_private_MPS_server_pids": [
+      415727
+    ],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.028221607208252
+  },
+  {
+    "name": "followup_mps_1t_4v",
+    "start_epoch": 1794338435.2110667,
+    "end_epoch": 1794338664.1565402,
+    "samples": 223,
+    "resolved_private_MPS_server_pids": [
+      422101
+    ],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.0346214771270752
+  },
+  {
+    "name": "followup_mps_1t_2v_repeat2",
+    "start_epoch": 1794339414.2762518,
+    "end_epoch": 1794339640.3756244,
+    "samples": 220,
+    "resolved_private_MPS_server_pids": [
+      448007
+    ],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.034088134765625
+  },
+  {
+    "name": "followup_mps_1t_4v_repeat2",
+    "start_epoch": 1794338666.466861,
+    "end_epoch": 1794338895.461014,
+    "samples": 224,
+    "resolved_private_MPS_server_pids": [
+      428491
+    ],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.0400702953338623
+  },
+  {
+    "name": "followup_mps_2t_1v",
+    "start_epoch": 1794339909.5922832,
+    "end_epoch": 1794340164.5087688,
+    "samples": 248,
+    "resolved_private_MPS_server_pids": [
+      460857
+    ],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.0350158214569092
+  },
+  {
+    "name": "followup_best_combined_repeat3",
+    "start_epoch": 1794338897.7641819,
+    "end_epoch": 1794339137.2975254,
+    "samples": 234,
+    "resolved_private_MPS_server_pids": [],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.0353894233703613
+  },
+  {
+    "name": "followup_best_combined_repeat4",
+    "start_epoch": 1794339139.5883346,
+    "end_epoch": 1794339374.236043,
+    "samples": 229,
+    "resolved_private_MPS_server_pids": [],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.0312581062316895
+  },
+  {
+    "name": "followup_isolated_20",
+    "start_epoch": 1794339642.68314,
+    "end_epoch": 1794339907.2732072,
+    "samples": 258,
+    "resolved_private_MPS_server_pids": [],
+    "status": "no_competing_process_observed",
+    "maximum_sample_gap_seconds": 1.0393917560577393
+  }
+]

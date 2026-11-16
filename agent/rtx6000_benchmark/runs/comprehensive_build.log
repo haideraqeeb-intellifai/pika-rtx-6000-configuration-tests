@@ -1,0 +1,32 @@
+{
+  "built_at_ist": "2026-11-11T02:28:46.854928+05:30",
+  "top_level_result_records": 115,
+  "cancelled_records": 1,
+  "supporting_top_level_result_records": 1818,
+  "all_nested_result_records": 1998,
+  "archived_json_artifacts": 7058,
+  "status_counts": {
+    "success": 100,
+    "interrupted": 1,
+    "failure": 4,
+    "timing_excluded": 2,
+    "memory_guard_rejected": 3,
+    "calibrated": 3,
+    "preflight_failure": 1,
+    "baseline_recorded": 1,
+    "cancelled": 1
+  },
+  "scope_counts": {
+    "full-video": 103,
+    "diagnostic": 9,
+    "two-video batch": 1,
+    "decode-only": 3
+  },
+  "unique_video_assets": 29,
+  "video_bytes": 682010422,
+  "notes": [
+    "Experiments are top-level result records plus explicit cancellations. Chunk results, preparation records and calibration children are supporting evidence, not separate full-video trials.",
+    "No global ranking across chained versus independent generation policies, decoder-only diagnostics, and two-video batches.",
+    "Calibration and failures have no successful-generation latency. Contended timings are excluded. Missing metrics stay null."
+  ]
+}

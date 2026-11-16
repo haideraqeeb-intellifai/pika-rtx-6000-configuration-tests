@@ -1,0 +1,27 @@
+{
+  "purpose": "Explain three historical multi-transformer configurations using fresh Nsight traces",
+  "gpu": "RTX PRO6000 Blackwell Workstation Edition 96GB",
+  "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+  "power_limit_watts": 600,
+  "nsys": "NVIDIA Nsight Systems version 2026.4.1.191-264138605071v0",
+  "ncu": "NVIDIA (R) Nsight Compute Command Line Profiler\nCopyright (c) 2018-2026 NVIDIA Corporation\nVersion 2026.2.1.0 (build 38283040) (public-release)",
+  "repo_commit": "7a1bbf944c8e2b99d175ec094768c22a945e75cb",
+  "source_sha256": {
+    "parallel_chunk_resident.py": "3c73ca876a030514772053ea27ce332558087f5b64a305a5e104d806b88dd266",
+    "stage_pipeline.py": "2f8bdd8c6bf9fe99bc75790503f6ad4aea7dcf4c252915fd5aaf08c95b7d0bce",
+    "run_case.py": "7e8354737a3c3548d18a7a47ea64cdf08f98b1de34fad77872c3d465980244bb",
+    "mps_session.py": "13819ec631947631fbea08a3259358c40bca848d19cf7c11d8e148ad1737ecd5"
+  },
+  "notes": [
+    "Default mode matches original multi-transformer experiments.",
+    "Only opt-in NVTX and verified profiler-specific idle-memory baseline added to ignored benchmark harness.",
+    "First capture stopped before model loading because Nsight counters changed idle allocation from2 to4MiB. Empty no-workload capture established this2MiB profiler overhead;successful retry captures use v2 names.",
+    "No CPU perf sampling or context-switch traces due hostpermissions;CUDA traces and GPUmetrics enabled.",
+    "Profiling totals excluded from prior benchmark means."
+  ],
+  "ncu_clock_policy": {
+    "clock_control": "none",
+    "cache_control": "none",
+    "pipeline_boost_state": "stable (tool default)"
+  }
+}

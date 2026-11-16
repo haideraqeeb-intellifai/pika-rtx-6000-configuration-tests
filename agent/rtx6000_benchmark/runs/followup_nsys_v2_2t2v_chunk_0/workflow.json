@@ -1,0 +1,70 @@
+{
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "c0_11": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "load_latent",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "c0_15": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "c0_11",
+        0
+      ],
+      "width": 720,
+      "height": 1280,
+      "x": 8,
+      "y": 0
+    }
+  },
+  "buffer_0": {
+    "class_type": "H3StoreChunk",
+    "inputs": {
+      "images": [
+        "c0_15",
+        0
+      ],
+      "index": 0,
+      "frames": 55,
+      "bit_depth": 8,
+      "in_memory": true,
+      "directory": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_nsys_v2_2t2v_chunk_0",
+      "deadline": 130436.481045409
+    }
+  },
+  "save_chunks": {
+    "class_type": "H3SaveChunks",
+    "inputs": {
+      "chunks": [
+        "buffer_0",
+        0
+      ],
+      "output": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_nsys_v2_2t2v_chunk_0/output.mp4",
+      "audio_master": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_nsys_v2_2t2v_chunk_0/audio_master.wav",
+      "width": 1080,
+      "height": 1920,
+      "crf": 23,
+      "deadline": 130436.481045409
+    }
+  },
+  "load_latent": {
+    "class_type": "H3LoadLatent",
+    "inputs": {
+      "path": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_nsys_v2_2t2v/latents/latent_0.pt"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "capture": "1t2v_control",
+    "nvtx_chunks": 40,
+    "interval_invariants": "passed",
+    "counter_ranges": "passed"
+  },
+  {
+    "capture": "2t2v",
+    "nvtx_chunks": 40,
+    "interval_invariants": "passed",
+    "counter_ranges": "passed"
+  },
+  {
+    "capture": "3t1v",
+    "nvtx_chunks": 40,
+    "interval_invariants": "passed",
+    "counter_ranges": "passed"
+  },
+  {
+    "capture": "3t2v_staged",
+    "nvtx_chunks": 40,
+    "interval_invariants": "passed",
+    "counter_ranges": "passed"
+  }
+]

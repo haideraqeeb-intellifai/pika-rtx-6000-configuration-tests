@@ -1,0 +1,46 @@
+{
+  "repo_commit": "7a1bbf944c8e2b99d175ec094768c22a945e75cb",
+  "sage3_revision": "d1a57a546c3d395b1ffcbeecc66d81db76f3b4b5",
+  "cutlass_revision": "0b55a2f691d69981583568fd9eb69687b1f0de8a",
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "sageattention": "2.2.0",
+    "sageattn3": "1.0.0",
+    "comfy-kitchen": "0.2.35",
+    "comfy-aimdo": "0.5.5"
+  },
+  "python": "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+  "overlay": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/fast_dependencies/site-packages",
+  "source_hashes": {
+    "run_fast_comparison.py": "86853766b0e5ca90192b263bdef916188f8c99db64c66d893df2cf3180a2b6ec",
+    "stage_pipeline.py": "2f8bdd8c6bf9fe99bc75790503f6ad4aea7dcf4c252915fd5aaf08c95b7d0bce",
+    "parallel_chunk_resident.py": "4e4ff11a2885c1dd2560771d78a051bad7f0b49119dcb2884cf029ddf5695ce3",
+    "gpu_preencode.py": "4988f120764d496f508f18821a28f1649471f299a2b445b3221716816aaef7de",
+    "runtime.py": "508de516b82e09d103b8077a7fb44fe81020f26c3ca0310e7081a04b7bfb8eb6",
+    "mps_session.py": "13819ec631947631fbea08a3259358c40bca848d19cf7c11d8e148ad1737ecd5",
+    "preencoded_parallel.py": "46b9e1dd87e5440c56015efa971f34b7543b01543dd344d747485a996917ee0c",
+    "fast_inference.py": "35f4cf38a711c416ca702ec069c365e8911e02d264632ca015eb40fa9fa3f037",
+    "runtime.patch": "a05c771cf4b811f5942a52b74d90abcd3d5112c917eac86ca15a5bade3abf7c4"
+  },
+  "protocol": "Same 49.408s podcast, 20 independent hard-anchor chunks, 1T+2V MPS, two steps. Fresh processes per video, resident loaders across chunks. GPU preparation included. Calibration excluded. Repeated controls and fast runs alternate. VAE-only fast validation is stage aware; request-local hook nodes refresh per chunk.",
+  "benchmark_source_sha256": {
+    "profile_pair.py": "7e447c9ea2a0b305ca14f5c7df1a006ff8c4f809da7457a696b6b9e539d5c8a2",
+    "validate_latents.py": "29c542ad7269872955323af697c7e38b0c45fb35d3ff332246791fdc7878405a",
+    "experiment.py": "abd7071243a0661e5f71202e2c8a57fec89dd5ba22c2affde1fe1166dc3ff936",
+    "batch_support_initial.py": "f533829e6a4a53fba653b2f7c615c01eefe857b846e1d33f06af8e094e742372",
+    "analyze.py": "9c550a84ecae7b855f74f33569af1e378777fc95260b01556de08cb42544d0ea",
+    "analyze_profiles.py": "b451f411314393fda8cb30a679d1e110495207600b2c31112930319607b0a682",
+    "build_report.py": "75dd181857b0d2ca7cc7714caa90fc65066389357c8d607ea8c4472ebf7add65",
+    "run_matrix.py": "8064d567130a1847b1dc2537eb812c9c8cad3c9f05fd826d555c65baf0a46f7e",
+    "batch_support.py": "9faedc36f8ab4e93d18616fb4f65aa6f00b5a1e27294640b48e0e31bd587d9ae",
+    "validate_outputs.py": "64bd2912e652d3fc2986734633c6577ccf0510383a3ea4ac4783221ffa8a8bae",
+    "make_contact_sheet.py": "d3e86cd0b1aa8003ceec3fe1a48042bff74d69518e2825154956f9563eeef329",
+    "profile_modulation.py": "ddf9a4eeb1ccbf9774efe73caf77d079ebecd926333731097d9874f1a808566d"
+  },
+  "prepared_artifacts_sha256": {
+    "prepared_0.pt": "cd1ca7adaa9fd792e80cb5f866bf4632a417277c22cf899e6cd029d15cf0ef31",
+    "prepared_1.pt": "0d2f1f6413d13380c4d0473705eb4b270235322facbf159411e30d94251a64ce"
+  },
+  "captured_gpu": "RTX PRO 6000 Blackwell Workstation Edition, 96 GB, 600 W",
+  "scope": "Benchmark-only batch adaptation; production files unchanged by this task."
+}

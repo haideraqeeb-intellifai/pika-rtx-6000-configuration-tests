@@ -1,0 +1,13 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_fast_cal20
+{"name": "followup_fast_cal20", "status": "calibrated", "timed_total_seconds": null, "gpu_trace_summary": null, "calibration_peak_gib": {"denoise": 28.757, "decode": 9.061}}
+Starting followup_fast_comparison_default_1
+{"name": "followup_fast_comparison_default_1", "status": "success", "timed_total_seconds": 222.55071899899485, "gpu_trace_summary": {"samples": 1062, "peak_vram_gib": 41.301, "gpu_util_mean_pct": 83.34463276836158}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_fast_comparison_fast_1
+{"name": "followup_fast_comparison_fast_1", "status": "success", "timed_total_seconds": 202.53258484699472, "gpu_trace_summary": {"samples": 959, "peak_vram_gib": 43.904, "gpu_util_mean_pct": 76.55370177267987}, "calibration_peak_gib": {"denoise": 28.757, "decode": 9.061}}
+Starting followup_fast_comparison_default_2
+{"name": "followup_fast_comparison_default_2", "status": "success", "timed_total_seconds": 225.15125261699723, "gpu_trace_summary": {"samples": 1074, "peak_vram_gib": 41.301, "gpu_util_mean_pct": 83.22998137802607}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_fast_comparison_fast_2
+{"name": "followup_fast_comparison_fast_2", "status": "success", "timed_total_seconds": 198.15877524499956, "gpu_trace_summary": {"samples": 937, "peak_vram_gib": 43.904, "gpu_util_mean_pct": 78.33084311632871}, "calibration_peak_gib": {"denoise": 28.757, "decode": 9.061}}
+Fast-mode comparison complete

@@ -1,0 +1,21 @@
+{
+  "page_http": 200,
+  "remote_browser": "passed",
+  "downloads": [
+    {
+      "file": "evidence.zip",
+      "http": 200,
+      "sample_bytes": 128
+    },
+    {
+      "file": "visual_summary.json",
+      "http": 200,
+      "sample_bytes": 128
+    },
+    {
+      "file": "ncu_denoise.csv",
+      "http": 200,
+      "sample_bytes": 128
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+[2026-11-11 13:26:42.556 Control 727501] Starting control daemon using socket /tmp/h3-vae-mps-_p1v08ui/control
+[2026-11-11 13:26:42.556 Control 727501] To connect CUDA applications to this daemon, set env CUDA_MPS_PIPE_DIRECTORY=/tmp/h3-vae-mps-_p1v08ui
+[2026-11-11 13:26:42.556 Control 727501] CUDA MPS Control binary version: 13020
+[2026-11-11 13:26:46.464 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.464 Control 727501] User did not send valid credentials
+[2026-11-11 13:26:46.464 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.464 Control 727501] NEW CLIENT 727505 from user 1014: Server is not ready, push client to pending list
+[2026-11-11 13:26:46.468 Control 727675] Starting new server 727675 for user 1014
+[2026-11-11 13:26:46.534 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.688 Control 727501] NEW SERVER 727675: Ready
+[2026-11-11 13:26:46.688 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.688 Control 727501] User did not send valid credentials
+[2026-11-11 13:26:46.688 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.688 Control 727501] User did not send valid credentials
+[2026-11-11 13:26:46.688 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.688 Control 727501] NEW CLIENT 727504 from user 1014: Server already exists
+[2026-11-11 13:26:46.706 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.706 Control 727501] NEW CLIENT 727506 from user 1014: Server already exists
+[2026-11-11 13:26:46.754 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.754 Control 727501] NEW CLIENT 727505 from user 1014: Server already exists
+[2026-11-11 13:26:46.785 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.785 Control 727501] NEW CLIENT 727506 from user 1014: Server already exists
+[2026-11-11 13:26:46.785 Control 727501] Accepting connection...
+[2026-11-11 13:26:46.785 Control 727501] NEW CLIENT 727504 from user 1014: Server already exists
+[2026-11-11 13:26:48.758 Control 727501] Accepting connection...
+[2026-11-11 13:26:48.758 Control 727501] NEW UI
+[2026-11-11 13:26:48.758 Control 727501] Cmd:ps
+[2026-11-11 13:26:48.758 Control 727501] PID       ID        SERVER         DEVICE                    NAMESPACE      COMMAND        ATTRIBUTES     
+[2026-11-11 13:26:48.758 Control 727501] 727505    1         727675         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-11 13:26:48.758 Control 727501] 727506    2         727675         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-11 13:26:48.758 Control 727501] 727504    3         727675         GPU-95524f71-5100-f040    4026531836     /home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python               
+[2026-11-11 13:26:48.758 Control 727501] UI closed
+[2026-11-11 13:28:50.860 Control 727501] Accepting connection...
+[2026-11-11 13:28:50.860 Control 727501] NEW UI
+[2026-11-11 13:28:50.860 Control 727501] Cmd:get_server_list
+[2026-11-11 13:28:50.860 Control 727501] 727675
+[2026-11-11 13:28:50.860 Control 727501] UI closed
+[2026-11-11 13:28:50.932 Control 727501] Accepting connection...
+[2026-11-11 13:28:50.933 Control 727501] NEW UI
+[2026-11-11 13:28:50.933 Control 727501] Cmd:quit
+[2026-11-11 13:28:50.933 Control 727501] Try shutting down server 727675, backoff is disabled
+[2026-11-11 13:28:50.974 Control 727501] Server 727675 exited with status 0
+[2026-11-11 13:28:50.974 Control 727501] Exit with status 0

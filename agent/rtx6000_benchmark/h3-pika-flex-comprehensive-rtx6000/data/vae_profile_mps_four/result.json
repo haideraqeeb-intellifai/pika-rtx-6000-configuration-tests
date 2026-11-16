@@ -1,0 +1,6 @@
+{
+  "status": "preflight_failure",
+  "scope": "unmeasured profiler diagnostic",
+  "error": "Nsight driver-only idle memory was 4 MiB; ordinary idle guard required 2 MiB. No H3 workload launched.",
+  "log": "../vae_profile_mps_four.log"
+}

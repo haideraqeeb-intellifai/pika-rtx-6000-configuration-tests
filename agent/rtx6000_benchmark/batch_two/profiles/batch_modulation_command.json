@@ -1,0 +1,27 @@
+{
+  "command": [
+    "nsys",
+    "profile",
+    "--trace=cuda-sw,nvtx,osrt",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "--wait=all",
+    "--output",
+    "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/batch_two/profiles/batch_modulation",
+    "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+    "-m",
+    "agent.rtx6000_benchmark.batch_two.experiment",
+    "--mode",
+    "batch",
+    "--name",
+    "profile_batch_modulation_v1",
+    "--repeats",
+    "1"
+  ],
+  "env_flags": {
+    "H3_BATCH_MODULATION": "1",
+    "H3_BATCH_NSYS": "1",
+    "H3_NSYS_GPU_METRICS": "1"
+  },
+  "purpose": "Diagnostic; exclude from timing means"
+}

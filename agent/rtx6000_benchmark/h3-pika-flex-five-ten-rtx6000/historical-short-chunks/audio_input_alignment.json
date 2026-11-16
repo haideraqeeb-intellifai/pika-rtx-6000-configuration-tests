@@ -1,0 +1,18 @@
+[
+  {
+    "chunk": 0,
+    "source_samples": 110000,
+    "sample_rate": 48000,
+    "best_lag_samples": 0,
+    "zero_lag_correlation": 0.9999212761928902,
+    "method": "FFT correlation within +/-2048 samples; AAC decode trimmed to intended source length. All configurations share identical decoded audio hashes."
+  },
+  {
+    "chunk": 1,
+    "source_samples": 110000,
+    "sample_rate": 48000,
+    "best_lag_samples": 0,
+    "zero_lag_correlation": 0.9999333157821102,
+    "method": "FFT correlation within +/-2048 samples; AAC decode trimmed to intended source length. All configurations share identical decoded audio hashes."
+  }
+]

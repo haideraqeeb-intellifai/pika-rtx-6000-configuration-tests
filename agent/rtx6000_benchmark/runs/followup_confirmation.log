@@ -1,0 +1,17 @@
+Existing followup_c20_1t_1v_repeat2: success
+Existing followup_c20_2t_2v_repeat2: success
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_best_resident
+{"name": "followup_best_resident", "status": "success", "timed_total_seconds": 229.04251957099768, "gpu_trace_summary": {"samples": 1095, "peak_vram_gib": 39.299, "gpu_util_mean_pct": 86.09954337899543}, "calibration_peak_gib": {"denoise": 32.333, "decode": 7.862}}
+Starting followup_best_async
+{"name": "followup_best_async", "status": "success", "timed_total_seconds": 232.82631348699942, "gpu_trace_summary": {"samples": 1112, "peak_vram_gib": 35.547, "gpu_util_mean_pct": 85.73920863309353}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_best_resident_repeat2
+{"name": "followup_best_resident_repeat2", "status": "success", "timed_total_seconds": 237.9657562450011, "gpu_trace_summary": {"samples": 1139, "peak_vram_gib": 39.299, "gpu_util_mean_pct": 83.57857769973661}, "calibration_peak_gib": {"denoise": 32.333, "decode": 7.862}}
+Starting followup_best_async_repeat2
+{"name": "followup_best_async_repeat2", "status": "success", "timed_total_seconds": 232.97570531300516, "gpu_trace_summary": {"samples": 1113, "peak_vram_gib": 35.547, "gpu_util_mean_pct": 85.7403414195867}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_best_two_mps
+{"name": "followup_best_two_mps", "status": "success", "timed_total_seconds": 225.88169814799767, "gpu_trace_summary": {"samples": 1077, "peak_vram_gib": 68.102, "gpu_util_mean_pct": 81.92200557103064}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_best_two_mps_repeat2
+{"name": "followup_best_two_mps_repeat2", "status": "success", "timed_total_seconds": 225.29679542600206, "gpu_trace_summary": {"samples": 1074, "peak_vram_gib": 68.102, "gpu_util_mean_pct": 83.69366852886407}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Confirmation complete

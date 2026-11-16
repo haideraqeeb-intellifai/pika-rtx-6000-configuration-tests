@@ -1,0 +1,109 @@
+{
+  "name": "followup_mps_3t_2v",
+  "status": "memory_guard_rejected",
+  "loader": "separate stage processes",
+  "schedule": "pipeline",
+  "transformers": 3,
+  "vaes": 2,
+  "reference": "original",
+  "anchor_mode": "hard",
+  "chunk_frames": [
+    55,
+    55,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73
+  ],
+  "chunks": 20,
+  "residency": "dynamic",
+  "async_encoding": false,
+  "static_patcher": false,
+  "chunk_plan": "aligned",
+  "cache_text": true,
+  "child_results": [],
+  "mps": true,
+  "prime_longest": false,
+  "mps_percentages": {
+    "denoise": 100,
+    "decode": 100
+  },
+  "command": [
+    "/home/raqeeb/h3/flex-2k-refinement/.h3-pika-env/bin/python",
+    "-m",
+    "agent.rtx6000_benchmark.stage_pipeline",
+    "--name",
+    "followup_mps_3t_2v",
+    "--schedule",
+    "pipeline",
+    "--chunks",
+    "20",
+    "--transformers",
+    "3",
+    "--vaes",
+    "2",
+    "--mps",
+    "--reuse-calibration",
+    "followup_cal_20",
+    "--run"
+  ],
+  "benchmark_code_sha256": {
+    "stage_pipeline.py": "3df18c6be24fa10908bfb57cb2a3894fc4b67ef468c7522460894aacaeb000a0",
+    "parallel_chunk_resident.py": "7f5feb8e425d93f9c2d29399c7d8b125ea0898f355dbdc493445bf1d104c76af",
+    "deferred_encoding.py": "14c856727cf9f9538f0d5630337b1bf1729959e67bcb3451774105c57eef4c1d",
+    "gpu_preencode.py": "4988f120764d496f508f18821a28f1649471f299a2b445b3221716816aaef7de"
+  },
+  "empty_gpu_gate": [
+    {
+      "time": 1794341274.9988294,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794341276.0202887,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794341277.0413733,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "calibration_source": "/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/runs/followup_cal_20/result.json",
+  "calibration_source_sha256": "011e2dee7e4e76f64f20116af98b36c80021d02eb5147c8a0f4d078ad0ab5e2e",
+  "calibration_peak_gib": {
+    "denoise": 28.757,
+    "decode": 7.696
+  },
+  "conservative_memory_envelope_gib": 101.663,
+  "memory_budget_fraction": 0.9,
+  "memory_budget_gib": 86.031,
+  "total_seconds": 2.128973423001298
+}

@@ -1,0 +1,79 @@
+{
+  "name": "followup_cal_20",
+  "status": "calibrated",
+  "loader": "separate stage processes",
+  "schedule": "staged",
+  "transformers": 1,
+  "vaes": 1,
+  "reference": "original",
+  "anchor_mode": "hard",
+  "chunk_frames": [
+    55,
+    55,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73,
+    56,
+    56,
+    56,
+    56,
+    73
+  ],
+  "chunks": 20,
+  "residency": "dynamic",
+  "async_encoding": false,
+  "chunk_plan": "aligned",
+  "cache_text": true,
+  "child_results": [],
+  "mps": false,
+  "prime_longest": false,
+  "mps_percentages": {
+    "denoise": 100,
+    "decode": 100
+  },
+  "empty_gpu_gate": [
+    {
+      "time": 1794309610.9916766,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794309612.0127714,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    },
+    {
+      "time": 1794309613.0322516,
+      "uuid": "GPU-95524f71-5100-f040-aebf-67296c094563",
+      "gpu_util_pct": 0,
+      "memory_used_mib": 2,
+      "driver_reserved_mib": 638,
+      "compute_pids": [],
+      "graphics_pids": []
+    }
+  ],
+  "calibration_peak_gib": {
+    "denoise": 28.757,
+    "decode": 7.696
+  },
+  "conservative_memory_envelope_gib": 28.757,
+  "total_seconds": 71.63738216399724
+}

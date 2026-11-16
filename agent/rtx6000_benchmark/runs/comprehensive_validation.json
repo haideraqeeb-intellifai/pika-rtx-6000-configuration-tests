@@ -1,0 +1,11 @@
+{
+  "record_coverage": 121,
+  "clean_full_video_trials": 96,
+  "recommendation_mean_seconds": 200.34568004599714,
+  "links_checked": 644,
+  "inventory_files": 482,
+  "archive_entries": 7950,
+  "archive_crc": "passed",
+  "credential_pattern_scan": "no matches",
+  "source_hash_checks": "All included output files rehashed and checked during build."
+}

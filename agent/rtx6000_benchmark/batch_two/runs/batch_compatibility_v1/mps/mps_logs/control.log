@@ -1,0 +1,28 @@
+[2026-11-11 14:15:03.443 Control 742160] Starting control daemon using socket /tmp/h3-vae-mps-lubuuo2p/control
+[2026-11-11 14:15:03.443 Control 742160] To connect CUDA applications to this daemon, set env CUDA_MPS_PIPE_DIRECTORY=/tmp/h3-vae-mps-lubuuo2p
+[2026-11-11 14:15:03.443 Control 742160] CUDA MPS Control binary version: 13020
+[2026-11-11 14:15:07.086 Control 742160] Accepting connection...
+[2026-11-11 14:15:07.086 Control 742160] User did not send valid credentials
+[2026-11-11 14:15:07.086 Control 742160] Accepting connection...
+[2026-11-11 14:15:07.086 Control 742160] NEW CLIENT 742163 from user 1014: Server is not ready, push client to pending list
+[2026-11-11 14:15:07.086 Control 742217] Starting new server 742217 for user 1014
+[2026-11-11 14:15:07.088 Control 742160] Accepting connection...
+[2026-11-11 14:15:07.270 Control 742160] NEW SERVER 742217: Ready
+[2026-11-11 14:15:07.270 Control 742160] Accepting connection...
+[2026-11-11 14:15:07.271 Control 742160] NEW UI
+[2026-11-11 14:15:07.271 Control 742160] Cmd:get_server_list
+[2026-11-11 14:15:07.271 Control 742160] 742217
+[2026-11-11 14:15:07.271 Control 742160] UI closed
+[2026-11-11 14:15:07.320 Control 742160] Accepting connection...
+[2026-11-11 14:15:07.320 Control 742160] NEW CLIENT 742163 from user 1014: Server already exists
+[2026-11-11 14:15:35.510 Control 742160] Accepting connection...
+[2026-11-11 14:15:35.510 Control 742160] NEW UI
+[2026-11-11 14:15:35.510 Control 742160] Cmd:get_server_list
+[2026-11-11 14:15:35.510 Control 742160] 742217
+[2026-11-11 14:15:35.510 Control 742160] UI closed
+[2026-11-11 14:15:35.512 Control 742160] Accepting connection...
+[2026-11-11 14:15:35.512 Control 742160] NEW UI
+[2026-11-11 14:15:35.512 Control 742160] Cmd:quit
+[2026-11-11 14:15:35.512 Control 742160] Try shutting down server 742217, backoff is disabled
+[2026-11-11 14:15:35.539 Control 742160] Server 742217 exited with status 0
+[2026-11-11 14:15:35.539 Control 742160] Exit with status 0

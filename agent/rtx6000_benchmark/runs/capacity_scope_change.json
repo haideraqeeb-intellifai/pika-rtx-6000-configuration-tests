@@ -1,0 +1,13 @@
+{
+  "reason": "User requested no further excessive decoder-copy combinations. Finish active 2T3V; skip 1T6V, 1T9V, 2T5V and automatic repeat of 1T8V.",
+  "paused_coordinator_pid": 477465,
+  "finish_run": "followup_capacity_2t_3v",
+  "status": "stopped_after_active_run_completed",
+  "finished_run_seconds": 227.31218156500108,
+  "skipped": [
+    "1T6V",
+    "1T9V",
+    "2T5V",
+    "automatic repeat of 1T8V"
+  ]
+}

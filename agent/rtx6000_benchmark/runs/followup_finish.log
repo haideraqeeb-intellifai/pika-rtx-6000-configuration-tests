@@ -1,0 +1,10 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_mps_1t_2v_repeat2
+{"name": "followup_mps_1t_2v_repeat2", "status": "success", "timed_total_seconds": 221.92696636500477, "gpu_trace_summary": {"samples": 1059, "peak_vram_gib": 41.301, "gpu_util_mean_pct": 83.6770538243626}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Existing followup_mps_1t_4v_repeat2: success
+Starting followup_isolated_20
+{"name": "followup_isolated_20", "status": "success", "timed_total_seconds": 260.4219172689991, "gpu_trace_summary": {"samples": 1250, "peak_vram_gib": 28.747, "gpu_util_mean_pct": 71.4824}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_mps_2t_1v
+{"name": "followup_mps_2t_1v", "status": "success", "timed_total_seconds": 250.7407321080027, "gpu_trace_summary": {"samples": 1202, "peak_vram_gib": 61.887, "gpu_util_mean_pct": 73.95008319467554}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+All resumed comparisons complete

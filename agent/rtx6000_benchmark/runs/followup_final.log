@@ -1,0 +1,9 @@
+/home/raqeeb/h3/6000-configuration-optimization/script2video/agent/rtx6000_benchmark/run_case.py:130: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml
+Starting followup_one_mps
+{"name": "followup_one_mps", "status": "success", "timed_total_seconds": 242.3023877279993, "gpu_trace_summary": {"samples": 1160, "peak_vram_gib": 35.013, "gpu_util_mean_pct": 76.12155172413793}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_one_mps_repeat2
+{"name": "followup_one_mps_repeat2", "status": "success", "timed_total_seconds": 292.4622601509982, "gpu_trace_summary": {"samples": 1411, "peak_vram_gib": 52.505, "gpu_util_mean_pct": 86.31750531537917}, "calibration_peak_gib": {"denoise": 28.757, "decode": 7.696}}
+Starting followup_best_combined
+{"name": "followup_best_combined", "status": "success", "timed_total_seconds": 305.59178803300165, "gpu_trace_summary": {"samples": 1476, "peak_vram_gib": 60.968, "gpu_util_mean_pct": 86.92344173441734}, "calibration_peak_gib": {"denoise": 32.333, "decode": 7.862}}
+Starting followup_best_combined_repeat2
